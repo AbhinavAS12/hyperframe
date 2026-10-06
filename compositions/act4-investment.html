@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #0d1321;
+          overflow: hidden;
+          font-family: "Space Mono", monospace;
+          color: #f0ebd8;
+        }
+        #root .kicker {
+          position: absolute;
+          top: 48px;
+          left: 56px;
+          font-size: 18px;
+          letter-spacing: 0.18em;
+          color: #748cab;
+          opacity: 0.55;
+          text-transform: uppercase;
+        }
+        #root .act-label {
+          position: absolute;
+          bottom: 48px;
+          right: 56px;
+          font-family: "League Gothic", sans-serif;
+          font-size: 30px;
+          letter-spacing: 0.03em;
+          color: #d4af6a;
+          opacity: 0.6;
+          text-transform: uppercase;
+        }
+        #root .glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 42%, rgba(212, 175, 106, 0.12), rgba(13, 19, 33, 0) 55%);
+        }
+        #root .hairline-ring {
+          position: absolute;
+          left: 50%;
+          top: 42%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+        }
+        #root .hairline-ring.r1 {
+          width: 1100px;
+          height: 1100px;
+          border: 1px solid rgba(212, 175, 106, 0.05);
+        }
+        #root .hairline-ring.r2 {
+          width: 1560px;
+          height: 1560px;
+          border: 1px solid rgba(212, 175, 106, 0.035);
+        }
+        #root .ghost-coord2 {
+          position: absolute;
+          left: -40px;
+          top: -80px;
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 230px;
+          color: #d4af6a;
+          opacity: 0.04;
+          white-space: nowrap;
+          letter-spacing: -0.02em;
+          pointer-events: none;
+        }
+        #root .headline {
+          position: absolute;
+          left: 50%;
+          top: 150px;
+          transform: translate(-50%, 0);
+          font-family: "League Gothic", sans-serif;
+          font-size: 46px;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          color: #f0ebd8;
+          opacity: 0;
+        }
+        #root .cards {
+          position: absolute;
+          left: 50%;
+          top: 300px;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 36px;
+        }
+        #root .card {
+          width: 300px;
+          padding: 32px 20px;
+          background: #1d2d44;
+          border: 1px solid rgba(212, 175, 106, 0.25);
+          border-radius: 10px;
+          text-align: center;
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        #root .card .label {
+          font-size: 18px;
+          letter-spacing: 0.05em;
+          color: #7e95b1;
+          text-transform: uppercase;
+          margin-bottom: 14px;
+        }
+        #root .card .price {
+          font-family: "League Gothic", sans-serif;
+          font-size: 48px;
+          color: #d4af6a;
+          line-height: 1;
+        }
+        #root .card .from {
+          font-size: 15px;
+          color: #7e95b1;
+          margin-top: 10px;
+        }
+        #root .avgline {
+          position: absolute;
+          left: 50%;
+          top: 620px;
+          transform: translate(-50%, 0);
+          font-size: 24px;
+          color: #f0ebd8;
+          opacity: 0;
+          text-align: center;
+        }
+        #root .avgline b {
+          color: #d4af6a;
+        }
+        #root .badges {
+          position: absolute;
+          left: 50%;
+          bottom: 110px;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 18px;
+        }
+        #root .badge {
+          padding: 12px 22px;
+          border-radius: 999px;
+          border: 1px solid rgba(212, 175, 106, 0.5);
+          font-size: 18px;
+          letter-spacing: 0.03em;
+          text-transform: uppercase;
+          color: #d4af6a;
+          opacity: 0;
+          transform: scale(0.8);
+          white-space: nowrap;
+        }
+      </style>
+
+      <div data-hf-id="hf-lehu" id="root" data-composition-id="act4-investment" data-width="1920" data-height="1080" data-duration="26.5">
+        <div data-hf-id="hf-2s7n" class="glow"></div>
+        <div data-hf-id="hf-r1ng" class="hairline-ring r1" id="a4-ring1" data-layout-allow-overflow="true"></div>
+        <div data-hf-id="hf-r2ng" class="hairline-ring r2" id="a4-ring2" data-layout-allow-overflow="true"></div>
+        <div data-hf-id="hf-gc04" class="ghost-coord2" data-layout-allow-overflow="true">55.1663° E</div>
+        <div data-hf-id="hf-cwk7" class="kicker">Allegiance Real Estate · Dubai South</div>
+        <div data-hf-id="hf-mpmb" class="act-label">The Investment Case</div>
+
+        <div data-hf-id="hf-12z0" class="headline" id="a4-headline">The entry point is still early</div>
+
+        <div data-hf-id="hf-5cwd" class="cards">
+          <div data-hf-id="hf-fe53" class="card" id="a4-card1"><div data-hf-id="hf-txs0" class="label">Studio</div><div data-hf-id="hf-dppc" class="price" id="a4-p1">AED 0</div><div data-hf-id="hf-3k14" class="from">from</div></div>
+          <div data-hf-id="hf-6q98" class="card" id="a4-card2"><div data-hf-id="hf-0g6k" class="label">1-Bedroom</div><div data-hf-id="hf-sxl5" class="price" id="a4-p2">AED 0</div><div data-hf-id="hf-iiw0" class="from">from</div></div>
+          <div data-hf-id="hf-7hx1" class="card" id="a4-card3"><div data-hf-id="hf-s2x1" class="label">2-Bedroom</div><div data-hf-id="hf-5b62" class="price" id="a4-p3">AED 0</div><div data-hf-id="hf-hbyx" class="from">from</div></div>
+          <div data-hf-id="hf-q9mq" class="card" id="a4-card4"><div data-hf-id="hf-0dyp" class="label">3-Bed Townhouse</div><div data-hf-id="hf-0c4b" class="price" id="a4-p4">AED 0</div><div data-hf-id="hf-hq9y" class="from">from</div></div>
+        </div>
+
+        <div data-hf-id="hf-vkej" class="avgline" id="a4-avg">Average <b data-hf-id="hf-l26e">~AED 800 / sq ft</b> — among the most accessible entry points in freehold Dubai</div>
+
+        <div data-hf-id="hf-1bhc" class="badges">
+          <div data-hf-id="hf-zayd" class="badge" id="a4-b1">Freehold</div>
+          <div data-hf-id="hf-kreq" class="badge" id="a4-b2">100% Foreign Ownership</div>
+          <div data-hf-id="hf-qqjn" class="badge" id="a4-b3">Golden Visa Eligible</div>
+          <div data-hf-id="hf-43yg" class="badge" id="a4-b4">60/40 Payment Plans</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          tl.to("#a4-headline", { opacity: 1, duration: 0.6, ease: "power2.out" }, 0.3);
+
+          const cards = ["#a4-card1", "#a4-card2", "#a4-card3", "#a4-card4"];
+          cards.forEach((sel, i) => {
+            tl.to(sel, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 1.0 + i * 0.25);
+          });
+
+          function countPrice(elId, target, at, dur) {
+            const el = document.getElementById(elId);
+            const state = { v: 0 };
+            tl.to(
+              state,
+              {
+                v: target,
+                duration: dur,
+                ease: "power2.out",
+                onUpdate: () => {
+                  el.textContent = "AED " + Math.round(state.v).toLocaleString("en-US");
+                },
+              },
+              at,
+            );
+          }
+          countPrice("a4-p1", 340000, 1.3, 1.6);
+          countPrice("a4-p2", 673000, 1.55, 1.7);
+          countPrice("a4-p3", 1050000, 1.8, 1.8);
+          countPrice("a4-p4", 2075000, 2.05, 1.9);
+
+          tl.to("#a4-avg", { opacity: 1, duration: 0.7, ease: "power2.out" }, 5.4);
+
+          const badges = ["#a4-b1", "#a4-b2", "#a4-b3", "#a4-b4"];
+          badges.forEach((sel, i) => {
+            tl.to(
+              sel,
+              { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.9)" },
+              7.0 + i * 0.35,
+            );
+          });
+
+          // Ambient breathing glow for the rest of the hold
+          tl.to(
+            ".glow",
+            { opacity: 0.6, duration: 3, ease: "sine.inOut", repeat: 6, yoyo: true },
+            9.0,
+          );
+
+          // Ambient decoratives: hairline rings + ghost coordinate breathe slowly for the whole scene
+          tl.to("#a4-ring1", { scale: 1.04, duration: 8, ease: "sine.inOut", repeat: 3, yoyo: true }, 0);
+          tl.to("#a4-ring2", { scale: 0.97, duration: 10, ease: "sine.inOut", repeat: 2, yoyo: true }, 0);
+          tl.to(".ghost-coord2", { opacity: 0.06, y: 10, duration: 12, ease: "sine.inOut", repeat: 2, yoyo: true }, 0);
+
+          window.__timelines["act4-investment"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

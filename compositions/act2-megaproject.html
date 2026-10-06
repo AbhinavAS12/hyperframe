@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #0d1321;
+          overflow: hidden;
+          font-family: "Space Mono", monospace;
+          color: #f0ebd8;
+        }
+        #root .kicker {
+          position: absolute;
+          top: 48px;
+          left: 56px;
+          font-size: 18px;
+          letter-spacing: 0.18em;
+          color: #748cab;
+          opacity: 0.55;
+          text-transform: uppercase;
+        }
+        #root .act-label {
+          position: absolute;
+          bottom: 48px;
+          right: 56px;
+          font-family: "League Gothic", sans-serif;
+          font-size: 30px;
+          letter-spacing: 0.03em;
+          color: #d4af6a;
+          opacity: 0.6;
+          text-transform: uppercase;
+        }
+        #root .glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 50%, rgba(212, 175, 106, 0.14), rgba(13, 19, 33, 0) 55%);
+        }
+        #root .hairline-ring {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+        }
+        #root .hairline-ring.r1 {
+          width: 1040px;
+          height: 1040px;
+          border: 1px solid rgba(212, 175, 106, 0.05);
+        }
+        #root .hairline-ring.r2 {
+          width: 1480px;
+          height: 1480px;
+          border: 1px solid rgba(212, 175, 106, 0.035);
+        }
+        #root .ghost-coord2 {
+          position: absolute;
+          left: -60px;
+          bottom: -70px;
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 230px;
+          color: #d4af6a;
+          opacity: 0.04;
+          white-space: nowrap;
+          letter-spacing: -0.02em;
+          pointer-events: none;
+        }
+        #root .phase {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+        }
+
+        /* ---- Phase A: DXB ceiling ---- */
+        #root .dxb-wrap {
+          position: absolute;
+          left: 50%;
+          top: 46%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
+        #root .dxb-pin {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #d4af6a;
+          margin: 0 auto 28px;
+          box-shadow: 0 0 24px 8px rgba(212, 175, 106, 0.35);
+        }
+        #root .dxb-label {
+          font-family: "League Gothic", sans-serif;
+          font-size: 54px;
+          text-transform: uppercase;
+          letter-spacing: 0.02em;
+          margin-bottom: 36px;
+        }
+        #root .cap-track {
+          width: 640px;
+          height: 28px;
+          border-radius: 14px;
+          background: #1d2d44;
+          overflow: visible;
+          position: relative;
+          margin: 0 auto;
+        }
+        #root .cap-fill {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 14px;
+          background: #d4af6a;
+          transform: scaleX(0);
+          transform-origin: left center;
+        }
+        #root .cap-overflow {
+          position: absolute;
+          top: 0;
+          right: -40px;
+          width: 40px;
+          height: 28px;
+          border-radius: 0 14px 14px 0;
+          background: #c0453f;
+          opacity: 0;
+        }
+        #root .cap-caption {
+          margin-top: 24px;
+          font-size: 24px;
+          color: #748cab;
+          letter-spacing: 0.04em;
+        }
+        #root .cap-caption b {
+          color: #f0ebd8;
+          font-weight: 700;
+        }
+
+        /* ---- Phase B: DWC site ---- */
+        #root .dwc-wrap {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 1500px;
+          height: 820px;
+        }
+        #root svg.dwc {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+        #root .dwc path.boundary {
+          fill: none;
+          stroke: #d4af6a;
+          stroke-width: 3;
+          opacity: 0.9;
+        }
+        #root .dwc line.runway {
+          stroke: #f0ebd8;
+          stroke-width: 6;
+          stroke-linecap: round;
+          opacity: 0.9;
+        }
+        #root .gate {
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: #748cab;
+          opacity: 0;
+          transform: scale(0);
+        }
+        #root .callouts {
+          position: absolute;
+          left: 50%;
+          bottom: 150px;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 56px;
+        }
+        #root .callout {
+          text-align: center;
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        #root .callout .num {
+          font-family: "League Gothic", sans-serif;
+          font-size: 64px;
+          color: #d4af6a;
+          line-height: 1;
+        }
+        #root .callout .lab {
+          font-size: 17px;
+          color: #748cab;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          margin-top: 8px;
+          width: 220px;
+        }
+        #root .timeline-strip {
+          position: absolute;
+          left: 50%;
+          bottom: 56px;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          font-size: 20px;
+          color: #748cab;
+          opacity: 0;
+          letter-spacing: 0.02em;
+        }
+        #root .timeline-strip .yr {
+          color: #f0ebd8;
+        }
+        #root .timeline-strip .arrow {
+          color: #d4af6a;
+        }
+      </style>
+
+      <div data-hf-id="hf-gt36" id="root" data-composition-id="act2-megaproject" data-width="1920" data-height="1080" data-duration="40.9">
+        <div data-hf-id="hf-2s7n" class="glow"></div>
+        <div data-hf-id="hf-r1ng" class="hairline-ring r1" id="a2-ring1" data-layout-allow-overflow="true"></div>
+        <div data-hf-id="hf-r2ng" class="hairline-ring r2" id="a2-ring2" data-layout-allow-overflow="true"></div>
+        <div data-hf-id="hf-gc02" class="ghost-coord2" data-layout-allow-overflow="true">24.8972° N</div>
+        <div data-hf-id="hf-cwk7" class="kicker">Allegiance Real Estate · Dubai South</div>
+        <div data-hf-id="hf-pbe2" class="act-label">The Mega-Project</div>
+
+        <div data-hf-id="hf-q8nd" class="phase" id="a2-phaseA">
+          <div data-hf-id="hf-rd5r" class="dxb-wrap">
+            <div data-hf-id="hf-l0es" class="dxb-pin"></div>
+            <div data-hf-id="hf-8x9e" class="dxb-label">Dubai International — DXB</div>
+            <div data-hf-id="hf-1bmy" class="cap-track">
+              <div data-hf-id="hf-iofp" class="cap-fill" id="a2-capfill"></div>
+              <div data-hf-id="hf-qdf9" class="cap-overflow" id="a2-capoverflow"></div>
+            </div>
+            <div data-hf-id="hf-xnm9" class="cap-caption" id="a2-capcaption"><b data-hf-id="hf-5wg9">DXB</b> — near its practical ceiling</div>
+          </div>
+        </div>
+
+        <div data-hf-id="hf-u6re" class="phase" id="a2-phaseB">
+          <div data-hf-id="hf-lccr" class="dwc-wrap">
+            <svg data-hf-id="hf-caki" class="dwc" viewBox="0 0 1500 820" preserveAspectRatio="xMidYMid meet">
+              <path data-hf-id="hf-54gh" id="a2-boundary" class="boundary" d="M 150 600 L 260 300 L 620 150 L 1100 160 L 1360 340 L 1310 640 L 900 740 L 400 700 Z" />
+              <line data-hf-id="hf-02c2" id="a2-rw1" class="runway" x1="320" y1="560" x2="980" y2="460" />
+              <line data-hf-id="hf-12dn" id="a2-rw2" class="runway" x1="300" y1="470" x2="1000" y2="370" />
+              <line data-hf-id="hf-0v4i" id="a2-rw3" class="runway" x1="300" y1="390" x2="1020" y2="290" />
+              <line data-hf-id="hf-ue02" id="a2-rw4" class="runway" x1="320" y1="320" x2="1000" y2="230" />
+              <line data-hf-id="hf-yrc1" id="a2-rw5" class="runway" x1="360" y1="260" x2="960" y2="190" />
+            </svg>
+          </div>
+          <div data-hf-id="hf-u45b" class="callouts">
+            <div data-hf-id="hf-bg0o" class="callout" id="a2-c1"><div data-hf-id="hf-39es" class="num" id="a2-c1n">$0B</div><div data-hf-id="hf-oro4" class="lab">Investment</div></div>
+            <div data-hf-id="hf-k3wj" class="callout" id="a2-c2"><div data-hf-id="hf-n34f" class="num" id="a2-c2n">0 km²</div><div data-hf-id="hf-zxkf" class="lab">5x the size of DXB</div></div>
+            <div data-hf-id="hf-g5si" class="callout" id="a2-c3"><div data-hf-id="hf-qcsp" class="num" id="a2-c3n">0 / 0</div><div data-hf-id="hf-4il7" class="lab">Runways / Gates</div></div>
+            <div data-hf-id="hf-xe2t" class="callout" id="a2-c4"><div data-hf-id="hf-txue" class="num" id="a2-c4n">0M</div><div data-hf-id="hf-rhyi" class="lab">Passengers / Year</div></div>
+          </div>
+          <div data-hf-id="hf-s0a8" class="timeline-strip" id="a2-tl">
+            <span data-hf-id="hf-34eb" class="yr">2013 ops begin</span><span data-hf-id="hf-v68i" class="arrow">→</span>
+            <span data-hf-id="hf-19et" class="yr">2024 Phase Two</span><span data-hf-id="hf-f1jq" class="arrow">→</span>
+            <span data-hf-id="hf-jc10" class="yr">~2030 first phase live</span><span data-hf-id="hf-ffur" class="arrow">→</span>
+            <span data-hf-id="hf-d5o1" class="yr">2032 DXB fully transfers</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const PHASE_A_DUR = 15.5;
+          const PHASE_B_START = 15.0;
+          const tl = gsap.timeline({ paused: true });
+
+          // ---- Phase A: DXB ceiling ----
+          tl.set("#a2-phaseA", { opacity: 1 }, 0);
+          tl.to("#a2-capfill", { scaleX: 1, duration: 2.2, ease: "power2.in" }, 1.0);
+          tl.to(
+            "#a2-capoverflow",
+            { opacity: 1, duration: 0.4, ease: "power1.out" },
+            3.1,
+          );
+          tl.to(
+            "#a2-capoverflow",
+            { boxShadow: "0 0 16px 4px rgba(192,69,63,0.6)", repeat: 3, yoyo: true, duration: 0.5 },
+            3.2,
+          );
+          tl.fromTo(
+            "#a2-capcaption",
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" },
+            3.6,
+          );
+          tl.to("#a2-phaseA", { opacity: 0, duration: 0.8, ease: "power1.in" }, PHASE_A_DUR - 0.8);
+
+          // ---- Phase B: DWC site ----
+          tl.set("#a2-phaseB", { opacity: 1 }, PHASE_B_START);
+          const boundary = document.getElementById("a2-boundary");
+          const blen = boundary.getTotalLength();
+          boundary.style.strokeDasharray = blen;
+          boundary.style.strokeDashoffset = blen;
+          tl.fromTo(
+            boundary,
+            { strokeDashoffset: blen },
+            { strokeDashoffset: 0, duration: 1.8, ease: "power2.out" },
+            PHASE_B_START + 0.3,
+          );
+
+          ["#a2-rw1", "#a2-rw2", "#a2-rw3", "#a2-rw4", "#a2-rw5"].forEach((sel, i) => {
+            const el = document.getElementById(sel.slice(1));
+            const l = el.getTotalLength();
+            el.style.strokeDasharray = l;
+            el.style.strokeDashoffset = l;
+            tl.to(
+              el,
+              { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" },
+              PHASE_B_START + 2.0 + i * 0.22,
+            );
+          });
+
+          // Gate dots scatter along the boundary interior
+          const gateHost = document.querySelector(".dwc-wrap");
+          const gates = [];
+          for (let i = 0; i < 40; i++) {
+            const g = document.createElement("div");
+            g.className = "gate";
+            const gx = 420 + ((i * 97) % 820);
+            const gy = 260 + ((i * 53) % 380);
+            g.style.left = gx + "px";
+            g.style.top = gy + "px";
+            gateHost.appendChild(g);
+            gates.push(g);
+          }
+          tl.to(
+            gates,
+            { opacity: 0.8, scale: 1, duration: 0.5, ease: "power2.out", stagger: 0.015 },
+            PHASE_B_START + 3.2,
+          );
+
+          // Sequential count-up callouts
+          function countUp(numEl, calloutSel, target, prefix, suffix, decimals, at, dur) {
+            const state = { v: 0 };
+            numEl.textContent = prefix + "0" + suffix;
+            tl.to(
+              calloutSel,
+              { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" },
+              at,
+            );
+            tl.to(
+              state,
+              {
+                v: target,
+                duration: dur,
+                ease: "power3.out",
+                onUpdate: () => {
+                  numEl.textContent = prefix + (decimals ? state.v.toFixed(decimals) : Math.round(state.v)) + suffix;
+                },
+              },
+              at,
+            );
+          }
+          const c1n = document.getElementById("a2-c1n");
+          const c2n = document.getElementById("a2-c2n");
+          const c3n = document.getElementById("a2-c3n");
+          const c4n = document.getElementById("a2-c4n");
+          countUp(c1n, "#a2-c1", 35, "$", "B", 0, PHASE_B_START + 4.0, 1.6);
+          countUp(c2n, "#a2-c2", 70, "", " km²", 0, PHASE_B_START + 4.4, 1.6);
+          countUp(c3n, "#a2-c3", 5, "", " / 400", 0, PHASE_B_START + 4.8, 1.6);
+          countUp(c4n, "#a2-c4", 260, "", "M", 0, PHASE_B_START + 5.2, 1.8);
+
+          tl.to(
+            "#a2-tl",
+            { opacity: 1, duration: 0.6, ease: "power2.out" },
+            PHASE_B_START + 9.0,
+          );
+
+          // Ambient decoratives: hairline rings + ghost coordinate breathe slowly for the whole scene
+          tl.to("#a2-ring1", { scale: 1.04, duration: 9, ease: "sine.inOut", repeat: 4, yoyo: true }, 0);
+          tl.to("#a2-ring2", { scale: 0.97, duration: 11, ease: "sine.inOut", repeat: 3, yoyo: true }, 0);
+          tl.to(".ghost-coord2", { opacity: 0.06, x: 12, duration: 13, ease: "sine.inOut", repeat: 3, yoyo: true }, 0);
+
+          // Slow continuous camera push-in on the whole phase B (multi-phase-camera, steady push)
+          const driftB = { p: 0 };
+          const dwcWrap = document.querySelector(".dwc-wrap");
+          tl.to(
+            driftB,
+            {
+              p: Math.PI * 2,
+              duration: 40.9 - PHASE_B_START,
+              ease: "none",
+              onUpdate: () => {
+                const t = driftB.p / (Math.PI * 2);
+                const s = 1.0 + t * 0.05;
+                const dx = Math.sin(driftB.p) * 3;
+                dwcWrap.style.transform = `translate(calc(-50% + ${dx}px), -50%) scale(${s})`;
+              },
+            },
+            PHASE_B_START,
+          );
+
+          window.__timelines["act2-megaproject"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

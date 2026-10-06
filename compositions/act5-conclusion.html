@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          background: #05070b;
+          overflow: hidden;
+          font-family: "Space Mono", monospace;
+          color: #f0ebd8;
+        }
+        #root .phase {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+        }
+        #root .hairline-ring {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+        }
+        #root .hairline-ring.r1 {
+          width: 1300px;
+          height: 1300px;
+          border: 1px solid rgba(212, 175, 106, 0.05);
+        }
+        #root .hairline-ring.r2 {
+          width: 1700px;
+          height: 1700px;
+          border: 1px solid rgba(212, 175, 106, 0.035);
+        }
+        #root .ghost-coord2 {
+          position: absolute;
+          right: -60px;
+          bottom: -70px;
+          font-family: "Space Mono", monospace;
+          font-weight: 700;
+          font-size: 230px;
+          color: #d4af6a;
+          opacity: 0.04;
+          white-space: nowrap;
+          letter-spacing: -0.02em;
+          pointer-events: none;
+        }
+        /* ---- Phase A: orbital network ---- */
+        #root .orbit-wrap {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 1200px;
+          height: 1200px;
+        }
+        #root .hub {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 18px;
+          height: 18px;
+          margin: -9px 0 0 -9px;
+          border-radius: 50%;
+          background: #d4af6a;
+          box-shadow: 0 0 30px 10px rgba(212, 175, 106, 0.5);
+        }
+        #root svg.network {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+        }
+        #root .network line {
+          stroke: #d4af6a;
+          stroke-width: 1.5;
+          opacity: 0.7;
+        }
+        #root .node {
+          position: absolute;
+          font-size: 17px;
+          letter-spacing: 0.04em;
+          color: #748cab;
+          opacity: 0;
+          text-transform: uppercase;
+        }
+        #root .headline-a {
+          position: absolute;
+          left: 50%;
+          bottom: 130px;
+          transform: translate(-50%, 0);
+          width: 1400px;
+          text-align: center;
+          font-family: "League Gothic", sans-serif;
+          font-size: 56px;
+          text-transform: uppercase;
+          letter-spacing: 0.01em;
+          opacity: 0;
+          color: #f0ebd8;
+        }
+
+        /* ---- Phase B: logo card ---- */
+        #root .logocard {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 22px;
+        }
+        #root .wordmark {
+          font-family: "League Gothic", sans-serif;
+          font-size: 86px;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          color: #f0ebd8;
+          opacity: 0;
+          transform: scale(0.94);
+        }
+        #root .wordmark .accent {
+          color: #d4af6a;
+        }
+        #root .tagline {
+          font-size: 24px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #748cab;
+          opacity: 0;
+        }
+        #root .logo-glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 50%, rgba(212, 175, 106, 0.16), rgba(5, 7, 11, 0) 55%);
+          opacity: 0;
+        }
+      </style>
+
+      <div data-hf-id="hf-x7mg" id="root" data-composition-id="act5-conclusion" data-width="1920" data-height="1080" data-duration="31.0">
+        <div data-hf-id="hf-aufc" class="phase" id="a5-phaseA">
+          <div data-hf-id="hf-r1ng" class="hairline-ring r1" id="a5-ring1" data-layout-allow-overflow="true"></div>
+          <div data-hf-id="hf-r2ng" class="hairline-ring r2" id="a5-ring2" data-layout-allow-overflow="true"></div>
+          <div data-hf-id="hf-gc05" class="ghost-coord2" data-layout-allow-overflow="true">25.0000° N</div>
+          <div data-hf-id="hf-rr0e" class="orbit-wrap" id="a5-orbit">
+            <svg data-hf-id="hf-dt06" class="network" viewBox="0 0 1200 1200">
+              <line data-hf-id="hf-ri4y" id="a5-ln1" x1="600" y1="600" x2="150" y2="260" />
+              <line data-hf-id="hf-2qby" id="a5-ln2" x1="600" y1="600" x2="1060" y2="220" />
+              <line data-hf-id="hf-jf01" id="a5-ln3" x1="600" y1="600" x2="1080" y2="820" />
+              <line data-hf-id="hf-eupi" id="a5-ln4" x1="600" y1="600" x2="300" y2="840" />
+              <line data-hf-id="hf-na7u" id="a5-ln5" x1="600" y1="600" x2="140" y2="700" />
+            </svg>
+            <div data-hf-id="hf-py4l" class="hub"></div>
+            <div data-hf-id="hf-myf2" class="node" id="a5-n1" style="left:90px; top:230px;">London</div>
+            <div data-hf-id="hf-nxr6" class="node" id="a5-n2" style="left:1010px; top:190px;">Shanghai</div>
+            <div data-hf-id="hf-yzg8" class="node" id="a5-n3" style="left:1030px; top:800px;">Singapore</div>
+            <div data-hf-id="hf-nwx0" class="node" id="a5-n4" style="left:250px; top:830px;">New York</div>
+            <div data-hf-id="hf-kaiy" class="node" id="a5-n5" style="left:40px; top:680px;">Johannesburg</div>
+          </div>
+          <div data-hf-id="hf-rrtk" class="headline-a" id="a5-headline">By the early 2030s, this becomes the world's busiest gateway.</div>
+        </div>
+
+        <div data-hf-id="hf-jib7" class="phase" id="a5-phaseB">
+          <div data-hf-id="hf-zqr5" class="logo-glow" id="a5-glow"></div>
+          <div data-hf-id="hf-z73v" class="logocard">
+            <div data-hf-id="hf-jf9x" class="wordmark" id="a5-wordmark"><span data-hf-id="hf-0z9i" class="accent">Allegiance</span> Real Estate</div>
+            <div data-hf-id="hf-11q3" class="tagline" id="a5-tagline">Your gateway to Dubai South</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const PHASE_B_START = 18.0;
+
+          tl.set("#a5-phaseA", { opacity: 1 }, 0);
+
+          // Orbital pull-back: camera scale grows outward (zoom-out reveal)
+          const orbit = document.getElementById("a5-orbit");
+          tl.fromTo(
+            orbit,
+            { scale: 0.55, opacity: 0 },
+            { scale: 1.0, opacity: 1, duration: 2.4, ease: "power3.out" },
+            0.2,
+          );
+
+          ["#a5-ln1", "#a5-ln2", "#a5-ln3", "#a5-ln4", "#a5-ln5"].forEach((sel, i) => {
+            const el = document.getElementById(sel.slice(1));
+            const l = el.getTotalLength();
+            el.style.strokeDasharray = l;
+            el.style.strokeDashoffset = l;
+            tl.to(el, { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, 1.4 + i * 0.18);
+          });
+          ["#a5-n1", "#a5-n2", "#a5-n3", "#a5-n4", "#a5-n5"].forEach((sel, i) => {
+            tl.to(sel, { opacity: 0.85, duration: 0.4, ease: "power1.out" }, 1.9 + i * 0.18);
+          });
+
+          tl.to("#a5-headline", { opacity: 1, duration: 0.9, ease: "power2.out" }, 4.0);
+
+          // Ambient decoratives: hairline rings + ghost coordinate breathe slowly through phase A
+          tl.to("#a5-ring1", { scale: 1.04, duration: 7, ease: "sine.inOut", repeat: 2, yoyo: true }, 0);
+          tl.to("#a5-ring2", { scale: 0.97, duration: 9, ease: "sine.inOut", repeat: 1, yoyo: true }, 0);
+          tl.to(".ghost-coord2", { opacity: 0.06, x: 10, duration: 10, ease: "sine.inOut", repeat: 1, yoyo: true }, 0);
+
+          // Slow continuous drift/push for the rest of phase A
+          const driftA = { p: 0 };
+          tl.to(
+            driftA,
+            {
+              p: Math.PI * 2,
+              duration: PHASE_B_START - 2.4,
+              ease: "none",
+              onUpdate: () => {
+                const t = driftA.p / (Math.PI * 2);
+                const s = 1.0 + t * 0.06;
+                orbit.style.transform = `translate(-50%, -50%) scale(${s})`;
+              },
+            },
+            2.4,
+          );
+
+          tl.to("#a5-phaseA", { opacity: 0, duration: 1.0, ease: "power1.in" }, PHASE_B_START - 1.0);
+
+          // ---- Phase B: logo card (titlecard-reveal — one move + hold) ----
+          tl.set("#a5-phaseB", { opacity: 1 }, PHASE_B_START);
+          tl.to("#a5-glow", { opacity: 1, duration: 1.2, ease: "power1.out" }, PHASE_B_START + 0.2);
+          tl.fromTo(
+            "#a5-wordmark",
+            { opacity: 0, scale: 0.94 },
+            { opacity: 1, scale: 1, duration: 0.9, ease: "power3.out" },
+            PHASE_B_START + 0.4,
+          );
+          tl.fromTo(
+            "#a5-tagline",
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" },
+            PHASE_B_START + 1.3,
+          );
+          // subtle breathing hold on the wordmark
+          tl.to(
+            "#a5-wordmark",
+            { scale: 1.015, duration: 2.6, ease: "sine.inOut", repeat: 5, yoyo: true },
+            PHASE_B_START + 2.2,
+          );
+
+          window.__timelines["act5-conclusion"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

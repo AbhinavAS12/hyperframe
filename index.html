@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dubai South & Al Maktoum International Airport — The Next Gateway</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #root > div[data-composition-src] {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-b167" id="root" data-composition-id="root" data-width="1920" data-height="1080" data-duration="132.6">
+      <div data-hf-id="hf-ztsz" id="el-act1" data-composition-id="act1-hook" data-composition-src="compositions/act1-hook.html" data-start="0" data-duration="8.8" data-track-index="1"></div>
+
+      <div data-hf-id="hf-834t" id="el-act2" data-composition-id="act2-megaproject" data-composition-src="compositions/act2-megaproject.html" data-start="8.8" data-duration="41.4" data-track-index="0"></div>
+
+      <div data-hf-id="hf-fzii" id="el-act3" data-composition-id="act3-dubaisouth" data-composition-src="compositions/act3-dubaisouth.html" data-start="49.2" data-duration="25.9" data-track-index="1"></div>
+
+      <div data-hf-id="hf-xyas" id="el-act4" data-composition-id="act4-investment" data-composition-src="compositions/act4-investment.html" data-start="74.6" data-duration="27.0" data-track-index="0"></div>
+
+      <div data-hf-id="hf-vx2x" id="el-act5" data-composition-id="act5-conclusion" data-composition-src="compositions/act5-conclusion.html" data-start="101.1" data-duration="31.5" data-track-index="1"></div>
+
+      <audio data-hf-id="hf-6ilb" id="el-narration" src="assets/voice/narration.wav" data-start="0" data-duration="132.6" data-track-index="10" data-has-audio="true" data-volume="1.0"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // Crossfades (act1 is a hard cut per frame.md; acts 2-5 overlap 0.5s each,
+      // matching the continuous-camera-zoom motion identity across sub-compositions)
+      [
+        ["#el-act2", "#el-act3", 49.2],
+        ["#el-act3", "#el-act4", 74.6],
+        ["#el-act4", "#el-act5", 101.1],
+      ].forEach(([outSel, inSel, t]) => {
+        tl.to(outSel, { opacity: 0, duration: 0.5, ease: "power2.inOut" }, t);
+        tl.fromTo(inSel, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.inOut" }, t);
+      });
+
+      window.__timelines["root"] = tl;
+    </script>
+  </body>
+</html>
