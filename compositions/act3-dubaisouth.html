@@ -14,123 +14,108 @@
           font-family: "Space Mono", monospace;
           color: #f0ebd8;
         }
-        #root .kicker {
+        #root .chip {
           position: absolute;
-          top: 48px;
-          left: 56px;
+          background: rgba(13, 19, 33, 0.78);
+          padding: 8px 14px;
+          border-radius: 4px;
+        }
+        #root .kicker {
+          top: 40px;
+          left: 48px;
           font-size: 18px;
           letter-spacing: 0.18em;
-          color: #748cab;
-          opacity: 0.55;
+          color: #9fb2cc;
           text-transform: uppercase;
         }
         #root .act-label {
-          position: absolute;
-          bottom: 48px;
-          right: 56px;
+          bottom: 40px;
+          right: 48px;
           font-family: "League Gothic", sans-serif;
           font-size: 30px;
           letter-spacing: 0.03em;
           color: #d4af6a;
-          opacity: 0.6;
           text-transform: uppercase;
         }
-        #root .glow {
+        #root .credit {
+          bottom: 40px;
+          left: 48px;
+          font-size: 16px;
+          letter-spacing: 0.06em;
+          color: #9fb2cc;
+        }
+        #root .earth {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 1920px;
+          height: 1285px;
+          margin-top: -642px;
+          transform-origin: 75% 40%;
+        }
+        #root .earth img {
           position: absolute;
           inset: 0;
-          background: radial-gradient(circle at 50% 48%, rgba(212, 175, 106, 0.14), rgba(13, 19, 33, 0) 55%);
+          width: 100%;
+          height: 100%;
+          display: block;
         }
-        #root .hairline-ring {
-          position: absolute;
-          left: 50%;
-          top: 48%;
-          border-radius: 50%;
-          transform: translate(-50%, -50%);
-          pointer-events: none;
-        }
-        #root .hairline-ring.r1 {
-          width: 1040px;
-          height: 1040px;
-          border: 1px solid rgba(212, 175, 106, 0.05);
-        }
-        #root .hairline-ring.r2 {
-          width: 1480px;
-          height: 1480px;
-          border: 1px solid rgba(212, 175, 106, 0.035);
-        }
-        #root .ghost-coord2 {
-          position: absolute;
-          right: -40px;
-          top: -60px;
-          font-family: "Space Mono", monospace;
-          font-weight: 700;
-          font-size: 230px;
-          color: #d4af6a;
-          opacity: 0.04;
-          white-space: nowrap;
-          letter-spacing: -0.02em;
-          pointer-events: none;
-        }
-        #root .map-wrap {
-          position: absolute;
-          left: 50%;
-          top: 48%;
-          transform: translate(-50%, -50%);
-          width: 1500px;
-          height: 820px;
-        }
-        #root svg.masterplan {
+        #root .earth svg {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
         }
-        #root .masterplan path.boundary {
+        #root .earth .region {
+          fill: rgba(212, 175, 106, 0.14);
+          stroke: none;
+          opacity: 0;
+        }
+        #root .earth .boundary {
           fill: none;
           stroke: #d4af6a;
-          stroke-width: 3;
-          opacity: 0.9;
-        }
-        #root .masterplan path.airport-ghost {
-          fill: none;
-          stroke: #748cab;
-          stroke-width: 1.5;
-          stroke-dasharray: 4 6;
-          opacity: 0.4;
+          stroke-width: 5;
+          stroke-linejoin: round;
+          stroke-linecap: round;
         }
         #root .district {
           position: absolute;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
           opacity: 0;
-          transform: translateY(10px) scale(0.9);
+          transform: translate(-50%, -50%) scale(0.9);
         }
         #root .district .dot {
-          width: 16px;
-          height: 16px;
+          width: 18px;
+          height: 18px;
           border-radius: 50%;
           background: #d4af6a;
-          box-shadow: 0 0 16px 5px rgba(212, 175, 106, 0.45);
+          border: 3px solid #0d1321;
+          box-shadow: 0 0 18px 6px rgba(212, 175, 106, 0.55);
         }
         #root .district .lab {
           font-size: 19px;
-          letter-spacing: 0.04em;
+          letter-spacing: 0.05em;
           text-transform: uppercase;
           color: #f0ebd8;
-          background: rgba(13, 19, 33, 0.72);
+          background: rgba(13, 19, 33, 0.85);
           padding: 4px 10px;
           border-radius: 4px;
           white-space: nowrap;
         }
         #root .callouts {
           position: absolute;
-          left: 50%;
-          bottom: 92px;
-          transform: translateX(-50%);
-          text-align: center;
+          left: 48px;
+          top: 112px;
+          text-align: left;
           opacity: 0;
+          background: rgba(13, 19, 33, 0.86);
+          padding: 20px 40px 22px;
+          border-radius: 8px;
+          border: 1px solid rgba(212, 175, 106, 0.35);
+          width: 660px;
         }
         #root .callouts .big {
           font-family: "League Gothic", sans-serif;
@@ -141,38 +126,30 @@
         }
         #root .callouts .sub {
           font-size: 22px;
-          color: #748cab;
+          color: #b9c7da;
           letter-spacing: 0.04em;
           margin-top: 10px;
         }
-        #root .callouts .sub2 {
-          font-size: 20px;
-          color: #f0ebd8;
-          margin-top: 6px;
-        }
       </style>
 
-      <div data-hf-id="hf-9uy0" id="root" data-composition-id="act3-dubaisouth" data-width="1920" data-height="1080" data-duration="25.4">
-        <div data-hf-id="hf-2s7n" class="glow"></div>
-        <div data-hf-id="hf-r1ng" class="hairline-ring r1" id="a3-ring1" data-layout-allow-overflow="true"></div>
-        <div data-hf-id="hf-r2ng" class="hairline-ring r2" id="a3-ring2" data-layout-allow-overflow="true"></div>
-        <div data-hf-id="hf-gc03" class="ghost-coord2" data-layout-allow-overflow="true">24.9875° N</div>
-        <div data-hf-id="hf-cwk7" class="kicker">Allegiance Real Estate · Dubai South</div>
-        <div data-hf-id="hf-ubvv" class="act-label">Dubai South</div>
-
-        <div data-hf-id="hf-sg7w" class="map-wrap" id="a3-map">
-          <svg data-hf-id="hf-dvvv" class="masterplan" viewBox="0 0 1500 820" preserveAspectRatio="xMidYMid meet">
-            <path data-hf-id="hf-vjzh" class="airport-ghost" d="M 460 560 L 560 380 L 820 320 L 1040 340 L 1150 480 L 1110 620 L 860 680 L 600 660 Z" />
-            <path data-hf-id="hf-wh11" id="a3-boundary" class="boundary" d="M 120 500 L 220 220 L 520 90 L 980 80 L 1300 230 L 1380 500 L 1220 710 L 780 760 L 340 700 Z" />
+      <div data-hf-id="hf-9uy0" id="root" data-composition-id="act3-dubaisouth" data-width="1920" data-height="1080" data-duration="25.9">
+        <div data-hf-id="hf-e3a0" class="earth" id="a3-earth" data-layout-allow-overflow="true">
+          <img data-color-grading="{&quot;preset&quot;:null,&quot;intensity&quot;:1,&quot;adjust&quot;:{&quot;exposure&quot;:-0.75,&quot;contrast&quot;:0.18,&quot;highlights&quot;:-0.25,&quot;shadows&quot;:0,&quot;whites&quot;:0,&quot;blacks&quot;:0,&quot;temperature&quot;:-0.4,&quot;tint&quot;:0,&quot;vibrance&quot;:0,&quot;saturation&quot;:-0.3},&quot;details&quot;:{&quot;vignette&quot;:0.55,&quot;vignetteMidpoint&quot;:0.5,&quot;vignetteRoundness&quot;:0,&quot;vignetteFeather&quot;:0.65,&quot;grain&quot;:0,&quot;grainSize&quot;:0.25,&quot;grainRoughness&quot;:0.5},&quot;effects&quot;:{&quot;blur&quot;:0,&quot;pixelate&quot;:0,&quot;chromaBleed&quot;:0,&quot;tapeDamage&quot;:0,&quot;tapeTracking&quot;:0,&quot;tapeNoise&quot;:1,&quot;tapeSpeed&quot;:0.5,&quot;filmArtifacts&quot;:0,&quot;halftone&quot;:0,&quot;halftoneSize&quot;:0,&quot;twoInkPrint&quot;:0,&quot;twoInkPrintSize&quot;:0,&quot;ascii&quot;:0,&quot;asciiSize&quot;:0.06578947368421052,&quot;asciiInvert&quot;:0,&quot;asciiStyle&quot;:0,&quot;asciiColor&quot;:1,&quot;asciiRotation&quot;:0,&quot;dither&quot;:0,&quot;ditherSize&quot;:0,&quot;bloom&quot;:0,&quot;bloomRadius&quot;:8,&quot;monoScreen&quot;:0,&quot;monoScreenSize&quot;:0,&quot;monoScreenAngle&quot;:0,&quot;monoScreenSpread&quot;:0,&quot;monoScreenShape&quot;:0,&quot;monoScreenInvert&quot;:0,&quot;scanlines&quot;:0,&quot;scanlineCount&quot;:0,&quot;scanlineSoftness&quot;:0,&quot;chromaticAberration&quot;:0,&quot;chromaticAngle&quot;:0,&quot;crtCurvature&quot;:0,&quot;digitalGlitch&quot;:0,&quot;digitalGlitchColorSplit&quot;:0,&quot;digitalGlitchLineTear&quot;:0,&quot;digitalGlitchPixelate&quot;:0,&quot;digitalGlitchBlockAmount&quot;:0,&quot;digitalGlitchBlockDisplacement&quot;:0,&quot;digitalGlitchBlockOpacity&quot;:0,&quot;digitalGlitchSpeed&quot;:0,&quot;engraving&quot;:0,&quot;engravingSpacing&quot;:0.4117647058823529,&quot;engravingMinThickness&quot;:0.2,&quot;engravingMaxThickness&quot;:0.4571428571428572,&quot;engravingAngle&quot;:0.25,&quot;engravingContrast&quot;:0.4666666666666667,&quot;engravingSharpness&quot;:0.59,&quot;engravingWave&quot;:0.2,&quot;engravingWaveFrequency&quot;:0.2222222222222222,&quot;crosshatch&quot;:0,&quot;crosshatchSpacing&quot;:0.28,&quot;crosshatchThickness&quot;:0.25,&quot;crosshatchAngle&quot;:0.25,&quot;crosshatchContrast&quot;:0.3333333333333333,&quot;crosshatchEdges&quot;:0.5,&quot;crosshatchLineWeight&quot;:0,&quot;crosshatchWave&quot;:0.33,&quot;crosshatchWaveFrequency&quot;:0.2222222222222222,&quot;kuwahara&quot;:0,&quot;kuwaharaRadius&quot;:0.14285714285714285,&quot;kuwaharaSharpness&quot;:0.3125,&quot;kuwaharaSaturation&quot;:0.5},&quot;lut&quot;:null,&quot;colorSpace&quot;:&quot;rec709&quot;}" data-hf-id="hf-e3a1" id="a3-earth-img" src="assets/maps/dubai-south-earth.jpg" alt="Satellite view of Dubai South and Al Maktoum International Airport">
+          <svg data-hf-id="hf-e3a2" viewBox="0 0 1850 1238" preserveAspectRatio="none">
+            <path data-hf-id="hf-e3a3" class="region" id="a3-region" d="M 1097 0 L 1031 79 L 925 251 L 819 357 L 714 423 L 581 515 L 1035 1169 L 1190 1097 L 1348 978 L 1480 846 L 1586 687 L 1668 528 L 1751 344 L 1810 198 L 1830 0 Z" />
+            <path data-hf-id="hf-e3a4" class="boundary" id="a3-boundary" d="M 1097 0 L 1031 79 L 925 251 L 819 357 L 714 423 L 581 515 L 1035 1169 L 1190 1097 L 1348 978 L 1480 846 L 1586 687 L 1668 528 L 1751 344 L 1810 198 L 1830 0" />
           </svg>
-
-          <div data-hf-id="hf-9z05" class="district" id="a3-d1" style="left:200px; top:560px;"><div data-hf-id="hf-lu65" class="dot"></div><div data-hf-id="hf-0bsd" class="lab">Residential</div></div>
-          <div data-hf-id="hf-tjpx" class="district" id="a3-d2" style="left:280px; top:260px;"><div data-hf-id="hf-ww7l" class="dot"></div><div data-hf-id="hf-tcco" class="lab">Logistics</div></div>
-          <div data-hf-id="hf-jw66" class="district" id="a3-d3" style="left:760px; top:430px;"><div data-hf-id="hf-y34o" class="dot"></div><div data-hf-id="hf-mwmu" class="lab">Aviation</div></div>
-          <div data-hf-id="hf-a8u6" class="district" id="a3-d4" style="left:1130px; top:260px;"><div data-hf-id="hf-xotn" class="dot"></div><div data-hf-id="hf-jle5" class="lab">Business Park</div></div>
-          <div data-hf-id="hf-lpir" class="district" id="a3-d5" style="left:1230px; top:580px;"><div data-hf-id="hf-vpai" class="dot"></div><div data-hf-id="hf-xbcx" class="lab">Golf</div></div>
-          <div data-hf-id="hf-keyl" class="district" id="a3-d6" style="left:700px; top:700px;"><div data-hf-id="hf-vazh" class="dot"></div><div data-hf-id="hf-sbt4" class="lab">Expo City</div></div>
+          <div data-hf-id="hf-e3d1" class="district" id="a3-d1" style="left:61.9%; top:70.5%;"><div data-hf-id="hf-e3d2" class="dot"></div><div data-hf-id="hf-e3d3" class="lab">Residential</div></div>
+          <div data-hf-id="hf-e3d4" class="district" id="a3-d2" style="left:62.2%; top:57.6%;"><div data-hf-id="hf-e3d5" class="dot"></div><div data-hf-id="hf-e3d6" class="lab">Logistics</div></div>
+          <div data-hf-id="hf-e3d7" class="district" id="a3-d3" style="left:71.5%; top:47.0%;"><div data-hf-id="hf-e3d8" class="dot"></div><div data-hf-id="hf-e3d9" class="lab">Aviation</div></div>
+          <div data-hf-id="hf-e3da" class="district" id="a3-d4" style="left:47.5%; top:43.5%;"><div data-hf-id="hf-e3db" class="dot"></div><div data-hf-id="hf-e3dc" class="lab">Business Park</div></div>
+          <div data-hf-id="hf-e3dd" class="district" id="a3-d5" style="left:53.5%; top:78.0%;"><div data-hf-id="hf-e3de" class="dot"></div><div data-hf-id="hf-e3df" class="lab">Golf</div></div>
+          <div data-hf-id="hf-e3dg" class="district" id="a3-d6" style="left:51.6%; top:36.5%;"><div data-hf-id="hf-e3dh" class="dot"></div><div data-hf-id="hf-e3di" class="lab">Expo City</div></div>
         </div>
+
+        <div data-hf-id="hf-cwk7" class="chip kicker">Allegiance Real Estate · Dubai South</div>
+        <div data-hf-id="hf-ubvv" class="chip act-label">Dubai South</div>
+        <div data-hf-id="hf-e3cr" class="chip credit">Imagery © Google</div>
 
         <div data-hf-id="hf-ao3p" class="callouts" id="a3-callouts">
           <div data-hf-id="hf-v7cy" class="big">145 km² · six districts</div>
@@ -189,58 +166,34 @@
           boundary.style.strokeDasharray = blen;
           boundary.style.strokeDashoffset = blen;
 
-          // Camera rises off the airport footprint (slight scale-down + settle)
-          const mapWrap = document.getElementById("a3-map");
+          // Camera rises off the airport footprint: starts tight on the airfield, pulls out to the whole district
           tl.fromTo(
-            mapWrap,
-            { scale: 1.12 },
-            { scale: 1.0, duration: 2.2, ease: "power3.out" },
+            "#a3-earth",
+            { scale: 1.9 },
+            { scale: 1.0, duration: 3.2, ease: "power3.inOut" },
             0,
           );
+          // Slow settle for the rest of the scene
+          tl.to("#a3-earth", { scale: 1.05, duration: 25.9 - 3.2, ease: "none" }, 3.2);
 
           tl.fromTo(
             boundary,
             { strokeDashoffset: blen },
-            { strokeDashoffset: 0, duration: 2.0, ease: "power2.out" },
-            0.5,
+            { strokeDashoffset: 0, duration: 2.6, ease: "power2.out" },
+            1.8,
           );
+          tl.to("#a3-region", { opacity: 1, duration: 1.2, ease: "power1.out" }, 3.6);
 
-          const districts = ["#a3-d1", "#a3-d2", "#a3-d3", "#a3-d4", "#a3-d5", "#a3-d6"];
+          const districts = ["#a3-d6", "#a3-d3", "#a3-d2", "#a3-d1", "#a3-d5", "#a3-d4"];
           districts.forEach((sel, i) => {
             tl.to(
               sel,
-              { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.7)" },
-              2.6 + i * 0.5,
+              { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.7)" },
+              4.0 + i * 0.5,
             );
           });
 
-          tl.to(
-            "#a3-callouts",
-            { opacity: 1, duration: 0.7, ease: "power2.out" },
-            6.3,
-          );
-
-          // Ambient decoratives: hairline rings + ghost coordinate breathe slowly for the whole scene
-          tl.to("#a3-ring1", { scale: 1.04, duration: 8, ease: "sine.inOut", repeat: 3, yoyo: true }, 0);
-          tl.to("#a3-ring2", { scale: 0.97, duration: 10, ease: "sine.inOut", repeat: 2, yoyo: true }, 0);
-          tl.to(".ghost-coord2", { opacity: 0.06, x: -12, duration: 12, ease: "sine.inOut", repeat: 2, yoyo: true }, 0);
-
-          // Slow ambient drift for the rest of the scene
-          const drift = { p: 0 };
-          tl.to(
-            drift,
-            {
-              p: Math.PI * 2,
-              duration: 25.4 - 2.2,
-              ease: "none",
-              onUpdate: () => {
-                const dx = Math.sin(drift.p) * 5;
-                const dy = Math.sin(drift.p * 1.25) * 3;
-                mapWrap.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(1.0)`;
-              },
-            },
-            2.2,
-          );
+          tl.to("#a3-callouts", { opacity: 1, duration: 0.7, ease: "power2.out" }, 7.6);
 
           window.__timelines["act3-dubaisouth"] = tl;
         })();
