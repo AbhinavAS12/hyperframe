@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+renders/work-*/
+renders/.*hf-transaction*/
