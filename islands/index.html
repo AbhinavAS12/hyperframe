@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Old Deira Beachfront Makeover — Dubai Islands</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      :root {
+        --ink: #06121c;
+        --deep: #0a2233;
+        --sea: #1fb6c1;
+        --sand: #e8c98a;
+        --gold: #d4af6a;
+        --foam: #f4efe4;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: #000; }
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: linear-gradient(180deg, #06121c 0%, #0a2233 55%, #0d3446 100%);
+        font-family: "League Gothic", sans-serif;
+        color: var(--foam);
+      }
+      .clip { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+
+      /* ambient layers */
+      #glow {
+        background: radial-gradient(circle at 50% 38%, rgba(31,182,193,0.28), rgba(6,18,28,0) 55%),
+          radial-gradient(circle at 20% 85%, rgba(212,175,106,0.18), rgba(6,18,28,0) 50%);
+      }
+      .wave { fill: none; stroke: rgba(31,182,193,0.35); stroke-width: 2; }
+
+      /* typography */
+      .big { font-size: 230px; line-height: 0.9; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+      .mid { font-size: 130px; line-height: 0.95; text-transform: uppercase; text-align: center; }
+      .tag { font-family: "Space Mono", monospace; font-size: 30px; letter-spacing: 6px; text-transform: uppercase; color: var(--sand); text-align: center; }
+      .gold { color: var(--gold); }
+      .sea { color: var(--sea); }
+      .center { left: 0; right: 0; }
+
+      /* caption */
+      .cap {
+        left: 70px; right: 70px; top: 1330px; bottom: auto;
+        text-align: center; font-size: 74px; line-height: 1.05; text-transform: uppercase;
+        text-shadow: 0 4px 24px rgba(0,0,0,0.7);
+      }
+      .cap b { color: var(--gold); font-weight: normal; }
+
+      .pin { width: 26px; height: 26px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 24px 8px rgba(212,175,106,0.5); }
+      .pin.sea { background: var(--sea); box-shadow: 0 0 24px 8px rgba(31,182,193,0.5); }
+      .lbl { font-family: "Space Mono", monospace; font-size: 30px; letter-spacing: 3px; text-transform: uppercase; color: var(--foam); white-space: nowrap; }
+      .chip { border: 2px solid var(--gold); color: var(--foam); padding: 14px 30px; border-radius: 60px; font-size: 54px; letter-spacing: 2px; text-transform: uppercase; background: rgba(6,18,28,0.55); white-space: nowrap; }
+      .cta { background: var(--gold); color: var(--ink); border-radius: 80px; padding: 34px 70px; font-size: 96px; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+      .foot { font-family: "Space Mono", monospace; font-size: 22px; line-height: 1.4; color: rgba(244,239,228,0.6); text-align: center; left: 70px; right: 70px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-duration="36">
+      <!-- ambient background -->
+      <div class="clip" id="glow" data-start="0" data-duration="36" data-track-index="0"></div>
+      <svg class="clip" id="waves" data-start="0" data-duration="36" data-track-index="0" viewBox="0 0 1080 1920" preserveAspectRatio="none">
+        <path class="wave" id="w1" d="M0 1500 Q 270 1460 540 1500 T 1080 1500" />
+        <path class="wave" id="w2" d="M0 1560 Q 270 1520 540 1560 T 1080 1560" />
+        <path class="wave" id="w3" d="M0 1620 Q 270 1580 540 1620 T 1080 1620" />
+      </svg>
+
+      <!-- SCENE 1 · hook (0–4.4s) -->
+      <div class="clip" id="s1" data-start="0" data-duration="4.4" data-track-index="1">
+        <svg class="abs" id="oldskyline" style="left:0;top:980px" width="1080" height="320" viewBox="0 0 1080 320">
+          <path fill="rgba(232,201,138,0.22)" d="M0 320V220h70v-40h60v40h50v-70h80v70h60v-30h70v30h90v-50h70v50h60v-80h90v80h80v-40h60v40h110v100z" />
+        </svg>
+        <div class="abs tag center" id="s1tag" style="top:330px">Deira · Dubai</div>
+        <div class="abs big center" id="s1a" style="top:430px">Old<br />Dubai<br /><span class="gold" id="s1strike" style="position:relative">is finished?</span></div>
+        <div class="abs big center sea" id="s1b" style="top:560px;font-size:260px">Look<br />again.</div>
+      </div>
+
+      <!-- SCENE 2 · the islands (4.4–10s) -->
+      <div class="clip" id="s2" data-start="4.4" data-duration="5.8" data-track-index="1">
+        <div class="abs tag center" id="s2tag" style="top:260px">Off the Deira coast</div>
+        <div class="abs mid center" id="s2title" style="top:320px">Dubai <span class="gold">Islands</span></div>
+        <svg class="abs" style="left:0;top:560px" width="1080" height="700" viewBox="0 0 1080 700">
+          <g id="isl">
+            <ellipse class="isle" cx="190" cy="430" rx="120" ry="70" fill="#e8c98a" />
+            <ellipse class="isle" cx="400" cy="300" rx="110" ry="80" fill="#e0bf7c" />
+            <ellipse class="isle" cx="640" cy="400" rx="130" ry="85" fill="#e8c98a" />
+            <ellipse class="isle" cx="850" cy="270" rx="100" ry="65" fill="#d9b570" />
+            <ellipse class="isle" cx="820" cy="500" rx="115" ry="70" fill="#e8c98a" />
+          </g>
+        </svg>
+        <div class="abs center" style="top:1130px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:0 60px">
+          <div class="chip s2chip">5 Islands</div>
+          <div class="chip s2chip">Nakheel</div>
+          <div class="chip s2chip">Marina</div>
+          <div class="chip s2chip">Golf</div>
+        </div>
+      </div>
+
+      <!-- SCENE 3 · map / distance (10–20s) -->
+      <div class="clip" id="s3" data-start="10" data-duration="10.2" data-track-index="1">
+        <div class="abs tag center" id="s3tag" style="top:230px">Location</div>
+        <div class="abs mid center" id="s3title" style="top:290px">Minutes from <span class="sea">DXB</span></div>
+        <svg class="abs" style="left:0;top:520px" width="1080" height="800" viewBox="0 0 1080 800">
+          <path id="coast" fill="none" stroke="#e8c98a" stroke-width="5" stroke-linecap="round" d="M60 700 C 220 640 340 600 470 560 C 600 520 640 400 760 350 C 870 305 960 300 1030 240" />
+          <path id="r1" fill="none" stroke="#1fb6c1" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 320 190" />
+          <path id="r2" fill="none" stroke="#1fb6c1" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 440 560" />
+          <path id="r3" fill="none" stroke="#d4af6a" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 150 640" />
+        </svg>
+        <div class="abs pin" id="pIsl" style="left:547px;top:837px"></div>
+        <div class="abs lbl" id="lIsl" style="left:600px;top:826px;color:#d4af6a">Dubai Islands</div>
+        <div class="abs pin sea" id="pDXB" style="left:307px;top:697px"></div>
+        <div class="abs lbl" id="lDXB" style="left:200px;top:655px">DXB Airport</div>
+        <div class="abs pin sea" id="pDT" style="left:427px;top:1067px"></div>
+        <div class="abs lbl" id="lDT" style="left:470px;top:1056px">Downtown</div>
+        <div class="abs pin" id="pPalm" style="left:137px;top:1147px"></div>
+        <div class="abs lbl" id="lPalm" style="left:60px;top:1190px;color:#d4af6a">Palm Jumeirah</div>
+        <div class="abs chip center" id="s3chip" style="left:120px;right:120px;top:1230px;text-align:center;font-size:46px">Entry prices still well below Palm*</div>
+      </div>
+
+      <!-- SCENE 4 · rental income chain (20–26.8s) -->
+      <div class="clip" id="s4" data-start="20" data-duration="6.8" data-track-index="1">
+        <div class="abs tag center" id="s4tag" style="top:260px">The income angle</div>
+        <div class="abs mid center s4row" style="top:380px">New <span class="gold">hotels</span></div>
+        <div class="abs mid center s4row" style="top:560px">▼</div>
+        <div class="abs mid center s4row" style="top:690px"><span class="sea">Tourists</span></div>
+        <div class="abs mid center s4row" style="top:870px">▼</div>
+        <div class="abs mid center s4row" style="top:1000px">Short-term<br /><span class="gold">rental income</span></div>
+      </div>
+
+      <!-- SCENE 5 · CTA (26.8–36s) -->
+      <div class="clip" id="s5" data-start="26.8" data-duration="9.2" data-track-index="1">
+        <div class="abs mid center" id="s5a" style="top:300px">The north side<br />of Dubai is<br /><span class="gold">waking up</span></div>
+        <div class="abs center" id="s5cta" style="top:880px;display:flex;justify-content:center"><div class="cta">Comment “ISLANDS”</div></div>
+        <div class="abs tag center" id="s5brand" style="top:1130px;font-size:38px;color:#f4efe4">Allegiance Real Estate</div>
+      </div>
+
+      <!-- captions (timing approximate — see README) -->
+      <div class="clip abs cap" data-start="0" data-duration="3.2" data-track-index="2"><span class="cp">For years, everyone said old Dubai was finished.</span></div>
+      <div class="clip abs cap" data-start="3.2" data-duration="1.4" data-track-index="2"><span class="cp">Look at <b>it now.</b></span></div>
+      <div class="clip abs cap" data-start="4.6" data-duration="2.4" data-track-index="2"><span class="cp">Five islands off Deira, built by <b>Nakheel,</b></span></div>
+      <div class="clip abs cap" data-start="7" data-duration="3" data-track-index="2"><span class="cp">with beaches, a marina, resorts and a <b>golf course.</b></span></div>
+      <div class="clip abs cap" data-start="10.2" data-duration="2.8" data-track-index="2"><span class="cp">It's minutes from <b>DXB,</b></span></div>
+      <div class="clip abs cap" data-start="13" data-duration="3.5" data-track-index="2"><span class="cp">has the <b>beachfront lifestyle</b> of Palm Jumeirah,</span></div>
+      <div class="clip abs cap" data-start="16.5" data-duration="3.5" data-track-index="2"><span class="cp">and entry prices are still <b>well below it.</b></span></div>
+      <div class="clip abs cap" data-start="20.3" data-duration="2.9" data-track-index="2"><span class="cp">New hotels mean <b>tourists,</b></span></div>
+      <div class="clip abs cap" data-start="23.2" data-duration="3.4" data-track-index="2"><span class="cp">and tourists mean <b>short-term rental income.</b></span></div>
+      <div class="clip abs cap" data-start="27" data-duration="2.8" data-track-index="2"><span class="cp">The north side of Dubai is <b>waking up.</b></span></div>
+      <div class="clip abs cap" data-start="29.8" data-duration="3.1" data-track-index="2"><span class="cp">Comment <b>“ISLANDS”</b> for the launches worth your money.</span></div>
+
+      <div class="clip abs foot" data-start="10" data-duration="26" data-track-index="3" style="top:1790px;bottom:auto">*Illustrative. Figures indicative; confirm current prices. Not financial advice. Returns are not guaranteed.</div>
+
+      <audio id="narration" src="assets/voice/narration.mp3" data-start="0" data-duration="32.7" data-track-index="10" data-has-audio="true" data-volume="1.0"></audio>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // ambient waves drift
+      ["#w1", "#w2", "#w3"].forEach((s, i) => tl.fromTo(s, { x: -40 }, { x: 40, duration: 36, ease: "none" }, 0));
+      tl.fromTo("#glow", { scale: 1 }, { scale: 1.2, duration: 36, ease: "none" }, 0);
+
+      // captions: fade/slide in
+      gsap.utils.toArray(".cp").forEach((el) => {
+        const clipStart = parseFloat(el.parentElement.dataset.start);
+        tl.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, clipStart + 0.05);
+      });
+
+      // S1 hook
+      tl.fromTo("#s1tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
+      tl.fromTo("#s1a", { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 0.1);
+      tl.fromTo("#oldskyline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8 }, 0.3);
+      tl.to("#s1strike", { textDecoration: "line-through", duration: 0.01 }, 1.5);
+      tl.to("#s1a", { opacity: 0, scale: 0.95, duration: 0.3 }, 3.0);
+      tl.fromTo("#s1b", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 3.2);
+
+      // S2 islands
+      tl.fromTo("#s2tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 4.5);
+      tl.fromTo("#s2title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.6);
+      tl.fromTo(".isle", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.25, ease: "back.out(1.8)" }, 5.2);
+      tl.fromTo(".s2chip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.35, ease: "power2.out" }, 6.6);
+
+      // S3 map
+      tl.fromTo("#s3tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 10.1);
+      tl.fromTo("#s3title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 10.2);
+      const coast = document.getElementById("coast");
+      const clen = coast.getTotalLength();
+      tl.fromTo(coast, { strokeDasharray: clen, strokeDashoffset: clen }, { strokeDashoffset: 0, duration: 1.6, ease: "power2.out" }, 10.4);
+      [["#pIsl", "#lIsl", 11.2], ["#pDXB", "#lDXB", 12.0], ["#pDT", "#lDT", 13.0], ["#pPalm", "#lPalm", 14.4]].forEach(([p, l, t]) => {
+        tl.fromTo(p, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)" }, t);
+        tl.fromTo(l, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, t + 0.1);
+      });
+      ["#r1", "#r2", "#r3"].forEach((r, i) => tl.fromTo(r, { opacity: 0 }, { opacity: 1, duration: 0.6 }, 12.2 + i * 1.2));
+      tl.fromTo("#s3chip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 16.8);
+
+      // S4 chain
+      tl.fromTo("#s4tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 20.1);
+      gsap.utils.toArray(".s4row").forEach((el, i) => {
+        tl.fromTo(el, { opacity: 0, y: 50, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.5)" }, 20.4 + i * 0.9);
+      });
+
+      // S5 CTA
+      tl.fromTo("#s5a", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 26.9);
+      tl.fromTo("#s5cta", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, 29.8);
+      tl.to("#s5cta", { scale: 1.06, duration: 0.5, yoyo: true, repeat: 5, ease: "sine.inOut" }, 30.6);
+      tl.fromTo("#s5brand", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 31.4);
+
+      window.__timelines["root"] = tl;
+    </script>
+  </body>
+</html>
