@@ -26,6 +26,11 @@
         color: var(--foam);
       }
       .clip { position: absolute; inset: 0; }
+      .maplayer { overflow: hidden; }
+      .maplayer .cam { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+      .maplayer img { display: block; }
+      .shade { background: linear-gradient(180deg, rgba(6,18,28,0.82) 0%, rgba(6,18,28,0.35) 30%, rgba(6,18,28,0.1) 50%, rgba(6,18,28,0.55) 72%, rgba(6,18,28,0.9) 100%); }
+      .credit { font-family: "Space Mono", monospace; font-size: 20px; color: rgba(244,239,228,0.55); right: 28px; top: 1850px; left: auto; }
       .abs { position: absolute; }
 
       /* ambient layers */
@@ -63,35 +68,27 @@
     <div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-duration="36">
       <!-- ambient background -->
       <div class="clip" id="glow" data-start="0" data-duration="36" data-track-index="0"></div>
-      <svg class="clip" id="waves" data-start="0" data-duration="36" data-track-index="0" viewBox="0 0 1080 1920" preserveAspectRatio="none">
-        <path class="wave" id="w1" d="M0 1500 Q 270 1460 540 1500 T 1080 1500" />
-        <path class="wave" id="w2" d="M0 1560 Q 270 1520 540 1560 T 1080 1560" />
-        <path class="wave" id="w3" d="M0 1620 Q 270 1580 540 1620 T 1080 1620" />
-      </svg>
+
+      <!-- real satellite imagery (Google Earth screenshots) -->
+      <div class="clip maplayer" id="mapA" data-start="0" data-duration="36" data-track-index="0">
+        <div class="cam" id="camA"><img id="imgA" src="assets/maps/dubai-islands-wide-hd.jpg" width="1354" height="1148" alt="" /></div>
+      </div>
+      <div class="clip maplayer" id="mapB" data-start="4.4" data-duration="5.8" data-track-index="0">
+        <div class="cam" id="camB"><img id="imgB" src="assets/maps/dubai-islands-close-hd.jpg" width="1994" height="1370" alt="" /></div>
+      </div>
+      <div class="clip shade" id="shade" data-start="0" data-duration="36" data-track-index="0"></div>
 
       <!-- SCENE 1 · hook (0–4.4s) -->
       <div class="clip" id="s1" data-start="0" data-duration="4.4" data-track-index="1">
-        <svg class="abs" id="oldskyline" style="left:0;top:980px" width="1080" height="320" viewBox="0 0 1080 320">
-          <path fill="rgba(232,201,138,0.22)" d="M0 320V220h70v-40h60v40h50v-70h80v70h60v-30h70v30h90v-50h70v50h60v-80h90v80h80v-40h60v40h110v100z" />
-        </svg>
         <div class="abs tag center" id="s1tag" style="top:330px">Deira · Dubai</div>
-        <div class="abs big center" id="s1a" style="top:430px">Old<br />Dubai<br /><span class="gold" id="s1strike" style="position:relative">is finished?</span></div>
+        <div class="abs big center" id="s1a" style="top:430px">Old<br />Dubai<br /><span class="gold" id="s1strike">is finished?</span></div>
         <div class="abs big center sea" id="s1b" style="top:560px;font-size:260px">Look<br />again.</div>
       </div>
 
-      <!-- SCENE 2 · the islands (4.4–10s) -->
+      <!-- SCENE 2 · the islands (4.4–10.2s) -->
       <div class="clip" id="s2" data-start="4.4" data-duration="5.8" data-track-index="1">
-        <div class="abs tag center" id="s2tag" style="top:260px">Off the Deira coast</div>
-        <div class="abs mid center" id="s2title" style="top:320px">Dubai <span class="gold">Islands</span></div>
-        <svg class="abs" style="left:0;top:560px" width="1080" height="700" viewBox="0 0 1080 700">
-          <g id="isl">
-            <ellipse class="isle" cx="190" cy="430" rx="120" ry="70" fill="#e8c98a" />
-            <ellipse class="isle" cx="400" cy="300" rx="110" ry="80" fill="#e0bf7c" />
-            <ellipse class="isle" cx="640" cy="400" rx="130" ry="85" fill="#e8c98a" />
-            <ellipse class="isle" cx="850" cy="270" rx="100" ry="65" fill="#d9b570" />
-            <ellipse class="isle" cx="820" cy="500" rx="115" ry="70" fill="#e8c98a" />
-          </g>
-        </svg>
+        <div class="abs tag center" id="s2tag" style="top:230px">Off the Deira coast</div>
+        <div class="abs mid center" id="s2title" style="top:290px">Dubai <span class="gold">Islands</span></div>
         <div class="abs center" style="top:1130px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;padding:0 60px">
           <div class="chip s2chip">5 Islands</div>
           <div class="chip s2chip">Nakheel</div>
@@ -100,29 +97,23 @@
         </div>
       </div>
 
-      <!-- SCENE 3 · map / distance (10–20s) -->
+      <!-- SCENE 3 · map / distance (10–20.2s) -->
       <div class="clip" id="s3" data-start="10" data-duration="10.2" data-track-index="1">
         <div class="abs tag center" id="s3tag" style="top:230px">Location</div>
         <div class="abs mid center" id="s3title" style="top:290px">Minutes from <span class="sea">DXB</span></div>
-        <svg class="abs" style="left:0;top:520px" width="1080" height="800" viewBox="0 0 1080 800">
-          <path id="coast" fill="none" stroke="#e8c98a" stroke-width="5" stroke-linecap="round" d="M60 700 C 220 640 340 600 470 560 C 600 520 640 400 760 350 C 870 305 960 300 1030 240" />
-          <path id="r1" fill="none" stroke="#1fb6c1" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 320 190" />
-          <path id="r2" fill="none" stroke="#1fb6c1" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 440 560" />
-          <path id="r3" fill="none" stroke="#d4af6a" stroke-width="4" stroke-dasharray="14 12" d="M560 330 L 150 640" />
+        <svg class="abs" style="left:0;top:0" width="1080" height="1920" viewBox="0 0 1080 1920">
+          <path id="route" fill="none" stroke="#4fd0da" stroke-width="7" stroke-linecap="round" stroke-dasharray="6 18" d="M100 774 C 380 760 520 1150 961 1605" />
         </svg>
-        <div class="abs pin" id="pIsl" style="left:547px;top:837px"></div>
-        <div class="abs lbl" id="lIsl" style="left:600px;top:826px;color:#d4af6a">Dubai Islands</div>
-        <div class="abs pin sea" id="pDXB" style="left:307px;top:697px"></div>
-        <div class="abs lbl" id="lDXB" style="left:200px;top:655px">DXB Airport</div>
-        <div class="abs pin sea" id="pDT" style="left:427px;top:1067px"></div>
-        <div class="abs lbl" id="lDT" style="left:470px;top:1056px">Downtown</div>
-        <div class="abs pin" id="pPalm" style="left:137px;top:1147px"></div>
-        <div class="abs lbl" id="lPalm" style="left:60px;top:1190px;color:#d4af6a">Palm Jumeirah</div>
-        <div class="abs chip center" id="s3chip" style="left:120px;right:120px;top:1230px;text-align:center;font-size:46px">Entry prices still well below Palm*</div>
+        <div class="abs pin" id="pIsl" style="left:87px;top:761px"></div>
+        <div class="abs lbl" id="lIsl" style="left:130px;top:690px;color:#f4efe4;font-size:34px">Dubai Islands</div>
+        <div class="abs pin sea" id="pDXB" style="left:948px;top:1592px"></div>
+        <div class="abs lbl" id="lDXB" style="left:700px;top:1530px;font-size:34px">DXB Airport</div>
+        <div class="abs pin sea" id="plane" style="left:87px;top:761px;width:20px;height:20px"></div>
+        <div class="abs chip center" id="s3chip" style="left:100px;right:100px;top:440px;text-align:center;font-size:44px">Entry prices still well below Palm*</div>
       </div>
 
-      <!-- SCENE 4 · rental income chain (20–26.8s) -->
-      <div class="clip" id="s4" data-start="20" data-duration="6.8" data-track-index="1">
+      <!-- SCENE 4 · rental income chain (20.2–26.8s) -->
+      <div class="clip" id="s4" data-start="20.2" data-duration="6.6" data-track-index="1">
         <div class="abs tag center" id="s4tag" style="top:260px">The income angle</div>
         <div class="abs mid center s4row" style="top:380px">New <span class="gold">hotels</span></div>
         <div class="abs mid center s4row" style="top:560px">▼</div>
@@ -151,6 +142,7 @@
       <div class="clip abs cap" data-start="27" data-duration="2.8" data-track-index="2"><span class="cp">The north side of Dubai is <b>waking up.</b></span></div>
       <div class="clip abs cap" data-start="29.8" data-duration="3.1" data-track-index="2"><span class="cp">Comment <b>“ISLANDS”</b> for the launches worth your money.</span></div>
 
+      <div class="clip abs credit" data-start="0" data-duration="36" data-track-index="3" style="top:1850px;left:auto;right:28px">Imagery © Google</div>
       <div class="clip abs foot" data-start="10" data-duration="26" data-track-index="3" style="top:1790px;bottom:auto">*Illustrative. Figures indicative; confirm current prices. Not financial advice. Returns are not guaranteed.</div>
 
       <audio id="narration" src="assets/voice/narration.mp3" data-start="0" data-duration="32.7" data-track-index="10" data-has-audio="true" data-volume="1.0"></audio>
@@ -160,9 +152,23 @@
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
-      // ambient waves drift
-      ["#w1", "#w2", "#w3"].forEach((s, i) => tl.fromTo(s, { x: -40 }, { x: 40, duration: 36, ease: "none" }, 0));
-      tl.fromTo("#glow", { scale: 1 }, { scale: 1.2, duration: 36, ease: "none" }, 0);
+      // ---- map camera A (wide view). source px 1354x1148
+      const A = "#camA", B = "#camB";
+      gsap.set(A, { x: -2170, y: -192, scale: 2.4 });
+      tl.fromTo("#imgA", { filter: "grayscale(0.9) brightness(0.55)" }, { filter: "grayscale(0) brightness(1)", duration: 1.2, ease: "power2.out" }, 3.0);
+      tl.set("#imgA", { filter: "grayscale(0.9) brightness(0.55)" }, 0);
+      tl.to(A, { x: -2100, y: -150, scale: 2.4, duration: 3.0, ease: "none" }, 0);
+      tl.to(A, { x: -495, y: 0, scale: 1.9, duration: 1.6, ease: "power3.inOut" }, 3.0);
+      tl.to(A, { x: -811, y: 0, scale: 1.672, duration: 5.4, ease: "power1.inOut" }, 4.6);
+      tl.to(A, { opacity: 1, duration: 0.01 }, 10);
+      tl.to("#mapA", { opacity: 0.3, duration: 0.8 }, 20.2);
+      tl.to(A, { x: -495, y: 0, scale: 1.9, duration: 1.2, ease: "power2.inOut" }, 20.2);
+      tl.to(A, { x: -560, y: 0, scale: 1.9, duration: 14, ease: "none" }, 21.4);
+      // camera B (close-up)
+      gsap.set(B, { x: -982, y: 0, scale: 1.45 });
+      tl.fromTo("#mapB", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 4.4);
+      tl.to(B, { x: -1585, y: -230, scale: 1.7, duration: 5.8, ease: "power1.inOut" }, 4.4);
+      tl.to("#mapB", { opacity: 0, duration: 0.5 }, 9.7);
 
       // captions: fade/slide in
       gsap.utils.toArray(".cp").forEach((el) => {
@@ -173,7 +179,6 @@
       // S1 hook
       tl.fromTo("#s1tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.1);
       tl.fromTo("#s1a", { opacity: 0, y: 60, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 0.1);
-      tl.fromTo("#oldskyline", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8 }, 0.3);
       tl.to("#s1strike", { textDecoration: "line-through", duration: 0.01 }, 1.5);
       tl.to("#s1a", { opacity: 0, scale: 0.95, duration: 0.3 }, 3.0);
       tl.fromTo("#s1b", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 3.2);
@@ -181,20 +186,25 @@
       // S2 islands
       tl.fromTo("#s2tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 4.5);
       tl.fromTo("#s2title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 4.6);
-      tl.fromTo(".isle", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.25, ease: "back.out(1.8)" }, 5.2);
       tl.fromTo(".s2chip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.35, ease: "power2.out" }, 6.6);
 
-      // S3 map
+      // S3 map overlay
       tl.fromTo("#s3tag", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 10.1);
       tl.fromTo("#s3title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 10.2);
-      const coast = document.getElementById("coast");
-      const clen = coast.getTotalLength();
-      tl.fromTo(coast, { strokeDasharray: clen, strokeDashoffset: clen }, { strokeDashoffset: 0, duration: 1.6, ease: "power2.out" }, 10.4);
-      [["#pIsl", "#lIsl", 11.2], ["#pDXB", "#lDXB", 12.0], ["#pDT", "#lDT", 13.0], ["#pPalm", "#lPalm", 14.4]].forEach(([p, l, t]) => {
-        tl.fromTo(p, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)" }, t);
-        tl.fromTo(l, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, t + 0.1);
-      });
-      ["#r1", "#r2", "#r3"].forEach((r, i) => tl.fromTo(r, { opacity: 0 }, { opacity: 1, duration: 0.6 }, 12.2 + i * 1.2));
+      tl.fromTo("#pIsl", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)" }, 11.0);
+      tl.fromTo("#lIsl", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.4 }, 11.1);
+      const route = document.getElementById("route");
+      const rlen = route.getTotalLength();
+      tl.fromTo(route, { strokeDashoffset: 0, opacity: 0 }, { opacity: 1, duration: 0.3 }, 12.0);
+      const prog = { p: 0 };
+      tl.fromTo("#plane", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 12.0);
+      tl.to(prog, { p: 1, duration: 3.2, ease: "power1.inOut", onUpdate: () => {
+        const pt = route.getPointAtLength(prog.p * rlen);
+        gsap.set("#plane", { left: pt.x - 10, top: pt.y - 10 });
+      } }, 12.0);
+      tl.fromTo("#pDXB", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)" }, 14.8);
+      tl.fromTo("#lDXB", { opacity: 0, x: 10 }, { opacity: 1, x: 0, duration: 0.4 }, 14.9);
+      tl.to("#plane", { opacity: 0, duration: 0.2 }, 15.2);
       tl.fromTo("#s3chip", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 16.8);
 
       // S4 chain
