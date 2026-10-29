@@ -1,0 +1,123 @@
+<!doctype html>
+<html
+  lang="en"
+  data-resolution="portrait"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Allegiance Career Event — Reel</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Untimed camera wrapper: punch-ins move this, never the timed <video> */
+      #cam {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        transform-origin: 50% 24%;
+      }
+      #a-roll {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1080px;
+        height: 1920px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="15.6"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="cam">
+        <!-- Original room sound kept low under the music bed -->
+        <video
+          id="a-roll"
+          class="clip"
+          src="assets/video/c9105.mp4"
+          playsinline
+          data-has-audio="true"
+          data-volume="0.35"
+          data-fade-out="0.6"
+          data-start="0"
+          data-duration="12.96"
+          data-track-index="0"
+          style="z-index: 1"
+        ></video>
+      </div>
+
+      <div
+        id="title"
+        data-composition-id="title"
+        data-composition-src="compositions/title.html"
+        data-track-kind="graphics"
+        data-start="0"
+        data-duration="4.6"
+        data-track-index="1"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 2"
+      ></div>
+
+      <div
+        id="tag"
+        data-composition-id="tag"
+        data-composition-src="compositions/tag.html"
+        data-track-kind="graphics"
+        data-start="6"
+        data-duration="5.6"
+        data-track-index="2"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 3"
+      ></div>
+
+      <div
+        id="endcard"
+        data-composition-id="endcard"
+        data-composition-src="compositions/endcard.html"
+        data-track-kind="graphics"
+        data-start="12.4"
+        data-duration="3.2"
+        data-track-index="3"
+        data-width="1080"
+        data-height="1920"
+        style="z-index: 4"
+      ></div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Camera: settle in on the hook, punch in as she starts speaking,
+      // ease back out while she returns to her notes.
+      tl.fromTo("#cam", { scale: 1.06 }, { scale: 1.0, duration: 2.8, ease: "power2.out" }, 0);
+      tl.to("#cam", { scale: 1.16, y: 60, duration: 0.7, ease: "power3.inOut" }, 3.0);
+      tl.to("#cam", { scale: 1.05, y: 0, duration: 1.2, ease: "power2.inOut" }, 8.4);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

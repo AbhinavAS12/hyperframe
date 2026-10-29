@@ -1,0 +1,68 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #tag-pill {
+      position: absolute;
+      left: 90px;
+      top: 1196px;
+      height: 84px;
+      padding: 0 36px 0 30px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-radius: 42px;
+      background: rgba(10, 34, 25, 0.82);
+      border: 1.5px solid rgba(212, 176, 106, 0.55);
+      backdrop-filter: blur(22px);
+    }
+    #tag-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #d4b06a;
+    }
+    #tag-text {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    #tag-text span {
+      color: #d4b06a;
+    }
+  </style>
+  <div id="root" data-composition-id="tag" data-width="1080" data-height="1920">
+    <div id="tag-pill" class="clip" data-start="0" data-duration="5.6">
+      <div id="tag-dot"></div>
+      <div id="tag-text"><span>Allegiance</span> Career Event</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Pill opens left to right, then the label sharpens in.
+    tl.fromTo(
+      "#tag-pill",
+      { clipPath: "inset(0 100% 0 0 round 42px)" },
+      { clipPath: "inset(0 0% 0 0 round 42px)", duration: 0.6, ease: "expo.out" },
+      0,
+    );
+    tl.fromTo(
+      "#tag-text",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      0.25,
+    );
+    tl.fromTo("#tag-dot", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 0.15);
+
+    // Exit before the end card floods in.
+    tl.to("#tag-pill", { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in" }, 5.2);
+
+    window.__timelines["tag"] = tl;
+  </script>
+</template>

@@ -1,0 +1,92 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    /* Dark base so white type reads over the brown top and table */
+    #title-scrim {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      background: linear-gradient(
+        to bottom,
+        rgba(6, 22, 16, 0) 38%,
+        rgba(6, 22, 16, 0.62) 56%,
+        rgba(6, 22, 16, 0.8) 72%,
+        rgba(6, 22, 16, 0.5) 100%
+      );
+    }
+    #title-block {
+      position: absolute;
+      left: 90px;
+      top: 1010px;
+      width: 900px;
+    }
+    #title-kicker {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #d4b06a;
+    }
+    #title-name {
+      margin-top: 26px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 132px;
+      line-height: 1;
+      color: #ffffff;
+    }
+    #title-name .w {
+      display: inline-block;
+    }
+    #title-rule {
+      margin-top: 40px;
+      width: 260px;
+      height: 4px;
+      background: #d4b06a;
+      transform-origin: 0 50%;
+    }
+  </style>
+  <div id="root" data-composition-id="title" data-width="1080" data-height="1920">
+    <div id="title-scrim" class="clip" data-start="0" data-duration="4.6"></div>
+    <div id="title-block" class="clip" data-start="0" data-duration="4.6">
+      <div id="title-kicker">Allegiance Real Estate</div>
+      <div id="title-name"><span class="w" id="title-w1">Career</span> <span class="w" id="title-w2">Event</span></div>
+      <div id="title-rule"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Frame 0 is the thumbnail: the title is already on screen.
+    // The words sharpen in; the kicker and the gold rule follow.
+    tl.fromTo(
+      ["#title-w1", "#title-w2"],
+      { opacity: 0.85, filter: "blur(3px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power4.out", stagger: 0.08 },
+      0,
+    );
+    tl.fromTo(
+      "#title-kicker",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.4, ease: "power4.out" },
+      0.35,
+    );
+    tl.fromTo("#title-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "expo.out" }, 0.55);
+
+    // Exit: one clean blur-out as the camera punches in.
+    tl.to(
+      ["#title-kicker", "#title-w1", "#title-w2", "#title-rule"],
+      { opacity: 0, filter: "blur(8px)", duration: 0.25, ease: "power3.in", stagger: 0.05 },
+      3.9,
+    );
+    tl.to("#title-scrim", { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 3.95);
+
+    window.__timelines["title"] = tl;
+  </script>
+</template>

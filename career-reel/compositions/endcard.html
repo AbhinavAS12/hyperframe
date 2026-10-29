@@ -1,0 +1,105 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+    }
+    #end-ground {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      background: radial-gradient(ellipse at 50% 38%, #144a37 0%, #0b2c21 55%, #061a13 100%);
+    }
+    #end-card {
+      position: absolute;
+      left: 90px;
+      top: 560px;
+      width: 900px;
+      text-align: center;
+    }
+    #end-word {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 108px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      color: #d4b06a;
+      line-height: 1;
+    }
+    #end-word .l {
+      display: inline-block;
+    }
+    #end-line {
+      margin-top: 28px;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: #e8dcc0;
+      padding-left: 0.5em;
+    }
+    #end-rule {
+      margin: 64px auto 0;
+      width: 140px;
+      height: 3px;
+      background: #d4b06a;
+    }
+    #end-event {
+      margin-top: 56px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 64px;
+      color: #ffffff;
+    }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920">
+    <div id="end-ground" class="clip" data-start="0" data-duration="3.2"></div>
+    <div id="end-card" class="clip" data-start="0" data-duration="3.2">
+      <div id="end-word">
+        <span class="l">A</span><span class="l">L</span><span class="l">L</span><span class="l">E</span><span class="l">G</span><span class="l">I</span><span class="l">A</span><span class="l">N</span><span class="l">C</span><span class="l">E</span>
+      </div>
+      <div id="end-line">Real Estate</div>
+      <div id="end-rule"></div>
+      <div id="end-event">Career Event</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Colour flood: brand green rises over the footage from the table up.
+    tl.fromTo(
+      "#end-ground",
+      { clipPath: "inset(100% 0 0 0)" },
+      { clipPath: "inset(0% 0 0 0)", duration: 0.6, ease: "power2.inOut" },
+      0,
+    );
+
+    // Wordmark letter by letter, then the line, rule and event name.
+    tl.fromTo(
+      "#end-word .l",
+      { opacity: 0.0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "power4.out", stagger: 0.045 },
+      0.45,
+    );
+    tl.fromTo(
+      "#end-line",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      0.95,
+    );
+    tl.fromTo("#end-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "expo.out" }, 1.05);
+    tl.fromTo(
+      "#end-event",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" },
+      1.2,
+    );
+    // Landed card holds dead still until the end.
+
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>
