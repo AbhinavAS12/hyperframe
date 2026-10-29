@@ -1,0 +1,5 @@
+footage/*.MP4
+footage/*.part
+snapshots/
+renders/work-*/
+.hyperframes/artifacts/
