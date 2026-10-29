@@ -69,33 +69,38 @@
         {
           "id": "s02",
           "clip": "C9196",
-          "in_s": 0.85,
+          "in_s": 5.6,
           "beats": 2,
           "enter": "zoom",
-          "note": "close: brown vest to camera, pink blazer laughs"
+          "stab": {
+            "smooth": 30,
+            "margin": 1.14,
+            "maxshift": 60,
+            "maxangle": 0.02
+          },
+          "note": "close: the walk continues, brown vest talking"
         },
         {
           "id": "s03",
           "clip": "C9200",
-          "in_s": 7.9,
-          "beats": 2,
-          "note": "close: pink blazer explains"
-        },
-        {
-          "id": "s04",
-          "clip": "C9200",
-          "in_s": 17.95,
-          "beats": 1,
-          "note": "pink blazer smiles as the camera swings"
+          "in_s": 12.75,
+          "beats": 3,
+          "stab": {
+            "smooth": 30,
+            "margin": 1.14,
+            "maxshift": 60,
+            "maxangle": 0.02
+          },
+          "note": "close: walking two-shot by the clock tower"
         },
         {
           "id": "s05",
           "clip": "C9263",
-          "in_s": 6.1,
+          "in_s": 7.6,
           "beats": 2,
           "enter": "whip-left",
           "stab": {
-            "smooth": 20,
+            "smooth": 30,
             "margin": 1.16,
             "maxshift": 70,
             "maxangle": 0.02
@@ -105,9 +110,9 @@
         {
           "id": "s06",
           "clip": "C9158",
-          "in_s": 1.8,
+          "in_s": 3.0,
           "beats": 2,
-          "note": "festival screen rolls into a Dutch angle"
+          "note": "festival screen, held Dutch angle"
         },
         {
           "id": "s07",
@@ -144,7 +149,7 @@
         {
           "id": "b02",
           "clip": "C9144",
-          "in_s": 0.5,
+          "in_s": 1.25,
           "beats": 2,
           "enter": "flash",
           "note": "the Allegiance booth at work"
@@ -188,9 +193,9 @@
         {
           "id": "b08",
           "clip": "C9129",
-          "in_s": 7.3,
+          "in_s": 5.8,
           "beats": 1,
-          "note": "brown vest laughs with a student"
+          "note": "brown vest breaks into a warm smile"
         },
         {
           "id": "b09",
@@ -240,23 +245,23 @@
         {
           "id": "b15",
           "clip": "C9227",
-          "in_s": 17.6,
+          "in_s": 17.35,
           "beats": 1,
-          "note": "handshake across the desk"
+          "note": "handshake: hand reaches and grips"
         },
         {
           "id": "b16",
-          "clip": "C9225",
-          "in_s": 3.8,
-          "beats": 1,
-          "note": "handover, both beam at the camera"
+          "clip": "C9237",
+          "in_s": 12.0,
+          "beats": 3,
+          "note": "handover: the notebook passes from brown vest to the recruiter"
         },
         {
           "id": "b17",
-          "clip": "C9237",
-          "in_s": 15.4,
-          "beats": 2,
-          "note": "posed smiles, thumbs-up"
+          "clip": "C9260",
+          "in_s": 0.6,
+          "beats": 1,
+          "note": "pink blazer hands a folder to a student"
         },
         {
           "id": "b18",
@@ -276,10 +281,10 @@
           "id": "b20",
           "clip": "C9251",
           "in_s": 4.6,
-          "beats": 3,
+          "beats": 2,
           "move": {
             "from": 1.0,
-            "to": 1.05
+            "to": 1.04
           },
           "note": "tight group photo with the notebooks"
         }

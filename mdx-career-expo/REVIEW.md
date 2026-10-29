@@ -1,6 +1,6 @@
-# Review — v1 (temporary music)
+# Review — v2 (temporary music)
 
-Rendered: `renders/mdx-career-expo-v1.mp4` (1080x1920, 30 fps, 26.1 s).
+Rendered: `renders/mdx-career-expo-v2.mp4` (1080x1920, 30 fps, 26.1 s).
 
 ## Creative calls
 - Followed the person's reference reel: hard cuts on the beat, one serif title card over the opening, the
@@ -26,4 +26,4 @@ Rendered: `renders/mdx-career-expo-v1.mp4` (1080x1920, 30 fps, 26.1 s).
   --json`), set `bpm`/`beat0_s`/`music` in edit.json, then `python3 tools/build_reel.py --no-stab`.
 - Render-time motion blur did not engage inside scenes (`motion_blur_no_movers`); the whip reads as a clean
   fast pan without it.
-- Weakest shot: intro s04 (C9200 17.95 s), torsos large in frame as the camera swings.
+- v2 (feedback): intro walk kept continuous across C9194 -> C9196 -> C9200 (walking windows, stronger stabilization); handovers cut on the action itself (C9237 12.0 s, C9260 0.6 s, handshake from the reach at C9227 17.35 s); camera-moving windows replaced by steadier ones (measured shake on a background band).
