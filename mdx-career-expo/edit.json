@@ -1,0 +1,289 @@
+{
+  "name": "Allegiance at MDX Global Futures Festival",
+  "fps": 30,
+  "bpm": 120,
+  "beat0_s": 0,
+  "duration_s": 26.1,
+  "music": [
+    {
+      "id": "music-a",
+      "src": "assets/music/temp-reference-music.wav",
+      "start_beat": 0,
+      "end_beat": 18,
+      "media_start_s": 0.51,
+      "fade_out_s": 0.03,
+      "track": 8
+    },
+    {
+      "id": "music-b",
+      "src": "assets/music/temp-reference-music.wav",
+      "start_beat": 18,
+      "end_s": 26.1,
+      "media_start_s": 21.51,
+      "fade_in_s": 0.03,
+      "fade_out_s": 0.8,
+      "track": 9
+    }
+  ],
+  "title": {
+    "start_beat": 0,
+    "end_beat": 8,
+    "in_beat": 0.3,
+    "date_beat": 2,
+    "out_beat": 6.6,
+    "kicker": "Allegiance Real Estate",
+    "line1": "MDX Global",
+    "line2": "Futures Festival",
+    "italic": "Networking Days",
+    "date": "28–29 October 2026"
+  },
+  "flashes": [
+    {
+      "at_beat": 18,
+      "dur_s": 0.6
+    }
+  ],
+  "outro": {
+    "src": "assets/video/allegiance-outro.mp4",
+    "start_beat": 45,
+    "media_start_s": 0
+  },
+  "scenes": [
+    {
+      "id": "intro",
+      "start_beat": 0,
+      "end_beat": 16,
+      "shots": [
+        {
+          "id": "s01",
+          "clip": "C9194",
+          "in_s": 8.5,
+          "beats": 3,
+          "move": {
+            "from": 1.0,
+            "to": 1.06
+          },
+          "origin": "50% 45%",
+          "note": "wide: presenters walk toward camera"
+        },
+        {
+          "id": "s02",
+          "clip": "C9196",
+          "in_s": 0.85,
+          "beats": 2,
+          "enter": "zoom",
+          "note": "close: brown vest to camera, pink blazer laughs"
+        },
+        {
+          "id": "s03",
+          "clip": "C9200",
+          "in_s": 7.9,
+          "beats": 2,
+          "note": "close: pink blazer explains"
+        },
+        {
+          "id": "s04",
+          "clip": "C9200",
+          "in_s": 17.95,
+          "beats": 1,
+          "note": "pink blazer smiles as the camera swings"
+        },
+        {
+          "id": "s05",
+          "clip": "C9263",
+          "in_s": 6.1,
+          "beats": 2,
+          "enter": "whip-left",
+          "stab": {
+            "smooth": 20,
+            "margin": 1.16,
+            "maxshift": 70,
+            "maxangle": 0.02
+          },
+          "note": "students crowd the corridor"
+        },
+        {
+          "id": "s06",
+          "clip": "C9158",
+          "in_s": 1.8,
+          "beats": 2,
+          "note": "festival screen rolls into a Dutch angle"
+        },
+        {
+          "id": "s07",
+          "clip": "Seq03",
+          "in_s": 15.1,
+          "beats": 2,
+          "note": "Allegiance logo snaps into focus on the half beat"
+        },
+        {
+          "id": "s08",
+          "clip": "Seq03",
+          "in_s": 3.6,
+          "beats": 2,
+          "move": {
+            "from": 1.0,
+            "to": 1.05
+          },
+          "note": "full Allegiance logo"
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "start_beat": 16,
+      "end_beat": 45,
+      "shots": [
+        {
+          "id": "b01",
+          "clip": "C9259",
+          "in_s": 9.8,
+          "beats": 2,
+          "note": "fair floor under the festival screen"
+        },
+        {
+          "id": "b02",
+          "clip": "C9144",
+          "in_s": 0.5,
+          "beats": 2,
+          "enter": "flash",
+          "note": "the Allegiance booth at work"
+        },
+        {
+          "id": "b03",
+          "clip": "C9234",
+          "in_s": 4.35,
+          "beats": 1,
+          "note": "brown vest leans in, explaining"
+        },
+        {
+          "id": "b04",
+          "clip": "C9130",
+          "in_s": 13.55,
+          "beats": 1,
+          "origin": "35% 45%",
+          "note": "pink blazer explains under the logo"
+        },
+        {
+          "id": "b05",
+          "clip": "C9227",
+          "in_s": 14.4,
+          "beats": 1,
+          "note": "recruiter in cream blazer, big smile"
+        },
+        {
+          "id": "b06",
+          "clip": "C9224",
+          "in_s": 6.9,
+          "beats": 1,
+          "note": "candidate explains at the Allegiance table"
+        },
+        {
+          "id": "b07",
+          "clip": "C9138",
+          "in_s": 0.8,
+          "beats": 1,
+          "note": "hands sign a CV with the Allegiance pen"
+        },
+        {
+          "id": "b08",
+          "clip": "C9129",
+          "in_s": 7.3,
+          "beats": 1,
+          "note": "brown vest laughs with a student"
+        },
+        {
+          "id": "b09",
+          "clip": "C9261",
+          "in_s": 10.7,
+          "beats": 2,
+          "punch": [
+            1
+          ],
+          "note": "student talks, big smile"
+        },
+        {
+          "id": "b10",
+          "clip": "C9106",
+          "in_s": 2.4,
+          "beats": 1,
+          "note": "green Allegiance notebooks"
+        },
+        {
+          "id": "b11",
+          "clip": "C9243",
+          "in_s": 4.85,
+          "beats": 2,
+          "note": "students burst into laughter at the CV review"
+        },
+        {
+          "id": "b12",
+          "clip": "C9267",
+          "in_s": 13.8,
+          "beats": 1,
+          "note": "a student films the booth on her phone"
+        },
+        {
+          "id": "b13",
+          "clip": "C9132",
+          "in_s": 7.9,
+          "beats": 2,
+          "note": "pink blazer and a student laugh"
+        },
+        {
+          "id": "b14",
+          "clip": "C9269",
+          "in_s": 15.2,
+          "beats": 1,
+          "note": "brochure: Start your success story with us"
+        },
+        {
+          "id": "b15",
+          "clip": "C9227",
+          "in_s": 17.6,
+          "beats": 1,
+          "note": "handshake across the desk"
+        },
+        {
+          "id": "b16",
+          "clip": "C9225",
+          "in_s": 3.8,
+          "beats": 1,
+          "note": "handover, both beam at the camera"
+        },
+        {
+          "id": "b17",
+          "clip": "C9237",
+          "in_s": 15.4,
+          "beats": 2,
+          "note": "posed smiles, thumbs-up"
+        },
+        {
+          "id": "b18",
+          "clip": "C9267",
+          "in_s": 26.6,
+          "beats": 1,
+          "note": "pink blazer smiles to camera"
+        },
+        {
+          "id": "b19",
+          "clip": "C9251",
+          "in_s": 12.8,
+          "beats": 2,
+          "note": "wide group photo"
+        },
+        {
+          "id": "b20",
+          "clip": "C9251",
+          "in_s": 4.6,
+          "beats": 3,
+          "move": {
+            "from": 1.0,
+            "to": 1.05
+          },
+          "note": "tight group photo with the notebooks"
+        }
+      ]
+    }
+  ]
+}

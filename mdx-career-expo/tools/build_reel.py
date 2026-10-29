@@ -341,8 +341,8 @@ def title_html(edit, clk):
       {{ opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power3.out", stagger: 0.09 }}, {fmt(t_in + 0.08)});
     tl.fromTo("#title-date", {{ opacity: 0, filter: "blur(6px)" }}, {{ opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }}, {fmt(t_date)});
     // out: one blur-out of the whole block, then the scrim
-    tl.fromTo("#title-block", {{ opacity: 1, filter: "blur(0px)" }}, {{ opacity: 0, filter: "blur(8px)", duration: 0.24, ease: "power2.in" }}, {fmt(t_out)});
-    tl.fromTo("#title-scrim", {{ opacity: 1 }}, {{ opacity: 0, duration: 0.3, ease: "power2.in" }}, {fmt(t_out + 0.05)});
+    tl.to("#title-block", {{ opacity: 0, filter: "blur(8px)", duration: 0.24, ease: "power2.in" }}, {fmt(t_out)});
+    tl.to("#title-scrim", {{ opacity: 0, duration: 0.3, ease: "power2.in" }}, {fmt(t_out + 0.05)});
     tl.set({{}}, {{}}, {fmt(dur)});
     window.__timelines["title"] = tl;
   </script>
@@ -393,7 +393,7 @@ def index_html(edit, clk, scenes):
     for k, fl in enumerate(edit.get("flashes", [])):
         d = fl.get("dur_s", 0.6)
         hit = max(0.12, d * 0.58)   # the block's own hit point
-        st = clk.t(fl["at_beat"]) - hit
+        st = clk.t(fl["at_beat"]) - hit - 0.05   # the wash peaks ~0.05 s after its hit: land the peak on the cut
         out.append(f'      <div id="flash-{k + 1}" data-composition-id="editorial-flash-overlay" '
                    f'data-composition-src="compositions/editorial-flash-overlay.html" data-start="{fmt(clk.r(st))}" '
                    f'data-duration="{fmt(d)}" data-track-index="{5 + k}" data-track-kind="graphics" '

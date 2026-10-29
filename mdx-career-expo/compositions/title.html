@@ -1,0 +1,91 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Source Serif 4";
+      src: url("assets/fonts/SourceSerif4-Variable.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 200 900;
+    }
+    @font-face {
+      font-family: "Source Serif 4";
+      src: url("assets/fonts/SourceSerif4-Italic-Variable.ttf") format("truetype");
+      font-style: italic;
+      font-weight: 200 900;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      --ink: #f2ede3;
+    }
+    /* legibility scrim for bright footage: dark at the bottom, gone by the middle of the frame */
+    #title-scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1180px;
+      background: linear-gradient(to top, rgba(8, 10, 12, 0.72) 0%, rgba(8, 10, 12, 0.5) 38%, rgba(8, 10, 12, 0) 100%);
+    }
+    #title-block {
+      position: absolute;
+      left: 84px;
+      right: 84px;
+      bottom: 596px;
+      color: var(--ink);
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
+    }
+    #title-kicker,
+    #title-date {
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 400;
+      font-size: 30px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+    #title-kicker {
+      margin-bottom: 30px;
+    }
+    #title-date {
+      margin-top: 34px;
+    }
+    #title-lines {
+      font-family: "Source Serif 4", serif;
+      font-optical-sizing: none;
+      font-variation-settings: "opsz" 20;
+      font-weight: 420;
+      font-size: 112px;
+      line-height: 1.04;
+      letter-spacing: -0.005em;
+    }
+    #title-lines .it {
+      font-style: italic;
+    }
+  </style>
+  <div id="root" data-composition-id="title" data-width="1080" data-height="1920" data-composition-variables="[{&quot;id&quot;: &quot;kicker&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Kicker&quot;, &quot;default&quot;: &quot;Allegiance Real Estate&quot;}, {&quot;id&quot;: &quot;line1&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Title line 1&quot;, &quot;default&quot;: &quot;MDX Global&quot;}, {&quot;id&quot;: &quot;line2&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Title line 2&quot;, &quot;default&quot;: &quot;Futures Festival&quot;}, {&quot;id&quot;: &quot;italic&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Italic line&quot;, &quot;default&quot;: &quot;Networking Days&quot;}, {&quot;id&quot;: &quot;date&quot;, &quot;type&quot;: &quot;string&quot;, &quot;label&quot;: &quot;Date line&quot;, &quot;default&quot;: &quot;28\u201329 October 2026&quot;}]">
+    <div id="title-scrim" data-layout-ignore></div>
+    <div id="title-block">
+      <div id="title-kicker" data-var-text="kicker">Allegiance Real Estate</div>
+      <div id="title-lines">
+        <div id="title-line1" data-var-text="line1">MDX Global</div>
+        <div id="title-line2" data-var-text="line2">Futures Festival</div>
+        <div id="title-italic" class="it" data-var-text="italic">Networking Days</div>
+      </div>
+      <div id="title-date" data-var-text="date">28–29 October 2026</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    // in: the scrim breathes in, the kicker and the lines blur in one after another (the reference's entrance)
+    tl.fromTo("#title-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
+    tl.fromTo("#title-kicker", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 0.1333);
+    tl.fromTo(["#title-line1", "#title-line2", "#title-italic"], { opacity: 0, filter: "blur(10px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power3.out", stagger: 0.09 }, 0.2133);
+    tl.fromTo("#title-date", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 1);
+    // out: one blur-out of the whole block, then the scrim
+    tl.to("#title-block", { opacity: 0, filter: "blur(8px)", duration: 0.24, ease: "power2.in" }, 3.3);
+    tl.to("#title-scrim", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.35);
+    tl.set({}, {}, 4);
+    window.__timelines["title"] = tl;
+  </script>
+</template>
