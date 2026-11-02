@@ -121,6 +121,30 @@ def make_bg(src, out):
                     "-g", "15", "-pix_fmt", "yuv420p", "-an", out], check=True)
 
 
+def prebake(sh, src, out):
+    """Pre-render a shot's look into its clip (HyperFrames' guidance for heavy treatment stacks: pre-render them),
+    so the film renders fast on machines without a GPU.
+      radial_blur: a blurred copy under the sharp shot, which shows through a soft radial alpha mask, plus a vignette
+      blur_in:     a blurred copy dissolving into the sharp shot over the first blur_in seconds of film time"""
+    rb, bi = sh.get("radial_blur"), sh.get("blur_in")
+    if rb:
+        rx, ry = rb.get("rx", 46) / 100, rb.get("ry", 40) / 100
+        cx, cy = [float(v.strip("%")) / 100 for v in rb.get("at", "50% 48%").split()]
+        inner = rb.get("inner", 55) / 100
+        sigma = 10 + 30 * rb.get("blur", 0.6)
+        mask = f"255*clip((1-hypot((X-W*{cx})/(W*{rx}),(Y-H*{cy})/(H*{ry})))/{1 - inner:.3f},0,1)"
+        fc = (f"[0:v]split[a][b];[a]gblur=sigma={sigma:.1f}[bl];"
+              f"[b]format=yuva444p,geq=lum='lum(X,Y)':cb='cb(X,Y)':cr='cr(X,Y)':a='{mask}'[sh];"
+              f"[bl][sh]overlay,vignette=angle={0.3 + rb.get('vignette', 0.25):.2f},format=yuv420p[v]")
+    else:
+        ms, d = sh["media_start"], bi * sh.get("rate", 1.0)
+        f = f"clip((T-{ms:.3f})/{d:.3f},0,1)"
+        fc = (f"[0:v]split[a][b];[a]gblur=sigma={10 + 30 * sh.get('blur_from', 0.8):.1f}[bl];"
+              f"[bl][b]blend=all_expr='A*(1-{f})+B*{f}',format=yuv420p[v]")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", fc, "-map", "[v]", "-c:v", "libx264",
+                    "-crf", "19", "-preset", "medium", "-g", "15", "-movflags", "+faststart", out], check=True)
+
+
 def stabilize(edit, scenes, footage, force=False, skip=False):
     os.makedirs(os.path.join(ROOT, "assets", "clips"), exist_ok=True)
     for sc in scenes:
@@ -162,6 +186,21 @@ def stabilize(edit, scenes, footage, force=False, skip=False):
                 make_bg(out, bg_out)
 
 
+def apply_prebake(edit, scenes):
+    if not edit.get("prebake"):
+        return
+    for sc in scenes:
+        for sh in sc["shots_resolved"]:
+            if not (sh.get("radial_blur") or sh.get("blur_in")):
+                continue
+            src = os.path.join(ROOT, sh["asset"])
+            fx = src[:-4] + "-fx.mp4"
+            if not os.path.exists(fx) or os.path.getmtime(fx) < os.path.getmtime(src):
+                print(f"prebake {os.path.basename(fx)}", flush=True)
+                prebake(sh, src, fx)
+            sh["asset"] = sh["asset"][:-4] + "-fx.mp4"
+
+
 def automation_attr(ramp):
     lane = {"version": 1, "lanes": [{"target": "rate",
                                      "points": [{"t": round(t, 3), "v": v} for t, v in ramp]}]}
@@ -190,7 +229,7 @@ def scene_html(edit, clk, sc):
             attrs.append(f'data-automation="{automation_attr(sh["ramp"])}"')
         elif sh.get("rate", 1.0) != 1.0:
             attrs.append(f'data-playback-rate="{fmt(sh["rate"])}"')
-        if sh.get("blur_in"):
+        if sh.get("blur_in") and not edit.get("prebake"):
             attrs.append(f'style="--hf-color-grading-blur: {sh.get("blur_from", 0.8)}"')
         attrs += ["muted", "playsinline"]
         note = sh.get("note", "")
@@ -199,7 +238,7 @@ def scene_html(edit, clk, sc):
         lines.append(f'    <div id="{name}-tr" class="tr" style="z-index: {i + 1}; transform-origin: {origin}">')
         lines.append(f'      <div id="{name}-pu" class="pu" style="transform-origin: {origin}">')
         lines.append(f'        <div id="{name}-mo" class="mo" style="transform-origin: {origin}">')
-        rb = sh.get("radial_blur")
+        rb = None if edit.get("prebake") else sh.get("radial_blur")
         if rb:
             # radial blur: a blurred copy underneath (media-treatment Blur, applied after writing) and the sharp
             # shot on top behind a soft radial mask, so the characters stay crisp and the edges fall off.
@@ -238,7 +277,7 @@ def scene_html(edit, clk, sc):
         if oz and not sh.get("no_zoom"):
             lines.append(f'    tl.fromTo("{name}-pu", {{ scale: 1 }}, {{ scale: {oz.get("scale", 1.08)}, '
                          f'duration: {fmt(oz.get("frames", 10) / clk.fps)}, ease: "{oz.get("ease", "power2.out")}" }}, {fmt(s)});')
-        if sh.get("blur_in"):
+        if sh.get("blur_in") and not edit.get("prebake"):
             lines.append(f'    tl.to("{name}", {{ "--hf-color-grading-blur": 0, duration: {fmt(sh["blur_in"])}, '
                          f'ease: "power2.out" }}, {fmt(vs)});')
         # punch-ins: instant steps on a beat (a hit is a 0 ms set; easing a hit kills it)
@@ -412,7 +451,7 @@ def index_html(edit, clk, scenes):
     out.append("  </head>")
     out.append("  <body>")
     out.append(f'    <div id="root" data-composition-id="main" data-start="0" data-duration="{fmt(dur)}" '
-               f'data-width="{W}" data-height="{H}" data-fps="{edit.get("fps", 30)}" data-motion-blur="on">')
+               f'data-width="{W}" data-height="{H}" data-fps="{edit.get("fps", 30)}">')
     track = 0
     z = 1
     for sc in scenes:
@@ -471,6 +510,7 @@ def main():
     edit = load_edit()
     clk, scenes = plan(edit)
     stabilize(edit, scenes, args.footage, force=args.force_stab, skip=args.no_stab)
+    apply_prebake(edit, scenes)
     os.makedirs(os.path.join(ROOT, "compositions"), exist_ok=True)
     for sc in scenes:
         with open(os.path.join(ROOT, "compositions", f"{sc['id']}.html"), "w") as f:
@@ -479,6 +519,8 @@ def main():
     for sc in scenes:
         for sh in sc["shots_resolved"]:
             name = f"{sc['id']}-{sh['id']}"
+            if edit.get("prebake"):
+                continue
             if sh.get("blur_in"):
                 subprocess.run(["npx", "--yes", "hyperframes@0.8.216", "media-treatment", "--selector", f"#{name}",
                                 "--grading", json.dumps({"effects": {"blur": sh.get("blur_from", 0.8)}}), "--apply", "--json"],

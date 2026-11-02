@@ -303,5 +303,6 @@
     "frames": 15,
     "scale": 1.08,
     "ease": "power2.out"
-  }
+  },
+  "prebake": true
 }
