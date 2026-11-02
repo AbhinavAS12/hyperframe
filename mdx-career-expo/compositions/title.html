@@ -78,14 +78,14 @@
     const tl = gsap.timeline({ paused: true });
     // in: the scrim breathes in, the kicker and the lines blur in one after another (the reference's entrance)
     tl.fromTo("#title-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
-    tl.fromTo("#title-kicker", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 0.1333);
+    tl.fromTo("#title-kicker", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 0.1667);
     tl.fromTo(["#title-line1", "#title-line2", "#title-italic"], { opacity: 0, filter: "blur(10px)" },
-      { opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power3.out", stagger: 0.09 }, 0.2133);
+      { opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "power3.out", stagger: 0.09 }, 0.2467);
     tl.fromTo("#title-date", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.3, ease: "power3.out" }, 1);
     // out: one blur-out of the whole block, then the scrim
-    tl.to("#title-block", { opacity: 0, filter: "blur(8px)", duration: 0.24, ease: "power2.in" }, 3.3);
-    tl.to("#title-scrim", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.35);
-    tl.set({}, {}, 4);
+    tl.to("#title-block", { opacity: 0, filter: "blur(8px)", duration: 0.24, ease: "power2.in" }, 3.8);
+    tl.to("#title-scrim", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.85);
+    tl.set({}, {}, 4.5);
     window.__timelines["title"] = tl;
   </script>
 </template>

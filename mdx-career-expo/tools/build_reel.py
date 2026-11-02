@@ -114,6 +114,13 @@ def plan(edit):
     return clk, scenes
 
 
+def make_bg(src, out):
+    """Half-resolution copy of a shot for the blurred layer under a radial-blur shot (its own file, so the
+    runtime never sees two identical media entries)."""
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-vf", "scale=540:960", "-c:v", "libx264", "-crf", "23",
+                    "-g", "15", "-pix_fmt", "yuv420p", "-an", out], check=True)
+
+
 def stabilize(edit, scenes, footage, force=False, skip=False):
     os.makedirs(os.path.join(ROOT, "assets", "clips"), exist_ok=True)
     for sc in scenes:
@@ -131,8 +138,11 @@ def stabilize(edit, scenes, footage, force=False, skip=False):
             sh["asset"] = f"assets/clips/{name}.mp4"
             sh["media_start"] = round(sh["src_a"] - a, 3)
             stamp = out + ".key"
+            bg_out = out[:-4] + "-bg.mp4"
             if skip or (not force and os.path.exists(out) and os.path.exists(stamp)
                         and open(stamp).read().strip() == key):
+                if sh.get("radial_blur") and not os.path.exists(bg_out):
+                    make_bg(out, bg_out)
                 continue
             if not os.path.exists(src):
                 sys.exit(f"missing footage {src} (shot {name}); pass --footage DIR")
@@ -140,6 +150,8 @@ def stabilize(edit, scenes, footage, force=False, skip=False):
             subprocess.run([os.path.join(ROOT, "tools", "stabilize.sh")] + args, check=True)
             with open(stamp, "w") as f:
                 f.write(key + "\n")
+            if sh.get("radial_blur"):
+                make_bg(out, bg_out)
 
 
 def automation_attr(ramp):
@@ -177,7 +189,20 @@ def scene_html(edit, clk, sc):
         lines.append(f'    <div id="{name}-tr" class="tr" style="z-index: {i + 1}; transform-origin: {origin}">')
         lines.append(f'      <div id="{name}-pu" class="pu" style="transform-origin: {origin}">')
         lines.append(f'        <div id="{name}-mo" class="mo" style="transform-origin: {origin}">')
-        lines.append(f"          <video {' '.join(attrs)}></video>")
+        rb = sh.get("radial_blur")
+        if rb:
+            # radial blur: a blurred copy underneath (media-treatment Blur, applied after writing) and the sharp
+            # shot on top behind a soft radial mask, so the characters stay crisp and the edges fall off.
+            bg = [a.replace(f'id="{name}"', f'id="{name}-bg"').replace(f'data-track-index="{i % 2}"', 'data-track-index="2"')
+                  .replace(f'src="{sh["asset"]}"', f'src="{sh["asset"][:-4]}-bg.mp4"') for a in attrs]
+            mask = (f"radial-gradient(ellipse {rb.get('rx', 46)}% {rb.get('ry', 40)}% at {rb.get('at', '50% 48%')}, "
+                    f"#000 {rb.get('inner', 55)}%, transparent 100%)")
+            lines.append(f"          <video {' '.join(bg)}></video>")
+            lines.append(f'          <div id="{name}-sharp" class="mo" style="-webkit-mask-image: {mask}; mask-image: {mask}">')
+            lines.append(f"            <video {' '.join(attrs)}></video>")
+            lines.append("          </div>")
+        else:
+            lines.append(f"          <video {' '.join(attrs)}></video>")
         lines.append("        </div>")
         lines.append("      </div>")
         lines.append("    </div>")
@@ -432,6 +457,18 @@ def main():
     for sc in scenes:
         with open(os.path.join(ROOT, "compositions", f"{sc['id']}.html"), "w") as f:
             f.write(scene_html(edit, clk, sc))
+    # canonical treatments for radial-blur shots (Blur on the copy underneath, a light vignette on the sharp layer)
+    for sc in scenes:
+        for sh in sc["shots_resolved"]:
+            rb = sh.get("radial_blur")
+            if not rb:
+                continue
+            name = f"{sc['id']}-{sh['id']}"
+            for sel, grading in ((f"#{name}-bg", {"effects": {"blur": rb.get("blur", 0.6)}}),
+                                 (f"#{name}", {"details": {"vignette": rb.get("vignette", 0.25)}})):
+                subprocess.run(["npx", "--yes", "hyperframes@0.8.216", "media-treatment", "--selector", sel,
+                                "--grading", json.dumps(grading), "--apply", "--json"], cwd=ROOT, check=True,
+                               stdout=subprocess.DEVNULL)
     with open(os.path.join(ROOT, "compositions", "title.html"), "w") as f:
         f.write(title_html(edit, clk))
     with open(os.path.join(ROOT, "index.html"), "w") as f:

@@ -26,11 +26,11 @@
     }
   ],
   "title": {
-    "start_beat": 0,
-    "end_beat": 8,
-    "in_beat": 0.3,
-    "date_beat": 2,
-    "out_beat": 6.6,
+    "start_beat": 3,
+    "end_beat": 12,
+    "in_beat": 3.3,
+    "date_beat": 5,
+    "out_beat": 10.6,
     "kicker": "Allegiance Real Estate",
     "line1": "MDX Global",
     "line2": "Futures Festival",
@@ -55,43 +55,73 @@
       "end_beat": 16,
       "shots": [
         {
-          "id": "s01",
-          "clip": "C9194",
-          "in_s": 8.5,
+          "id": "s00",
+          "clip": "C9158",
+          "in_s": 3.2,
           "beats": 3,
           "move": {
             "from": 1.0,
-            "to": 1.06
+            "to": 1.14,
+            "ease": "power1.inOut"
           },
-          "origin": "50% 45%",
-          "note": "wide: presenters walk toward camera"
+          "note": "festival TV screen, smooth push-in"
+        },
+        {
+          "id": "s01",
+          "clip": "C9194",
+          "in_s": 8.6,
+          "beats": 2,
+          "radial_blur": {
+            "blur": 0.6,
+            "vignette": 0.25,
+            "rx": 48,
+            "ry": 42,
+            "at": "50% 46%",
+            "inner": 55
+          },
+          "note": "wide: presenters walking toward camera"
         },
         {
           "id": "s02",
           "clip": "C9196",
-          "in_s": 5.6,
+          "in_s": 7.0,
           "beats": 2,
-          "enter": "zoom",
+          "radial_blur": {
+            "blur": 0.6,
+            "vignette": 0.25,
+            "rx": 48,
+            "ry": 42,
+            "at": "50% 46%",
+            "inner": 55
+          },
           "stab": {
             "smooth": 30,
-            "margin": 1.14,
-            "maxshift": 60,
+            "margin": 1.18,
+            "maxshift": 80,
             "maxangle": 0.02
           },
-          "note": "close: the walk continues, brown vest talking"
+          "note": "close: brown dress, walking"
         },
         {
           "id": "s03",
-          "clip": "C9200",
-          "in_s": 12.75,
-          "beats": 3,
+          "clip": "C9198",
+          "in_s": 13.0,
+          "beats": 2,
+          "radial_blur": {
+            "blur": 0.6,
+            "vignette": 0.25,
+            "rx": 48,
+            "ry": 42,
+            "at": "50% 46%",
+            "inner": 55
+          },
           "stab": {
             "smooth": 30,
             "margin": 1.14,
             "maxshift": 60,
             "maxangle": 0.02
           },
-          "note": "close: walking two-shot by the clock tower"
+          "note": "close: pink blazer, walking"
         },
         {
           "id": "s05",
@@ -108,29 +138,18 @@
           "note": "students crowd the corridor"
         },
         {
-          "id": "s06",
-          "clip": "C9158",
-          "in_s": 3.0,
-          "beats": 2,
-          "note": "festival screen, held Dutch angle"
-        },
-        {
           "id": "s07",
           "clip": "Seq03",
-          "in_s": 15.1,
-          "beats": 2,
-          "note": "Allegiance logo snaps into focus on the half beat"
-        },
-        {
-          "id": "s08",
-          "clip": "Seq03",
-          "in_s": 3.6,
-          "beats": 2,
-          "move": {
-            "from": 1.0,
-            "to": 1.05
+          "in_s": 21.9,
+          "beats": 5,
+          "rate": 0.55,
+          "stab": {
+            "smooth": 30,
+            "margin": 1.12,
+            "maxshift": 50,
+            "maxangle": 0.015
           },
-          "note": "full Allegiance logo"
+          "note": "slow reveal: pan off blurred hair into the Allegiance logo"
         }
       ]
     },
@@ -151,8 +170,8 @@
           "clip": "C9144",
           "in_s": 1.25,
           "beats": 2,
-          "enter": "flash",
-          "note": "the Allegiance booth at work"
+          "note": "the Allegiance booth at work",
+          "enter": "flash"
         },
         {
           "id": "b03",
@@ -163,25 +182,17 @@
         },
         {
           "id": "b04",
-          "clip": "C9130",
-          "in_s": 13.55,
+          "clip": "C9112",
+          "in_s": 11.1,
           "beats": 1,
-          "origin": "35% 45%",
-          "note": "pink blazer explains under the logo"
+          "note": "students across the Allegiance table"
         },
         {
           "id": "b05",
-          "clip": "C9227",
-          "in_s": 14.4,
-          "beats": 1,
-          "note": "recruiter in cream blazer, big smile"
-        },
-        {
-          "id": "b06",
-          "clip": "C9224",
-          "in_s": 6.9,
-          "beats": 1,
-          "note": "candidate explains at the Allegiance table"
+          "clip": "C9135",
+          "in_s": 3.3,
+          "beats": 2,
+          "note": "pink blazer talks to a student"
         },
         {
           "id": "b07",
@@ -202,10 +213,10 @@
           "clip": "C9261",
           "in_s": 10.7,
           "beats": 2,
+          "note": "student talks, big smile",
           "punch": [
             1
-          ],
-          "note": "student talks, big smile"
+          ]
         },
         {
           "id": "b10",
@@ -216,10 +227,10 @@
         },
         {
           "id": "b11",
-          "clip": "C9243",
-          "in_s": 4.85,
+          "clip": "C9174",
+          "in_s": 2.4,
           "beats": 2,
-          "note": "students burst into laughter at the CV review"
+          "note": "students queue with their CVs"
         },
         {
           "id": "b12",
@@ -251,17 +262,17 @@
         },
         {
           "id": "b16",
-          "clip": "C9237",
-          "in_s": 12.0,
+          "clip": "C9225",
+          "in_s": 0.7,
           "beats": 3,
-          "note": "handover: the notebook passes from brown vest to the recruiter"
+          "note": "handover: pink blazer gives the brochure, both smile"
         },
         {
           "id": "b17",
           "clip": "C9260",
-          "in_s": 0.6,
-          "beats": 1,
-          "note": "pink blazer hands a folder to a student"
+          "in_s": 0.1,
+          "beats": 2,
+          "note": "handover: folder to another student"
         },
         {
           "id": "b18",
@@ -273,20 +284,13 @@
         {
           "id": "b19",
           "clip": "C9251",
-          "in_s": 12.8,
-          "beats": 2,
-          "note": "wide group photo"
-        },
-        {
-          "id": "b20",
-          "clip": "C9251",
-          "in_s": 4.6,
-          "beats": 2,
+          "in_s": 4.35,
+          "beats": 3,
+          "note": "group photo with the notebooks",
           "move": {
             "from": 1.0,
             "to": 1.04
-          },
-          "note": "tight group photo with the notebooks"
+          }
         }
       ]
     }
