@@ -281,14 +281,21 @@
         },
         {
           "id": "b19",
-          "clip": "C9251",
-          "in_s": 4.35,
-          "beats": 3,
-          "note": "group photo with the notebooks",
+          "clip": "C9271",
+          "in_s": 7.6,
+          "beats": 1,
+          "note": "student at another booth, queue of students behind"
+        },
+        {
+          "id": "b20",
+          "clip": "C9259",
+          "in_s": 22.0,
+          "beats": 2,
           "move": {
             "from": 1.0,
-            "to": 1.04
-          }
+            "to": 1.05
+          },
+          "note": "packed registration tables, the scale of the fair"
         }
       ]
     }
