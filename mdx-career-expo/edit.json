@@ -300,7 +300,7 @@
     "maxangle": 0.02
   },
   "optical_zoom": {
-    "frames": 10,
+    "frames": 15,
     "scale": 1.08,
     "ease": "power2.out"
   }
