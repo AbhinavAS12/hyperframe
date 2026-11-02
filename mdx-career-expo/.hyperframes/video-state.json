@@ -1549,7 +1549,6 @@
         {
           "id": "472f25be-9616-4176-8b6d-9a027b2d7181",
           "scope": "project",
-          "report": "/home/user/hyperframe/mdx-career-expo/.hyperframes/artifacts/checks/472f25be-9616-4176-8b6d-9a027b2d7181.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -1571,7 +1570,9 @@
           "revision": "d489c5f4-fd6d-40ee-9127-b34b84f058c0",
           "inputFingerprint": "26addbe78ed229de6e86ade8842d35a9170d44af1241bd51aa91885bec4707b0",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "e15239e8-162c-4191-b975-04b445d9612f"
         }
       ],
       "60b71e5c-e102-4355-8700-9e0fc5c2e34c": [
@@ -2587,15 +2588,15 @@
   },
   "renders": {
     "latest": {
-      "id": "7fdcf8ef-10e6-4119-be3d-d0920147c570",
-      "completedAt": 1793617027228,
+      "id": "e15239e8-162c-4191-b975-04b445d9612f",
+      "completedAt": 1793618694644,
       "output": "/home/user/hyperframe/mdx-career-expo/renders/mdx-career-expo-v4.mp4",
       "status": "completed",
-      "revision": "ef490380-591b-49a3-b37e-d03052b0370f"
+      "revision": "f779e86a-04ac-4eae-b34f-7c97bba033b4"
     },
     "retainedRevisions": [
-      "ef490380-591b-49a3-b37e-d03052b0370f",
-      "d489c5f4-fd6d-40ee-9127-b34b84f058c0"
+      "f779e86a-04ac-4eae-b34f-7c97bba033b4",
+      "ef490380-591b-49a3-b37e-d03052b0370f"
     ]
   },
   "pendingArtifactCleanup": []
