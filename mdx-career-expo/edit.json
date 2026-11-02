@@ -148,7 +148,8 @@
           },
           "note": "full Allegiance name, slow, clears from blur (not stabilized)",
           "blur_in": 0.6,
-          "blur_from": 0.8
+          "blur_from": 0.8,
+          "no_zoom": true
         }
       ]
     },
