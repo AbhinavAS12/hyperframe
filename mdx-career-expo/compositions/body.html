@@ -133,7 +133,7 @@
         </div>
       </div>
     </div>
-    <!-- body-b18: C9267 @26.6s, 1 beats - pink blazer smiles to camera -->
+    <!-- body-b18: C9271 @7.6s, 1 beats - student at another booth, queue of students behind -->
     <div id="body-b18-tr" class="tr" style="z-index: 17; transform-origin: 50% 50%">
       <div id="body-b18-pu" class="pu" style="transform-origin: 50% 50%">
         <div id="body-b18-mo" class="mo" style="transform-origin: 50% 50%">
@@ -141,19 +141,11 @@
         </div>
       </div>
     </div>
-    <!-- body-b19: C9271 @7.6s, 1 beats - student at another booth, queue of students behind -->
+    <!-- body-b19: C9251 @4.35s, 3 beats - group photo: students with the green notebooks -->
     <div id="body-b19-tr" class="tr" style="z-index: 18; transform-origin: 50% 50%">
       <div id="body-b19-pu" class="pu" style="transform-origin: 50% 50%">
         <div id="body-b19-mo" class="mo" style="transform-origin: 50% 50%">
-          <video id="body-b19" class="clip" src="assets/clips/body-b19.mp4" data-start="13" data-duration="0.5" data-media-start="0.4" data-track-index="1" muted playsinline></video>
-        </div>
-      </div>
-    </div>
-    <!-- body-b20: C9259 @22s, 2 beats - packed registration tables, the scale of the fair -->
-    <div id="body-b20-tr" class="tr" style="z-index: 19; transform-origin: 50% 50%">
-      <div id="body-b20-pu" class="pu" style="transform-origin: 50% 50%">
-        <div id="body-b20-mo" class="mo" style="transform-origin: 50% 50%">
-          <video id="body-b20" class="clip" src="assets/clips/body-b20.mp4" data-start="13.5" data-duration="1" data-media-start="0.4" data-track-index="0" muted playsinline></video>
+          <video id="body-b19" class="clip" src="assets/clips/body-b19.mp4" data-start="13" data-duration="1.5" data-media-start="0.4" data-track-index="1" muted playsinline></video>
         </div>
       </div>
     </div>
@@ -197,10 +189,8 @@
     // body-b18
     tl.fromTo("#body-b18-pu", { scale: 1 }, { scale: 1.08, duration: 0.5, ease: "power2.out" }, 12.5);
     // body-b19
+    tl.fromTo("#body-b19-mo", { scale: 1.0, x: 0, y: 0 }, { scale: 1.04, x: 0, y: 0, duration: 1.5, ease: "none" }, 13);
     tl.fromTo("#body-b19-pu", { scale: 1 }, { scale: 1.08, duration: 0.5, ease: "power2.out" }, 13);
-    // body-b20
-    tl.fromTo("#body-b20-mo", { scale: 1.0, x: 0, y: 0 }, { scale: 1.05, x: 0, y: 0, duration: 1, ease: "none" }, 13.5);
-    tl.fromTo("#body-b20-pu", { scale: 1 }, { scale: 1.08, duration: 0.5, ease: "power2.out" }, 13.5);
     tl.set({}, {}, 14.5);
     window.__timelines["body"] = tl;
   </script>
