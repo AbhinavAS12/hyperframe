@@ -130,11 +130,11 @@ def stabilize(edit, scenes, footage, force=False, skip=False):
             src = os.path.join(footage, f"{sh['clip']}.MP4")
             a = max(0.0, sh["src_a"] - HANDLE)
             dur = (sh["src_b"] + HANDLE) - a
-            st = sh.get("stab", {})
+            st = {**edit.get("stab_default", {}), **sh.get("stab", {})}
             fps = 50 if (sh.get("rate", 1.0) < 1.0 or sh.get("ramp")) else edit.get("fps", 30)
             args = [src, f"{a:.3f}", f"{dur:.3f}", out, str(fps), str(st.get("smooth", 15)),
                     str(st.get("margin", 1.10)), str(st.get("maxshift", 40)), str(st.get("maxangle", 0.012))]
-            key = hashlib.sha1(json.dumps(args[:3] + args[4:]).encode()).hexdigest()[:12]
+            key = hashlib.sha1(json.dumps(args[:3] + args[4:] + (["off"] if st.get("off") else [])).encode()).hexdigest()[:12]
             sh["asset"] = f"assets/clips/{name}.mp4"
             sh["media_start"] = round(sh["src_a"] - a, 3)
             stamp = out + ".key"
@@ -146,8 +146,16 @@ def stabilize(edit, scenes, footage, force=False, skip=False):
                 continue
             if not os.path.exists(src):
                 sys.exit(f"missing footage {src} (shot {name}); pass --footage DIR")
-            print(f"stabilize {name}: {sh['clip']} {a:.2f}s +{dur:.2f}s @{fps}fps", flush=True)
-            subprocess.run([os.path.join(ROOT, "tools", "stabilize.sh")] + args, check=True)
+            if st.get("off"):
+                # no stabilization: straight scale/crop of the original framing
+                print(f"cut {name}: {sh['clip']} {a:.2f}s +{dur:.2f}s @{fps}fps (not stabilized)", flush=True)
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{a:.3f}", "-i", src, "-t", f"{dur:.3f}", "-an", "-vf",
+                                f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps={fps}",
+                                "-c:v", "libx264", "-crf", "19", "-preset", "medium", "-g", "15", "-pix_fmt", "yuv420p",
+                                "-movflags", "+faststart", out], check=True)
+            else:
+                print(f"stabilize {name}: {sh['clip']} {a:.2f}s +{dur:.2f}s @{fps}fps", flush=True)
+                subprocess.run([os.path.join(ROOT, "tools", "stabilize.sh")] + args, check=True)
             with open(stamp, "w") as f:
                 f.write(key + "\n")
             if sh.get("radial_blur"):
@@ -182,6 +190,8 @@ def scene_html(edit, clk, sc):
             attrs.append(f'data-automation="{automation_attr(sh["ramp"])}"')
         elif sh.get("rate", 1.0) != 1.0:
             attrs.append(f'data-playback-rate="{fmt(sh["rate"])}"')
+        if sh.get("blur_in"):
+            attrs.append(f'style="--hf-color-grading-blur: {sh.get("blur_from", 0.8)}"')
         attrs += ["muted", "playsinline"]
         note = sh.get("note", "")
         lines.append(f"    <!-- {name}: {sh['clip']} @{fmt(sh['in_s'])}s, {fmt(sh['beats'])} beats"
@@ -223,6 +233,14 @@ def scene_html(edit, clk, sc):
             lines.append(f'    tl.fromTo("{name}-mo", {{ scale: {frm["scale"]}, x: {frm["x"]}, y: {frm["y"]} }}, '
                          f'{{ scale: {to["scale"]}, x: {to["x"]}, y: {to["y"]}, duration: {fmt(ve - vs)}, '
                          f'ease: "{ease}" }}, {fmt(vs)});')
+        # optical zoom: every shot opens with a short zoom-in on its punch layer
+        oz = edit.get("optical_zoom")
+        if oz and not sh.get("no_zoom"):
+            lines.append(f'    tl.fromTo("{name}-pu", {{ scale: 1 }}, {{ scale: {oz.get("scale", 1.08)}, '
+                         f'duration: {fmt(oz.get("frames", 10) / clk.fps)}, ease: "{oz.get("ease", "power2.out")}" }}, {fmt(s)});')
+        if sh.get("blur_in"):
+            lines.append(f'    tl.to("{name}", {{ "--hf-color-grading-blur": 0, duration: {fmt(sh["blur_in"])}, '
+                         f'ease: "power2.out" }}, {fmt(vs)});')
         # punch-ins: instant steps on a beat (a hit is a 0 ms set; easing a hit kills it)
         punches = sh.get("punch", [])
         if punches:
@@ -460,10 +478,14 @@ def main():
     # canonical treatments for radial-blur shots (Blur on the copy underneath, a light vignette on the sharp layer)
     for sc in scenes:
         for sh in sc["shots_resolved"]:
+            name = f"{sc['id']}-{sh['id']}"
+            if sh.get("blur_in"):
+                subprocess.run(["npx", "--yes", "hyperframes@0.8.216", "media-treatment", "--selector", f"#{name}",
+                                "--grading", json.dumps({"effects": {"blur": sh.get("blur_from", 0.8)}}), "--apply", "--json"],
+                               cwd=ROOT, check=True, stdout=subprocess.DEVNULL)
             rb = sh.get("radial_blur")
             if not rb:
                 continue
-            name = f"{sc['id']}-{sh['id']}"
             for sel, grading in ((f"#{name}-bg", {"effects": {"blur": rb.get("blur", 0.6)}}),
                                  (f"#{name}", {"details": {"vignette": rb.get("vignette", 0.25)}})):
                 subprocess.run(["npx", "--yes", "hyperframes@0.8.216", "media-treatment", "--selector", sel,

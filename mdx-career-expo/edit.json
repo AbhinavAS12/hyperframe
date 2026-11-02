@@ -140,16 +140,15 @@
         {
           "id": "s07",
           "clip": "Seq03",
-          "in_s": 21.9,
+          "in_s": 3.6,
           "beats": 5,
-          "rate": 0.55,
+          "rate": 0.5,
           "stab": {
-            "smooth": 30,
-            "margin": 1.12,
-            "maxshift": 50,
-            "maxangle": 0.015
+            "off": true
           },
-          "note": "slow reveal: pan off blurred hair into the Allegiance logo"
+          "note": "full Allegiance name, slow, clears from blur (not stabilized)",
+          "blur_in": 0.6,
+          "blur_from": 0.8
         }
       ]
     },
@@ -213,10 +212,7 @@
           "clip": "C9261",
           "in_s": 10.7,
           "beats": 2,
-          "note": "student talks, big smile",
-          "punch": [
-            1
-          ]
+          "note": "student talks, big smile"
         },
         {
           "id": "b10",
@@ -263,15 +259,16 @@
         {
           "id": "b16",
           "clip": "C9225",
-          "in_s": 0.7,
-          "beats": 3,
-          "note": "handover: pink blazer gives the brochure, both smile"
+          "in_s": 0.0,
+          "beats": 2,
+          "note": "handover: pink blazer gives the brochure (slow motion)",
+          "rate": 0.7
         },
         {
           "id": "b17",
           "clip": "C9260",
-          "in_s": 0.1,
-          "beats": 2,
+          "in_s": 0.0,
+          "beats": 3,
           "note": "handover: folder to another student"
         },
         {
@@ -294,5 +291,16 @@
         }
       ]
     }
-  ]
+  ],
+  "stab_default": {
+    "smooth": 30,
+    "margin": 1.14,
+    "maxshift": 60,
+    "maxangle": 0.02
+  },
+  "optical_zoom": {
+    "frames": 10,
+    "scale": 1.08,
+    "ease": "power2.out"
+  }
 }
