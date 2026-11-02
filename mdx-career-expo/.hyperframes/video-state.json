@@ -2331,11 +2331,11 @@
   },
   "renders": {
     "latest": {
-      "id": "a33fce51-a40b-4cfb-b091-9efa39477844",
-      "completedAt": 1793292533140,
-      "output": "/home/user/hyperframe/mdx-career-expo/renders/mdx-career-expo-v2.mp4",
+      "id": "c5b8e923-4f1a-4675-90bd-48b490bbef08",
+      "completedAt": 1793611361791,
+      "output": "/home/user/hyperframe/mdx-career-expo/renders/mdx-career-expo-v3.mp4",
       "status": "completed",
-      "revision": "d489c5f4-fd6d-40ee-9127-b34b84f058c0"
+      "revision": null
     },
     "retainedRevisions": [
       "d489c5f4-fd6d-40ee-9127-b34b84f058c0",
