@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4"><sequence id="seq1"><name>MDX Reel - stabilized shots</name><duration>783</duration>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+<media><video><format><samplecharacteristics><rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+<width>1080</width><height>1920</height><pixelaspectratio>square</pixelaspectratio></samplecharacteristics></format><track><clipitem id="clip-intro-s01"><name>01 intro-s01 (C9194) wide: presenters walk toward camera</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>0</start><end>45</end><in>60</in><out>105</out>
+<file id="file-intro-s01"><name>intro-s01.mp4</name><pathurl>media/intro-s01.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>165</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s02"><name>02 intro-s02 (C9196) close: the walk continues, brown vest talking</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>45</start><end>75</end><in>60</in><out>90</out>
+<file id="file-intro-s02"><name>intro-s02.mp4</name><pathurl>media/intro-s02.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s03"><name>03 intro-s03 (C9200) close: walking two-shot by the clock tower</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>75</start><end>120</end><in>60</in><out>105</out>
+<file id="file-intro-s03"><name>intro-s03.mp4</name><pathurl>media/intro-s03.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>165</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s05"><name>04 intro-s05 (C9263) students crowd the corridor</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>120</start><end>150</end><in>60</in><out>90</out>
+<file id="file-intro-s05"><name>intro-s05.mp4</name><pathurl>media/intro-s05.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s06"><name>05 intro-s06 (C9158) festival screen, held Dutch angle</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>150</start><end>180</end><in>60</in><out>90</out>
+<file id="file-intro-s06"><name>intro-s06.mp4</name><pathurl>media/intro-s06.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s07"><name>06 intro-s07 (Seq03) Allegiance logo snaps into focus on the half beat</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>180</start><end>210</end><in>60</in><out>90</out>
+<file id="file-intro-s07"><name>intro-s07.mp4</name><pathurl>media/intro-s07.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-intro-s08"><name>07 intro-s08 (Seq03) full Allegiance logo</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>210</start><end>240</end><in>60</in><out>90</out>
+<file id="file-intro-s08"><name>intro-s08.mp4</name><pathurl>media/intro-s08.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b01"><name>08 body-b01 (C9259) fair floor under the festival screen</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>240</start><end>270</end><in>60</in><out>90</out>
+<file id="file-body-b01"><name>body-b01.mp4</name><pathurl>media/body-b01.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b02"><name>09 body-b02 (C9144) the Allegiance booth at work</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>270</start><end>300</end><in>38</in><out>68</out>
+<file id="file-body-b02"><name>body-b02.mp4</name><pathurl>media/body-b02.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>128</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b03"><name>10 body-b03 (C9234) brown vest leans in, explaining</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>300</start><end>315</end><in>60</in><out>75</out>
+<file id="file-body-b03"><name>body-b03.mp4</name><pathurl>media/body-b03.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b04"><name>11 body-b04 (C9130) pink blazer explains under the logo</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>315</start><end>330</end><in>60</in><out>75</out>
+<file id="file-body-b04"><name>body-b04.mp4</name><pathurl>media/body-b04.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>114</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b05"><name>12 body-b05 (C9227) recruiter in cream blazer, big smile</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>330</start><end>345</end><in>60</in><out>75</out>
+<file id="file-body-b05"><name>body-b05.mp4</name><pathurl>media/body-b05.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b06"><name>13 body-b06 (C9224) candidate explains at the Allegiance table</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>345</start><end>360</end><in>60</in><out>75</out>
+<file id="file-body-b06"><name>body-b06.mp4</name><pathurl>media/body-b06.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b07"><name>14 body-b07 (C9138) hands sign a CV with the Allegiance pen</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>360</start><end>375</end><in>24</in><out>39</out>
+<file id="file-body-b07"><name>body-b07.mp4</name><pathurl>media/body-b07.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>99</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b08"><name>15 body-b08 (C9129) brown vest breaks into a warm smile</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>375</start><end>390</end><in>60</in><out>75</out>
+<file id="file-body-b08"><name>body-b08.mp4</name><pathurl>media/body-b08.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b09"><name>16 body-b09 (C9261) student talks, big smile</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>390</start><end>420</end><in>60</in><out>90</out>
+<file id="file-body-b09"><name>body-b09.mp4</name><pathurl>media/body-b09.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b10"><name>17 body-b10 (C9106) green Allegiance notebooks</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>420</start><end>435</end><in>60</in><out>75</out>
+<file id="file-body-b10"><name>body-b10.mp4</name><pathurl>media/body-b10.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b11"><name>18 body-b11 (C9243) students burst into laughter at the CV review</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>435</start><end>465</end><in>60</in><out>90</out>
+<file id="file-body-b11"><name>body-b11.mp4</name><pathurl>media/body-b11.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b12"><name>19 body-b12 (C9267) a student films the booth on her phone</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>465</start><end>480</end><in>60</in><out>75</out>
+<file id="file-body-b12"><name>body-b12.mp4</name><pathurl>media/body-b12.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b13"><name>20 body-b13 (C9132) pink blazer and a student laugh</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>480</start><end>510</end><in>60</in><out>90</out>
+<file id="file-body-b13"><name>body-b13.mp4</name><pathurl>media/body-b13.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b14"><name>21 body-b14 (C9269) brochure: Start your success story with us</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>510</start><end>525</end><in>60</in><out>75</out>
+<file id="file-body-b14"><name>body-b14.mp4</name><pathurl>media/body-b14.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b15"><name>22 body-b15 (C9227) handshake: hand reaches and grips</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>525</start><end>540</end><in>60</in><out>75</out>
+<file id="file-body-b15"><name>body-b15.mp4</name><pathurl>media/body-b15.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b16"><name>23 body-b16 (C9237) handover: the notebook passes from brown vest to the recruiter</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>540</start><end>585</end><in>60</in><out>105</out>
+<file id="file-body-b16"><name>body-b16.mp4</name><pathurl>media/body-b16.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>165</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b17"><name>24 body-b17 (C9260) pink blazer hands a folder to a student</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>585</start><end>600</end><in>18</in><out>33</out>
+<file id="file-body-b17"><name>body-b17.mp4</name><pathurl>media/body-b17.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>93</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b18"><name>25 body-b18 (C9267) pink blazer smiles to camera</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>600</start><end>615</end><in>60</in><out>75</out>
+<file id="file-body-b18"><name>body-b18.mp4</name><pathurl>media/body-b18.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>135</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b19"><name>26 body-b19 (C9251) wide group photo</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>615</start><end>645</end><in>60</in><out>90</out>
+<file id="file-body-b19"><name>body-b19.mp4</name><pathurl>media/body-b19.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-body-b20"><name>27 body-b20 (C9251) tight group photo with the notebooks</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>645</start><end>675</end><in>60</in><out>90</out>
+<file id="file-body-b20"><name>body-b20.mp4</name><pathurl>media/body-b20.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>150</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem><clipitem id="clip-outro"><name>Allegiance outro</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>675</start><end>783</end><in>0</in><out>108</out>
+<file id="file-outro"><name>allegiance-outro.mp4</name><pathurl>media/allegiance-outro.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>148</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem></track><track><clipitem id="clip-title"><name>Title card (transparent)</name><enabled>TRUE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>0</start><end>120</end><in>0</in><out>120</out>
+<file id="file-title"><name>title-overlay.mov</name><pathurl>media/title-overlay.mov</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>120</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video></media></file></clipitem></track><track><clipitem id="clip-ref"><name>reference render (finished cut, enable to compare)</name><enabled>FALSE</enabled>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><start>0</start><end>783</end><in>0</in><out>783</out>
+<file id="file-ref"><name>reference-render.mp4</name><pathurl>media/reference-render.mp4</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>783</duration>
+<media><video><samplecharacteristics><width>1080</width><height>1920</height></samplecharacteristics></video><audio><channelcount>2</channelcount></audio></media></file></clipitem></track></video>
+<audio><track><clipitem id="music-0"><name>music 1</name><rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+<start>0</start><end>270</end><in>15</in><out>285</out><file id="file-music"><name>music.wav</name><pathurl>media/music.wav</pathurl>
+<rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate><duration>1200</duration>
+<media><audio><channelcount>2</channelcount></audio></media></file><sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack></clipitem><clipitem id="music-1"><name>music 2</name><rate><timebase>30</timebase><ntsc>FALSE</ntsc></rate>
+<start>270</start><end>783</end><in>645</in><out>1158</out><file id="file-music"/><sourcetrack><mediatype>audio</mediatype><trackindex>1</trackindex></sourcetrack></clipitem></track></audio></media></sequence></xmeml>
