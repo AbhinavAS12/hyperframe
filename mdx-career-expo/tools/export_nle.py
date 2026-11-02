@@ -19,6 +19,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build_reel as br  # noqa: E402
 
 ROOT = br.ROOT
+# names of the originals as they appear in the Drive folder
+DRIVE_NAMES = {f["name"]: f["drive_title"] for f in __import__("json").load(open(os.path.join(br.ROOT, "footage", "manifest.json")))["files"]}
 FPS = 30
 
 
@@ -101,8 +103,9 @@ def main():
                           in_f, in_f + (end - start), file_el(fid, f"{name}.mp4", f"media/{name}.mp4", dur_f, 1080, 1920)))
         # the same cut on the untouched 4K original (50 fps source, whole clip available)
         ofid = f"orig-{sh['clip']}"
+        oname = DRIVE_NAMES.get(sh["clip"], f"{sh['clip']}.MP4")
         oxml = f'<file id="{ofid}"/>' if ofid in files_seen else file_el(
-            ofid, f"{sh['clip']}.MP4", f"{sh['clip']}.MP4", int(round(src_dur * 50)), 2160, 3840, rate=50, audio=True)
+            ofid, oname, oname, int(round(src_dur * 50)), 2160, 3840, rate=50, audio=True)
         files_seen[ofid] = True
         oin = int(round(sh["in_s"] * 50))
         v1_4k.append(clip_el(f"o-{name}", f"{k:02d} {name} ({sh['clip']})", start, end, oin,
