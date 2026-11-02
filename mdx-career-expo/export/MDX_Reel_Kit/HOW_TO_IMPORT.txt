@@ -1,0 +1,53 @@
+MDX Global Futures Festival reel - editing kit
+================================================
+
+Sequence: 1080 x 1920 (vertical), 30 fps, 26.1 s. Cuts land on the 120 BPM beat of the temporary music.
+
+WHAT'S INSIDE
+  MDX_Reel_Premiere.xml              Premiere Pro / DaVinci Resolve timeline on the stabilized shots
+  MDX_Reel_Premiere_4K_originals.xml Same cut on your untouched 4K camera files (whole clips available)
+  media/                             Stabilized shots (2 s of extra footage on each side of every cut),
+                                     title-overlay.mov (transparent), allegiance-outro.mp4, music.wav,
+                                     reference-render.mp4 (the finished cut, for comparison)
+  CapCut/                            Every shot cut to its exact length, numbered in timeline order,
+                                     plus title-overlay.mov and music.wav
+
+PREMIERE PRO (recommended)
+  1. Unzip the kit somewhere permanent, keeping the folders together.
+  2. File > Import > MDX_Reel_Premiere.xml. A bin with the sequence appears.
+  3. If Premiere asks to "Link Media", point it at any file in the media/ folder; it finds the rest.
+  4. Open the sequence. Tracks:
+       V1  shots in order, then the Allegiance logo outro
+       V2  title card (transparent overlay)
+       V3  reference render, switched OFF; turn it on to compare with the finished cut
+       A1  music
+  5. Every shot has 2 s of handles: drag its edges or use the Slip tool (Y) to move the moment.
+     DaVinci Resolve: File > Import > Timeline > select the same XML.
+
+  4K ORIGINALS VERSION
+  MDX_Reel_Premiere_4K_originals.xml places the same cut on your camera files (C9194.MP4 ... and
+  "Sequence 03_1.mp4" from the Drive folder), scaled to 50% to fill the vertical frame. When Premiere asks
+  to link media, point it to the folder with your downloaded originals. These are NOT stabilized: select
+  the clips and add Effects > Distort > Warp Stabilizer (Smoothness 20-30%, Method: Position, Scale,
+  Rotation, Framing: Stabilize, Crop, Auto-scale).
+
+CAPCUT
+  CapCut cannot import a timeline file, so the kit has the shots ready in order:
+  1. New project, set ratio 9:16.
+  2. Import everything in the CapCut/ folder. Select clips 01 ... 28 (sorted by name) and drag them to the
+     main track together; they land in the right order with the right lengths.
+  3. Drag music.wav to the audio track at 0:00, and title-overlay.mov to an overlay track at 0:00.
+  Note: these pieces have no extra footage. To adjust a moment, re-import the longer version of that shot
+  from media/ (same name without the number) and trim it.
+
+NOT CARRIED OVER (re-create if you want them)
+  Timeline files can't carry the animated moves, so they come in as plain cuts:
+  - 0:01.5  zoom punch from the wide walk into the first close-up
+  - 0:04.0  whip pan into the crowded corridor
+  - 0:09.0  white flash into the booth (Premiere: "Dip to White", 6 frames; CapCut: "Flash")
+  - slow push-ins on the opening wide shot, the logo and the group photo (Scale 100 -> 106)
+  Use reference-render.mp4 to match them.
+
+MUSIC
+  music.wav is the temporary track from your reference reel, cut once at 0:09.0 (the second music clip
+  starts at 21.51 s into the file). Replace it with your Envato track.

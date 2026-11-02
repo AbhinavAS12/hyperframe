@@ -3,3 +3,6 @@ footage/*.part
 snapshots/
 renders/work-*/
 .hyperframes/artifacts/
+export/MDX_Reel_Kit/media/
+export/MDX_Reel_Kit/CapCut/
+export/*.zip
