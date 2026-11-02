@@ -7,3 +7,5 @@ export/MDX_Reel_Kit/media/
 export/MDX_Reel_Kit/CapCut/
 export/*.zip
 __pycache__/
+renders/work-*/
+renders/.*hf-transaction*/
