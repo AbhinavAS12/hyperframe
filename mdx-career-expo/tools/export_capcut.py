@@ -104,12 +104,26 @@ def main():
                                            source_timerange=cc.Timerange(us(m["media_start_s"]), us(me - ms))))
     script.save()
 
-    # point every material at the folder the person will keep the media in
+    # mark every video as a LOCAL file (a filled material_id with no local_material_id reads as cloud media,
+    # which CapCut for Mac then tries to download), then point every material at the person's media folder
     draft = os.path.join(args.out, args.name, "draft_content.json")
+    d = json.load(open(draft, encoding="utf-8"))
+    for v in d["materials"]["videos"]:
+        v["local_material_id"] = v.get("local_material_id") or v["id"]
+        v["material_id"] = ""
+        v["source_platform"] = 0
+        v["category_name"] = "local"
+    json.dump(d, open(draft, "w", encoding="utf-8"), ensure_ascii=False)
     text = open(draft, encoding="utf-8").read()
     root = args.media_root.rstrip("/")
     text = text.replace(media.replace("\\", "/") + "/", root + "/").replace(media + "/", root + "/")
     open(draft, "w", encoding="utf-8").write(text)
+    # CapCut for Mac reads the timeline from draft_info.json (Windows: draft_content.json): write both
+    shutil.copy(draft, os.path.join(args.out, args.name, "draft_info.json"))
+    meta = os.path.join(args.out, args.name, "draft_meta_info.json")
+    m = json.load(open(meta, encoding="utf-8"))
+    m["draft_name"] = args.name
+    json.dump(m, open(meta, "w", encoding="utf-8"), ensure_ascii=False)
     print(f"draft {draft}: {len(segs)} shots, media root {root}")
 
 
