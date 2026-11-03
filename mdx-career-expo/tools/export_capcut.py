@@ -18,6 +18,7 @@ import build_reel as br  # noqa: E402
 import pycapcut as cc  # noqa: E402
 
 US = 1_000_000
+DRIVE_NAMES = {f["name"]: f["drive_title"] for f in json.load(open(os.path.join(br.ROOT, "footage", "manifest.json")))["files"]}
 
 
 def us(t):
@@ -30,6 +31,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--name", default="MDX_Reel")
     ap.add_argument("--media-root", default="C:/MDX_Reel_CapCut/media")
+    ap.add_argument("--originals", help="build on the untouched camera originals in this local folder (named as on "
+                    "Drive, e.g. C9194.MP4); the shots are then not stabilized and have no baked looks")
     args = ap.parse_args()
     edit = br.load_edit()
     clk, scenes = br.plan(edit)
@@ -54,7 +57,11 @@ def main():
         for sh in sc["shots_resolved"]:
             clip = sh["clip"]
             path = os.path.join(media, f"{clip}.mp4")
-            if sh.get("radial_blur"):
+            if args.originals:
+                path = os.path.join(media, DRIVE_NAMES.get(clip, f"{clip}.MP4"))
+                if not os.path.exists(path):
+                    os.symlink(os.path.join(os.path.abspath(args.originals), f"{clip}.MP4"), path)
+            elif sh.get("radial_blur"):
                 look = os.path.join(media, f"{clip}_look.mp4")
                 if not os.path.exists(look):
                     print(f"bake radial blur into {os.path.basename(look)}", flush=True)
@@ -63,18 +70,23 @@ def main():
             mat = materials.setdefault(path, cc.VideoMaterial(path))
             start, dur = sh["abs_start"], sh["abs_end"] - sh["abs_start"]
             rate = sh.get("rate", 1.0)
+            # a landscape original fills the vertical frame (CapCut fits it inside first)
+            base = 1.0
+            if mat.width > mat.height:
+                base = round((1920 / 1080) * (mat.width / mat.height), 4)
             seg = cc.VideoSegment(mat, cc.Timerange(us(start), us(dur)),
-                                  source_timerange=cc.Timerange(us(sh["in_s"]), us(dur * rate)), speed=rate)
+                                  source_timerange=cc.Timerange(us(sh["in_s"]), us(dur * rate)), speed=rate,
+                                  clip_settings=cc.ClipSettings(scale_x=base, scale_y=base))
             # optical zoom on every shot, the slow push on top where the cut has one
             push = sh.get("move", {}).get("to", 1.0)
             if not sh.get("no_zoom"):
-                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, 0, 1.0)
-                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(oz_dur), oz_scale)
+                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, 0, base)
+                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(oz_dur), base * oz_scale)
                 if push != 1.0:
-                    seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(dur) - 1, oz_scale * push)
+                    seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(dur) - 1, base * oz_scale * push)
             elif push != 1.0:
-                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, 0, 1.0)
-                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(dur) - 1, push)
+                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, 0, base)
+                seg.add_keyframe(cc.KeyframeProperty.uniform_scale, us(dur) - 1, base * push)
             if sh.get("blur_in"):
                 seg.add_animation(cc.IntroType.Focus, duration=us(sh["blur_in"]))
             segs.append((sh, seg))
