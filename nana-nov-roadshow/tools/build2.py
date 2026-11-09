@@ -214,7 +214,7 @@ write("captions.html", comp("captions", cap_css, "\n".join(cap_html), "\n".join(
 
 # ---------------------------------------------------------------- intro tag
 write("intro.html", comp("intro", """
-    #intro-tag { position: absolute; left: 0; right: 0; top: 196px; display: flex; justify-content: center; }
+    #intro-tag { position: absolute; left: 0; right: 0; top: 760px; display: flex; justify-content: center; }
     #intro-pill {
       display: flex; flex-direction: column; align-items: center; gap: 6px;
       padding: 20px 44px 22px; border-radius: 26px;
