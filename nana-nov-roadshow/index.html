@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="53.25" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="54.51" data-width="1080" data-height="1920">
       <div id="shot1" class="shot" style="z-index:1">
         <video id="v1" class="clip" src="assets/shots/s1.mp4" data-start="0.0" data-duration="10.0333" data-track-index="0" muted playsinline></video>
       </div>
@@ -30,17 +30,19 @@
         <video id="v5" class="clip" src="assets/shots/s5.mp4" data-start="40.7667" data-duration="8.9" data-track-index="0" muted playsinline></video>
       </div>
       <audio id="voice" src="assets/audio/voice.wav" data-start="0" data-duration="49.667" data-track-index="5"></audio>
-      <audio id="music" src="assets/audio/music.mp3" data-start="0" data-duration="53.25" data-track-index="6" data-volume="1"></audio>
+      <audio id="music" src="assets/audio/music_outro.mp3" data-start="0" data-duration="54.51" data-track-index="6" data-volume="1"></audio>
       <audio id="sfx1" src="assets/audio/whoosh.wav" data-start="9.413" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
       <audio id="sfx2" src="assets/audio/whoosh.wav" data-start="22.847" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
       <audio id="sfx3" src="assets/audio/whoosh.wav" data-start="34.313" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
       <audio id="sfx4" src="assets/audio/whoosh.wav" data-start="38.98" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
       <audio id="sfx5" src="assets/audio/whoosh.wav" data-start="40.98" data-duration="0.75" data-track-index="7" data-volume="0.22"></audio>
+      <div id="outro-wrap" class="shot" style="z-index:40">
+        <video id="vout" class="clip" src="assets/outro/outro.mp4" data-start="49.35" data-duration="5.16" data-track-index="0" muted playsinline></video>
+      </div>
       <div id="intro" data-composition-id="intro" data-composition-src="compositions/intro.html" data-start="0" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:20"></div>
       <div id="date-card" data-composition-id="date-card" data-composition-src="compositions/date-card.html" data-start="35.55" data-duration="3.15" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:20"></div>
       <div id="venue" data-composition-id="venue" data-composition-src="compositions/venue.html" data-start="39.2" data-duration="2.4" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:15"></div>
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="49.666666666666664" data-track-index="4" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:30"></div>
-      <div id="end-card" data-composition-id="end-card" data-composition-src="compositions/end-card.html" data-start="49.35" data-duration="3.9" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:40"></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
@@ -62,6 +64,8 @@
       tl.to("#shot5", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 40.767);
       tl.to("#shot5", { scale: 1, duration: 0.8, ease: "power2.out" }, 40.767);
       tl.to("#shot4", { scale: 1.025, duration: 0.4, ease: "power1.in" }, 40.767);
+      gsap.set("#outro-wrap", { opacity: 0 });
+      tl.to("#outro-wrap", { opacity: 1, duration: 0.35, ease: "power1.inOut" }, 49.35);
       window.__timelines["main"] = tl;
     </script>
   </body>

@@ -396,7 +396,8 @@ for st, du, p in cap:
 # ---------------------------------------------------------------- text scale + placement
 # All type (and the boxes around it) at TEXT_SCALE of the original design,
 # subtitles raised to the lower-middle of the frame.
-TEXT_SCALE = 0.6
+# "large" keeps the original (approved v6) type size and placement.
+TEXT_SCALE = 1.0 if "large" in sys.argv[4:] else 0.6
 SCALED_PROPS = ("font-size", "padding", "border-radius", "gap", "margin", "margin-top",
                 "margin-right", "text-shadow", "width")
 
@@ -415,7 +416,7 @@ def scale_css(text):
         out.append("".join(parts))
     return "\n".join(out)
 
-for n in os.listdir(os.path.join(P, "compositions")):
+for n in (os.listdir(os.path.join(P, "compositions")) if TEXT_SCALE != 1.0 else []):
     fp = os.path.join(P, "compositions", n)
     t = open(fp, encoding="utf-8").read()
     head, sep, rest = t.partition("<style>")
@@ -433,9 +434,10 @@ def patch(path, pairs):
         t = t.replace(a, b)
     open(path, "w", encoding="utf-8").write(t)
 C = lambda n: os.path.join(P, "compositions", n)
-patch(C("captions.html"), [("top: 1180px;", "top: 1075px;")])
-patch(C("intro.html"), [("top: 745px;", "top: 772px;")])
-patch(C("end-card.html"), [("top: 470px;", "top: 750px;")])
+if TEXT_SCALE != 1.0:
+    patch(C("captions.html"), [("top: 1180px;", "top: 1075px;")])
+    patch(C("intro.html"), [("top: 745px;", "top: 772px;")])
+    patch(C("end-card.html"), [("top: 470px;", "top: 750px;")])
 
 # ---------------------------------------------------------------- square (1:1) variant
 # Usage: add a 4th argument "square" to re-lay the same edit out at 1080x1080.
@@ -465,28 +467,30 @@ if len(sys.argv) > 4 and sys.argv[4] == "square":
     patch(C("venue.html"), [("top: 210px;", "top: 110px;")])
     patch(C("end-card.html"), [("top: 750px;", "top: 330px;")])
 
-    # Brand outro clip replaces the text end card (square only, "outro" arg).
-    if "outro" in sys.argv[5:]:
-        OUT_DUR = 5.16
-        new_total = round(END_START + OUT_DUR, 2)
-        ip = os.path.join(P, "index.html")
-        t = open(ip, encoding="utf-8").read()
-        t = re.sub(r'\n\s*<div id="end-card"[^\n]*</div>', "", t)
-        t = t.replace(f'data-duration="{TOTAL}" data-width', f'data-duration="{new_total}" data-width')
-        t = t.replace(f'src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL}"',
-                      f'src="assets/audio/music_outro.mp3" data-start="0" data-duration="{new_total}"')
-        t = t.replace('      <div id="intro"',
-                      '      <div id="outro-wrap" class="shot" style="z-index:40">\n'
-                      f'        <video id="vout" class="clip" src="assets/outro/outro.mp4" data-start="{END_START}" '
-                      f'data-duration="{OUT_DUR}" data-track-index="0" muted playsinline></video>\n      </div>\n'
-                      '      <div id="intro"', 1)
-        t = t.replace("    </style>", "      #vout { object-position: 50% 72.6%; }\n    </style>", 1)
-        t = t.replace('      window.__timelines["main"] = tl;',
-                      '      gsap.set("#outro-wrap", { opacity: 0 });\n'
-                      f'      tl.to("#outro-wrap", {{ opacity: 1, duration: 0.35, ease: "power1.inOut" }}, {END_START});\n'
-                      '      window.__timelines["main"] = tl;')
-        assert "end-card" not in t and "music_outro" in t and "vout" in t and f'data-duration="{new_total}"' in t
-        open(ip, "w", encoding="utf-8").write(t)
-        os.remove(C("end-card.html"))
-        print("brand outro applied, total", new_total)
     print("square layout applied")
+
+# Brand outro clip replaces the text end card (any format, "outro" arg).
+if "outro" in sys.argv[4:]:
+    OUT_DUR = 5.16
+    new_total = round(END_START + OUT_DUR, 2)
+    ip = os.path.join(P, "index.html")
+    t = open(ip, encoding="utf-8").read()
+    t = re.sub(r'\n\s*<div id="end-card"[^\n]*</div>', "", t)
+    t = t.replace(f'data-duration="{TOTAL}" data-width', f'data-duration="{new_total}" data-width')
+    t = t.replace(f'src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL}"',
+                  f'src="assets/audio/music_outro.mp3" data-start="0" data-duration="{new_total}"')
+    t = t.replace('      <div id="intro"',
+                  '      <div id="outro-wrap" class="shot" style="z-index:40">\n'
+                  f'        <video id="vout" class="clip" src="assets/outro/outro.mp4" data-start="{END_START}" '
+                  f'data-duration="{OUT_DUR}" data-track-index="0" muted playsinline></video>\n      </div>\n'
+                  '      <div id="intro"', 1)
+    if "square" in sys.argv[4:]:
+        t = t.replace("    </style>", "      #vout { object-position: 50% 72.6%; }\n    </style>", 1)
+    t = t.replace('      window.__timelines["main"] = tl;',
+                  '      gsap.set("#outro-wrap", { opacity: 0 });\n'
+                  f'      tl.to("#outro-wrap", {{ opacity: 1, duration: 0.35, ease: "power1.inOut" }}, {END_START});\n'
+                  '      window.__timelines["main"] = tl;')
+    assert "end-card" not in t and "music_outro" in t and "vout" in t and f'data-duration="{new_total}"' in t
+    open(ip, "w", encoding="utf-8").write(t)
+    os.remove(C("end-card.html"))
+    print("brand outro applied, total", new_total)
