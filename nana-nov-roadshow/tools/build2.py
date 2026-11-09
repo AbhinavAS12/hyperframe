@@ -353,7 +353,7 @@ variables = ('[{"id":"venuePhoto","type":"string","label":"Venue photo","default
 music = ""
 if os.path.exists(os.path.join(P, "assets", "audio", "music.mp3")):
     music = (f'      <audio id="music" src="assets/audio/music.mp3" data-start="0" data-duration="{TOTAL}" '
-             f'data-track-index="6" data-volume="0.12" data-fade-in="1" data-fade-out="1.5"></audio>\n')
+             f'data-track-index="6" data-volume="1"></audio>\n')
 
 root = f"""<!doctype html>
 <html lang="ja" data-composition-variables='{variables}'>
