@@ -1,7 +1,7 @@
 assets/clips/
 assets/shots/
 assets/audio/voice.wav
-assets/audio/music.*
+assets/audio/music*
 assets/images/
 renders/
 snapshots/
