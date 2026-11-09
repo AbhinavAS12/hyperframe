@@ -205,7 +205,7 @@ for i, (st, du, p) in enumerate(cap):
     fs = int(min(80, max(50, 900 / max(len(plain(p)), 1))))
     gid = f"cap-{i:02d}"
     # Full-body shots (first and last): lift the line up to hand height.
-    top = 775 if st < CUTS[1] else (815 if st >= CUTS[4] else None)
+    top = 885 if st < CUTS[1] else (815 if st >= CUTS[4] else None)
     pos = f' style="top:{top}px"' if top else ""
     cap_html.append(f'    <div id="{gid}" class="clip cap" data-start="{st}" data-duration="{du}"{pos}>'
                     f'<span class="cap-txt" style="font-size:{fs}px">{rich(p)}</span></div>')
@@ -217,7 +217,7 @@ write("captions.html", comp("captions", cap_css, "\n".join(cap_html), "\n".join(
 
 # ---------------------------------------------------------------- intro tag
 write("intro.html", comp("intro", """
-    #intro-tag { position: absolute; left: 0; right: 0; top: 560px; display: flex; justify-content: center; }
+    #intro-tag { position: absolute; left: 0; right: 0; top: 745px; display: flex; justify-content: center; }
     #intro-pill {
       display: flex; flex-direction: column; align-items: center; gap: 6px;
       padding: 20px 44px 22px; border-radius: 26px;
