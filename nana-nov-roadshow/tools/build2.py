@@ -393,6 +393,50 @@ print("mode", MODE, "total", TOTAL, "music", bool(music))
 for st, du, p in cap:
     print(f"{st:6.2f} +{du:4.2f}  {p}")
 
+# ---------------------------------------------------------------- text scale + placement
+# All type (and the boxes around it) at TEXT_SCALE of the original design,
+# subtitles raised to the lower-middle of the frame.
+TEXT_SCALE = 0.6
+SCALED_PROPS = ("font-size", "padding", "border-radius", "gap", "margin", "margin-top",
+                "margin-right", "text-shadow", "width")
+
+def scale_px(m):
+    v = float(m.group(1)) * TEXT_SCALE
+    return f"{max(1, round(v))}px"
+
+def scale_css(text):
+    out = []
+    for line in text.split("\n"):
+        parts = re.split(r"(;)", line)
+        for k, part in enumerate(parts):
+            prop = part.strip().split(":", 1)[0].strip().lstrip("{ ").split()[-1] if ":" in part else ""
+            if prop in SCALED_PROPS:
+                parts[k] = re.sub(r"(-?\d+(?:\.\d+)?)px", scale_px, part)
+        out.append("".join(parts))
+    return "\n".join(out)
+
+for n in os.listdir(os.path.join(P, "compositions")):
+    fp = os.path.join(P, "compositions", n)
+    t = open(fp, encoding="utf-8").read()
+    head, sep, rest = t.partition("<style>")
+    css, sep2, tail = rest.partition("</style>")
+    css = css.replace("\n{FONT_CSS}", "")
+    font_part, _, rule_part = css.partition("    #root {")
+    css = font_part + "    #root {" + scale_css(rule_part)
+    tail = re.sub(r'font-size:(\d+)px', lambda m: f"font-size:{round(int(m.group(1)) * TEXT_SCALE)}px", tail)
+    open(fp, "w", encoding="utf-8").write(head + sep + css + sep2 + tail)
+
+def patch(path, pairs):
+    t = open(path, encoding="utf-8").read()
+    for a, b in pairs:
+        assert a in t, (path, a)
+        t = t.replace(a, b)
+    open(path, "w", encoding="utf-8").write(t)
+C = lambda n: os.path.join(P, "compositions", n)
+patch(C("captions.html"), [("top: 1180px;", "top: 1075px;")])
+patch(C("intro.html"), [("top: 745px;", "top: 772px;")])
+patch(C("end-card.html"), [("top: 470px;", "top: 750px;")])
+
 # ---------------------------------------------------------------- square (1:1) variant
 # Usage: add a 4th argument "square" to re-lay the same edit out at 1080x1080.
 # The 9:16 footage is cropped 168 px from the top (object-position 50% 20%),
@@ -400,13 +444,6 @@ for st, du, p in cap:
 if len(sys.argv) > 4 and sys.argv[4] == "square":
     Y0 = 168
     SQ_CROP = {1: 60, 2: 168, 3: 168, 4: 120, 5: 168}
-    def patch(path, pairs):
-        t = open(path, encoding="utf-8").read()
-        for a, b in pairs:
-            assert a in t, (path, a)
-            t = t.replace(a, b)
-        open(path, "w", encoding="utf-8").write(t)
-    C = lambda n: os.path.join(P, "compositions", n)
     for n in os.listdir(os.path.join(P, "compositions")):
         patch(C(n), [('data-height="1920"', 'data-height="1080"')])
     patch(os.path.join(P, "index.html"), [
@@ -419,17 +456,12 @@ if len(sys.argv) > 4 and sys.argv[4] == "square":
                                    for k, y in SQ_CROP.items()) + "    </style>"),
     ])
     patch(C("captions.html"), [
-        ("top: 1180px;", "top: 860px;"),
-        ('style="top:885px"', f'style="top:{885 - SQ_CROP[1]}px"'),
+        ("top: 1075px;", "top: 645px;"),
+        ('style="top:885px"', 'style="top:765px"'),
         ('style="top:815px"', f'style="top:{815 - Y0}px"'),
     ])
-    patch(C("intro.html"), [("top: 745px;", f"top: {745 - SQ_CROP[1]}px;")])
-    patch(C("date-card.html"), [("top: 860px;", "top: 640px;")])
+    patch(C("intro.html"), [("top: 772px;", "top: 710px;")])
+    patch(C("date-card.html"), [("top: 860px;", "top: 470px;")])
     patch(C("venue.html"), [("top: 210px;", "top: 110px;")])
-    patch(C("end-card.html"), [
-        ("top: 470px;", "top: 150px;"),
-        ("font-size: 96px;", "font-size: 84px;"),
-        ("margin: 40px auto;", "margin: 28px auto;"),
-        ("margin-top: 60px;", "margin-top: 40px;"),
-    ])
+    patch(C("end-card.html"), [("top: 750px;", "top: 330px;")])
     print("square layout applied")
