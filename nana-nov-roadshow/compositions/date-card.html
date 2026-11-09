@@ -47,87 +47,46 @@
     #root {
       position: absolute;
       inset: 0;
-
       --navy: #0d1524;
       --gold: #d9b56a;
       --gold-hi: #f3d58e;
       --ink: #ffffff;
     }
 
+    #date-wrap { position: absolute; left: 0; right: 0; top: 860px; display: flex; justify-content: center; }
     #date-card {
-      position: absolute;
-      left: 90px;
-      right: 90px;
-      top: 790px;
-      padding: 34px 40px 40px;
-      border-radius: 34px;
-      background: rgba(13, 21, 36, 0.82);
-      border: 2px solid rgba(217, 181, 106, 0.8);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-      text-align: center;
+      padding: 22px 40px 26px; border-radius: 26px; text-align: center;
+      background: rgba(13, 21, 36, 0.82); border: 2px solid rgba(217, 181, 106, 0.8);
+      box-shadow: 0 20px 56px rgba(0, 0, 0, 0.4);
     }
-    #date-label {
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 700;
-      font-size: 38px;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-    }
-    #date-row {
-      margin-top: 8px;
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 22px;
-      color: var(--ink);
-    }
-    .date-num {
-      font-family: Montserrat, sans-serif;
-      font-weight: 700;
-      font-size: 132px;
-      letter-spacing: -0.02em;
-      line-height: 1;
-    }
-    .date-dow {
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 700;
-      font-size: 44px;
-      color: var(--gold-hi);
-    }
-    #date-amp {
-      font-family: Montserrat, sans-serif;
-      font-weight: 700;
-      font-size: 70px;
-      color: var(--gold);
-    }
-    #date-rule {
-      margin: 24px auto 0;
-      height: 6px;
-      width: 70%;
-      border-radius: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-hi));
-      transform-origin: left center;
-    }
+    #date-label { font-family: 'NotoJP', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: 0.3em; color: var(--gold); }
+    #date-row { margin-top: 4px; display: flex; align-items: baseline; justify-content: center; gap: 14px; color: var(--ink); }
+    .date-num { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 88px; letter-spacing: -0.02em; line-height: 1; }
+    .date-dow { font-family: 'NotoJP', sans-serif; font-weight: 700; font-size: 30px; color: var(--gold-hi); }
+    #date-amp { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 48px; color: var(--gold); }
+    #date-rule { margin: 16px auto 0; height: 4px; width: 70%; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); transform-origin: left center; }
 
   </style>
   <div id="root" data-composition-id="date-card" data-width="1080" data-height="1920">
-    <div id="date-card" class="clip" data-start="0" data-duration="2.9">
-      <div id="date-label">開催日</div>
-      <div id="date-row">
-        <div class="date-num" id="date-a">11.28</div><div class="date-dow">(土)</div>
-        <div id="date-amp">&amp;</div>
-        <div class="date-num" id="date-b">29</div><div class="date-dow">(日)</div>
+    <div id="date-wrap" class="clip" data-start="0" data-duration="3.15">
+      <div id="date-card">
+        <div id="date-label">開催日</div>
+        <div id="date-row">
+          <div class="date-num" id="date-a">11.28</div><div class="date-dow">(土)</div>
+          <div id="date-amp">&amp;</div>
+          <div class="date-num" id="date-b">29</div><div class="date-dow">(日)</div>
+        </div>
+        <div id="date-rule"></div>
       </div>
-      <div id="date-rule"></div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#date-card", { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 0);
-    tl.fromTo("#date-a", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.15);
-    tl.fromTo("#date-b", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.75);
+    tl.fromTo("#date-card", { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.6)" }, 0);
+    tl.fromTo("#date-a", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.15);
+    tl.fromTo("#date-b", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0.7);
     tl.fromTo("#date-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 0.4);
-    tl.to("#date-card", { opacity: 0, y: -24, duration: 0.3, ease: "power2.in" }, 2.58);
+    tl.to("#date-card", { opacity: 0, y: -18, duration: 0.3, ease: "power2.in" }, 2.83);
     window.__timelines["date-card"] = tl;
   </script>
 </template>

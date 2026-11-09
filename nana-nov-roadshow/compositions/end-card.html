@@ -47,74 +47,25 @@
     #root {
       position: absolute;
       inset: 0;
-
       --navy: #0d1524;
       --gold: #d9b56a;
       --gold-hi: #f3d58e;
       --ink: #ffffff;
     }
 
-    #end-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(110% 70% at 50% 35%, #1b2740 0%, #0d1524 55%, #070b14 100%);
-    }
-    #end-wrap {
-      position: absolute;
-      left: 80px;
-      right: 80px;
-      top: 470px;
-      text-align: center;
-      color: var(--ink);
-    }
-    #end-brand {
-      font-family: Montserrat, sans-serif;
-      font-weight: 700;
-      font-size: 40px;
-      letter-spacing: 0.24em;
-      color: var(--gold-hi);
-    }
-    #end-title {
-      margin-top: 26px;
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 900;
-      font-size: 96px;
-      line-height: 1.2;
-    }
-    #end-rule {
-      margin: 40px auto;
-      width: 260px;
-      height: 6px;
-      border-radius: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-hi));
-    }
-    .end-line {
-      white-space: nowrap;
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 700;
-      font-size: 46px;
-      line-height: 1.5;
-    }
-    .end-line .k {
-      color: var(--gold);
-      margin-right: 18px;
-    }
-    #end-cta {
-      margin-top: 60px;
-      display: inline-block;
-      padding: 22px 54px 26px;
-      border-radius: 60px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-hi));
-      color: #1a1408;
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 900;
-      font-size: 52px;
-    }
+    #end-bg { position: absolute; inset: 0; background: radial-gradient(110% 70% at 50% 35%, #1b2740 0%, #0d1524 55%, #070b14 100%); }
+    #end-wrap { position: absolute; left: 80px; right: 80px; top: 470px; text-align: center; color: var(--ink); }
+    #end-brand { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 40px; letter-spacing: 0.24em; color: var(--gold-hi); }
+    #end-title { margin-top: 26px; font-family: 'NotoJP', sans-serif; font-weight: 900; font-size: 96px; line-height: 1.2; }
+    #end-rule { margin: 40px auto; width: 260px; height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); }
+    .end-line { white-space: nowrap; font-family: 'NotoJP', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.5; }
+    .end-line .k { color: var(--gold); margin-right: 18px; }
+    #end-cta { margin-top: 60px; display: inline-block; padding: 22px 54px 26px; border-radius: 60px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); color: #1a1408; font-family: 'NotoJP', sans-serif; font-weight: 900; font-size: 52px; }
 
   </style>
   <div id="root" data-composition-id="end-card" data-width="1080" data-height="1920">
-    <div id="end-bg" class="clip" data-start="0" data-duration="3.6"></div>
-    <div id="end-wrap" class="clip" data-start="0" data-duration="3.6">
+    <div id="end-bg" class="clip" data-start="0" data-duration="3.9"></div>
+    <div id="end-wrap" class="clip" data-start="0" data-duration="3.9">
       <div id="end-brand">ALLEGIANCE × DAMAC</div>
       <div id="end-title">東京特別イベント</div>
       <div id="end-rule"></div>
@@ -126,12 +77,12 @@
   <script>
     const tl = gsap.timeline({ paused: true });
     tl.fromTo("#end-bg", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
-    tl.fromTo("#end-brand", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.2);
-    tl.fromTo("#end-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.35);
-    tl.fromTo("#end-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.6);
-    tl.fromTo("#end-date", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.75);
-    tl.fromTo("#end-venue", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.95);
-    tl.fromTo("#end-cta", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 1.2);
+    tl.fromTo("#end-brand", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.35);
+    tl.fromTo("#end-title", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.5);
+    tl.fromTo("#end-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.75);
+    tl.fromTo("#end-date", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.9);
+    tl.fromTo("#end-venue", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 1.1);
+    tl.fromTo("#end-cta", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 1.35);
     window.__timelines["end-card"] = tl;
   </script>
 </template>

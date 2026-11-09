@@ -1,61 +1,66 @@
 <!doctype html>
-<html lang="ja" data-composition-variables='[{"id":"venuePhoto","type":"string","label":"Venue photo","default":"assets/images/venue.jpg"},{"id":"venueName","type":"string","label":"Venue name","default":"銀座ブルガリタワー"},{"id":"introBrand","type":"string","label":"Intro brand line","default":"ALLEGIANCE × DAMAC"},{"id":"introSub","type":"string","label":"Intro sub line","default":"東京特別イベント 2026.11"}]'>
+<html lang="ja" data-composition-variables='[{"id":"venuePhoto","type":"string","label":"Venue photo","default":"assets/images/venue.jpg"},{"id":"introBrand","type":"string","label":"Intro brand line","default":"ALLEGIANCE × DAMAC"},{"id":"introSub","type":"string","label":"Intro sub line","default":"東京特別イベント 2026.11"}]'>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        width: 1080px;
-        height: 1920px;
-        overflow: hidden;
-        background: #0d1524;
-      }
-      #root {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: #0d1524;
-      }
-      video.clip {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0d1524; }
+      #root { position: relative; width: 100%; height: 100%; background: #0d1524; }
+      .shot { position: absolute; inset: 0; overflow: hidden; }
+      .shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="57.9"
-      data-width="1080"
-      data-height="1920"
-    >
-      <video id="c1" class="clip" src="assets/clips/c1.mp4" data-start="0.0" data-duration="10.6" data-track-index="0" data-has-audio="true" playsinline></video>
-      <video id="c2" class="clip" src="assets/clips/c2.mp4" data-start="10.6" data-duration="14.4" data-track-index="0" data-has-audio="true" playsinline></video>
-      <video id="c3" class="clip" src="assets/clips/c3.mp4" data-start="25.0" data-duration="12.3" data-track-index="0" data-has-audio="true" playsinline></video>
-      <video id="c4" class="clip" src="assets/clips/c4.mp4" data-start="37.3" data-duration="7.3" data-track-index="0" data-has-audio="true" playsinline></video>
-      <video id="c5" class="clip" src="assets/clips/c5.mp4" data-start="44.6" data-duration="9.7" data-track-index="0" data-has-audio="true" playsinline></video>
-      <div id="intro" data-composition-id="intro" data-composition-src="compositions/intro.html" data-start="0" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="date-card" data-composition-id="date-card" data-composition-src="compositions/date-card.html" data-start="38.45" data-duration="2.9" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="venue-card" data-composition-id="venue-card" data-composition-src="compositions/venue-card.html" data-start="41.3" data-duration="4.2" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:3"></div>
-      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="54.3" data-track-index="4" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:4"></div>
-      <div id="end-card" data-composition-id="end-card" data-composition-src="compositions/end-card.html" data-start="54.3" data-duration="3.6" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:5"></div>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="53.25" data-width="1080" data-height="1920">
+      <div id="shot1" class="shot" style="z-index:1">
+        <video id="v1" class="clip" src="assets/shots/s1.mp4" data-start="0.0" data-duration="10.0333" data-track-index="0" muted playsinline></video>
+      </div>
+      <div id="shot2" class="shot" style="z-index:2">
+        <video id="v2" class="clip" src="assets/shots/s2.mp4" data-start="9.6333" data-duration="13.8333" data-track-index="0" muted playsinline></video>
+      </div>
+      <div id="shot3" class="shot" style="z-index:3">
+        <video id="v3" class="clip" src="assets/shots/s3.mp4" data-start="23.0667" data-duration="11.8667" data-track-index="0" muted playsinline></video>
+      </div>
+      <div id="shot4" class="shot" style="z-index:4">
+        <video id="v4" class="clip" src="assets/shots/s4.mp4" data-start="34.5333" data-duration="6.6333" data-track-index="0" muted playsinline></video>
+      </div>
+      <div id="shot5" class="shot" style="z-index:5">
+        <video id="v5" class="clip" src="assets/shots/s5.mp4" data-start="40.7667" data-duration="8.9" data-track-index="0" muted playsinline></video>
+      </div>
+      <audio id="voice" src="assets/audio/voice.wav" data-start="0" data-duration="49.667" data-track-index="5"></audio>
+      <audio id="sfx1" src="assets/audio/whoosh.wav" data-start="9.413" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
+      <audio id="sfx2" src="assets/audio/whoosh.wav" data-start="22.847" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
+      <audio id="sfx3" src="assets/audio/whoosh.wav" data-start="34.313" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
+      <audio id="sfx4" src="assets/audio/whoosh.wav" data-start="38.98" data-duration="0.75" data-track-index="7" data-volume="0.32"></audio>
+      <audio id="sfx5" src="assets/audio/whoosh.wav" data-start="40.98" data-duration="0.75" data-track-index="7" data-volume="0.22"></audio>
+      <div id="intro" data-composition-id="intro" data-composition-src="compositions/intro.html" data-start="0" data-duration="5" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:20"></div>
+      <div id="date-card" data-composition-id="date-card" data-composition-src="compositions/date-card.html" data-start="35.55" data-duration="3.15" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:20"></div>
+      <div id="venue" data-composition-id="venue" data-composition-src="compositions/venue.html" data-start="39.2" data-duration="2.4" data-track-index="3" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:15"></div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="49.666666666666664" data-track-index="4" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:30"></div>
+      <div id="end-card" data-composition-id="end-card" data-composition-src="compositions/end-card.html" data-start="49.35" data-duration="3.9" data-track-index="5" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:40"></div>
     </div>
     <script>
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
+      gsap.set("#shot5", { opacity: 0, scale: 1.045 });
+      gsap.set("#shot4", { opacity: 0, scale: 1.045 });
+      gsap.set("#shot3", { opacity: 0, scale: 1.045 });
+      gsap.set("#shot2", { opacity: 0, scale: 1.045 });
+      gsap.set("#shot1", { opacity: 1, scale: 1 });
+      tl.to("#shot2", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 9.633);
+      tl.to("#shot2", { scale: 1, duration: 0.8, ease: "power2.out" }, 9.633);
+      tl.to("#shot1", { scale: 1.025, duration: 0.4, ease: "power1.in" }, 9.633);
+      tl.to("#shot3", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 23.067);
+      tl.to("#shot3", { scale: 1, duration: 0.8, ease: "power2.out" }, 23.067);
+      tl.to("#shot2", { scale: 1.025, duration: 0.4, ease: "power1.in" }, 23.067);
+      tl.to("#shot4", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 34.533);
+      tl.to("#shot4", { scale: 1, duration: 0.8, ease: "power2.out" }, 34.533);
+      tl.to("#shot3", { scale: 1.025, duration: 0.4, ease: "power1.in" }, 34.533);
+      tl.to("#shot5", { opacity: 1, duration: 0.4, ease: "power1.inOut" }, 40.767);
+      tl.to("#shot5", { scale: 1, duration: 0.8, ease: "power2.out" }, 40.767);
+      tl.to("#shot4", { scale: 1.025, duration: 0.4, ease: "power1.in" }, 40.767);
       window.__timelines["main"] = tl;
     </script>
   </body>

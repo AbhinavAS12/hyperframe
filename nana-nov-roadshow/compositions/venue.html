@@ -47,82 +47,39 @@
     #root {
       position: absolute;
       inset: 0;
-
       --navy: #0d1524;
       --gold: #d9b56a;
       --gold-hi: #f3d58e;
       --ink: #ffffff;
     }
 
-    #venue-card {
-      position: absolute;
-      left: 90px;
-      right: 90px;
-      top: 780px;
-      border-radius: 34px;
-      overflow: hidden;
-      background: rgba(13, 21, 36, 0.86);
-      border: 2px solid rgba(217, 181, 106, 0.8);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-    }
-    #venue-photo-wrap {
-      position: relative;
-      height: 520px;
-      overflow: hidden;
-      background: radial-gradient(120% 90% at 50% 0%, #2a3550 0%, #121a2b 60%, #0b111d 100%);
-    }
-    #venue-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    #venue-text {
-      padding: 26px 40px 34px;
-      text-align: center;
-    }
-    #venue-label {
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 700;
-      font-size: 36px;
-      letter-spacing: 0.3em;
-      color: var(--gold);
-    }
-    #venue-name {
-      margin-top: 4px;
-      font-family: 'NotoJP', sans-serif;
-      font-weight: 900;
-      font-size: 76px;
-      color: var(--ink);
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-    #venue-en {
-      margin-top: 6px;
-      font-family: Montserrat, sans-serif;
-      font-weight: 700;
-      font-size: 28px;
-      letter-spacing: 0.26em;
-      color: rgba(255, 255, 255, 0.7);
-    }
+    #venue-frame { position: absolute; inset: 0; overflow: hidden; background: #0d1524; }
+    #venue-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+    #venue-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,12,20,0.55) 0%, rgba(8,12,20,0) 26%, rgba(8,12,20,0) 55%, rgba(8,12,20,0.5) 100%); }
+    #venue-label { position: absolute; left: 0; right: 0; top: 210px; text-align: center; }
+    #venue-k { font-family: 'NotoJP', sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.32em; color: var(--gold-hi); }
+    #venue-en { margin-top: 8px; font-family: Montserrat, sans-serif; font-weight: 700; font-size: 34px; letter-spacing: 0.26em; color: #fff; text-shadow: 0 3px 12px rgba(0,0,0,0.6); }
+    #venue-rule { margin: 16px auto 0; width: 160px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-hi)); }
 
   </style>
-  <div id="root" data-composition-id="venue-card" data-width="1080" data-height="1920">
-    <div id="venue-card" class="clip" data-start="0" data-duration="4.2">
-      <div id="venue-text">
-        <div id="venue-label">会場</div>
-        <div id="venue-name" data-var-text="venueName">銀座ブルガリタワー</div>
-        <div id="venue-en">BVLGARI GINZA TOWER · TOKYO</div>
+  <div id="root" data-composition-id="venue" data-width="1080" data-height="1920">
+    <div id="venue-frame" class="clip" data-start="0" data-duration="2.4">
+      <img id="venue-photo" src="assets/images/venue.jpg" data-var-src="venuePhoto" alt="銀座ブルガリタワー" />
+      <div id="venue-shade"></div>
+      <div id="venue-label">
+        <div id="venue-k">会場</div>
+        <div id="venue-en">BVLGARI GINZA TOWER</div>
+        <div id="venue-rule"></div>
       </div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#venue-card", { opacity: 0, y: 50, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.4)" }, 0);
-    tl.fromTo("#venue-name", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 0.25);
-    tl.fromTo("#venue-en", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.45);
-    tl.to("#venue-card", { opacity: 0, y: -24, duration: 0.35, ease: "power2.in" }, 3.83);
-    window.__timelines["venue-card"] = tl;
+    tl.fromTo("#venue-frame", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.inOut" }, 0);
+    tl.fromTo("#venue-photo", { scale: 1.12 }, { scale: 1.0, duration: 2.4, ease: "power1.out" }, 0);
+    tl.fromTo("#venue-label", { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0.25);
+    tl.fromTo("#venue-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0.4);
+    tl.to("#venue-frame", { opacity: 0, duration: 0.4, ease: "power2.inOut" }, 2.0);
+    window.__timelines["venue"] = tl;
   </script>
 </template>
