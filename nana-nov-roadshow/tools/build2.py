@@ -392,3 +392,44 @@ open(os.path.join(P, "index.html"), "w", encoding="utf-8").write(root)
 print("mode", MODE, "total", TOTAL, "music", bool(music))
 for st, du, p in cap:
     print(f"{st:6.2f} +{du:4.2f}  {p}")
+
+# ---------------------------------------------------------------- square (1:1) variant
+# Usage: add a 4th argument "square" to re-lay the same edit out at 1080x1080.
+# The 9:16 footage is cropped 168 px from the top (object-position 50% 20%),
+# and every overlay is moved by hand for the shorter frame.
+if len(sys.argv) > 4 and sys.argv[4] == "square":
+    Y0 = 168
+    SQ_CROP = {1: 60, 2: 168, 3: 168, 4: 120, 5: 168}
+    def patch(path, pairs):
+        t = open(path, encoding="utf-8").read()
+        for a, b in pairs:
+            assert a in t, (path, a)
+            t = t.replace(a, b)
+        open(path, "w", encoding="utf-8").write(t)
+    C = lambda n: os.path.join(P, "compositions", n)
+    for n in os.listdir(os.path.join(P, "compositions")):
+        patch(C(n), [('data-height="1920"', 'data-height="1080"')])
+    patch(os.path.join(P, "index.html"), [
+        ('content="width=1080, height=1920"', 'content="width=1080, height=1080"'),
+        ("height: 1920px;", "height: 1080px;"),
+        ('data-height="1920"', 'data-height="1080"'),
+        ("object-fit: cover; }", f"object-fit: cover; object-position: 50% {Y0 / 840 * 100:.2f}%; }}"),
+        # per-shot crop from the top (px of the 1920 frame): keep headroom on each shot
+        ("    </style>", "".join(f"      #v{k} {{ object-position: 50% {y / 840 * 100:.2f}%; }}\n"
+                                   for k, y in SQ_CROP.items()) + "    </style>"),
+    ])
+    patch(C("captions.html"), [
+        ("top: 1180px;", "top: 860px;"),
+        ('style="top:885px"', f'style="top:{885 - SQ_CROP[1]}px"'),
+        ('style="top:815px"', f'style="top:{815 - Y0}px"'),
+    ])
+    patch(C("intro.html"), [("top: 745px;", f"top: {745 - SQ_CROP[1]}px;")])
+    patch(C("date-card.html"), [("top: 860px;", "top: 640px;")])
+    patch(C("venue.html"), [("top: 210px;", "top: 110px;")])
+    patch(C("end-card.html"), [
+        ("top: 470px;", "top: 150px;"),
+        ("font-size: 96px;", "font-size: 84px;"),
+        ("margin: 40px auto;", "margin: 28px auto;"),
+        ("margin-top: 60px;", "margin-top: 40px;"),
+    ])
+    print("square layout applied")
