@@ -17,6 +17,11 @@
         src: url("assets/fonts/tajawal-latin-800-normal.woff2") format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
+      @font-face { font-family: "Montserrat"; font-weight: 400; font-style: normal; src: url("assets/fonts/montserrat-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; font-weight: 500; font-style: normal; src: url("assets/fonts/montserrat-latin-500-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; font-weight: 700; font-style: normal; src: url("assets/fonts/montserrat-latin-700-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-latin-800-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Montserrat"; font-weight: 800; font-style: italic; src: url("assets/fonts/montserrat-latin-800-italic.woff2") format("woff2"); }
       body { margin: 0; background: #000; }
       #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
       #root .clip { position: absolute; inset: 0; }
@@ -44,8 +49,20 @@
       .cue .w.hl { color: #ffe11a; font-size: 105px; }
       .cue .w.lat { font-size: 85px; }
       .cue .w.hl.lat { font-size: 99px; }
-      /* English version: left-to-right, Latin glyphs at the same 90 / 105px scale. */
-      .cue.en { direction: ltr; gap: 0 24px; letter-spacing: -0.005em; }
+      /* English version — type hierarchy from the ZUKHRI Aleef reference: Montserrat ExtraBold
+         yellow for key facts (italic for figures and places), Bold white for emphasis,
+         Regular for body copy, Medium small for connectors. Lines stack in a tight block. */
+      .cue.en { direction: ltr; flex-direction: column; align-items: center; gap: 0;
+        top: 900px; font-family: "Montserrat", sans-serif; line-height: 1.02; letter-spacing: -0.01em; }
+      .cue.en .ln { display: flex; justify-content: center; align-items: baseline; gap: 0 16px;
+        overflow: hidden; padding: 4px 14px 10px; margin: -6px 0; }
+      .cue.en .w { transform-origin: 50% 100%; white-space: nowrap; flex-shrink: 0; }
+      .cue.en.sm .w.k { font-size: 72px; }
+      .cue.en .w.r  { font-weight: 400; font-size: 58px; color: #fff; }
+      .cue.en .w.c  { font-weight: 500; font-size: 46px; color: #fff; }
+      .cue.en .w.b  { font-weight: 700; font-size: 66px; color: #fff; }
+      .cue.en .w.k  { font-weight: 800; font-size: 90px; color: #ffe11a; letter-spacing: -0.02em; }
+      .cue.en .w.ki { font-weight: 800; font-style: italic; font-size: 96px; color: #ffe11a; letter-spacing: -0.025em; }
     </style>
   </head>
   <body>
@@ -112,7 +129,33 @@
       const subs = document.getElementById("subs");
       ((LANG === "en" ? window.CAPTIONS_EN : window.CAPTIONS) || []).forEach((cue, i) => {
         const el = document.createElement("div");
-        el.className = "cue" + (LANG === "en" ? " en" : "");
+        el.className = "cue" + (LANG === "en" ? " en" : "") + (cue.sm ? " sm" : "");
+        el.id = "cue-" + i;
+        if (cue.lines) {
+          // Reference-style stacked lines: each word slides up out of its line mask as it is spoken.
+          cue.lines.forEach((row, r) => {
+            const ln = document.createElement("div");
+            ln.className = "ln";
+            row.forEach((w, j) => {
+              const s = document.createElement("span");
+              s.className = "w " + w.c;
+              s.id = `cue-${i}-l${r}-w-${j}`;
+              s.textContent = w.w;
+              ln.appendChild(s);
+            });
+            el.appendChild(ln);
+          });
+          subs.appendChild(el);
+          tl.set(el, { opacity: 1 }, cue.start);
+          tl.set(el, { opacity: 0 }, cue.end);
+          cue.lines.forEach((row, r) => row.forEach((w, j) => {
+            tl.fromTo(`#cue-${i}-l${r}-w-${j}`,
+              { opacity: 0, yPercent: 85 },
+              { opacity: 1, yPercent: 0, duration: 0.24, ease: "back.out(1.4)", immediateRender: false },
+              Math.max(cue.start, w.t));
+          }));
+          return;
+        }
         el.id = "cue-" + i;
         cue.words.forEach((w, j) => {
           const s = document.createElement("span");
