@@ -2,3 +2,4 @@ node_modules/
 .hyperframes/
 renders/work-*/
 renders/.*hf-transaction*/
+renders/*.mp4
