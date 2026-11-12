@@ -37,24 +37,24 @@
   </style>
   <div id="root" data-composition-id="broll" data-width="1080" data-height="1920">
     <!-- "Welcome to Arada CBD, in Aljada" -->
-    <div id="br-aerial" class="shot clip" data-start="5.15" data-duration="3.45" data-track-index="0" data-layout-allow-overflow>
+    <div id="br-aerial" class="shot clip" data-start="4.93" data-duration="3.67" data-track-index="0" data-layout-allow-overflow>
       <div id="br-aerial-punch" class="punch">
         <img id="br-aerial-img" src="assets/broll/aerial-district.jpg" alt="Aerial render of Arada CBD in Aljada" />
       </div>
     </div>
     <!-- "via Emirates Road & Mohammed Bin Zayed Road" -->
-    <div id="br-masterplan" class="shot clip" data-start="10.6" data-duration="3.55" data-track-index="1" data-layout-allow-overflow>
+    <div id="br-masterplan" class="shot clip" data-start="10.26" data-duration="3.89" data-track-index="1" data-layout-allow-overflow>
       <div id="br-masterplan-punch" class="punch">
         <img id="br-masterplan-img" src="assets/broll/aljada-masterplan-aerial.jpg" alt="Aerial render of the Aljada masterplan" />
       </div>
     </div>
-    <div id="br-towers" class="shot clip" data-start="14.15" data-duration="2.27" data-track-index="2" data-layout-allow-overflow>
+    <div id="br-towers" class="shot clip" data-start="14.15" data-duration="2.05" data-track-index="2" data-layout-allow-overflow>
       <div id="br-towers-punch" class="punch">
         <img id="br-towers-img" class="tall" src="assets/broll/towers-plane.jpg" alt="Looking up at glass towers with a plane overhead" />
       </div>
     </div>
     <!-- "a spacious office from 1,200 sq ft" -->
-    <div id="br-office" class="shot clip" data-start="17.2" data-duration="2.9" data-track-index="0" data-layout-allow-overflow>
+    <div id="br-office" class="shot clip" data-start="17.6" data-duration="2.5" data-track-index="0" data-layout-allow-overflow>
       <div id="br-office-punch" class="punch">
         <img id="br-office-img" class="big" src="assets/broll/grade-a-campus.jpg" alt="Grade A glass office buildings" />
       </div>
@@ -85,17 +85,19 @@
     // Each shot punches in (scale 1.14 -> 1.0, fade 0.2s) then drifts slowly, like the reference.
     // [img, start, duration, xFrom, xTo, yFrom, yTo, scaleEnd]
     const shots = [
-      ["#br-aerial-img", 5.15, 3.45, -1250, -1720, 0, 0, 1.06],
-      ["#br-masterplan-img", 10.6, 3.55, -250, -720, 0, 0, 1.08],
-      ["#br-towers-img", 14.15, 2.27, 0, 0, -1300, -620, 1.04],
-      ["#br-office-img", 17.2, 2.9, -1050, -1450, -580, -580, 1.05],
+      ["#br-aerial-img", 4.93, 3.67, -1250, -1720, 0, 0, 1.06],
+      ["#br-masterplan-img", 10.26, 3.89, -250, -720, 0, 0, 1.08],
+      ["#br-towers-img", 14.15, 2.05, 0, 0, -1300, -620, 1.04],
+      ["#br-office-img", 17.6, 2.5, -1050, -1450, -580, -580, 1.05],
       ["#br-rooftop-img", 20.1, 1.05, -760, -950, 0, 0, 1.04],
       ["#br-park-img", 21.15, 2.15, -300, -620, 0, 0, 1.05],
       ["#br-boulevard-img", 26.8, 2.6, -850, -1150, 0, 0, 1.08],
     ];
     shots.forEach(([sel, start, dur, x0, x1, y0, y1, s1]) => {
       const punch = sel.replace("-img", "-punch");
-      tl.fromTo(punch, { opacity: 0, scale: 1.14 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, start);
+      // Punch-in zoom; opacity snaps in fast so a source cut underneath never peeks through.
+      tl.fromTo(punch, { scale: 1.14 }, { scale: 1, duration: 0.45, ease: "expo.out" }, start);
+      tl.fromTo(punch, { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none" }, start);
       tl.fromTo(
         sel,
         { x: x0, y: y0, scale: 1 },
