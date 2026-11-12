@@ -27,6 +27,9 @@
       width: auto;
       transform-origin: 50% 50%;
     }
+    #root .shot img.big {
+      height: 2500px;
+    }
     #root .shot img.tall {
       width: 1080px;
       height: auto;
@@ -39,10 +42,10 @@
         <img id="br-aerial-img" src="assets/broll/aerial-district.jpg" alt="Aerial render of Arada CBD in Aljada" />
       </div>
     </div>
-    <!-- "via Emirates Road & Mohammed Bin Zayed Road ... Dubai & Northern Emirates" -->
-    <div id="br-map" class="shot clip" data-start="10.6" data-duration="3.55" data-track-index="1" data-layout-allow-overflow>
-      <div id="br-map-punch" class="punch">
-        <img id="br-map-img" src="assets/broll/connectivity-map.jpg" alt="Connectivity map from the brochure" />
+    <!-- "via Emirates Road & Mohammed Bin Zayed Road" -->
+    <div id="br-masterplan" class="shot clip" data-start="10.6" data-duration="3.55" data-track-index="1" data-layout-allow-overflow>
+      <div id="br-masterplan-punch" class="punch">
+        <img id="br-masterplan-img" src="assets/broll/aljada-masterplan-aerial.jpg" alt="Aerial render of the Aljada masterplan" />
       </div>
     </div>
     <div id="br-towers" class="shot clip" data-start="14.15" data-duration="2.27" data-track-index="2" data-layout-allow-overflow>
@@ -53,7 +56,7 @@
     <!-- "a spacious office from 1,200 sq ft" -->
     <div id="br-office" class="shot clip" data-start="17.2" data-duration="2.9" data-track-index="0" data-layout-allow-overflow>
       <div id="br-office-punch" class="punch">
-        <img id="br-office-img" src="assets/broll/office-professional.jpg" alt="Professional in a glass office" />
+        <img id="br-office-img" class="big" src="assets/broll/grade-a-campus.jpg" alt="Grade A glass office buildings" />
       </div>
     </div>
     <!-- "a rooftop terrace" -->
@@ -83,9 +86,9 @@
     // [img, start, duration, xFrom, xTo, yFrom, yTo, scaleEnd]
     const shots = [
       ["#br-aerial-img", 5.15, 3.45, -1250, -1720, 0, 0, 1.06],
-      ["#br-map-img", 10.6, 3.55, -2953, -1755, 0, 0, 1.04],
+      ["#br-masterplan-img", 10.6, 3.55, -250, -720, 0, 0, 1.08],
       ["#br-towers-img", 14.15, 2.27, 0, 0, -1300, -620, 1.04],
-      ["#br-office-img", 17.2, 2.9, -380, -560, 0, 0, 1.08],
+      ["#br-office-img", 17.2, 2.9, -1050, -1450, -580, -580, 1.05],
       ["#br-rooftop-img", 20.1, 1.05, -760, -950, 0, 0, 1.04],
       ["#br-park-img", 21.15, 2.15, -300, -620, 0, 0, 1.05],
       ["#br-boulevard-img", 26.8, 2.6, -850, -1150, 0, 0, 1.08],
