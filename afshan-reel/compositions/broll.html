@@ -1,0 +1,106 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: transparent;
+    }
+    #root .shot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+    }
+    #root .punch {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 50%;
+    }
+    #root .shot img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 1920px;
+      width: auto;
+      transform-origin: 50% 50%;
+    }
+    #root .shot img.tall {
+      width: 1080px;
+      height: auto;
+    }
+  </style>
+  <div id="root" data-composition-id="broll" data-width="1080" data-height="1920">
+    <!-- "Welcome to Arada CBD, in Aljada" -->
+    <div id="br-aerial" class="shot clip" data-start="5.15" data-duration="3.45" data-track-index="0" data-layout-allow-overflow>
+      <div id="br-aerial-punch" class="punch">
+        <img id="br-aerial-img" src="assets/broll/aerial-district.jpg" alt="Aerial render of Arada CBD in Aljada" />
+      </div>
+    </div>
+    <!-- "via Emirates Road & Mohammed Bin Zayed Road ... Dubai & Northern Emirates" -->
+    <div id="br-map" class="shot clip" data-start="10.6" data-duration="3.55" data-track-index="1" data-layout-allow-overflow>
+      <div id="br-map-punch" class="punch">
+        <img id="br-map-img" src="assets/broll/connectivity-map.jpg" alt="Connectivity map from the brochure" />
+      </div>
+    </div>
+    <div id="br-towers" class="shot clip" data-start="14.15" data-duration="2.27" data-track-index="2" data-layout-allow-overflow>
+      <div id="br-towers-punch" class="punch">
+        <img id="br-towers-img" class="tall" src="assets/broll/towers-plane.jpg" alt="Looking up at glass towers with a plane overhead" />
+      </div>
+    </div>
+    <!-- "a spacious office from 1,200 sq ft" -->
+    <div id="br-office" class="shot clip" data-start="17.2" data-duration="2.9" data-track-index="0" data-layout-allow-overflow>
+      <div id="br-office-punch" class="punch">
+        <img id="br-office-img" src="assets/broll/office-professional.jpg" alt="Professional in a glass office" />
+      </div>
+    </div>
+    <!-- "a rooftop terrace" -->
+    <div id="br-rooftop" class="shot clip" data-start="20.1" data-duration="1.05" data-track-index="1" data-layout-allow-overflow>
+      <div id="br-rooftop-punch" class="punch">
+        <img id="br-rooftop-img" src="assets/broll/rooftop-terrace.jpg" alt="Rooftop terrace render" />
+      </div>
+    </div>
+    <!-- "a green park at the heart of the district" -->
+    <div id="br-park" class="shot clip" data-start="21.15" data-duration="2.15" data-track-index="2" data-layout-allow-overflow>
+      <div id="br-park-punch" class="punch">
+        <img id="br-park-img" src="assets/broll/green-park.jpg" alt="Green park between the buildings" />
+      </div>
+    </div>
+    <!-- "guaranteed by Arada" -->
+    <div id="br-boulevard" class="shot clip" data-start="26.8" data-duration="2.6" data-track-index="0" data-layout-allow-overflow>
+      <div id="br-boulevard-punch" class="punch">
+        <img id="br-boulevard-img" src="assets/broll/cbd-boulevard.jpg" alt="Arada CBD boulevard render" />
+      </div>
+    </div>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+
+    // Each shot punches in (scale 1.14 -> 1.0, fade 0.2s) then drifts slowly, like the reference.
+    // [img, start, duration, xFrom, xTo, yFrom, yTo, scaleEnd]
+    const shots = [
+      ["#br-aerial-img", 5.15, 3.45, -1250, -1720, 0, 0, 1.06],
+      ["#br-map-img", 10.6, 3.55, -2953, -1755, 0, 0, 1.04],
+      ["#br-towers-img", 14.15, 2.27, 0, 0, -1300, -620, 1.04],
+      ["#br-office-img", 17.2, 2.9, -380, -560, 0, 0, 1.08],
+      ["#br-rooftop-img", 20.1, 1.05, -760, -950, 0, 0, 1.04],
+      ["#br-park-img", 21.15, 2.15, -300, -620, 0, 0, 1.05],
+      ["#br-boulevard-img", 26.8, 2.6, -850, -1150, 0, 0, 1.08],
+    ];
+    shots.forEach(([sel, start, dur, x0, x1, y0, y1, s1]) => {
+      const punch = sel.replace("-img", "-punch");
+      tl.fromTo(punch, { opacity: 0, scale: 1.14 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, start);
+      tl.fromTo(
+        sel,
+        { x: x0, y: y0, scale: 1 },
+        { x: x1, y: y1, scale: s1, duration: dur, ease: "sine.inOut" },
+        start,
+      );
+    });
+
+    window.__timelines["broll"] = tl;
+  </script>
+</template>
