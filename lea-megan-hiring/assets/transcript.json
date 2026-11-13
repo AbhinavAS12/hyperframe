@@ -1,0 +1,534 @@
+{
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.31,
+   "parakeet": "We're Swiss and we love watches. No.",
+   "whisper": "We're Swiss and we love watches. No."
+  },
+  {
+   "start": 3.45,
+   "end": 5.19,
+   "parakeet": "We are hard to impress.",
+   "whisper": "We are hard to impress."
+  },
+  {
+   "start": 5.47,
+   "end": 7.91,
+   "parakeet": "Especially when I'm hiring.",
+   "whisper": "especially when I'm hiring."
+  },
+  {
+   "start": 7.9,
+   "end": 9.0,
+   "parakeet": "So",
+   "whisper": "so"
+  },
+  {
+   "start": 8.92,
+   "end": 16.23,
+   "parakeet": "Who makes your shortlist? Experienced resale agents, strong negotiators, people who can create lasting client relationships.",
+   "whisper": "Who makes your shortlist? Experienced resale agents, strong negotiators, people who can create lasting client relationships."
+  },
+  {
+   "start": 16.35,
+   "end": 18.44,
+   "parakeet": "and arrive on time.",
+   "whisper": "and arrive on time."
+  },
+  {
+   "start": 18.46,
+   "end": 20.23,
+   "parakeet": "Obviously.",
+   "whisper": "Obviously."
+  },
+  {
+   "start": 20.22,
+   "end": 22.57,
+   "parakeet": "So what can they expect here?",
+   "whisper": "So what can they expect here?"
+  },
+  {
+   "start": 22.65,
+   "end": 26.95,
+   "parakeet": "Up to sixty percent commission, special trainings and global brand exposure.",
+   "whisper": "Up to 60% commission, special trainings, and global brand exposure."
+  },
+  {
+   "start": 27.77,
+   "end": 31.66,
+   "parakeet": "We're hiring secondary sales agents at Allegiance Real Estate.",
+   "whisper": "We're hiring secondary sales agents at Allegiance Real Estate."
+  },
+  {
+   "start": 31.58,
+   "end": 33.03,
+   "parakeet": "Put in your C V's.",
+   "whisper": "Put in your CVs."
+  },
+  {
+   "start": 33.34,
+   "end": 35.56,
+   "parakeet": "I'll save your desk. Don't be late.",
+   "whisper": "I'll save your desk, don't be late."
+  }
+ ],
+ "words": [
+  {
+   "text": "We're",
+   "start": 0.16,
+   "end": 0.56,
+   "id": "w0"
+  },
+  {
+   "text": "Swiss",
+   "start": 0.56,
+   "end": 1.28,
+   "id": "w1"
+  },
+  {
+   "text": "and",
+   "start": 1.28,
+   "end": 1.52,
+   "id": "w2"
+  },
+  {
+   "text": "we",
+   "start": 1.52,
+   "end": 1.68,
+   "id": "w3"
+  },
+  {
+   "text": "love",
+   "start": 1.68,
+   "end": 1.92,
+   "id": "w4"
+  },
+  {
+   "text": "watches.",
+   "start": 1.92,
+   "end": 2.8,
+   "id": "w5"
+  },
+  {
+   "text": "No.",
+   "start": 2.8,
+   "end": 3.306,
+   "id": "w6"
+  },
+  {
+   "text": "We",
+   "start": 3.61,
+   "end": 3.85,
+   "id": "w7"
+  },
+  {
+   "text": "are",
+   "start": 3.85,
+   "end": 4.01,
+   "id": "w8"
+  },
+  {
+   "text": "hard",
+   "start": 4.01,
+   "end": 4.25,
+   "id": "w9"
+  },
+  {
+   "text": "to",
+   "start": 4.25,
+   "end": 4.41,
+   "id": "w10"
+  },
+  {
+   "text": "impress.",
+   "start": 4.41,
+   "end": 5.194,
+   "id": "w11"
+  },
+  {
+   "text": "Especially",
+   "start": 5.706,
+   "end": 6.506,
+   "id": "w12"
+  },
+  {
+   "text": "when",
+   "start": 6.506,
+   "end": 6.826,
+   "id": "w13"
+  },
+  {
+   "text": "I'm",
+   "start": 6.826,
+   "end": 7.146,
+   "id": "w14"
+  },
+  {
+   "text": "hiring.",
+   "start": 7.146,
+   "end": 7.914,
+   "id": "w15"
+  },
+  {
+   "text": "So",
+   "start": 8.298,
+   "end": 8.748,
+   "id": "w16"
+  },
+  {
+   "text": "Who",
+   "start": 8.922,
+   "end": 9.402,
+   "id": "w17"
+  },
+  {
+   "text": "makes",
+   "start": 9.402,
+   "end": 9.642,
+   "id": "w18"
+  },
+  {
+   "text": "your",
+   "start": 9.642,
+   "end": 9.882,
+   "id": "w19"
+  },
+  {
+   "text": "shortlist?",
+   "start": 9.882,
+   "end": 10.842,
+   "id": "w20"
+  },
+  {
+   "text": "Experienced",
+   "start": 10.842,
+   "end": 11.402,
+   "id": "w21"
+  },
+  {
+   "text": "resale",
+   "start": 11.402,
+   "end": 11.802,
+   "id": "w22"
+  },
+  {
+   "text": "agents,",
+   "start": 11.802,
+   "end": 12.522,
+   "id": "w23"
+  },
+  {
+   "text": "strong",
+   "start": 12.522,
+   "end": 12.842,
+   "id": "w24"
+  },
+  {
+   "text": "negotiators,",
+   "start": 12.842,
+   "end": 13.802,
+   "id": "w25"
+  },
+  {
+   "text": "people",
+   "start": 13.802,
+   "end": 14.042,
+   "id": "w26"
+  },
+  {
+   "text": "who",
+   "start": 14.042,
+   "end": 14.122,
+   "id": "w27"
+  },
+  {
+   "text": "can",
+   "start": 14.122,
+   "end": 14.282,
+   "id": "w28"
+  },
+  {
+   "text": "create",
+   "start": 14.282,
+   "end": 14.602,
+   "id": "w29"
+  },
+  {
+   "text": "lasting",
+   "start": 14.602,
+   "end": 14.922,
+   "id": "w30"
+  },
+  {
+   "text": "client",
+   "start": 14.922,
+   "end": 15.322,
+   "id": "w31"
+  },
+  {
+   "text": "relationships.",
+   "start": 15.322,
+   "end": 16.234,
+   "id": "w32"
+  },
+  {
+   "text": "and",
+   "start": 16.746,
+   "end": 17.196,
+   "id": "w33"
+  },
+  {
+   "text": "arrive",
+   "start": 17.226,
+   "end": 17.786,
+   "id": "w34"
+  },
+  {
+   "text": "on",
+   "start": 17.786,
+   "end": 17.946,
+   "id": "w35"
+  },
+  {
+   "text": "time.",
+   "start": 17.946,
+   "end": 18.442,
+   "id": "w36"
+  },
+  {
+   "text": "Obviously.",
+   "start": 18.698,
+   "end": 19.948,
+   "id": "w37"
+  },
+  {
+   "text": "So",
+   "start": 20.538,
+   "end": 20.988,
+   "id": "w38"
+  },
+  {
+   "text": "what",
+   "start": 21.018,
+   "end": 21.338,
+   "id": "w39"
+  },
+  {
+   "text": "can",
+   "start": 21.338,
+   "end": 21.498,
+   "id": "w40"
+  },
+  {
+   "text": "they",
+   "start": 21.498,
+   "end": 21.738,
+   "id": "w41"
+  },
+  {
+   "text": "expect",
+   "start": 21.738,
+   "end": 22.138,
+   "id": "w42"
+  },
+  {
+   "text": "here?",
+   "start": 22.138,
+   "end": 22.57,
+   "id": "w43"
+  },
+  {
+   "text": "Up",
+   "start": 22.65,
+   "end": 22.97,
+   "id": "w44"
+  },
+  {
+   "text": "to",
+   "start": 22.97,
+   "end": 23.13,
+   "id": "w45"
+  },
+  {
+   "text": "sixty",
+   "start": 23.13,
+   "end": 23.45,
+   "id": "w46"
+  },
+  {
+   "text": "percent",
+   "start": 23.45,
+   "end": 23.77,
+   "id": "w47"
+  },
+  {
+   "text": "commission,",
+   "start": 23.77,
+   "end": 24.41,
+   "id": "w48"
+  },
+  {
+   "text": "special",
+   "start": 24.41,
+   "end": 24.81,
+   "id": "w49"
+  },
+  {
+   "text": "trainings",
+   "start": 24.81,
+   "end": 25.37,
+   "id": "w50"
+  },
+  {
+   "text": "and",
+   "start": 25.37,
+   "end": 25.53,
+   "id": "w51"
+  },
+  {
+   "text": "global",
+   "start": 25.53,
+   "end": 25.93,
+   "id": "w52"
+  },
+  {
+   "text": "brand",
+   "start": 25.93,
+   "end": 26.25,
+   "id": "w53"
+  },
+  {
+   "text": "exposure.",
+   "start": 26.25,
+   "end": 26.954,
+   "id": "w54"
+  },
+  {
+   "text": "We're",
+   "start": 27.93,
+   "end": 28.41,
+   "id": "w55"
+  },
+  {
+   "text": "hiring",
+   "start": 28.41,
+   "end": 28.81,
+   "id": "w56"
+  },
+  {
+   "text": "secondary",
+   "start": 28.81,
+   "end": 29.37,
+   "id": "w57"
+  },
+  {
+   "text": "sales",
+   "start": 29.37,
+   "end": 29.69,
+   "id": "w58"
+  },
+  {
+   "text": "agents",
+   "start": 29.69,
+   "end": 30.09,
+   "id": "w59"
+  },
+  {
+   "text": "at",
+   "start": 30.09,
+   "end": 30.25,
+   "id": "w60"
+  },
+  {
+   "text": "Allegiance",
+   "start": 30.25,
+   "end": 30.81,
+   "id": "w61"
+  },
+  {
+   "text": "Real",
+   "start": 30.81,
+   "end": 31.05,
+   "id": "w62"
+  },
+  {
+   "text": "Estate.",
+   "start": 31.05,
+   "end": 31.658,
+   "id": "w63"
+  },
+  {
+   "text": "Put",
+   "start": 31.578,
+   "end": 31.898,
+   "id": "w64"
+  },
+  {
+   "text": "in",
+   "start": 31.898,
+   "end": 32.058,
+   "id": "w65"
+  },
+  {
+   "text": "your",
+   "start": 32.058,
+   "end": 32.218,
+   "id": "w66"
+  },
+  {
+   "text": "C",
+   "start": 32.218,
+   "end": 32.458,
+   "id": "w67"
+  },
+  {
+   "text": "V's.",
+   "start": 32.458,
+   "end": 33.034,
+   "id": "w68"
+  },
+  {
+   "text": "I'll",
+   "start": 33.498,
+   "end": 33.738,
+   "id": "w69"
+  },
+  {
+   "text": "save",
+   "start": 33.738,
+   "end": 34.058,
+   "id": "w70"
+  },
+  {
+   "text": "your",
+   "start": 34.058,
+   "end": 34.218,
+   "id": "w71"
+  },
+  {
+   "text": "desk.",
+   "start": 34.218,
+   "end": 34.698,
+   "id": "w72"
+  },
+  {
+   "text": "Don't",
+   "start": 34.698,
+   "end": 34.938,
+   "id": "w73"
+  },
+  {
+   "text": "be",
+   "start": 34.938,
+   "end": 35.018,
+   "id": "w74"
+  },
+  {
+   "text": "late.",
+   "start": 35.018,
+   "end": 35.562,
+   "id": "w75"
+  }
+ ]
+}
