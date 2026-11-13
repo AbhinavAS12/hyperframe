@@ -1,4 +1,5 @@
 {
+ "source": "Lea & Megan Hiring Final 2.mp4",
  "segments": [
   {
    "start": 0.0,
@@ -27,7 +28,7 @@
   {
    "start": 8.92,
    "end": 16.23,
-   "parakeet": "Who makes your shortlist? Experienced resale agents, strong negotiators, people who can create lasting client relationships.",
+   "parakeet": "Who likes your shortlist? Experienced resale agents, strong negotiators, people who can create lasting client relationships.",
    "whisper": "Who makes your shortlist? Experienced resale agents, strong negotiators, people who can create lasting client relationships."
   },
   {
@@ -55,22 +56,22 @@
    "whisper": "Up to 60% commission, special trainings, and global brand exposure."
   },
   {
-   "start": 27.77,
-   "end": 31.66,
-   "parakeet": "We're hiring secondary sales agents at Allegiance Real Estate.",
+   "start": 27.1,
+   "end": 30.99,
+   "parakeet": "We are hiring secondary sales agents at Allegiance Real Estate.",
    "whisper": "We're hiring secondary sales agents at Allegiance Real Estate."
   },
   {
-   "start": 31.58,
-   "end": 33.03,
+   "start": 30.91,
+   "end": 32.36,
    "parakeet": "Put in your C V's.",
    "whisper": "Put in your CVs."
   },
   {
-   "start": 33.34,
-   "end": 35.56,
+   "start": 32.67,
+   "end": 34.89,
    "parakeet": "I'll save your desk. Don't be late.",
-   "whisper": "I'll save your desk, don't be late."
+   "whisper": "And save your desk. Don't be late."
   }
  ],
  "words": [
@@ -118,13 +119,13 @@
   },
   {
    "text": "We",
-   "start": 3.61,
-   "end": 3.85,
+   "start": 3.45,
+   "end": 3.77,
    "id": "w7"
   },
   {
    "text": "are",
-   "start": 3.85,
+   "start": 3.77,
    "end": 4.01,
    "id": "w8"
   },
@@ -178,13 +179,13 @@
   },
   {
    "text": "Who",
-   "start": 8.922,
-   "end": 9.402,
+   "start": 9.082,
+   "end": 9.322,
    "id": "w17"
   },
   {
    "text": "makes",
-   "start": 9.402,
+   "start": 9.322,
    "end": 9.642,
    "id": "w18"
   },
@@ -383,12 +384,12 @@
   {
    "text": "and",
    "start": 25.37,
-   "end": 25.53,
+   "end": 25.61,
    "id": "w51"
   },
   {
    "text": "global",
-   "start": 25.53,
+   "start": 25.61,
    "end": 25.93,
    "id": "w52"
   },
@@ -406,128 +407,128 @@
   },
   {
    "text": "We're",
-   "start": 27.93,
-   "end": 28.41,
+   "start": 27.258,
+   "end": 27.738,
    "id": "w55"
   },
   {
    "text": "hiring",
-   "start": 28.41,
-   "end": 28.81,
+   "start": 27.738,
+   "end": 28.138,
    "id": "w56"
   },
   {
    "text": "secondary",
-   "start": 28.81,
-   "end": 29.37,
+   "start": 28.138,
+   "end": 28.698,
    "id": "w57"
   },
   {
    "text": "sales",
-   "start": 29.37,
-   "end": 29.69,
+   "start": 28.698,
+   "end": 29.018,
    "id": "w58"
   },
   {
    "text": "agents",
-   "start": 29.69,
-   "end": 30.09,
+   "start": 29.018,
+   "end": 29.418,
    "id": "w59"
   },
   {
    "text": "at",
-   "start": 30.09,
-   "end": 30.25,
+   "start": 29.418,
+   "end": 29.578,
    "id": "w60"
   },
   {
    "text": "Allegiance",
-   "start": 30.25,
-   "end": 30.81,
+   "start": 29.578,
+   "end": 30.138,
    "id": "w61"
   },
   {
    "text": "Real",
-   "start": 30.81,
-   "end": 31.05,
+   "start": 30.138,
+   "end": 30.378,
    "id": "w62"
   },
   {
    "text": "Estate.",
-   "start": 31.05,
-   "end": 31.658,
+   "start": 30.378,
+   "end": 30.986,
    "id": "w63"
   },
   {
    "text": "Put",
-   "start": 31.578,
-   "end": 31.898,
+   "start": 30.906,
+   "end": 31.306,
    "id": "w64"
   },
   {
    "text": "in",
-   "start": 31.898,
-   "end": 32.058,
+   "start": 31.306,
+   "end": 31.466,
    "id": "w65"
   },
   {
    "text": "your",
-   "start": 32.058,
-   "end": 32.218,
+   "start": 31.466,
+   "end": 31.546,
    "id": "w66"
   },
   {
    "text": "C",
-   "start": 32.218,
-   "end": 32.458,
+   "start": 31.546,
+   "end": 31.786,
    "id": "w67"
   },
   {
    "text": "V's.",
-   "start": 32.458,
-   "end": 33.034,
+   "start": 31.786,
+   "end": 32.362,
    "id": "w68"
   },
   {
    "text": "I'll",
-   "start": 33.498,
-   "end": 33.738,
+   "start": 32.826,
+   "end": 33.146,
    "id": "w69"
   },
   {
    "text": "save",
-   "start": 33.738,
-   "end": 34.058,
+   "start": 33.146,
+   "end": 33.386,
    "id": "w70"
   },
   {
    "text": "your",
-   "start": 34.058,
-   "end": 34.218,
+   "start": 33.386,
+   "end": 33.626,
    "id": "w71"
   },
   {
    "text": "desk.",
-   "start": 34.218,
-   "end": 34.698,
+   "start": 33.626,
+   "end": 34.026,
    "id": "w72"
   },
   {
    "text": "Don't",
-   "start": 34.698,
-   "end": 34.938,
+   "start": 34.026,
+   "end": 34.266,
    "id": "w73"
   },
   {
    "text": "be",
-   "start": 34.938,
-   "end": 35.018,
+   "start": 34.266,
+   "end": 34.426,
    "id": "w74"
   },
   {
    "text": "late.",
-   "start": 35.018,
-   "end": 35.562,
+   "start": 34.426,
+   "end": 34.89,
    "id": "w75"
   }
  ]
