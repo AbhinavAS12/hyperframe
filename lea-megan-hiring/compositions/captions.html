@@ -12,235 +12,309 @@
       font-weight: 100 900;
       font-style: italic;
     }
+    @font-face {
+      font-family: "Playfair Cap";
+      src: url("assets/fonts/PlayfairDisplay-Italic-VF.ttf") format("truetype");
+      font-weight: 400 900;
+      font-style: italic;
+    }
     #root {
       position: absolute;
       inset: 0;
-      --cap-y: 1060px;
-      --cap-accent: #ffd60a;
+      --cap-yellow: #f5ef1f;
+      --cap-cyan: #1ee6f0;
+      --cap-red: #e3141c;
+      --cap-white: #ffffff;
     }
     #root .group {
       position: absolute;
-      left: 0;
-      right: 0;
-      top: var(--cap-y);
-      padding: 0 110px;
-      text-align: center;
       overflow: visible;
       font-family: "Montserrat Cap", Montserrat, sans-serif;
-      color: #ffffff;
-      line-height: 1.02;
+      color: var(--cap-white);
+      line-height: 0.98;
+    }
+    #root .pos-C {
+      left: 0;
+      right: 0;
+      padding: 0 90px;
+      text-align: center;
+    }
+    #root .pos-L {
+      left: 80px;
+      text-align: left;
+    }
+    #root .pos-R {
+      right: 80px;
+      text-align: right;
     }
     #root .line {
       display: block;
       white-space: nowrap;
       font-size: 50px;
-      word-spacing: 0.02em;
     }
     #root .line + .line {
-      margin-top: 4px;
+      margin-top: 6px;
     }
     #root .w {
       display: inline-block;
       text-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.68),
-        0 0 26px rgba(0, 0, 0, 0.5);
+        0 2px 6px rgba(0, 0, 0, 0.6),
+        0 0 24px rgba(0, 0, 0, 0.4);
     }
-    #root .l {
-      font-size: 50px;
+    #root .s {
+      font-size: 52px;
       font-weight: 500;
-      letter-spacing: -0.005em;
+    }
+    #root .si {
+      font-size: 52px;
+      font-weight: 500;
+      font-style: italic;
     }
     #root .b {
-      font-size: 56px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+      font-size: 78px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
     }
-    #root .h {
-      font-size: 88px;
+    #root .bc {
+      font-size: 92px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--cap-cyan);
+    }
+    #root .y {
+      font-size: 120px;
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      color: var(--cap-yellow);
+    }
+    #root .pc,
+    #root .py {
+      font-family: "Playfair Cap", "Playfair Display", serif;
+      font-size: 100px;
       font-weight: 800;
       font-style: italic;
       letter-spacing: -0.01em;
-      color: var(--cap-accent);
+      color: var(--cap-cyan);
+      line-height: 1.02;
       text-shadow:
-        0 3px 6px rgba(0, 0, 0, 0.5),
-        0 0 26px rgba(0, 0, 0, 0.35);
+        0 3px 8px rgba(0, 0, 0, 0.7),
+        0 0 28px rgba(0, 0, 0, 0.5);
+    }
+    #root .py {
+      color: var(--cap-yellow);
+    }
+    #root .red {
+      font-size: 260px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--cap-red);
+      line-height: 0.9;
+      text-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 0, 0, 0.3);
+    }
+    #root .gold {
+      font-size: 200px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      text-shadow: none;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+    }
+    #root .gold .fill {
+      background: linear-gradient(180deg, #ffe81f 0%, #ffc21a 55%, #f39a12 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
   </style>
   <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
-    <div id="cap-g0" class="group clip" data-start="0.12" data-duration="1.1">
-      <div class="line"><span id="cap-w0" class="w l">We&#x27;re</span></div>
-      <div class="line"><span id="cap-w1" class="w h">SWISS</span></div>
+    <div id="cap-g0" class="group clip pos-C" data-layout-allow-overlap style="top:930px" data-start="0.12" data-duration="1.1">
+      <div class="line"><span id="cap-w0" class="w s" data-layout-allow-overlap>We&#x27;re</span></div>
+      <div class="line"><span id="cap-w1" class="w y" data-layout-allow-overlap style="font-size:150px">Swiss</span></div>
     </div>
-    <div id="cap-g1" class="group clip" data-start="1.22" data-duration="1.52">
-      <div class="line"><span id="cap-w2" class="w l">and</span> <span id="cap-w3" class="w l">we</span> <span id="cap-w4" class="w l">love</span></div>
-      <div class="line"><span id="cap-w5" class="w b">watches.</span></div>
+    <div id="cap-g1" class="group clip pos-C" data-layout-allow-overlap style="top:980px" data-start="1.22" data-duration="1.52">
+      <div class="line"><span id="cap-w2" class="w s" data-layout-allow-overlap>and</span> <span id="cap-w3" class="w s" data-layout-allow-overlap>we</span> <span id="cap-w4" class="w s" data-layout-allow-overlap>love</span></div>
+      <div class="line"><span id="cap-w5" class="w pc" data-layout-allow-overlap style="font-size:110px">watches.</span></div>
     </div>
-    <div id="cap-g2" class="group clip" data-start="2.74" data-duration="0.81">
-      <div class="line"><span id="cap-w6" class="w h">NO.</span></div>
+    <div id="cap-g2" class="group clip pos-C" data-layout-allow-overlap style="top:820px" data-start="2.74" data-duration="0.81">
+      <div class="line"><span id="cap-w6" class="w red" data-layout-allow-overlap style="font-size:260px">NO.</span></div>
     </div>
-    <div id="cap-g3" class="group clip" data-start="3.55" data-duration="2.096">
-      <div class="line"><span id="cap-w7" class="w l">We</span> <span id="cap-w8" class="w l">are</span> <span id="cap-w9" class="w b">hard</span> <span id="cap-w10" class="w l">to</span></div>
-      <div class="line"><span id="cap-w11" class="w h">IMPRESS.</span></div>
+    <div id="cap-g3" class="group clip pos-C" data-layout-allow-overlap style="top:900px" data-start="3.55" data-duration="2.096">
+      <div class="line"><span id="cap-w7" class="w si" data-layout-allow-overlap>We</span> <span id="cap-w8" class="w si" data-layout-allow-overlap>are</span></div>
+      <div class="line"><span id="cap-w9" class="w b" data-layout-allow-overlap>hard</span> <span id="cap-w10" class="w b" data-layout-allow-overlap>to</span></div>
+      <div class="line"><span id="cap-w11" class="w py" data-layout-allow-overlap style="font-size:120px">impress.</span></div>
     </div>
-    <div id="cap-g4" class="group clip" data-start="5.646" data-duration="2.592">
-      <div class="line"><span id="cap-w12" class="w l">Especially</span> <span id="cap-w13" class="w l">when</span> <span id="cap-w14" class="w l">I&#x27;m</span></div>
-      <div class="line"><span id="cap-w15" class="w h">HIRING.</span></div>
+    <div id="cap-g4" class="group clip pos-C" data-layout-allow-overlap style="top:900px" data-start="5.646" data-duration="2.592">
+      <div class="line"><span id="cap-w12" class="w s" data-layout-allow-overlap>Especially</span> <span id="cap-w13" class="w s" data-layout-allow-overlap>when</span> <span id="cap-w14" class="w s" data-layout-allow-overlap>I&#x27;m</span></div>
+      <div class="line"><span id="cap-w15" class="w y" data-layout-allow-overlap style="font-size:170px">hiring.</span></div>
     </div>
-    <div id="cap-g5" class="group clip" data-start="8.238" data-duration="2.544">
-      <div class="line"><span id="cap-w16" class="w l">So,</span> <span id="cap-w17" class="w l">who</span> <span id="cap-w18" class="w l">makes</span> <span id="cap-w19" class="w l">your</span></div>
-      <div class="line"><span id="cap-w20" class="w b">shortlist?</span></div>
+    <div id="cap-g5" class="group clip pos-C" data-layout-allow-overlap style="top:1000px" data-start="8.238" data-duration="2.544">
+      <div class="line"><span id="cap-w16" class="w si" data-layout-allow-overlap>So,</span> <span id="cap-w17" class="w si" data-layout-allow-overlap>who</span> <span id="cap-w18" class="w si" data-layout-allow-overlap>makes</span> <span id="cap-w19" class="w si" data-layout-allow-overlap>your</span></div>
+      <div class="line"><span id="cap-w20" class="w b" data-layout-allow-overlap style="font-size:84px">shortlist?</span></div>
     </div>
-    <div id="cap-g6" class="group clip" data-start="10.782" data-duration="1.68">
-      <div class="line"><span id="cap-w21" class="w l">Experienced</span></div>
-      <div class="line"><span id="cap-w22" class="w b">resale</span> <span id="cap-w23" class="w b">agents,</span></div>
+    <div id="cap-g6" class="group clip pos-L" data-layout-allow-overlap style="top:760px" data-start="10.782" data-duration="5.802">
+      <div class="line"><span id="cap-w21" class="w s" data-layout-allow-overlap>Experienced</span></div>
+      <div class="line"><span id="cap-w22" class="w pc" data-layout-allow-overlap style="font-size:84px">resale</span> <span id="cap-w23" class="w pc" data-layout-allow-overlap style="font-size:84px">agents,</span></div>
     </div>
-    <div id="cap-g7" class="group clip" data-start="12.462" data-duration="1.28">
-      <div class="line"><span id="cap-w24" class="w l">strong</span></div>
-      <div class="line"><span id="cap-w25" class="w b">negotiators,</span></div>
+    <div id="cap-g7" class="group clip pos-R" data-layout-allow-overlap style="top:1010px" data-start="12.462" data-duration="4.122">
+      <div class="line"><span id="cap-w24" class="w s" data-layout-allow-overlap>strong</span></div>
+      <div class="line"><span id="cap-w25" class="w y" data-layout-allow-overlap style="font-size:86px">negotiators,</span></div>
     </div>
-    <div id="cap-g8" class="group clip" data-start="13.742" data-duration="1.52">
-      <div class="line"><span id="cap-w26" class="w l">people</span> <span id="cap-w27" class="w l">who</span> <span id="cap-w28" class="w l">can</span> <span id="cap-w29" class="w l">create</span></div>
-      <div class="line"><span id="cap-w30" class="w b">lasting</span> <span id="cap-w31" class="w b">client</span></div>
+    <div id="cap-g8" class="group clip pos-C" data-layout-allow-overlap style="top:1250px" data-start="13.742" data-duration="2.842">
+      <div class="line"><span id="cap-w26" class="w s" data-layout-allow-overlap>people</span> <span id="cap-w27" class="w s" data-layout-allow-overlap>who</span> <span id="cap-w28" class="w s" data-layout-allow-overlap>can</span> <span id="cap-w29" class="w s" data-layout-allow-overlap>create</span></div>
+      <div class="line"><span id="cap-w30" class="w b" data-layout-allow-overlap style="font-size:66px">lasting</span> <span id="cap-w31" class="w b" data-layout-allow-overlap style="font-size:66px">client</span></div>
+      <div class="line"><span id="cap-w32" class="w pc" data-layout-allow-overlap style="font-size:90px">relationships.</span></div>
     </div>
-    <div id="cap-g9" class="group clip" data-start="15.262" data-duration="1.424">
-      <div class="line"><span id="cap-w32" class="w b">relationships.</span></div>
+    <div id="cap-g9" class="group clip pos-C" data-layout-allow-overlap style="top:1000px" data-start="16.686" data-duration="1.952">
+      <div class="line"><span id="cap-w33" class="w si" data-layout-allow-overlap>and</span> <span id="cap-w34" class="w si" data-layout-allow-overlap>arrive</span></div>
+      <div class="line"><span id="cap-w35" class="w bc" data-layout-allow-overlap style="font-size:112px">on</span> <span id="cap-w36" class="w bc" data-layout-allow-overlap style="font-size:112px">time.</span></div>
     </div>
-    <div id="cap-g10" class="group clip" data-start="16.686" data-duration="1.952">
-      <div class="line"><span id="cap-w33" class="w l">and</span> <span id="cap-w34" class="w l">arrive</span></div>
-      <div class="line"><span id="cap-w35" class="w h">ON</span> <span id="cap-w36" class="w h">TIME.</span></div>
+    <div id="cap-g10" class="group clip pos-C" data-layout-allow-overlap style="top:1000px" data-start="18.638" data-duration="1.84">
+      <div class="line"><span id="cap-w37" class="w py" data-layout-allow-overlap style="font-size:150px">Obviously.</span></div>
     </div>
-    <div id="cap-g11" class="group clip" data-start="18.638" data-duration="1.84">
-      <div class="line"><span id="cap-w37" class="w h">OBVIOUSLY.</span></div>
+    <div id="cap-g11" class="group clip pos-C" data-layout-allow-overlap style="top:1000px" data-start="20.478" data-duration="2.112">
+      <div class="line"><span id="cap-w38" class="w si" data-layout-allow-overlap>So</span> <span id="cap-w39" class="w si" data-layout-allow-overlap>what</span> <span id="cap-w40" class="w si" data-layout-allow-overlap>can</span> <span id="cap-w41" class="w si" data-layout-allow-overlap>they</span></div>
+      <div class="line"><span id="cap-w42" class="w b" data-layout-allow-overlap>expect</span> <span id="cap-w43" class="w b" data-layout-allow-overlap>here?</span></div>
     </div>
-    <div id="cap-g12" class="group clip" data-start="20.478" data-duration="2.112">
-      <div class="line"><span id="cap-w38" class="w l">So</span> <span id="cap-w39" class="w l">what</span> <span id="cap-w40" class="w l">can</span> <span id="cap-w41" class="w l">they</span></div>
-      <div class="line"><span id="cap-w42" class="w b">expect</span> <span id="cap-w43" class="w b">here?</span></div>
+    <div id="cap-g12" class="group clip pos-L" data-layout-allow-overlap style="top:800px" data-start="22.59" data-duration="4.714">
+      <div class="line"><span id="cap-w44" class="w s" data-layout-allow-overlap>Up</span> <span id="cap-w45" class="w s" data-layout-allow-overlap>to</span></div>
+      <div class="line"><span id="cap-w46" class="w gold" data-layout-allow-overlap style="font-size:210px"><span class="fill">60%</span></span></div>
+      <div class="line"><span id="cap-w48" class="w y" data-layout-allow-overlap style="font-size:70px">commission,</span></div>
     </div>
-    <div id="cap-g13" class="group clip" data-start="22.59" data-duration="1.76">
-      <div class="line"><span id="cap-w44" class="w l">Up</span> <span id="cap-w45" class="w l">to</span></div>
-      <div class="line"><span id="cap-w46" class="w h">60%</span> <span id="cap-w48" class="w b">commission,</span></div>
+    <div id="cap-g13" class="group clip pos-R" data-layout-allow-overlap style="top:1130px" data-start="24.35" data-duration="2.954">
+      <div class="line"><span id="cap-w49" class="w s" data-layout-allow-overlap>special</span></div>
+      <div class="line"><span id="cap-w50" class="w pc" data-layout-allow-overlap style="font-size:92px">trainings</span></div>
     </div>
-    <div id="cap-g14" class="group clip" data-start="24.35" data-duration="3.304">
-      <div class="line"><span id="cap-w49" class="w b">special</span> <span id="cap-w50" class="w b">trainings</span> <span id="cap-w51" class="w l">and</span></div>
-      <div class="line"><span id="cap-w52" class="w b">global</span> <span id="cap-w53" class="w b">brand</span> <span id="cap-w54" class="w b">exposure.</span></div>
+    <div id="cap-g14" class="group clip pos-C" data-layout-allow-overlap style="top:1390px" data-start="25.31" data-duration="1.994">
+      <div class="line"><span id="cap-w51" class="w si" data-layout-allow-overlap>and</span> <span id="cap-w52" class="w s" data-layout-allow-overlap>global</span></div>
+      <div class="line"><span id="cap-w53" class="w b" data-layout-allow-overlap style="font-size:72px">brand</span> <span id="cap-w54" class="w b" data-layout-allow-overlap style="font-size:72px">exposure.</span></div>
     </div>
-    <div id="cap-g15" class="group clip" data-start="27.87" data-duration="2.16">
-      <div class="line"><span id="cap-w55" class="w l">We&#x27;re</span> <span id="cap-w56" class="w l">hiring</span></div>
-      <div class="line"><span id="cap-w57" class="w b">secondary</span> <span id="cap-w58" class="w b">sales</span> <span id="cap-w59" class="w b">agents</span></div>
+    <div id="cap-g15" class="group clip pos-C" data-layout-allow-overlap style="top:760px" data-start="27.87" data-duration="2.57">
+      <div class="line"><span id="cap-w55" class="w s" data-layout-allow-overlap>We&#x27;re</span></div>
+      <div class="line"><span id="cap-w56" class="w y" data-layout-allow-overlap style="font-size:190px">hiring</span></div>
     </div>
-    <div id="cap-g16" class="group clip" data-start="30.03" data-duration="1.488">
-      <div class="line"><span id="cap-w60" class="w l">at</span> <span id="cap-w61" class="w h">ALLEGIANCE</span></div>
-      <div class="line"><span id="cap-w62" class="w h">REAL</span> <span id="cap-w63" class="w h">ESTATE.</span></div>
+    <div id="cap-g16" class="group clip pos-C" data-layout-allow-overlap style="top:1290px" data-start="28.75" data-duration="1.28">
+      <div class="line"><span id="cap-w57" class="w pc" data-layout-allow-overlap style="font-size:112px">secondary</span></div>
+      <div class="line"><span id="cap-w58" class="w b" data-layout-allow-overlap>sales</span> <span id="cap-w59" class="w b" data-layout-allow-overlap>agents</span></div>
     </div>
-    <div id="cap-g17" class="group clip" data-start="31.518" data-duration="1.92">
-      <div class="line"><span id="cap-w64" class="w l">Put</span> <span id="cap-w65" class="w l">in</span> <span id="cap-w66" class="w l">your</span></div>
-      <div class="line"><span id="cap-w67" class="w h">CVs.</span></div>
+    <div id="cap-g17" class="group clip pos-C" data-layout-allow-overlap style="top:1290px" data-start="30.03" data-duration="1.488">
+      <div class="line"><span id="cap-w60" class="w si" data-layout-allow-overlap>at</span> <span id="cap-w61" class="w b" data-layout-allow-overlap style="font-size:96px">Allegiance</span></div>
+      <div class="line"><span id="cap-w62" class="w py" data-layout-allow-overlap style="font-size:104px">Real</span> <span id="cap-w63" class="w py" data-layout-allow-overlap style="font-size:104px">Estate.</span></div>
     </div>
-    <div id="cap-g18" class="group clip" data-start="33.438" data-duration="1.2">
-      <div class="line"><span id="cap-w69" class="w l">I&#x27;ll</span> <span id="cap-w70" class="w l">save</span> <span id="cap-w71" class="w l">your</span></div>
-      <div class="line"><span id="cap-w72" class="w b">desk.</span></div>
+    <div id="cap-g18" class="group clip pos-C" data-layout-allow-overlap style="top:1290px" data-start="31.518" data-duration="1.92">
+      <div class="line"><span id="cap-w64" class="w s" data-layout-allow-overlap>Put</span> <span id="cap-w65" class="w s" data-layout-allow-overlap>in</span> <span id="cap-w66" class="w s" data-layout-allow-overlap>your</span></div>
+      <div class="line"><span id="cap-w67" class="w y" data-layout-allow-overlap style="font-size:150px">CVs.</span></div>
     </div>
-    <div id="cap-g19" class="group clip" data-start="34.638" data-duration="1.624">
-      <div class="line"><span id="cap-w73" class="w l">Don&#x27;t</span> <span id="cap-w74" class="w l">be</span></div>
-      <div class="line"><span id="cap-w75" class="w h">LATE.</span></div>
+    <div id="cap-g19" class="group clip pos-C" data-layout-allow-overlap style="top:1290px" data-start="33.438" data-duration="1.2">
+      <div class="line"><span id="cap-w69" class="w s" data-layout-allow-overlap>I&#x27;ll</span> <span id="cap-w70" class="w s" data-layout-allow-overlap>save</span> <span id="cap-w71" class="w s" data-layout-allow-overlap>your</span></div>
+      <div class="line"><span id="cap-w72" class="w pc" data-layout-allow-overlap style="font-size:124px">desk.</span></div>
+    </div>
+    <div id="cap-g20" class="group clip pos-C" data-layout-allow-overlap style="top:1200px" data-start="34.638" data-duration="1.624">
+      <div class="line"><span id="cap-w73" class="w s" data-layout-allow-overlap>Don&#x27;t</span> <span id="cap-w74" class="w s" data-layout-allow-overlap>be</span></div>
+      <div class="line"><span id="cap-w75" class="w red" data-layout-allow-overlap style="font-size:230px">LATE.</span></div>
     </div>
   </div>
   <script>
   const tl = gsap.timeline({ paused: true });
-  tl.fromTo("#cap-g0",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},1.1);
-  tl.fromTo("#cap-g1",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},2.62);
-  tl.fromTo("#cap-g2",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},3.43);
-  tl.fromTo("#cap-g3",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},5.526);
-  tl.fromTo("#cap-g4",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},8.118);
-  tl.fromTo("#cap-g5",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},10.662);
-  tl.fromTo("#cap-g6",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},12.342);
-  tl.fromTo("#cap-g7",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},13.622);
-  tl.fromTo("#cap-g8",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},15.142);
-  tl.fromTo("#cap-g9",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},16.566);
-  tl.fromTo("#cap-g10",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},18.518);
-  tl.fromTo("#cap-g11",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},20.358);
-  tl.fromTo("#cap-g12",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},22.47);
-  tl.fromTo("#cap-g13",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},24.23);
-  tl.fromTo("#cap-g14",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},27.534);
-  tl.fromTo("#cap-g15",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},29.91);
-  tl.fromTo("#cap-g16",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},31.398);
-  tl.fromTo("#cap-g17",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},33.318);
-  tl.fromTo("#cap-g18",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},34.518);
-  tl.fromTo("#cap-g19",{opacity:1},{opacity:0,duration:0.12,ease:"power2.in"},36.142);
   tl.fromTo("#cap-w0",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},0.16);
-  tl.fromTo("#cap-w1",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},0.56);
+  tl.fromTo("#cap-w1",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},0.56);
+  tl.fromTo("#cap-g0",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},1.08);
   tl.fromTo("#cap-w2",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},1.28);
   tl.fromTo("#cap-w3",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},1.52);
   tl.fromTo("#cap-w4",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},1.68);
-  tl.fromTo("#cap-w5",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},1.92);
-  tl.fromTo("#cap-w6",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},2.8);
+  tl.fromTo("#cap-w5",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},1.92);
+  tl.fromTo("#cap-g1",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},2.6);
+  tl.fromTo("#cap-w6",{opacity:0,scale:2.3},{opacity:1,scale:1,duration:0.2,ease:"power4.out"},2.8);
+  tl.to("#cap-w6",{keyframes:{x:[-10,9,-6,4,0]},duration:0.3,ease:"none"},2.98);
+  tl.fromTo("#cap-g2",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},3.41);
   tl.fromTo("#cap-w7",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},3.61);
   tl.fromTo("#cap-w8",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},3.85);
-  tl.fromTo("#cap-w9",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},4.01);
-  tl.fromTo("#cap-w10",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},4.25);
-  tl.fromTo("#cap-w11",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},4.41);
+  tl.fromTo("#cap-w9",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},4.01);
+  tl.fromTo("#cap-w10",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},4.25);
+  tl.fromTo("#cap-w11",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},4.41);
+  tl.fromTo("#cap-g3",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},5.506);
   tl.fromTo("#cap-w12",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},5.706);
   tl.fromTo("#cap-w13",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},6.506);
   tl.fromTo("#cap-w14",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},6.826);
-  tl.fromTo("#cap-w15",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},7.146);
+  tl.fromTo("#cap-w15",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},7.146);
+  tl.fromTo("#cap-g4",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},8.098);
   tl.fromTo("#cap-w16",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},8.298);
   tl.fromTo("#cap-w17",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},8.922);
   tl.fromTo("#cap-w18",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},9.402);
   tl.fromTo("#cap-w19",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},9.642);
-  tl.fromTo("#cap-w20",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},9.882);
+  tl.fromTo("#cap-w20",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},9.882);
+  tl.fromTo("#cap-g5",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},10.642);
   tl.fromTo("#cap-w21",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},10.842);
-  tl.fromTo("#cap-w22",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},11.402);
-  tl.fromTo("#cap-w23",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},11.802);
+  tl.fromTo("#cap-w22",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},11.402);
+  tl.fromTo("#cap-w23",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},11.802);
+  tl.fromTo("#cap-g6",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},16.444);
   tl.fromTo("#cap-w24",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},12.522);
-  tl.fromTo("#cap-w25",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},12.842);
+  tl.fromTo("#cap-w25",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},12.842);
+  tl.fromTo("#cap-g7",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},16.444);
   tl.fromTo("#cap-w26",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},13.802);
   tl.fromTo("#cap-w27",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},14.042);
   tl.fromTo("#cap-w28",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},14.122);
   tl.fromTo("#cap-w29",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},14.282);
-  tl.fromTo("#cap-w30",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},14.602);
-  tl.fromTo("#cap-w31",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},14.922);
-  tl.fromTo("#cap-w32",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},15.322);
+  tl.fromTo("#cap-w30",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},14.602);
+  tl.fromTo("#cap-w31",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},14.922);
+  tl.fromTo("#cap-w32",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},15.322);
+  tl.fromTo("#cap-g8",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},16.444);
   tl.fromTo("#cap-w33",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},16.746);
   tl.fromTo("#cap-w34",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},17.226);
-  tl.fromTo("#cap-w35",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},17.786);
-  tl.fromTo("#cap-w36",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},17.946);
-  tl.fromTo("#cap-w37",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},18.698);
+  tl.fromTo("#cap-w35",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},17.786);
+  tl.fromTo("#cap-w36",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},17.946);
+  tl.fromTo("#cap-g9",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},18.498);
+  tl.fromTo("#cap-w37",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},18.698);
+  tl.fromTo("#cap-g10",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},20.338);
   tl.fromTo("#cap-w38",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},20.538);
   tl.fromTo("#cap-w39",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},21.018);
   tl.fromTo("#cap-w40",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},21.338);
   tl.fromTo("#cap-w41",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},21.498);
-  tl.fromTo("#cap-w42",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},21.738);
-  tl.fromTo("#cap-w43",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},22.138);
+  tl.fromTo("#cap-w42",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},21.738);
+  tl.fromTo("#cap-w43",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},22.138);
+  tl.fromTo("#cap-g11",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},22.45);
   tl.fromTo("#cap-w44",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},22.65);
   tl.fromTo("#cap-w45",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},22.97);
-  tl.fromTo("#cap-w46",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},23.13);
-  tl.fromTo("#cap-w48",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},23.77);
+  tl.fromTo("#cap-w46",{opacity:0,scale:0.5},{opacity:1,scale:1,duration:0.36,ease:"back.out(2.2)"},23.13);
+  tl.fromTo("#cap-w48",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},23.77);
+  tl.fromTo("#cap-g12",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},27.164);
   tl.fromTo("#cap-w49",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},24.41);
-  tl.fromTo("#cap-w50",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},24.81);
+  tl.fromTo("#cap-w50",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},24.81);
+  tl.fromTo("#cap-g13",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},27.164);
   tl.fromTo("#cap-w51",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},25.37);
   tl.fromTo("#cap-w52",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},25.53);
-  tl.fromTo("#cap-w53",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},25.93);
-  tl.fromTo("#cap-w54",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},26.25);
+  tl.fromTo("#cap-w53",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},25.93);
+  tl.fromTo("#cap-w54",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},26.25);
+  tl.fromTo("#cap-g14",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},27.164);
   tl.fromTo("#cap-w55",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},27.93);
-  tl.fromTo("#cap-w56",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},28.41);
-  tl.fromTo("#cap-w57",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},28.81);
-  tl.fromTo("#cap-w58",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},29.37);
-  tl.fromTo("#cap-w59",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},29.69);
+  tl.fromTo("#cap-w56",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},28.41);
+  tl.fromTo("#cap-g15",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},30.3);
+  tl.fromTo("#cap-w57",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},28.81);
+  tl.fromTo("#cap-w58",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},29.37);
+  tl.fromTo("#cap-w59",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},29.69);
+  tl.fromTo("#cap-g16",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},29.89);
   tl.fromTo("#cap-w60",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},30.09);
-  tl.fromTo("#cap-w61",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},30.25);
-  tl.fromTo("#cap-w62",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},30.81);
-  tl.fromTo("#cap-w63",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},31.05);
+  tl.fromTo("#cap-w61",{opacity:0,y:34,scale:0.9,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.28,ease:"power3.out"},30.25);
+  tl.fromTo("#cap-w62",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},30.81);
+  tl.fromTo("#cap-w63",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},31.05);
+  tl.fromTo("#cap-g17",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},31.378);
   tl.fromTo("#cap-w64",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},31.578);
   tl.fromTo("#cap-w65",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},31.898);
   tl.fromTo("#cap-w66",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},32.058);
-  tl.fromTo("#cap-w67",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},32.218);
+  tl.fromTo("#cap-w67",{opacity:0,scale:1.35,filter:"blur(10px)"},{opacity:1,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(1.7)"},32.218);
+  tl.fromTo("#cap-g18",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},33.298);
   tl.fromTo("#cap-w69",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},33.498);
   tl.fromTo("#cap-w70",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},33.738);
   tl.fromTo("#cap-w71",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},34.058);
-  tl.fromTo("#cap-w72",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},34.218);
+  tl.fromTo("#cap-w72",{opacity:0,x:-40,filter:"blur(10px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.34,ease:"power3.out"},34.218);
+  tl.fromTo("#cap-g19",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},34.498);
   tl.fromTo("#cap-w73",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},34.698);
   tl.fromTo("#cap-w74",{opacity:0,y:16,filter:"blur(6px)"},{opacity:1,y:0,filter:"blur(0px)",duration:0.24,ease:"power3.out"},34.938);
-  tl.fromTo("#cap-w75",{opacity:0,y:22,scale:0.82,filter:"blur(8px)"},{opacity:1,y:0,scale:1,filter:"blur(0px)",duration:0.32,ease:"back.out(2)"},35.018);
+  tl.fromTo("#cap-w75",{opacity:0,scale:2.3},{opacity:1,scale:1,duration:0.2,ease:"power4.out"},35.018);
+  tl.to("#cap-w75",{keyframes:{x:[-10,9,-6,4,0]},duration:0.3,ease:"none"},35.198);
+  tl.fromTo("#cap-g20",{opacity:1},{opacity:0,duration:0.14,ease:"power2.in"},36.122);
   window.__timelines["captions"] = tl;
   </script>
 </template>
