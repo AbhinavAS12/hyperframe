@@ -49,8 +49,14 @@ TOTAL = 31.6
 
 STYLES = {
     # base font sizes per tier, vertical anchor (centre of group), italic highlights
-    "a": dict(sizes=dict(r=56, m=62, b=104, h=132), anchor=1010, upper=False),
-    "b": dict(sizes=dict(r=56, m=62, b=78, h=124), anchor=1215, upper=True),
+    # anchor_overrides: group index -> centre y. Groups 0-3 (first ~4.5 s, wide shot) sit at waist height.
+    "a": dict(sizes=dict(r=56, m=62, b=104, h=132), anchor=1010, upper=False,
+              anchor_overrides={0: 850, 1: 850, 2: 850, 3: 850}),
+    # B: first shot (0-21.4 s, groups 0-14) and last shot (27.8 s+, groups 18-20) at waist height;
+    # the office close-up in between keeps the lower 1215 anchor.
+    "b": dict(sizes=dict(r=56, m=62, b=78, h=124), anchor=1215, upper=True,
+              anchor_overrides={**{i: 860 for i in range(0, 4)}, **{i: 940 for i in range(4, 15)},
+                                **{i: 900 for i in range(18, 21)}}),
 }
 WEIGHT = dict(r=400, m=500, b=700, h=700)
 
@@ -95,8 +101,10 @@ def build(variant):
             lines_html.append(f'<div class="ln t-{tier}" id="{lid}">{inner}</div>')
             lines_meta.append(dict(id=lid, tier=tier, text=text, words=wmeta))
         dur = round(end - start, 3)
+        top = st.get("anchor_overrides", {}).get(gi)
+        style_attr = f' style="top: {top}px"' if top is not None else ""
         markup.append(
-            f'<div id="cg-{gi}" class="clip cg" data-start="{start}" data-duration="{dur}" '
+            f'<div id="cg-{gi}" class="clip cg"{style_attr} data-start="{start}" data-duration="{dur}" '
             f'data-track-index="{gi % 2}">\n        ' + "\n        ".join(lines_html) + "\n      </div>"
         )
         tl_groups.append(dict(id=f"cg-{gi}", start=start, end=end, lines=lines_meta))
