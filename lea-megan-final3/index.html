@@ -24,6 +24,7 @@
         height: 100%;
       }
       #edit,
+      #patch,
       #outro {
         position: absolute;
         inset: 0;
@@ -34,8 +35,11 @@
       #edit {
         z-index: 1;
       }
-      #outro {
+      #patch {
         z-index: 2;
+      }
+      #outro {
+        z-index: 3;
       }
     </style>
   </head>
@@ -57,6 +61,19 @@
         data-duration="35.1"
         data-track-index="0"
         data-has-audio="true"
+        playsinline
+      ></video>
+      <!-- Picture-only patch: same frames re-rendered with "relationships," (comma)
+           for that one caption; Final 3's audio underneath is untouched -->
+      <video
+        id="patch"
+        class="clip"
+        src="assets/video/caption-patch.mp4"
+        data-start="13.7"
+        data-duration="2.25"
+        data-media-start="13.7"
+        data-track-index="3"
+        muted
         playsinline
       ></video>
       <!-- Allegiance outro with QR (from the HR Secondary reel), fades up from black -->
