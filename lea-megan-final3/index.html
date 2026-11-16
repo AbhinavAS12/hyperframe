@@ -25,6 +25,7 @@
       }
       #edit,
       #patch,
+      #patch-swiss,
       #outro {
         position: absolute;
         inset: 0;
@@ -35,7 +36,8 @@
       #edit {
         z-index: 1;
       }
-      #patch {
+      #patch,
+      #patch-swiss {
         z-index: 2;
       }
       #outro {
@@ -74,6 +76,19 @@
         data-duration="35.1"
         data-track-index="0"
         data-has-audio="true"
+        playsinline
+      ></video>
+      <!-- Picture-only patch: "Swiss" caption re-rendered with a soft white glow
+           instead of the dark shadow; audio underneath untouched -->
+      <video
+        id="patch-swiss"
+        class="clip"
+        src="assets/video/caption-patch-swiss.mp4"
+        data-start="0.1"
+        data-duration="1.12"
+        data-media-start="0.1"
+        data-track-index="5"
+        muted
         playsinline
       ></video>
       <!-- Picture-only patch: same frames re-rendered with "relationships," (comma)
