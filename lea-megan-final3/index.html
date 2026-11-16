@@ -41,6 +41,19 @@
       #outro {
         z-index: 3;
       }
+      #flag {
+        position: absolute;
+        left: 435px;
+        top: 1142px;
+        z-index: 4;
+        width: 210px;
+        height: 113px;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow:
+          0 6px 18px rgba(0, 0, 0, 0.35),
+          0 2px 4px rgba(0, 0, 0, 0.25);
+      }
     </style>
   </head>
   <body>
@@ -76,6 +89,16 @@
         muted
         playsinline
       ></video>
+      <!-- Swiss flag under "We're Swiss": pops in on "Swiss", leaves with the caption -->
+      <img
+        id="flag"
+        class="clip"
+        src="assets/images/swiss-flag.png"
+        alt="Swiss flag"
+        data-start="0.5"
+        data-duration="0.72"
+        data-track-index="4"
+      />
       <!-- Allegiance outro with QR (from the HR Secondary reel), fades up from black -->
       <video
         id="outro"
@@ -105,7 +128,15 @@
     </div>
     <script>
       window.__timelines = window.__timelines || {};
-      window.__timelines["main"] = gsap.timeline({ paused: true });
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(
+        "#flag",
+        { opacity: 0, scale: 0.6, y: 18 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.32, ease: "back.out(1.8)" },
+        0.56,
+      );
+      tl.to("#flag", { opacity: 0, duration: 0.14, ease: "power2.in" }, 1.08);
+      window.__timelines["main"] = tl;
     </script>
   </body>
 </html>
