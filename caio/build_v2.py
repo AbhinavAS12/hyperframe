@@ -217,7 +217,7 @@ def main():
     for f, *_r in BROLL:
         cp(os.path.join(SHARED, "broll", f + ".mp4"), os.path.join(assets, "broll", f + ".mp4"))
     cp(os.path.join(SHARED, "outro-1080.mp4"), os.path.join(assets, "outro.mp4"))
-    cp(os.path.join(SHARED, "music-c.mp3"), os.path.join(assets, "music.mp3"))
+    cp(os.path.join(SHARED, "music-calm.mp3"), os.path.join(assets, "music.mp3"))
     for img in ("bg-chart.jpg", "bg-brand.jpg"):
         cp(os.path.join(SHARED, img), os.path.join(assets, img))
     shutil.copy(os.path.join(HERE, "..", "vendor", "gsap.min.js"), os.path.join(assets, "gsap.min.js"))
