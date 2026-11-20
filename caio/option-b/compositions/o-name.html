@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden;  font-family:"Inter", sans-serif; color:#f7f3ea; }
+
+        #root .nm { position:absolute; left:70px; right:70px; top:1335px; }
+        #root .nmi { display:flex; gap:22px; padding:24px 30px; border-radius:24px; background:rgba(10,20,44,.80); border:1.5px solid rgba(212,175,106,.45);
+                     box-shadow:0 14px 40px rgba(0,0,0,.35); }
+        #root .bar { width:8px; border-radius:4px; background:#d4af6a; transform-origin:50% 0; }
+        #root .n { font:800 58px/1.05 "Playfair Display", serif; color:#f7f3ea; }
+        #root .r { font:600 34px "Inter"; color:#d4af6a; margin-top:6px; }
+        #root .chips { display:flex; gap:14px; margin-top:14px; flex-wrap:wrap; }
+        #root .chips span { display:inline-flex; align-items:center; gap:8px; padding:8px 18px; border-radius:40px; background:rgba(255,255,255,.08);
+                            border:1px solid rgba(212,175,106,.45); font:600 28px "Inter"; color:#f7f3ea; }
+        #root .chips svg { stroke:#d4af6a; }
+    
+      </style>
+      <div id="root" data-composition-id="o-name" data-width="1080" data-height="1920">
+        <div id="nm-card" class="clip nm" data-start="0.05" data-duration="7.65" data-track-index="0">
+          <div id="nm-in" class="nmi">
+            <div class="bar"></div>
+            <div>
+              <div id="nm-n" class="n">Caio Rezende</div>
+              <div id="nm-r1" class="r">Advogado · Consultor imobiliário</div>
+              <div id="nm-r2" class="chips"><span id="nm-c1"><svg class="ic" viewBox="0 0 48 48" width="34" height="34" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="19" r="12"/><path d="m17 29-4 13 11-5 11 5-4-13"/><path d="m19 19 4 4 7-8"/></svg> +10 anos de experiência</span><span id="nm-c2"><svg class="ic" viewBox="0 0 48 48" width="34" height="34" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg> São Paulo, Brasil</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#nm-in", { opacity:0, x:-60 }, { opacity:1, x:0, duration:0.5, ease:"expo.out" }, 0.05);
+          tl.fromTo("#nm-in .bar", { scaleY:0 }, { scaleY:1, duration:0.5, ease:"expo.out" }, 0.1);
+          tl.fromTo("#nm-r1", { opacity:0, y:10 }, { opacity:1, y:0, duration:0.35 }, 1.62);
+          tl.fromTo("#nm-c1", { opacity:0, scale:0.7 }, { opacity:1, scale:1, duration:0.4, ease:"back.out(2)" }, 2.85);
+          tl.fromTo("#nm-c2", { opacity:0, scale:0.7 }, { opacity:1, scale:1, duration:0.4, ease:"back.out(2)" }, 6.12);
+          tl.to("#nm-in", { opacity:0, x:-40, duration:0.25, ease:"power2.in" }, 7.40);
+    
+          window.__timelines["o-name"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

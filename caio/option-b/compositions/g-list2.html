@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden; background:#081024; font-family:"Inter", sans-serif; color:#f7f3ea; }
+
+        #g-list2-stage { position:absolute; inset:0; }
+        #g-list2-bg3d { position:absolute; inset:0; width:1080px; height:1920px; }
+        #g-list2-vig { position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 38%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
+        #g-list2-ring { position:absolute; left:402px; top:142px; width:276px; height:276px;
+                    border-radius:50%; border:3px solid #d4af6a; box-shadow:0 0 40px rgba(212,175,106,.35); }
+    
+        #root .ttl { position:absolute; top:440px; left:0; right:0; text-align:center; font:800 64px "Playfair Display", serif; color:#f7f3ea; }
+        #root .list { position:absolute; top:560px; left:110px; right:110px; display:flex; flex-direction:column; gap:18px; }
+        #root .row { display:flex; gap:28px; align-items:flex-start; padding:18px 24px; border-radius:24px;
+                     background:rgba(10,20,44,.80); border:1.5px solid rgba(212,175,106,.45); }
+        #root .num { flex:none; width:76px; height:76px; border-radius:50%; background:#d4af6a; color:#06121a; display:grid; place-items:center; font:900 40px "Inter"; }
+        #root .hd { display:flex; align-items:center; gap:14px; font:800 46px/1.15 "Inter"; }
+        #root .hd svg { flex:none; }
+        #root .sb { margin-top:6px; font:500 30px/1.3 "Inter"; color:rgba(247,243,234,.66); }
+    
+      </style>
+      <div id="root" data-composition-id="g-list2" data-width="1080" data-height="1920">
+        <canvas id="g-list2-bg3d" width="1080" height="1920"></canvas><div id="g-list2-vig"></div><div id="g-list2-ring"></div>
+        <div id="g-list2-stage">
+          <div id="g-list2-ttl" class="ttl">Segurança <span style='color:#d4af6a'>jurídica</span></div>
+          <div class="list">
+            <div id="g-list2-r0" class="row">
+              <div class="num">4</div>
+              <div class="txt"><div class="hd"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" style="stroke:#d4af6a" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="30" r="8"/><path d="M22 24 39 7M33 13l5 5M28 18l4 4"/></svg><span>Propriedade plena</span></div><div class="sb">Freehold: o imóvel é 100% seu</div></div>
+            </div>
+            <div id="g-list2-r1" class="row">
+              <div class="num">5</div>
+              <div class="txt"><div class="hd"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" style="stroke:#d4af6a" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6h17l9 9v27H12z"/><path d="M29 6v9h9M18 24h14M18 31h14"/></svg><span>Registro oficial</span></div><div class="sb">Em órgão público local</div></div>
+            </div>
+            <div id="g-list2-r2" class="row">
+              <div class="num">6</div>
+              <div class="txt"><div class="hd"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" style="stroke:#d4af6a" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="21" width="28" height="20" rx="3"/><path d="M16 21v-6a8 8 0 0 1 16 0v6M24 29v5"/></svg><span>Conta garantia</span></div><div class="sb">Compra na planta protegida e fiscalizada pelo governo</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          
+          tl.fromTo("#g-list2-stage", { clipPath:"circle(0% at 540px 280px)" }, { clipPath:"circle(150% at 540px 280px)", duration:0.55, ease:"power3.inOut" }, 0);
+          tl.to("#g-list2-stage", { opacity:0, duration:0.22, ease:"power2.in" }, 9.060);
+          const bg = window.CaioFX.goldField(document.getElementById("g-list2-bg3d"), 642);
+          const st = { t:0 };
+          tl.fromTo(st, { t:0 }, { t:9.300, duration:9.300, ease:"none", onUpdate:() => bg(st.t) }, 0);
+          bg(0);
+        
+          tl.fromTo("#g-list2-ttl",{opacity:0,y:24},{opacity:1,y:0,duration:0.45,ease:"expo.out"},0.08);
+          tl.fromTo("#g-list2-r0 .num",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"back.out(2)"},0.10);
+          tl.fromTo("#g-list2-r0 .hd",{opacity:0,x:-30,filter:"blur(8px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.35,ease:"expo.out"},0.18);
+          tl.fromTo("#g-list2-r0 .sb",{opacity:0},{opacity:1,duration:0.35},0.40);
+          tl.fromTo("#g-list2-r1 .num",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"back.out(2)"},1.47);
+          tl.fromTo("#g-list2-r1 .hd",{opacity:0,x:-30,filter:"blur(8px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.35,ease:"expo.out"},1.55);
+          tl.fromTo("#g-list2-r1 .sb",{opacity:0},{opacity:1,duration:0.35},1.77);
+          tl.to("#g-list2-r0",{opacity:0.45,duration:0.3},1.47);
+          tl.fromTo("#g-list2-r2 .num",{scale:0,opacity:0},{scale:1,opacity:1,duration:0.4,ease:"back.out(2)"},3.90);
+          tl.fromTo("#g-list2-r2 .hd",{opacity:0,x:-30,filter:"blur(8px)"},{opacity:1,x:0,filter:"blur(0px)",duration:0.35,ease:"expo.out"},3.98);
+          tl.fromTo("#g-list2-r2 .sb",{opacity:0},{opacity:1,duration:0.35},4.20);
+          tl.to("#g-list2-r1",{opacity:0.45,duration:0.3},3.90);
+          window.__timelines["g-list2"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

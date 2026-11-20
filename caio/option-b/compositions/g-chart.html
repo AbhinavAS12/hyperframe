@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden; background:#081024; font-family:"Inter", sans-serif; color:#f7f3ea; }
+
+        #g-chart-stage { position:absolute; inset:0; }
+        #g-chart-bg3d { position:absolute; inset:0; width:1080px; height:1920px; }
+        #g-chart-vig { position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 38%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
+        #g-chart-ring { position:absolute; left:402px; top:142px; width:276px; height:276px;
+                    border-radius:50%; border:3px solid #d4af6a; box-shadow:0 0 40px rgba(212,175,106,.35); }
+    
+        #root .ttl { position:absolute; top:440px; left:0; right:0; text-align:center; font:800 84px/1.02 "Playfair Display", serif; letter-spacing:-1px; }
+        #root .ttl span { color:#d4af6a; }
+        #root .sub { position:absolute; top:630px; left:0; right:0; display:flex; gap:12px; justify-content:center; align-items:center; font:600 36px "Inter"; color:rgba(247,243,234,.66); }
+        #root .chart { position:absolute; left:150px; right:150px; top:770px; height:390px; display:flex; align-items:flex-end; justify-content:space-between; }
+        #root .col { width:200px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+        #root .bar { width:150px; border-radius:18px 18px 4px 4px; transform-origin:50% 100%; }
+        #root .val { font:900 54px "Inter"; margin-bottom:12px; }
+        #root .lab { font:600 34px "Inter"; margin-top:16px; color:rgba(247,243,234,.66); }
+        #root .badge { position:absolute; left:50%; margin-left:-260px; width:520px; top:690px; padding:12px 0; text-align:center; border-radius:60px;
+                       background:#d4af6a; color:#06121a; font:800 36px "Inter"; }
+    
+      </style>
+      <div id="root" data-composition-id="g-chart" data-width="1080" data-height="1920">
+        <canvas id="g-chart-bg3d" width="1080" height="1920"></canvas><div id="g-chart-vig"></div><div id="g-chart-ring"></div>
+        <div id="g-chart-stage">
+          
+          <div id="ch-title" class="ttl">Crescimento do PIB<br><span>em 2027</span></div>
+          <div id="ch-sub" class="sub"><svg class="ic" viewBox="0 0 48 48" width="40" height="40" style="stroke:#d4af6a" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 40h34"/><path d="m9 32 9-9 7 6 14-15"/><path d="M33 14h6v6"/></svg> Projeção do FMI</div>
+          <div class="chart">
+          <div class="col">
+            <div class="val" id="chv0">0,0%</div>
+            <div class="bar" id="chb0" style="height:62px;background:rgba(255,255,255,.35)"></div>
+            <div class="lab">Brasil</div>
+          </div>
+          <div class="col">
+            <div class="val" id="chv1">0,0%</div>
+            <div class="bar" id="chb1" style="height:104px;background:rgba(255,255,255,.6)"></div>
+            <div class="lab">Mundo</div>
+          </div>
+          <div class="col">
+            <div class="val" id="chv2">0,0%</div>
+            <div class="bar" id="chb2" style="height:250px;background:#d4af6a"></div>
+            <div class="lab">Emirados</div>
+          </div>
+          </div>
+          <div id="ch-badge" class="badge">4× a média do Brasil</div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          
+          tl.fromTo("#g-chart-stage", { clipPath:"circle(0% at 540px 280px)" }, { clipPath:"circle(150% at 540px 280px)", duration:0.55, ease:"power3.inOut" }, 0);
+          tl.to("#g-chart-stage", { opacity:0, duration:0.22, ease:"power2.in" }, 6.210);
+          const bg = window.CaioFX.goldField(document.getElementById("g-chart-bg3d"), 678);
+          const st = { t:0 };
+          tl.fromTo(st, { t:0 }, { t:6.450, duration:6.450, ease:"none", onUpdate:() => bg(st.t) }, 0);
+          bg(0);
+        
+          tl.fromTo("#chb0",{scaleY:0},{scaleY:1,duration:0.7,ease:"expo.out"},0.05);
+          tl.fromTo("#chv0",{opacity:0,y:20},{opacity:1,y:0,duration:0.3,ease:"power3.out"},0.05);
+          (function(){const o={v:0};const el=document.getElementById("chv0");tl.fromTo(o,{v:0},{v:1.9,duration:0.7,ease:"expo.out",onUpdate:()=>{el.textContent=o.v.toFixed(1).replace(".",",")+"%";}},0.05);})();
+          tl.fromTo("#chb1",{scaleY:0},{scaleY:1,duration:0.7,ease:"expo.out"},3.75);
+          tl.fromTo("#chv1",{opacity:0,y:20},{opacity:1,y:0,duration:0.3,ease:"power3.out"},3.75);
+          (function(){const o={v:0};const el=document.getElementById("chv1");tl.fromTo(o,{v:0},{v:3.2,duration:0.7,ease:"expo.out",onUpdate:()=>{el.textContent=o.v.toFixed(1).replace(".",",")+"%";}},3.75);})();
+          tl.fromTo("#chb2",{scaleY:0},{scaleY:1,duration:0.7,ease:"expo.out"},2.7);
+          tl.fromTo("#chv2",{opacity:0,y:20},{opacity:1,y:0,duration:0.3,ease:"power3.out"},2.7);
+          (function(){const o={v:0};const el=document.getElementById("chv2");tl.fromTo(o,{v:0},{v:7.7,duration:0.7,ease:"expo.out",onUpdate:()=>{el.textContent=o.v.toFixed(1).replace(".",",")+"%";}},2.7);})();
+          tl.fromTo("#ch-title",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"expo.out"},0.1);
+          tl.fromTo("#ch-sub",{opacity:0},{opacity:1,duration:0.4},0.35);
+          tl.fromTo("#ch-badge",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"},4.4);
+          window.__timelines["g-chart"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 renders/work-*/
 renders/.*hf-transaction*/
+caio/**/*.mp4
+caio/**/renders/
+caio/**/snapshots/
+caio/**/.hyperframes/

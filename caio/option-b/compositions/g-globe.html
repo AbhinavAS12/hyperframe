@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden; background:#081024; font-family:"Inter", sans-serif; color:#f7f3ea; }
+
+        #g-globe-stage { position:absolute; inset:0; }
+        #g-globe-bg3d { position:absolute; inset:0; width:1080px; height:1920px; }
+        #g-globe-vig { position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 38%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
+        #g-globe-ring { position:absolute; left:402px; top:142px; width:276px; height:276px;
+                    border-radius:50%; border:3px solid #d4af6a; box-shadow:0 0 40px rgba(212,175,106,.35); }
+    
+        #root .ttl { position:absolute; top:440px; left:0; right:0; text-align:center; font:800 74px/1.05 "Playfair Display", serif; }
+        #root .ttl span { color:#d4af6a; }
+        #root .route { position:absolute; top:630px; left:0; right:0; display:flex; justify-content:center; align-items:center; gap:22px; font:700 42px "Inter"; }
+        #root .pt { display:flex; align-items:center; gap:8px; padding:12px 26px; border-radius:50px; background:rgba(10,20,44,.80); border:1.5px solid rgba(212,175,106,.45); }
+        #root .pt.hi { color:#d4af6a; }
+        #root .arrow { color:rgba(247,243,234,.66); }
+    
+      </style>
+      <div id="root" data-composition-id="g-globe" data-width="1080" data-height="1920">
+        <canvas id="g-globe-bg3d" width="1080" height="1920"></canvas><div id="g-globe-vig"></div><div id="g-globe-ring"></div>
+        <div id="g-globe-stage">
+          <canvas id="gl-canvas" width="1080" height="1920" style="position:absolute;inset:0"></canvas>
+          <div id="gl-ttl" class="ttl">Investidores <span>brasileiros</span><br>nos Emirados</div>
+          <div class="route">
+            <div id="gl-from" class="pt"><svg class="ic" viewBox="0 0 48 48" width="40" height="40" style="stroke:rgba(247,243,234,.66)" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg> São Paulo</div>
+            <div class="arrow">→</div>
+            <div id="gl-to" class="pt hi"><svg class="ic" viewBox="0 0 48 48" width="40" height="40" style="stroke:#d4af6a" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg> Dubai</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#g-globe-stage", { clipPath:"circle(0% at 540px 280px)" }, { clipPath:"circle(150% at 540px 280px)", duration:0.55, ease:"power3.inOut" }, 0);
+          tl.to("#g-globe-stage", { opacity:0, duration:0.22, ease:"power2.in" }, 4.910);
+          const bg = window.CaioFX.goldField(document.getElementById("g-globe-bg3d"), 669);
+          const st = { t:0 };
+          tl.fromTo(st, { t:0 }, { t:5.150, duration:5.150, ease:"none", onUpdate:() => bg(st.t) }, 0);
+          bg(0);
+        
+          const R = window.CaioFX.globe(document.getElementById("gl-canvas"), "assets/globe-b.png", "#d4af6a", 960);
+          const g = { p:0, a:0 };
+          tl.fromTo(g, { p:0 }, { p:1, duration:4.75, ease:"power2.inOut", onUpdate:() => R(g.p, g.a) }, 0);
+          tl.fromTo(g, { a:0 }, { a:1, duration:2.2, ease:"power2.inOut", onUpdate:() => R(g.p, g.a) }, 1.0);
+          R(0, 0);
+          tl.fromTo("#gl-from", { opacity:0, x:-30 }, { opacity:1, x:0, duration:0.4, ease:"expo.out" }, 0.25);
+          tl.fromTo("#gl-to", { opacity:0, x:30 }, { opacity:1, x:0, duration:0.4, ease:"expo.out" }, 2.9);
+          tl.fromTo("#gl-ttl", { opacity:0, y:24 }, { opacity:1, y:0, duration:0.5, ease:"expo.out" }, 0.1);
+    
+          window.__timelines["g-globe"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

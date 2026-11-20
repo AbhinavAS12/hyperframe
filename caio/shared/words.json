@@ -1,0 +1,2289 @@
+{
+ "words": [
+  {
+   "id": "w0",
+   "text": "o",
+   "start": 0.633,
+   "end": 0.94
+  },
+  {
+   "id": "w1",
+   "text": "Brasil",
+   "start": 0.94,
+   "end": 1.553
+  },
+  {
+   "id": "w2",
+   "text": "deve",
+   "start": 1.553,
+   "end": 1.962
+  },
+  {
+   "id": "w3",
+   "text": "crescer",
+   "start": 1.962,
+   "end": 2.678
+  },
+  {
+   "id": "w4",
+   "text": "apenas",
+   "start": 2.678,
+   "end": 3.291
+  },
+  {
+   "id": "w5",
+   "text": "1,9%",
+   "start": 3.291,
+   "end": 3.7
+  },
+  {
+   "id": "w6",
+   "text": "em",
+   "start": 3.766,
+   "end": 4.152
+  },
+  {
+   "id": "w7",
+   "text": "2027",
+   "start": 4.152,
+   "end": 4.666
+  },
+  {
+   "id": "w8",
+   "text": "de",
+   "start": 4.7,
+   "end": 4.894
+  },
+  {
+   "id": "w9",
+   "text": "acordo",
+   "start": 4.894,
+   "end": 5.283
+  },
+  {
+   "id": "w10",
+   "text": "com",
+   "start": 5.283,
+   "end": 5.477
+  },
+  {
+   "id": "w11",
+   "text": "o",
+   "start": 5.477,
+   "end": 5.672
+  },
+  {
+   "id": "w12",
+   "text": "FMI",
+   "start": 5.672,
+   "end": 5.866
+  },
+  {
+   "id": "w13",
+   "text": "os",
+   "start": 6.0,
+   "end": 6.231
+  },
+  {
+   "id": "w14",
+   "text": "Emirados",
+   "start": 6.231,
+   "end": 6.849
+  },
+  {
+   "id": "w15",
+   "text": "Árabes",
+   "start": 6.849,
+   "end": 7.311
+  },
+  {
+   "id": "w16",
+   "text": "Unidos",
+   "start": 7.311,
+   "end": 7.774
+  },
+  {
+   "id": "w17",
+   "text": "devem",
+   "start": 7.774,
+   "end": 8.16
+  },
+  {
+   "id": "w18",
+   "text": "crescer",
+   "start": 8.16,
+   "end": 8.7
+  },
+  {
+   "id": "w19",
+   "text": "7,7%",
+   "start": 8.7,
+   "end": 9.252
+  },
+  {
+   "id": "w20",
+   "text": "contra",
+   "start": 9.252,
+   "end": 10.081
+  },
+  {
+   "id": "w21",
+   "text": "3,2%",
+   "start": 10.081,
+   "end": 10.633
+  },
+  {
+   "id": "w22",
+   "text": "da",
+   "start": 10.633,
+   "end": 10.96
+  },
+  {
+   "id": "w23",
+   "text": "média",
+   "start": 10.96,
+   "end": 11.504
+  },
+  {
+   "id": "w24",
+   "text": "mundial",
+   "start": 11.504,
+   "end": 12.266
+  },
+  {
+   "id": "w25",
+   "text": "e",
+   "start": 12.6,
+   "end": 12.788
+  },
+  {
+   "id": "w26",
+   "text": "quem",
+   "start": 12.788,
+   "end": 13.038
+  },
+  {
+   "id": "w27",
+   "text": "investe",
+   "start": 13.038,
+   "end": 13.476
+  },
+  {
+   "id": "w28",
+   "text": "antes",
+   "start": 13.476,
+   "end": 13.79
+  },
+  {
+   "id": "w29",
+   "text": "do",
+   "start": 13.79,
+   "end": 13.977
+  },
+  {
+   "id": "w30",
+   "text": "crescimento",
+   "start": 13.977,
+   "end": 14.666
+  },
+  {
+   "id": "w31",
+   "text": "aproveita",
+   "start": 14.833,
+   "end": 15.319
+  },
+  {
+   "id": "w32",
+   "text": "a",
+   "start": 15.319,
+   "end": 15.481
+  },
+  {
+   "id": "w33",
+   "text": "melhor",
+   "start": 15.481,
+   "end": 15.806
+  },
+  {
+   "id": "w34",
+   "text": "valorização",
+   "start": 15.806,
+   "end": 16.4
+  },
+  {
+   "id": "w35",
+   "text": "eu",
+   "start": 16.666,
+   "end": 16.848
+  },
+  {
+   "id": "w36",
+   "text": "me",
+   "start": 16.848,
+   "end": 17.03
+  },
+  {
+   "id": "w37",
+   "text": "chamo",
+   "start": 17.03,
+   "end": 17.333
+  },
+  {
+   "id": "w38",
+   "text": "Caio",
+   "start": 17.333,
+   "end": 17.576
+  },
+  {
+   "id": "w39",
+   "text": "Rezende",
+   "start": 17.576,
+   "end": 18.0
+  },
+  {
+   "id": "w40",
+   "text": "eu",
+   "start": 18.166,
+   "end": 18.337
+  },
+  {
+   "id": "w41",
+   "text": "sou",
+   "start": 18.337,
+   "end": 18.509
+  },
+  {
+   "id": "w42",
+   "text": "advogado",
+   "start": 18.509,
+   "end": 18.966
+  },
+  {
+   "id": "w43",
+   "text": "e",
+   "start": 18.966,
+   "end": 19.128
+  },
+  {
+   "id": "w44",
+   "text": "tenho",
+   "start": 19.128,
+   "end": 19.398
+  },
+  {
+   "id": "w45",
+   "text": "mais",
+   "start": 19.398,
+   "end": 19.614
+  },
+  {
+   "id": "w46",
+   "text": "de",
+   "start": 19.614,
+   "end": 19.776
+  },
+  {
+   "id": "w47",
+   "text": "10",
+   "start": 19.776,
+   "end": 19.938
+  },
+  {
+   "id": "w48",
+   "text": "anos",
+   "start": 19.938,
+   "end": 20.154
+  },
+  {
+   "id": "w49",
+   "text": "de",
+   "start": 20.154,
+   "end": 20.316
+  },
+  {
+   "id": "w50",
+   "text": "experiência",
+   "start": 20.316,
+   "end": 20.91
+  },
+  {
+   "id": "w51",
+   "text": "em",
+   "start": 20.91,
+   "end": 21.072
+  },
+  {
+   "id": "w52",
+   "text": "consultoria",
+   "start": 21.072,
+   "end": 21.666
+  },
+  {
+   "id": "w53",
+   "text": "imobiliária",
+   "start": 21.8,
+   "end": 22.6
+  },
+  {
+   "id": "w54",
+   "text": "em",
+   "start": 22.666,
+   "end": 22.812
+  },
+  {
+   "id": "w55",
+   "text": "São",
+   "start": 22.812,
+   "end": 22.957
+  },
+  {
+   "id": "w56",
+   "text": "Paulo",
+   "start": 22.957,
+   "end": 23.2
+  },
+  {
+   "id": "w57",
+   "text": "capital",
+   "start": 23.2,
+   "end": 23.564
+  },
+  {
+   "id": "w58",
+   "text": "no",
+   "start": 23.564,
+   "end": 23.721
+  },
+  {
+   "id": "w59",
+   "text": "Brasil",
+   "start": 23.721,
+   "end": 24.033
+  },
+  {
+   "id": "w60",
+   "text": "e",
+   "start": 24.3,
+   "end": 24.455
+  },
+  {
+   "id": "w61",
+   "text": "hoje",
+   "start": 24.455,
+   "end": 24.661
+  },
+  {
+   "id": "w62",
+   "text": "eu",
+   "start": 24.661,
+   "end": 24.816
+  },
+  {
+   "id": "w63",
+   "text": "assessoro",
+   "start": 24.816,
+   "end": 25.28
+  },
+  {
+   "id": "w64",
+   "text": "investidores",
+   "start": 25.28,
+   "end": 25.899
+  },
+  {
+   "id": "w65",
+   "text": "brasileiros",
+   "start": 25.899,
+   "end": 26.466
+  },
+  {
+   "id": "w66",
+   "text": "a",
+   "start": 26.633,
+   "end": 26.825
+  },
+  {
+   "id": "w67",
+   "text": "investir",
+   "start": 26.825,
+   "end": 27.337
+  },
+  {
+   "id": "w68",
+   "text": "aqui",
+   "start": 27.337,
+   "end": 27.593
+  },
+  {
+   "id": "w69",
+   "text": "nos",
+   "start": 27.593,
+   "end": 27.785
+  },
+  {
+   "id": "w70",
+   "text": "Emirados",
+   "start": 27.785,
+   "end": 28.298
+  },
+  {
+   "id": "w71",
+   "text": "Árabes",
+   "start": 28.298,
+   "end": 28.682
+  },
+  {
+   "id": "w72",
+   "text": "Unidos",
+   "start": 28.682,
+   "end": 29.066
+  },
+  {
+   "id": "w73",
+   "text": "e",
+   "start": 29.566,
+   "end": 29.757
+  },
+  {
+   "id": "w74",
+   "text": "por",
+   "start": 29.757,
+   "end": 29.948
+  },
+  {
+   "id": "w75",
+   "text": "que",
+   "start": 29.948,
+   "end": 30.139
+  },
+  {
+   "id": "w76",
+   "text": "investir",
+   "start": 30.139,
+   "end": 30.648
+  },
+  {
+   "id": "w77",
+   "text": "aqui?",
+   "start": 30.648,
+   "end": 30.966
+  },
+  {
+   "id": "w78",
+   "text": "a",
+   "start": 31.3,
+   "end": 31.497
+  },
+  {
+   "id": "w79",
+   "text": "moeda",
+   "start": 31.497,
+   "end": 31.826
+  },
+  {
+   "id": "w80",
+   "text": "é",
+   "start": 31.826,
+   "end": 32.023
+  },
+  {
+   "id": "w81",
+   "text": "atrelada",
+   "start": 32.023,
+   "end": 32.549
+  },
+  {
+   "id": "w82",
+   "text": "ao",
+   "start": 32.549,
+   "end": 32.746
+  },
+  {
+   "id": "w83",
+   "text": "dólar",
+   "start": 32.746,
+   "end": 33.075
+  },
+  {
+   "id": "w84",
+   "text": "desde",
+   "start": 33.075,
+   "end": 33.403
+  },
+  {
+   "id": "w85",
+   "text": "1997",
+   "start": 33.403,
+   "end": 33.666
+  },
+  {
+   "id": "w86",
+   "text": "então",
+   "start": 33.766,
+   "end": 34.09
+  },
+  {
+   "id": "w87",
+   "text": "seu",
+   "start": 34.09,
+   "end": 34.284
+  },
+  {
+   "id": "w88",
+   "text": "patrimônio",
+   "start": 34.284,
+   "end": 34.932
+  },
+  {
+   "id": "w89",
+   "text": "fica",
+   "start": 34.932,
+   "end": 35.191
+  },
+  {
+   "id": "w90",
+   "text": "dolarizado",
+   "start": 35.191,
+   "end": 35.839
+  },
+  {
+   "id": "w91",
+   "text": "e",
+   "start": 35.839,
+   "end": 36.033
+  },
+  {
+   "id": "w92",
+   "text": "protegido",
+   "start": 36.033,
+   "end": 36.833
+  },
+  {
+   "id": "w93",
+   "text": "o",
+   "start": 36.966,
+   "end": 37.127
+  },
+  {
+   "id": "w94",
+   "text": "retorno",
+   "start": 37.127,
+   "end": 37.503
+  },
+  {
+   "id": "w95",
+   "text": "com",
+   "start": 37.503,
+   "end": 37.664
+  },
+  {
+   "id": "w96",
+   "text": "aluguel",
+   "start": 37.664,
+   "end": 38.04
+  },
+  {
+   "id": "w97",
+   "text": "é",
+   "start": 38.04,
+   "end": 38.202
+  },
+  {
+   "id": "w98",
+   "text": "acima",
+   "start": 38.202,
+   "end": 38.47
+  },
+  {
+   "id": "w99",
+   "text": "da",
+   "start": 38.47,
+   "end": 38.631
+  },
+  {
+   "id": "w100",
+   "text": "média",
+   "start": 38.631,
+   "end": 38.9
+  },
+  {
+   "id": "w101",
+   "text": "das",
+   "start": 39.033,
+   "end": 39.156
+  },
+  {
+   "id": "w102",
+   "text": "grandes",
+   "start": 39.156,
+   "end": 39.443
+  },
+  {
+   "id": "w103",
+   "text": "capitais",
+   "start": 39.443,
+   "end": 39.772
+  },
+  {
+   "id": "w104",
+   "text": "do",
+   "start": 39.772,
+   "end": 39.895
+  },
+  {
+   "id": "w105",
+   "text": "mundo",
+   "start": 39.895,
+   "end": 40.1
+  },
+  {
+   "id": "w106",
+   "text": "não",
+   "start": 40.366,
+   "end": 40.551
+  },
+  {
+   "id": "w107",
+   "text": "tem",
+   "start": 40.551,
+   "end": 40.735
+  },
+  {
+   "id": "w108",
+   "text": "imposto",
+   "start": 40.735,
+   "end": 41.166
+  },
+  {
+   "id": "w109",
+   "text": "local",
+   "start": 41.466,
+   "end": 41.753
+  },
+  {
+   "id": "w110",
+   "text": "sobre",
+   "start": 41.753,
+   "end": 42.04
+  },
+  {
+   "id": "w111",
+   "text": "a",
+   "start": 42.04,
+   "end": 42.213
+  },
+  {
+   "id": "w112",
+   "text": "renda",
+   "start": 42.213,
+   "end": 42.5
+  },
+  {
+   "id": "w113",
+   "text": "e",
+   "start": 42.566,
+   "end": 42.71
+  },
+  {
+   "id": "w114",
+   "text": "nem",
+   "start": 42.71,
+   "end": 42.854
+  },
+  {
+   "id": "w115",
+   "text": "sobre",
+   "start": 42.854,
+   "end": 43.094
+  },
+  {
+   "id": "w116",
+   "text": "o",
+   "start": 43.094,
+   "end": 43.238
+  },
+  {
+   "id": "w117",
+   "text": "lucro",
+   "start": 43.238,
+   "end": 43.478
+  },
+  {
+   "id": "w118",
+   "text": "na",
+   "start": 43.478,
+   "end": 43.621
+  },
+  {
+   "id": "w119",
+   "text": "venda",
+   "start": 43.621,
+   "end": 43.861
+  },
+  {
+   "id": "w120",
+   "text": "da",
+   "start": 43.861,
+   "end": 44.005
+  },
+  {
+   "id": "w121",
+   "text": "propriedade",
+   "start": 44.005,
+   "end": 44.533
+  },
+  {
+   "id": "w122",
+   "text": "a",
+   "start": 45.233,
+   "end": 45.341
+  },
+  {
+   "id": "w123",
+   "text": "população",
+   "start": 45.341,
+   "end": 45.666
+  },
+  {
+   "id": "w124",
+   "text": "tá",
+   "start": 45.666,
+   "end": 45.775
+  },
+  {
+   "id": "w125",
+   "text": "crescendo",
+   "start": 45.775,
+   "end": 46.1
+  },
+  {
+   "id": "w126",
+   "text": "em",
+   "start": 46.166,
+   "end": 46.337
+  },
+  {
+   "id": "w127",
+   "text": "ritmo",
+   "start": 46.337,
+   "end": 46.622
+  },
+  {
+   "id": "w128",
+   "text": "recorde",
+   "start": 46.622,
+   "end": 47.021
+  },
+  {
+   "id": "w129",
+   "text": "e",
+   "start": 47.021,
+   "end": 47.192
+  },
+  {
+   "id": "w130",
+   "text": "a",
+   "start": 47.192,
+   "end": 47.364
+  },
+  {
+   "id": "w131",
+   "text": "demanda",
+   "start": 47.364,
+   "end": 47.763
+  },
+  {
+   "id": "w132",
+   "text": "por",
+   "start": 47.763,
+   "end": 47.934
+  },
+  {
+   "id": "w133",
+   "text": "imóveis",
+   "start": 47.934,
+   "end": 48.333
+  },
+  {
+   "id": "w134",
+   "text": "cresce",
+   "start": 48.466,
+   "end": 48.902
+  },
+  {
+   "id": "w135",
+   "text": "junto",
+   "start": 48.902,
+   "end": 49.266
+  },
+  {
+   "id": "w136",
+   "text": "um",
+   "start": 49.566,
+   "end": 49.734
+  },
+  {
+   "id": "w137",
+   "text": "dos",
+   "start": 49.734,
+   "end": 49.902
+  },
+  {
+   "id": "w138",
+   "text": "países",
+   "start": 49.902,
+   "end": 50.237
+  },
+  {
+   "id": "w139",
+   "text": "mais",
+   "start": 50.237,
+   "end": 50.461
+  },
+  {
+   "id": "w140",
+   "text": "seguros",
+   "start": 50.461,
+   "end": 50.853
+  },
+  {
+   "id": "w141",
+   "text": "do",
+   "start": 50.853,
+   "end": 51.02
+  },
+  {
+   "id": "w142",
+   "text": "mundo",
+   "start": 51.02,
+   "end": 51.3
+  },
+  {
+   "id": "w143",
+   "text": "com",
+   "start": 51.433,
+   "end": 51.639
+  },
+  {
+   "id": "w144",
+   "text": "regras",
+   "start": 51.639,
+   "end": 52.051
+  },
+  {
+   "id": "w145",
+   "text": "estáveis",
+   "start": 52.051,
+   "end": 52.6
+  },
+  {
+   "id": "w146",
+   "text": "e",
+   "start": 52.6,
+   "end": 52.806
+  },
+  {
+   "id": "w147",
+   "text": "feitas",
+   "start": 52.806,
+   "end": 53.218
+  },
+  {
+   "id": "w148",
+   "text": "pro",
+   "start": 53.218,
+   "end": 53.424
+  },
+  {
+   "id": "w149",
+   "text": "investidor",
+   "start": 53.424,
+   "end": 54.111
+  },
+  {
+   "id": "w150",
+   "text": "estrangeiro",
+   "start": 54.111,
+   "end": 54.866
+  },
+  {
+   "id": "w151",
+   "text": "a",
+   "start": 55.266,
+   "end": 55.407
+  },
+  {
+   "id": "w152",
+   "text": "propriedade",
+   "start": 55.407,
+   "end": 55.924
+  },
+  {
+   "id": "w153",
+   "text": "é",
+   "start": 55.924,
+   "end": 56.065
+  },
+  {
+   "id": "w154",
+   "text": "plena",
+   "start": 56.065,
+   "end": 56.3
+  },
+  {
+   "id": "w155",
+   "text": "o",
+   "start": 56.666,
+   "end": 56.866
+  },
+  {
+   "id": "w156",
+   "text": "registro",
+   "start": 56.866,
+   "end": 57.399
+  },
+  {
+   "id": "w157",
+   "text": "é",
+   "start": 57.399,
+   "end": 57.599
+  },
+  {
+   "id": "w158",
+   "text": "oficial",
+   "start": 57.599,
+   "end": 58.066
+  },
+  {
+   "id": "w159",
+   "text": "num",
+   "start": 58.066,
+   "end": 58.266
+  },
+  {
+   "id": "w160",
+   "text": "órgão",
+   "start": 58.266,
+   "end": 58.6
+  },
+  {
+   "id": "w161",
+   "text": "local",
+   "start": 58.6,
+   "end": 58.933
+  },
+  {
+   "id": "w162",
+   "text": "e",
+   "start": 59.1,
+   "end": 59.249
+  },
+  {
+   "id": "w163",
+   "text": "o",
+   "start": 59.249,
+   "end": 59.398
+  },
+  {
+   "id": "w164",
+   "text": "dinheiro",
+   "start": 59.398,
+   "end": 59.795
+  },
+  {
+   "id": "w165",
+   "text": "da",
+   "start": 59.795,
+   "end": 59.944
+  },
+  {
+   "id": "w166",
+   "text": "compra",
+   "start": 59.944,
+   "end": 60.241
+  },
+  {
+   "id": "w167",
+   "text": "na",
+   "start": 60.241,
+   "end": 60.39
+  },
+  {
+   "id": "w168",
+   "text": "planta",
+   "start": 60.39,
+   "end": 60.688
+  },
+  {
+   "id": "w169",
+   "text": "fica",
+   "start": 60.688,
+   "end": 60.886
+  },
+  {
+   "id": "w170",
+   "text": "protegido",
+   "start": 60.886,
+   "end": 61.333
+  },
+  {
+   "id": "w171",
+   "text": "numa",
+   "start": 61.466,
+   "end": 61.822
+  },
+  {
+   "id": "w172",
+   "text": "conta",
+   "start": 61.822,
+   "end": 62.266
+  },
+  {
+   "id": "w173",
+   "text": "garantida",
+   "start": 62.266,
+   "end": 62.966
+  },
+  {
+   "id": "w174",
+   "text": "fiscalizada",
+   "start": 62.966,
+   "end": 63.6
+  },
+  {
+   "id": "w175",
+   "text": "pelo",
+   "start": 63.6,
+   "end": 63.83
+  },
+  {
+   "id": "w176",
+   "text": "governo",
+   "start": 63.83,
+   "end": 64.233
+  },
+  {
+   "id": "w177",
+   "text": "mercado",
+   "start": 64.733,
+   "end": 65.149
+  },
+  {
+   "id": "w178",
+   "text": "líquido",
+   "start": 65.149,
+   "end": 65.565
+  },
+  {
+   "id": "w179",
+   "text": "pra",
+   "start": 65.565,
+   "end": 65.743
+  },
+  {
+   "id": "w180",
+   "text": "entrar",
+   "start": 65.743,
+   "end": 66.099
+  },
+  {
+   "id": "w181",
+   "text": "e",
+   "start": 66.099,
+   "end": 66.278
+  },
+  {
+   "id": "w182",
+   "text": "sair",
+   "start": 66.278,
+   "end": 66.515
+  },
+  {
+   "id": "w183",
+   "text": "quando",
+   "start": 66.515,
+   "end": 66.872
+  },
+  {
+   "id": "w184",
+   "text": "você",
+   "start": 66.872,
+   "end": 67.11
+  },
+  {
+   "id": "w185",
+   "text": "quiser",
+   "start": 67.11,
+   "end": 67.466
+  },
+  {
+   "id": "w186",
+   "text": "e",
+   "start": 67.833,
+   "end": 67.971
+  },
+  {
+   "id": "w187",
+   "text": "a",
+   "start": 67.971,
+   "end": 68.108
+  },
+  {
+   "id": "w188",
+   "text": "partir",
+   "start": 68.108,
+   "end": 68.383
+  },
+  {
+   "id": "w189",
+   "text": "de",
+   "start": 68.383,
+   "end": 68.521
+  },
+  {
+   "id": "w190",
+   "text": "um",
+   "start": 68.521,
+   "end": 68.658
+  },
+  {
+   "id": "w191",
+   "text": "valor",
+   "start": 68.658,
+   "end": 68.887
+  },
+  {
+   "id": "w192",
+   "text": "específico",
+   "start": 68.887,
+   "end": 69.346
+  },
+  {
+   "id": "w193",
+   "text": "de",
+   "start": 69.346,
+   "end": 69.483
+  },
+  {
+   "id": "w194",
+   "text": "investimento",
+   "start": 69.483,
+   "end": 70.033
+  },
+  {
+   "id": "w195",
+   "text": "um",
+   "start": 70.133,
+   "end": 70.353
+  },
+  {
+   "id": "w196",
+   "text": "visto",
+   "start": 70.353,
+   "end": 70.718
+  },
+  {
+   "id": "w197",
+   "text": "de",
+   "start": 70.718,
+   "end": 70.938
+  },
+  {
+   "id": "w198",
+   "text": "10",
+   "start": 70.938,
+   "end": 71.157
+  },
+  {
+   "id": "w199",
+   "text": "anos",
+   "start": 71.157,
+   "end": 71.45
+  },
+  {
+   "id": "w200",
+   "text": "pra",
+   "start": 71.45,
+   "end": 71.67
+  },
+  {
+   "id": "w201",
+   "text": "você",
+   "start": 71.67,
+   "end": 71.962
+  },
+  {
+   "id": "w202",
+   "text": "e",
+   "start": 71.962,
+   "end": 72.182
+  },
+  {
+   "id": "w203",
+   "text": "pra",
+   "start": 72.182,
+   "end": 72.401
+  },
+  {
+   "id": "w204",
+   "text": "sua",
+   "start": 72.401,
+   "end": 72.621
+  },
+  {
+   "id": "w205",
+   "text": "família",
+   "start": 72.621,
+   "end": 73.133
+  },
+  {
+   "id": "w206",
+   "text": "e",
+   "start": 73.833,
+   "end": 74.03
+  },
+  {
+   "id": "w207",
+   "text": "por",
+   "start": 74.03,
+   "end": 74.226
+  },
+  {
+   "id": "w208",
+   "text": "que",
+   "start": 74.226,
+   "end": 74.423
+  },
+  {
+   "id": "w209",
+   "text": "escolher",
+   "start": 74.423,
+   "end": 74.948
+  },
+  {
+   "id": "w210",
+   "text": "a",
+   "start": 74.948,
+   "end": 75.145
+  },
+  {
+   "id": "w211",
+   "text": "Allegiance?",
+   "start": 75.145,
+   "end": 75.866
+  },
+  {
+   "id": "w212",
+   "text": "nós",
+   "start": 76.166,
+   "end": 76.364
+  },
+  {
+   "id": "w213",
+   "text": "somos",
+   "start": 76.364,
+   "end": 76.693
+  },
+  {
+   "id": "w214",
+   "text": "uma",
+   "start": 76.693,
+   "end": 76.891
+  },
+  {
+   "id": "w215",
+   "text": "consultoria",
+   "start": 76.891,
+   "end": 77.616
+  },
+  {
+   "id": "w216",
+   "text": "global",
+   "start": 77.616,
+   "end": 78.011
+  },
+  {
+   "id": "w217",
+   "text": "de",
+   "start": 78.011,
+   "end": 78.209
+  },
+  {
+   "id": "w218",
+   "text": "investimentos",
+   "start": 78.209,
+   "end": 79.066
+  },
+  {
+   "id": "w219",
+   "text": "reconhecida",
+   "start": 79.433,
+   "end": 80.115
+  },
+  {
+   "id": "w220",
+   "text": "pela",
+   "start": 80.115,
+   "end": 80.363
+  },
+  {
+   "id": "w221",
+   "text": "imprensa",
+   "start": 80.363,
+   "end": 80.86
+  },
+  {
+   "id": "w222",
+   "text": "internacional",
+   "start": 80.86,
+   "end": 81.666
+  },
+  {
+   "id": "w223",
+   "text": "com",
+   "start": 82.333,
+   "end": 82.498
+  },
+  {
+   "id": "w224",
+   "text": "7",
+   "start": 82.498,
+   "end": 82.664
+  },
+  {
+   "id": "w225",
+   "text": "escritórios",
+   "start": 82.664,
+   "end": 83.27
+  },
+  {
+   "id": "w226",
+   "text": "pelo",
+   "start": 83.27,
+   "end": 83.49
+  },
+  {
+   "id": "w227",
+   "text": "mundo",
+   "start": 83.49,
+   "end": 83.766
+  },
+  {
+   "id": "w228",
+   "text": "registro",
+   "start": 84.1,
+   "end": 84.651
+  },
+  {
+   "id": "w229",
+   "text": "no",
+   "start": 84.651,
+   "end": 84.858
+  },
+  {
+   "id": "w230",
+   "text": "órgão",
+   "start": 84.858,
+   "end": 85.203
+  },
+  {
+   "id": "w231",
+   "text": "regulador",
+   "start": 85.203,
+   "end": 85.823
+  },
+  {
+   "id": "w232",
+   "text": "imobiliário",
+   "start": 85.823,
+   "end": 86.582
+  },
+  {
+   "id": "w233",
+   "text": "de",
+   "start": 86.582,
+   "end": 86.788
+  },
+  {
+   "id": "w234",
+   "text": "Dubai",
+   "start": 86.788,
+   "end": 87.133
+  },
+  {
+   "id": "w235",
+   "text": "e",
+   "start": 87.333,
+   "end": 87.503
+  },
+  {
+   "id": "w236",
+   "text": "mais",
+   "start": 87.503,
+   "end": 87.729
+  },
+  {
+   "id": "w237",
+   "text": "de",
+   "start": 87.729,
+   "end": 87.898
+  },
+  {
+   "id": "w238",
+   "text": "20",
+   "start": 87.898,
+   "end": 88.068
+  },
+  {
+   "id": "w239",
+   "text": "bilhões",
+   "start": 88.068,
+   "end": 88.463
+  },
+  {
+   "id": "w240",
+   "text": "de",
+   "start": 88.463,
+   "end": 88.633
+  },
+  {
+   "id": "w241",
+   "text": "dirhams",
+   "start": 88.766,
+   "end": 89.204
+  },
+  {
+   "id": "w242",
+   "text": "em",
+   "start": 89.204,
+   "end": 89.391
+  },
+  {
+   "id": "w243",
+   "text": "transações",
+   "start": 89.391,
+   "end": 90.016
+  },
+  {
+   "id": "w244",
+   "text": "imobiliárias",
+   "start": 90.016,
+   "end": 90.766
+  },
+  {
+   "id": "w245",
+   "text": "quer",
+   "start": 91.366,
+   "end": 91.577
+  },
+  {
+   "id": "w246",
+   "text": "fazer",
+   "start": 91.577,
+   "end": 91.84
+  },
+  {
+   "id": "w247",
+   "text": "parte",
+   "start": 91.84,
+   "end": 92.104
+  },
+  {
+   "id": "w248",
+   "text": "desse",
+   "start": 92.104,
+   "end": 92.368
+  },
+  {
+   "id": "w249",
+   "text": "crescimento",
+   "start": 92.368,
+   "end": 92.948
+  },
+  {
+   "id": "w250",
+   "text": "com",
+   "start": 92.948,
+   "end": 93.106
+  },
+  {
+   "id": "w251",
+   "text": "segurança?",
+   "start": 93.106,
+   "end": 93.633
+  },
+  {
+   "id": "w252",
+   "text": "agende",
+   "start": 94.133,
+   "end": 94.533
+  },
+  {
+   "id": "w253",
+   "text": "uma",
+   "start": 94.533,
+   "end": 94.733
+  },
+  {
+   "id": "w254",
+   "text": "consulta",
+   "start": 94.733,
+   "end": 95.266
+  },
+  {
+   "id": "w255",
+   "text": "inicial",
+   "start": 95.266,
+   "end": 95.733
+  },
+  {
+   "id": "w256",
+   "text": "comigo",
+   "start": 95.733,
+   "end": 96.133
+  },
+  {
+   "id": "w257",
+   "text": "como",
+   "start": 96.3,
+   "end": 96.567
+  },
+  {
+   "id": "w258",
+   "text": "cortesia",
+   "start": 96.567,
+   "end": 97.1
+  },
+  {
+   "id": "w259",
+   "text": "da",
+   "start": 97.1,
+   "end": 97.3
+  },
+  {
+   "id": "w260",
+   "text": "Allegiance",
+   "start": 97.3,
+   "end": 97.966
+  },
+  {
+   "id": "w261",
+   "text": "e",
+   "start": 98.233,
+   "end": 98.416
+  },
+  {
+   "id": "w262",
+   "text": "descubra",
+   "start": 98.416,
+   "end": 98.903
+  },
+  {
+   "id": "w263",
+   "text": "como",
+   "start": 98.903,
+   "end": 99.146
+  },
+  {
+   "id": "w264",
+   "text": "investir",
+   "start": 99.146,
+   "end": 99.633
+  },
+  {
+   "id": "w265",
+   "text": "nos",
+   "start": 99.633,
+   "end": 99.816
+  },
+  {
+   "id": "w266",
+   "text": "Emirados",
+   "start": 99.816,
+   "end": 100.303
+  },
+  {
+   "id": "w267",
+   "text": "Árabes",
+   "start": 100.303,
+   "end": 100.668
+  },
+  {
+   "id": "w268",
+   "text": "Unidos",
+   "start": 100.668,
+   "end": 101.033
+  }
+ ],
+ "segments": [
+  {
+   "seg": 52,
+   "start": 0.633,
+   "end": 3.7,
+   "text": "o Brasil deve crescer apenas 1,9%",
+   "words": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  {
+   "seg": 54,
+   "start": 3.766,
+   "end": 4.666,
+   "text": "em 2027",
+   "words": [
+    6,
+    7
+   ]
+  },
+  {
+   "seg": 55,
+   "start": 4.7,
+   "end": 5.866,
+   "text": "de acordo com o FMI",
+   "words": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "seg": 56,
+   "start": 6.0,
+   "end": 8.7,
+   "text": "os Emirados Árabes Unidos devem crescer",
+   "words": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ]
+  },
+  {
+   "seg": 57,
+   "start": 8.7,
+   "end": 10.633,
+   "text": "7,7% contra 3,2%",
+   "words": [
+    19,
+    20,
+    21
+   ]
+  },
+  {
+   "seg": 58,
+   "start": 10.633,
+   "end": 12.266,
+   "text": "da média mundial",
+   "words": [
+    22,
+    23,
+    24
+   ]
+  },
+  {
+   "seg": 59,
+   "start": 12.6,
+   "end": 14.666,
+   "text": "e quem investe antes do crescimento",
+   "words": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+   ]
+  },
+  {
+   "seg": 60,
+   "start": 14.833,
+   "end": 16.4,
+   "text": "aproveita a melhor valorização",
+   "words": [
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "seg": 61,
+   "start": 16.666,
+   "end": 18.0,
+   "text": "eu me chamo Caio Rezende",
+   "words": [
+    35,
+    36,
+    37,
+    38,
+    39
+   ]
+  },
+  {
+   "seg": 62,
+   "start": 18.166,
+   "end": 18.966,
+   "text": "eu sou advogado",
+   "words": [
+    40,
+    41,
+    42
+   ]
+  },
+  {
+   "seg": 63,
+   "start": 18.966,
+   "end": 21.666,
+   "text": "e tenho mais de 10 anos de experiência em consultoria",
+   "words": [
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52
+   ]
+  },
+  {
+   "seg": 64,
+   "start": 21.8,
+   "end": 22.6,
+   "text": "imobiliária",
+   "words": [
+    53
+   ]
+  },
+  {
+   "seg": 65,
+   "start": 22.666,
+   "end": 23.2,
+   "text": "em São Paulo",
+   "words": [
+    54,
+    55,
+    56
+   ]
+  },
+  {
+   "seg": 66,
+   "start": 23.2,
+   "end": 24.033,
+   "text": "capital no Brasil",
+   "words": [
+    57,
+    58,
+    59
+   ]
+  },
+  {
+   "seg": 67,
+   "start": 24.3,
+   "end": 26.466,
+   "text": "e hoje eu assessoro investidores brasileiros",
+   "words": [
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+   ]
+  },
+  {
+   "seg": 68,
+   "start": 26.633,
+   "end": 29.066,
+   "text": "a investir aqui nos Emirados Árabes Unidos",
+   "words": [
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+   ]
+  },
+  {
+   "seg": 69,
+   "start": 29.566,
+   "end": 30.966,
+   "text": "e por que investir aqui?",
+   "words": [
+    73,
+    74,
+    75,
+    76,
+    77
+   ]
+  },
+  {
+   "seg": 70,
+   "start": 31.3,
+   "end": 33.666,
+   "text": "a moeda é atrelada ao dólar desde 1997",
+   "words": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85
+   ]
+  },
+  {
+   "seg": 71,
+   "start": 33.766,
+   "end": 36.033,
+   "text": "então seu patrimônio fica dolarizado e",
+   "words": [
+    86,
+    87,
+    88,
+    89,
+    90,
+    91
+   ]
+  },
+  {
+   "seg": 72,
+   "start": 36.033,
+   "end": 36.833,
+   "text": "protegido",
+   "words": [
+    92
+   ]
+  },
+  {
+   "seg": 73,
+   "start": 36.966,
+   "end": 38.9,
+   "text": "o retorno com aluguel é acima da média",
+   "words": [
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+   ]
+  },
+  {
+   "seg": 74,
+   "start": 39.033,
+   "end": 40.1,
+   "text": "das grandes capitais do mundo",
+   "words": [
+    101,
+    102,
+    103,
+    104,
+    105
+   ]
+  },
+  {
+   "seg": 75,
+   "start": 40.366,
+   "end": 41.166,
+   "text": "não tem imposto",
+   "words": [
+    106,
+    107,
+    108
+   ]
+  },
+  {
+   "seg": 76,
+   "start": 41.466,
+   "end": 42.5,
+   "text": "local sobre a renda",
+   "words": [
+    109,
+    110,
+    111,
+    112
+   ]
+  },
+  {
+   "seg": 77,
+   "start": 42.566,
+   "end": 44.533,
+   "text": "e nem sobre o lucro na venda da propriedade",
+   "words": [
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121
+   ]
+  },
+  {
+   "seg": 78,
+   "start": 45.233,
+   "end": 46.1,
+   "text": "a população tá crescendo",
+   "words": [
+    122,
+    123,
+    124,
+    125
+   ]
+  },
+  {
+   "seg": 79,
+   "start": 46.166,
+   "end": 48.333,
+   "text": "em ritmo recorde e a demanda por imóveis",
+   "words": [
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133
+   ]
+  },
+  {
+   "seg": 80,
+   "start": 48.466,
+   "end": 49.266,
+   "text": "cresce junto",
+   "words": [
+    134,
+    135
+   ]
+  },
+  {
+   "seg": 81,
+   "start": 49.566,
+   "end": 51.3,
+   "text": "um dos países mais seguros do mundo",
+   "words": [
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142
+   ]
+  },
+  {
+   "seg": 82,
+   "start": 51.433,
+   "end": 54.866,
+   "text": "com regras estáveis e feitas pro investidor estrangeiro",
+   "words": [
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+   ]
+  },
+  {
+   "seg": 83,
+   "start": 55.266,
+   "end": 56.3,
+   "text": "a propriedade é plena",
+   "words": [
+    151,
+    152,
+    153,
+    154
+   ]
+  },
+  {
+   "seg": 84,
+   "start": 56.666,
+   "end": 58.933,
+   "text": "o registro é oficial num órgão local",
+   "words": [
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161
+   ]
+  },
+  {
+   "seg": 85,
+   "start": 59.1,
+   "end": 61.333,
+   "text": "e o dinheiro da compra na planta fica protegido",
+   "words": [
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170
+   ]
+  },
+  {
+   "seg": 86,
+   "start": 61.466,
+   "end": 62.266,
+   "text": "numa conta",
+   "words": [
+    171,
+    172
+   ]
+  },
+  {
+   "seg": 87,
+   "start": 62.266,
+   "end": 62.966,
+   "text": "garantida",
+   "words": [
+    173
+   ]
+  },
+  {
+   "seg": 88,
+   "start": 62.966,
+   "end": 64.233,
+   "text": "fiscalizada pelo governo",
+   "words": [
+    174,
+    175,
+    176
+   ]
+  },
+  {
+   "seg": 89,
+   "start": 64.733,
+   "end": 67.466,
+   "text": "mercado líquido pra entrar e sair quando você quiser",
+   "words": [
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185
+   ]
+  },
+  {
+   "seg": 90,
+   "start": 67.833,
+   "end": 70.033,
+   "text": "e a partir de um valor específico de investimento",
+   "words": [
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194
+   ]
+  },
+  {
+   "seg": 91,
+   "start": 70.133,
+   "end": 73.133,
+   "text": "um visto de 10 anos pra você e pra sua família",
+   "words": [
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205
+   ]
+  },
+  {
+   "seg": 92,
+   "start": 73.833,
+   "end": 75.866,
+   "text": "e por que escolher a Allegiance?",
+   "words": [
+    206,
+    207,
+    208,
+    209,
+    210,
+    211
+   ]
+  },
+  {
+   "seg": 93,
+   "start": 76.166,
+   "end": 79.066,
+   "text": "nós somos uma consultoria global de investimentos",
+   "words": [
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218
+   ]
+  },
+  {
+   "seg": 94,
+   "start": 79.433,
+   "end": 81.666,
+   "text": "reconhecida pela imprensa internacional",
+   "words": [
+    219,
+    220,
+    221,
+    222
+   ]
+  },
+  {
+   "seg": 95,
+   "start": 82.333,
+   "end": 83.766,
+   "text": "com 7 escritórios pelo mundo",
+   "words": [
+    223,
+    224,
+    225,
+    226,
+    227
+   ]
+  },
+  {
+   "seg": 96,
+   "start": 84.1,
+   "end": 87.133,
+   "text": "registro no órgão regulador imobiliário de Dubai",
+   "words": [
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234
+   ]
+  },
+  {
+   "seg": 97,
+   "start": 87.333,
+   "end": 88.633,
+   "text": "e mais de 20 bilhões de",
+   "words": [
+    235,
+    236,
+    237,
+    238,
+    239,
+    240
+   ]
+  },
+  {
+   "seg": 98,
+   "start": 88.766,
+   "end": 90.766,
+   "text": "dirhams em transações imobiliárias",
+   "words": [
+    241,
+    242,
+    243,
+    244
+   ]
+  },
+  {
+   "seg": 99,
+   "start": 91.366,
+   "end": 93.633,
+   "text": "quer fazer parte desse crescimento com segurança?",
+   "words": [
+    245,
+    246,
+    247,
+    248,
+    249,
+    250,
+    251
+   ]
+  },
+  {
+   "seg": 100,
+   "start": 94.133,
+   "end": 96.133,
+   "text": "agende uma consulta inicial comigo",
+   "words": [
+    252,
+    253,
+    254,
+    255,
+    256
+   ]
+  },
+  {
+   "seg": 101,
+   "start": 96.3,
+   "end": 97.966,
+   "text": "como cortesia da Allegiance",
+   "words": [
+    257,
+    258,
+    259,
+    260
+   ]
+  },
+  {
+   "seg": 102,
+   "start": 98.233,
+   "end": 101.033,
+   "text": "e descubra como investir nos Emirados Árabes Unidos",
+   "words": [
+    261,
+    262,
+    263,
+    264,
+    265,
+    266,
+    267,
+    268
+   ]
+  }
+ ]
+}
