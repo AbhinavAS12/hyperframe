@@ -120,6 +120,7 @@ def root():
       <div id="grade" style="position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 50%,rgba(0,0,0,.45) 100%);"></div>
 {chr(10).join(brolls)}
 {chr(10).join(hosts)}
+      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="{DUR}" data-track-index="10" data-volume="0.13" data-fade-in="0.5" data-fade-out="2.5"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
@@ -148,6 +149,7 @@ def main():
         for f in os.listdir(bdir):
             shutil.copy(os.path.join(bdir, f), os.path.join(assets, "broll", f))
     shutil.copy(os.path.join(SHARED, "three.min.js"), assets)
+    shutil.copy(os.path.join(SHARED, "music-a.mp3"), os.path.join(assets, "music.mp3"))
     shutil.copy(os.path.join(HERE, "..", "vendor", "gsap.min.js"), os.path.join(assets, "gsap.min.js"))
     for f in os.listdir(SHARED):
         if f.endswith(".mp3") and not f.startswith("music"):
