@@ -21,6 +21,7 @@
     
       </style>
       <div id="root" data-composition-id="g-brand" data-width="1080" data-height="1920">
+        <img id="g-brand-bgimg" src="assets/bg-brand.jpg" alt="" style="position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;"><div id="g-brand-bgdim" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,14,.55) 0%,rgba(4,8,14,.35) 45%,rgba(4,8,14,.75) 100%);"></div>
         <div id="g-brand-glow" style="position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 40%, rgba(47,211,245,.10), rgba(0,0,0,0) 70%);"></div>
         <div id="g-brand-stage">
           <div class="brand">
@@ -43,6 +44,7 @@
           tl.fromTo("#br-line", { scaleX:0 }, { scaleX:1, duration:0.6, ease:"power3.inOut" }, 0.9);
           tl.fromTo("#br-tag", { opacity:0 }, { opacity:1, duration:0.4 }, 1.2);
     
+          tl.fromTo("#g-brand-bgimg",{scale:1.1},{scale:1.0,duration:2.35,ease:"power1.out"},0);
           window.__timelines["g-brand"] = tl;
         })();
       </script>

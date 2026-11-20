@@ -24,7 +24,7 @@ BROLL = [
     ("b01", 24.30, 28.35, "globe", "Brasil <b>→</b> Emirados"),
     ("b02", 31.30, 35.00, "dollar", "Moeda atrelada ao <b>dólar</b> desde 1997"),
     ("b03", 36.95, 40.30, "house", "Aluguel <b>acima da média</b>"),
-    ("b04", 40.35, 43.95, "percent", "<b>0% imposto</b> sobre renda e lucro"),
+    ("b04", 40.35, 45.20, "percent", "<b>0% imposto</b> sobre renda e lucro"),
     ("b05", 45.20, 48.45, "people", "População em <b>ritmo recorde</b>"),
     ("b06", 49.55, 53.05, "shield", "Um dos países <b>mais seguros</b>"),
     ("b07", 55.25, 58.90, "key", "Propriedade <b>plena</b> e registro oficial"),
@@ -34,12 +34,25 @@ BROLL = [
     ("b11", 76.15, 79.40, "globe", "Consultoria <b>global</b> de investimentos"),
     ("b12", 87.30, 91.05, "chart", "Mais de <b>AED 20 bilhões</b> em transações"),
 ]
+RATE = {"b04": ' data-playback-rate="1.04"'}
+# image backgrounds behind the text-only cards
+BG = {"g-question": ("bg-question.jpg", 1.85), "g-brand": ("bg-brand.jpg", 2.35)}
 CUTS = [("g-chart", 6.0, 12.45), ("g-question", 29.45, 31.3), ("g-brand", 73.8, 76.15)]
 OVERS = [("o-name", 16.55, 24.25), ("o-stats", 79.45, 87.25), ("o-cta", 93.9, DUR)]
 # punch-ins on the talking-head stretches only
 PUNCH = [(0, 1.0), (3.77, 1.12), (16.45, 1.0), (21.8, 1.1), (28.35, 1.0), (35.0, 1.1),
-         (43.95, 1.0), (48.45, 1.1), (53.05, 1.0), (62.95, 1.1), (67.55, 1.0),
+         (48.45, 1.1), (53.05, 1.0), (62.95, 1.1), (67.55, 1.0),
          (79.4, 1.08), (82.33, 1.0), (84.1, 1.1), (91.05, 1.0), (94.13, 1.1), (98.23, 1.0)]
+
+
+def with_bg(cid, html_):
+    img, dur = BG[cid]
+    layer = (f'<img id="{cid}-bgimg" src="assets/{img}" alt="" style="position:absolute;inset:0;width:{W}px;height:{H}px;object-fit:cover;">'
+             f'<div id="{cid}-bgdim" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,14,.55) 0%,rgba(4,8,14,.35) 45%,rgba(4,8,14,.75) 100%);"></div>')
+    i = html_.index('data-height="1920">', html_.index('<div id="root"')) + len('data-height="1920">')
+    html_ = html_[:i] + "\n        " + layer + html_[i:]
+    anim = f'tl.fromTo("#{cid}-bgimg",{{scale:1.1}},{{scale:1.0,duration:{dur},ease:"power1.out"}},0);\n          window.__timelines'
+    return html_.replace("window.__timelines", anim, 1)
 
 
 def labels_scene():
@@ -89,7 +102,7 @@ def root():
     brolls, bjs = [], []
     for i, (f, a, b, *_r) in enumerate(BROLL):
         d = b - a
-        brolls.append(f'      <div id="bw{i}" class="bw"><video id="br{i}" class="clip" src="assets/broll/{f}.mp4" muted playsinline data-start="{a:.2f}" data-duration="{d:.2f}" data-media-start="0" data-track-index="2"></video></div>')
+        brolls.append(f'      <div id="bw{i}" class="bw"><video id="br{i}" class="clip" src="assets/broll/{f}.mp4" muted playsinline data-start="{a:.2f}" data-duration="{d:.2f}" data-media-start="0"{RATE.get(f, '')} data-track-index="2"></video></div>')
         bjs.append(f'      tl.fromTo("#bw{i}", {{ scale:1.12 }}, {{ scale:1.0, duration:{d:.2f}, ease:"power1.out" }}, {a:.2f});')
     aud = [f'      <audio id="sfx{i}" src="assets/sfx/{f}.mp3" data-start="{t:.2f}" data-duration="{d}" data-track-index="{11 + (i % 2)}" data-volume="{v * S["sfx_vol"]:.2f}"></audio>'
            for i, (f, t, d, v) in enumerate(sfx())]
@@ -120,7 +133,7 @@ def root():
       <div id="grade" style="position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 50%,rgba(0,0,0,.45) 100%);"></div>
 {chr(10).join(brolls)}
 {chr(10).join(hosts)}
-      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="{DUR}" data-track-index="10" data-volume="0.13" data-fade-in="0.5" data-fade-out="2.5"></audio>
+      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="{DUR}" data-track-index="10" data-volume="0.16" data-fade-in="0.5" data-fade-out="2.5"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
@@ -149,7 +162,9 @@ def main():
         for f in os.listdir(bdir):
             shutil.copy(os.path.join(bdir, f), os.path.join(assets, "broll", f))
     shutil.copy(os.path.join(SHARED, "three.min.js"), assets)
-    shutil.copy(os.path.join(SHARED, "music-a.mp3"), os.path.join(assets, "music.mp3"))
+    shutil.copy(os.path.join(SHARED, "music-c.mp3"), os.path.join(assets, "music.mp3"))
+    for img in ("bg-question.jpg", "bg-brand.jpg"):
+        shutil.copy(os.path.join(SHARED, img), os.path.join(assets, img))
     shutil.copy(os.path.join(HERE, "..", "vendor", "gsap.min.js"), os.path.join(assets, "gsap.min.js"))
     for f in os.listdir(SHARED):
         if f.endswith(".mp3") and not f.startswith("music"):
@@ -158,8 +173,8 @@ def main():
     files = {
         "captions.html": B.build_captions(S, OPT),
         "g-chart.html": B.g_chart(S, OPT, 6.45),
-        "g-question.html": B.g_question(S, OPT, 1.85),
-        "g-brand.html": B.g_brand(S, OPT, 2.35),
+        "g-question.html": with_bg("g-question", B.g_question(S, OPT, 1.85)),
+        "g-brand.html": with_bg("g-brand", B.g_brand(S, OPT, 2.35)),
         "o-name.html": B.o_name(S, OPT, 16.55, 24.25),
         "o-stats.html": o_stats_c(),
         "o-cta.html": B.o_cta(S, OPT, 93.9, DUR),
