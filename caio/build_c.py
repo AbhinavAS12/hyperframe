@@ -85,9 +85,7 @@ def o_stats_c():
 
 
 def sfx():
-    s = [("whoosh-short", a - 0.1, 0.57, 0.7) for _, a, *_ in BROLL]
-    s += [("whoosh", a - 0.12, 0.57, 1.0) for _, a, _ in CUTS]
-    s += [("impact-bass-1", 8.7, 2.1, 0.7), ("pop", 6.1, 0.72, 0.6), ("pop", 9.6, 0.72, 0.6),
+    s = [("impact-bass-1", 8.7, 2.1, 0.7), ("pop", 6.1, 0.72, 0.6), ("pop", 9.6, 0.72, 0.6),
           ("click-soft", 16.6, 0.37, 1.0), ("click-soft", 79.45, 0.37, 1.0), ("click-soft", 82.33, 0.37, 1.0),
           ("click-soft", 84.1, 0.37, 1.0), ("sparkle", 74.2, 1.8, 0.7), ("click", 96.3, 0.3, 1.0),
           ("chime", 96.35, 2.5, 0.6), ("sparkle", 100.9, 1.8, 0.8)]

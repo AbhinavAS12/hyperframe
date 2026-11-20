@@ -140,9 +140,7 @@ OVERS = [("o-name", 15.4, 19.6), ("o-stats", 42.1, 45.2), ("o-cta", 45.3, TALK)]
 
 
 def sfx():
-    s = [("whoosh-short", a - 0.1, 0.57, 0.7) for _, a, *_ in BROLL]
-    s += [("whoosh", a - 0.12, 0.57, 1.0) for _, a, _ in CUTS]
-    s += [("pop", 7.7, 0.72, 0.6), ("impact-bass-1", 7.85, 2.1, 0.7), ("pop", 12.75, 0.72, 0.6),
+    s = [("pop", 7.7, 0.72, 0.6), ("impact-bass-1", 7.85, 2.1, 0.7), ("pop", 12.75, 0.72, 0.6),
           ("click-soft", 15.45, 0.37, 1.0), ("click-soft", 42.15, 0.37, 1.0), ("sparkle", 37.9, 1.8, 0.7),
           ("click", 47.1, 0.3, 1.0), ("chime", 47.15, 2.5, 0.6), ("sparkle", OUTRO_AT + 0.05, 1.8, 0.8)]
     return sorted(s, key=lambda x: x[1])
