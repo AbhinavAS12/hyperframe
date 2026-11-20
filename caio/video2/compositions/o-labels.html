@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden;  font-family:"Montserrat", sans-serif; color:#ffffff; }
+
+        #root .lab { position:absolute; left:0; right:0; top:300px; display:flex; justify-content:center; }
+        #root .li { display:flex; align-items:center; gap:14px; padding:18px 30px; border-radius:60px; background:#fff; color:#0b0f16;
+                    font:700 40px/1.15 "Montserrat", sans-serif; box-shadow:0 14px 40px rgba(0,0,0,.35); max-width:900px; }
+        #root .li svg { flex:none; stroke:#0aa5c6; }
+        #root .li b { color:#0aa5c6; font-weight:900; }
+    
+      </style>
+      <div id="root" data-composition-id="o-labels" data-width="1080" data-height="1920">
+        <div id="lb0" class="clip lab" data-start="19.77" data-duration="3.13" data-track-index="0"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36"/></svg><span>Brasil <b>→</b> Emirados</span></div></div>
+        <div id="lb1" class="clip lab" data-start="23.57" data-duration="1.28" data-track-index="1"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="19"/><path d="M30 16.5c-1.4-1.8-3.6-2.6-6-2.6-3.4 0-6 1.8-6 4.6 0 6.6 12.4 3.6 12.4 10.4 0 2.9-2.8 4.8-6.4 4.8-2.7 0-5-1-6.4-2.9M24 10v4M24 34v4"/></svg><span>Moeda atrelada ao <b>dólar</b></span></div></div>
+        <div id="lb2" class="clip lab" data-start="25.04" data-duration="1.79" data-track-index="0"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 22 24 8l17 14"/><path d="M12 19v20h24V19"/><path d="M20 39V28h8v11"/></svg><span>Aluguel <b>acima da média</b></span></div></div>
+        <div id="lb3" class="clip lab" data-start="27.02" data-duration="3.13" data-track-index="1"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 36 36 12"/><circle cx="14" cy="14" r="5"/><circle cx="34" cy="34" r="5"/></svg><span><b>Sem imposto</b> sobre aluguel e renda</span></div></div>
+        <div id="lb4" class="clip lab" data-start="30.34" data-duration="2.16" data-track-index="0"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 39 12v11c0 10-6.5 16-15 19C15.5 39 9 33 9 23V12z"/><path d="m17 24 5 5 9-10"/></svg><span>Um dos países <b>mais seguros</b></span></div></div>
+        <div id="lb5" class="clip lab" data-start="32.70" data-duration="3.35" data-track-index="1"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="12" r="5"/><circle cx="33" cy="12" r="5"/><circle cx="24" cy="25" r="4"/><path d="M6 40c0-9 4-14 9-14s9 5 9 14M24 40c0-9 4-14 9-14s9 5 9 14"/></svg><span>Visto de <b>10 anos</b> para a família</span></div></div>
+        <div id="lb6" class="clip lab" data-start="39.37" data-duration="2.48" data-track-index="0"><div class="li"><svg class="ic" viewBox="0 0 48 48" width="46" height="46" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg><span><b>Sete escritórios</b> pelo mundo</span></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#lb0 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},19.77);
+          tl.to("#lb0 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},22.75);
+          tl.fromTo("#lb1 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},23.57);
+          tl.to("#lb1 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},24.70);
+          tl.fromTo("#lb2 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},25.04);
+          tl.to("#lb2 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},26.68);
+          tl.fromTo("#lb3 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},27.02);
+          tl.to("#lb3 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},30.00);
+          tl.fromTo("#lb4 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},30.34);
+          tl.to("#lb4 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},32.35);
+          tl.fromTo("#lb5 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},32.70);
+          tl.to("#lb5 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},35.90);
+          tl.fromTo("#lb6 .li",{opacity:0,y:-30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.35,ease:"back.out(1.7)"},39.37);
+          tl.to("#lb6 .li",{opacity:0,y:-14,duration:0.16,ease:"power2.in"},41.70);
+          window.__timelines["o-labels"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

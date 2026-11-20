@@ -261,11 +261,11 @@ def build_captions(S, opt):
 
 
 # ------------------------------------------------------------- cutaways ----
-def g_chart(S, opt, dur):
+def g_chart(S, opt, dur, times=(0.05, 3.75, 2.7), badge_t=4.4):
     cid = "g-chart"
     bg, fcss, fjs = cut_frame(cid, dur, S, opt)
     top = 440 if opt == "b" else 250
-    bars = [("Brasil", 1.9, "rgba(255,255,255,.35)", 0.05), ("Mundo", 3.2, "rgba(255,255,255,.6)", 3.75), ("Emirados", 7.7, S["accent"], 2.7)]
+    bars = [("Brasil", 1.9, "rgba(255,255,255,.35)", times[0]), ("Mundo", 3.2, "rgba(255,255,255,.6)", times[1]), ("Emirados", 7.7, S["accent"], times[2])]
     hmax = 340 if opt == "a" else 250
     cols = []
     js = [fjs]
@@ -283,7 +283,7 @@ def g_chart(S, opt, dur):
                   f'tl.fromTo(o,{{v:0}},{{v:{v},duration:0.7,ease:"expo.out",onUpdate:()=>{{el.textContent=o.v.toFixed(1).replace(".",",")+"%";}}}},{t});}})();')
     js.append(f'tl.fromTo("#ch-title",{{opacity:0,y:30}},{{opacity:1,y:0,duration:0.5,ease:"expo.out"}},0.1);')
     js.append(f'tl.fromTo("#ch-sub",{{opacity:0}},{{opacity:1,duration:0.4}},0.35);')
-    js.append(f'tl.fromTo("#ch-badge",{{opacity:0,scale:0.6}},{{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"}},4.4);')
+    js.append(f'tl.fromTo("#ch-badge",{{opacity:0,scale:0.6}},{{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"}},{badge_t});')
     html_ = f"""        {bg}
         <div id="{cid}-stage">
           {bg if False else ''}

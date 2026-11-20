@@ -1,0 +1,1070 @@
+{
+ "words": [
+  {
+   "id": "w0",
+   "text": "O",
+   "start": 0.36,
+   "end": 0.44
+  },
+  {
+   "id": "w1",
+   "text": "Brasil",
+   "start": 0.48,
+   "end": 0.98
+  },
+  {
+   "id": "w2",
+   "text": "deve",
+   "start": 1.32,
+   "end": 1.54
+  },
+  {
+   "id": "w3",
+   "text": "crescer",
+   "start": 1.58,
+   "end": 1.92
+  },
+  {
+   "id": "w4",
+   "text": "apenas",
+   "start": 1.98,
+   "end": 2.42
+  },
+  {
+   "id": "w5",
+   "text": "1,9%",
+   "start": 2.88,
+   "end": 4.34
+  },
+  {
+   "id": "w6",
+   "text": "em",
+   "start": 4.38,
+   "end": 4.48
+  },
+  {
+   "id": "w7",
+   "text": "2027",
+   "start": 4.72,
+   "end": 5.5
+  },
+  {
+   "id": "w8",
+   "text": "de",
+   "start": 5.56,
+   "end": 5.64
+  },
+  {
+   "id": "w9",
+   "text": "acordo",
+   "start": 5.7,
+   "end": 6.06
+  },
+  {
+   "id": "w10",
+   "text": "com",
+   "start": 6.1,
+   "end": 6.2
+  },
+  {
+   "id": "w11",
+   "text": "o",
+   "start": 6.22,
+   "end": 6.3
+  },
+  {
+   "id": "w12",
+   "text": "FMI",
+   "start": 6.34,
+   "end": 6.7
+  },
+  {
+   "id": "w13",
+   "text": "7,7%",
+   "start": 7.82,
+   "end": 8.78
+  },
+  {
+   "id": "w14",
+   "text": "é",
+   "start": 8.82,
+   "end": 8.9
+  },
+  {
+   "id": "w15",
+   "text": "quanto",
+   "start": 8.9,
+   "end": 9.08
+  },
+  {
+   "id": "w16",
+   "text": "os",
+   "start": 9.1,
+   "end": 9.22
+  },
+  {
+   "id": "w17",
+   "text": "Emirados",
+   "start": 9.28,
+   "end": 9.72
+  },
+  {
+   "id": "w18",
+   "text": "Árabes",
+   "start": 9.8,
+   "end": 10.0
+  },
+  {
+   "id": "w19",
+   "text": "Unidos",
+   "start": 10.06,
+   "end": 10.28
+  },
+  {
+   "id": "w20",
+   "text": "devem",
+   "start": 10.3,
+   "end": 10.5
+  },
+  {
+   "id": "w21",
+   "text": "crescer",
+   "start": 10.54,
+   "end": 10.88
+  },
+  {
+   "id": "w22",
+   "text": "em",
+   "start": 10.88,
+   "end": 10.96
+  },
+  {
+   "id": "w23",
+   "text": "2027",
+   "start": 11.08,
+   "end": 11.92
+  },
+  {
+   "id": "w24",
+   "text": "contra",
+   "start": 12.16,
+   "end": 12.46
+  },
+  {
+   "id": "w25",
+   "text": "3,2%",
+   "start": 12.72,
+   "end": 13.94
+  },
+  {
+   "id": "w26",
+   "text": "do",
+   "start": 13.98,
+   "end": 14.06
+  },
+  {
+   "id": "w27",
+   "text": "restante",
+   "start": 14.1,
+   "end": 14.5
+  },
+  {
+   "id": "w28",
+   "text": "do",
+   "start": 14.52,
+   "end": 14.6
+  },
+  {
+   "id": "w29",
+   "text": "mundo",
+   "start": 14.64,
+   "end": 14.86
+  },
+  {
+   "id": "w30",
+   "text": "Eu",
+   "start": 15.5,
+   "end": 15.58
+  },
+  {
+   "id": "w31",
+   "text": "me",
+   "start": 15.58,
+   "end": 15.66
+  },
+  {
+   "id": "w32",
+   "text": "chamo",
+   "start": 15.66,
+   "end": 15.88
+  },
+  {
+   "id": "w33",
+   "text": "Caio",
+   "start": 15.94,
+   "end": 16.12
+  },
+  {
+   "id": "w34",
+   "text": "Rezende",
+   "start": 16.16,
+   "end": 16.58
+  },
+  {
+   "id": "w35",
+   "text": "eu",
+   "start": 16.74,
+   "end": 16.82
+  },
+  {
+   "id": "w36",
+   "text": "sou",
+   "start": 16.84,
+   "end": 16.92
+  },
+  {
+   "id": "w37",
+   "text": "advogado",
+   "start": 16.94,
+   "end": 17.5
+  },
+  {
+   "id": "w38",
+   "text": "e",
+   "start": 17.52,
+   "end": 17.599999999999998
+  },
+  {
+   "id": "w39",
+   "text": "consultor",
+   "start": 17.62,
+   "end": 18.08
+  },
+  {
+   "id": "w40",
+   "text": "imobiliário",
+   "start": 18.12,
+   "end": 18.8
+  },
+  {
+   "id": "w41",
+   "text": "eu",
+   "start": 18.86,
+   "end": 18.939999999999998
+  },
+  {
+   "id": "w42",
+   "text": "assessoro",
+   "start": 18.98,
+   "end": 19.5
+  },
+  {
+   "id": "w43",
+   "text": "investidores",
+   "start": 19.72,
+   "end": 20.42
+  },
+  {
+   "id": "w44",
+   "text": "brasileiros",
+   "start": 20.48,
+   "end": 21.08
+  },
+  {
+   "id": "w45",
+   "text": "a",
+   "start": 21.12,
+   "end": 21.2
+  },
+  {
+   "id": "w46",
+   "text": "investir",
+   "start": 21.16,
+   "end": 21.58
+  },
+  {
+   "id": "w47",
+   "text": "aqui",
+   "start": 21.92,
+   "end": 22.14
+  },
+  {
+   "id": "w48",
+   "text": "nos",
+   "start": 22.18,
+   "end": 22.28
+  },
+  {
+   "id": "w49",
+   "text": "Emirados",
+   "start": 22.34,
+   "end": 22.78
+  },
+  {
+   "id": "w50",
+   "text": "Moeda",
+   "start": 23.56,
+   "end": 23.8
+  },
+  {
+   "id": "w51",
+   "text": "atrelada",
+   "start": 23.84,
+   "end": 24.2
+  },
+  {
+   "id": "w52",
+   "text": "ao",
+   "start": 24.24,
+   "end": 24.319999999999997
+  },
+  {
+   "id": "w53",
+   "text": "dólar",
+   "start": 24.36,
+   "end": 24.64
+  },
+  {
+   "id": "w54",
+   "text": "aluguel",
+   "start": 24.98,
+   "end": 25.36
+  },
+  {
+   "id": "w55",
+   "text": "acima",
+   "start": 25.42,
+   "end": 25.7
+  },
+  {
+   "id": "w56",
+   "text": "da",
+   "start": 25.74,
+   "end": 25.86
+  },
+  {
+   "id": "w57",
+   "text": "média",
+   "start": 25.92,
+   "end": 26.16
+  },
+  {
+   "id": "w58",
+   "text": "mundial",
+   "start": 26.22,
+   "end": 26.72
+  },
+  {
+   "id": "w59",
+   "text": "sem",
+   "start": 26.94,
+   "end": 27.04
+  },
+  {
+   "id": "w60",
+   "text": "imposto",
+   "start": 27.1,
+   "end": 27.58
+  },
+  {
+   "id": "w61",
+   "text": "local",
+   "start": 27.64,
+   "end": 28.06
+  },
+  {
+   "id": "w62",
+   "text": "sobre",
+   "start": 28.14,
+   "end": 28.32
+  },
+  {
+   "id": "w63",
+   "text": "o",
+   "start": 28.34,
+   "end": 28.419999999999998
+  },
+  {
+   "id": "w64",
+   "text": "aluguel",
+   "start": 28.38,
+   "end": 28.76
+  },
+  {
+   "id": "w65",
+   "text": "e",
+   "start": 29.04,
+   "end": 29.12
+  },
+  {
+   "id": "w66",
+   "text": "a",
+   "start": 29.16,
+   "end": 29.24
+  },
+  {
+   "id": "w67",
+   "text": "renda",
+   "start": 29.32,
+   "end": 29.64
+  },
+  {
+   "id": "w68",
+   "text": "um",
+   "start": 30.32,
+   "end": 30.4
+  },
+  {
+   "id": "w69",
+   "text": "dos",
+   "start": 30.42,
+   "end": 30.54
+  },
+  {
+   "id": "w70",
+   "text": "países",
+   "start": 30.6,
+   "end": 30.96
+  },
+  {
+   "id": "w71",
+   "text": "mais",
+   "start": 31.04,
+   "end": 31.26
+  },
+  {
+   "id": "w72",
+   "text": "seguros",
+   "start": 31.32,
+   "end": 31.76
+  },
+  {
+   "id": "w73",
+   "text": "do",
+   "start": 31.78,
+   "end": 31.88
+  },
+  {
+   "id": "w74",
+   "text": "mundo",
+   "start": 31.96,
+   "end": 32.28
+  },
+  {
+   "id": "w75",
+   "text": "e",
+   "start": 32.659,
+   "end": 32.739
+  },
+  {
+   "id": "w76",
+   "text": "um",
+   "start": 32.759,
+   "end": 32.84
+  },
+  {
+   "id": "w77",
+   "text": "visto",
+   "start": 32.88,
+   "end": 33.12
+  },
+  {
+   "id": "w78",
+   "text": "de",
+   "start": 33.18,
+   "end": 33.26
+  },
+  {
+   "id": "w79",
+   "text": "dez",
+   "start": 33.38,
+   "end": 33.72
+  },
+  {
+   "id": "w80",
+   "text": "anos",
+   "start": 33.84,
+   "end": 34.18
+  },
+  {
+   "id": "w81",
+   "text": "pra",
+   "start": 34.22,
+   "end": 34.32
+  },
+  {
+   "id": "w82",
+   "text": "você",
+   "start": 34.38,
+   "end": 34.64
+  },
+  {
+   "id": "w83",
+   "text": "e",
+   "start": 34.68,
+   "end": 34.76
+  },
+  {
+   "id": "w84",
+   "text": "pra",
+   "start": 34.74,
+   "end": 34.84
+  },
+  {
+   "id": "w85",
+   "text": "sua",
+   "start": 34.88,
+   "end": 35.02
+  },
+  {
+   "id": "w86",
+   "text": "família",
+   "start": 35.08,
+   "end": 35.52
+  },
+  {
+   "id": "w87",
+   "text": "a",
+   "start": 35.58,
+   "end": 35.66
+  },
+  {
+   "id": "w88",
+   "text": "partir",
+   "start": 35.68,
+   "end": 36.04
+  },
+  {
+   "id": "w89",
+   "text": "de",
+   "start": 36.06,
+   "end": 36.14
+  },
+  {
+   "id": "w90",
+   "text": "um",
+   "start": 36.14,
+   "end": 36.22
+  },
+  {
+   "id": "w91",
+   "text": "valor",
+   "start": 36.24,
+   "end": 36.5
+  },
+  {
+   "id": "w92",
+   "text": "de",
+   "start": 36.52,
+   "end": 36.6
+  },
+  {
+   "id": "w93",
+   "text": "investimento",
+   "start": 36.58,
+   "end": 37.22
+  },
+  {
+   "id": "w94",
+   "text": "Tudo",
+   "start": 37.8,
+   "end": 38.02
+  },
+  {
+   "id": "w95",
+   "text": "isso",
+   "start": 38.08,
+   "end": 38.26
+  },
+  {
+   "id": "w96",
+   "text": "com",
+   "start": 38.3,
+   "end": 38.4
+  },
+  {
+   "id": "w97",
+   "text": "a",
+   "start": 38.44,
+   "end": 38.519999999999996
+  },
+  {
+   "id": "w98",
+   "text": "Allegiance",
+   "start": 38.56,
+   "end": 39.02
+  },
+  {
+   "id": "w99",
+   "text": "Nós",
+   "start": 39.3,
+   "end": 39.42
+  },
+  {
+   "id": "w100",
+   "text": "temos",
+   "start": 39.44,
+   "end": 39.76
+  },
+  {
+   "id": "w101",
+   "text": "sete",
+   "start": 39.84,
+   "end": 40.1
+  },
+  {
+   "id": "w102",
+   "text": "escritórios",
+   "start": 40.16,
+   "end": 41.06
+  },
+  {
+   "id": "w103",
+   "text": "pelo",
+   "start": 41.1,
+   "end": 41.34
+  },
+  {
+   "id": "w104",
+   "text": "mundo",
+   "start": 41.4,
+   "end": 41.68
+  },
+  {
+   "id": "w105",
+   "text": "e",
+   "start": 42.16,
+   "end": 42.239999999999995
+  },
+  {
+   "id": "w106",
+   "text": "registro",
+   "start": 42.24,
+   "end": 42.64
+  },
+  {
+   "id": "w107",
+   "text": "no",
+   "start": 42.68,
+   "end": 42.76
+  },
+  {
+   "id": "w108",
+   "text": "órgão",
+   "start": 42.84,
+   "end": 43.06
+  },
+  {
+   "id": "w109",
+   "text": "regulador",
+   "start": 43.12,
+   "end": 43.62
+  },
+  {
+   "id": "w110",
+   "text": "de",
+   "start": 43.66,
+   "end": 43.74
+  },
+  {
+   "id": "w111",
+   "text": "Dubai",
+   "start": 43.78,
+   "end": 44.16
+  },
+  {
+   "id": "w112",
+   "text": "o",
+   "start": 44.4,
+   "end": 44.48
+  },
+  {
+   "id": "w113",
+   "text": "RERA",
+   "start": 44.56,
+   "end": 44.9
+  },
+  {
+   "id": "w114",
+   "text": "Agende",
+   "start": 45.36,
+   "end": 45.6
+  },
+  {
+   "id": "w115",
+   "text": "uma",
+   "start": 45.64,
+   "end": 45.76
+  },
+  {
+   "id": "w116",
+   "text": "consulta",
+   "start": 45.8,
+   "end": 46.34
+  },
+  {
+   "id": "w117",
+   "text": "inicial",
+   "start": 46.4,
+   "end": 47.04
+  },
+  {
+   "id": "w118",
+   "text": "comigo",
+   "start": 47.1,
+   "end": 47.62
+  },
+  {
+   "id": "w119",
+   "text": "sem",
+   "start": 47.96,
+   "end": 48.08
+  },
+  {
+   "id": "w120",
+   "text": "compromisso",
+   "start": 48.12,
+   "end": 48.8
+  },
+  {
+   "id": "w121",
+   "text": "e",
+   "start": 48.88,
+   "end": 48.96
+  },
+  {
+   "id": "w122",
+   "text": "descubra",
+   "start": 48.96,
+   "end": 49.36
+  },
+  {
+   "id": "w123",
+   "text": "como",
+   "start": 49.4,
+   "end": 49.52
+  },
+  {
+   "id": "w124",
+   "text": "investir",
+   "start": 49.56,
+   "end": 50.28
+  },
+  {
+   "id": "w125",
+   "text": "aqui",
+   "start": 50.38,
+   "end": 50.58
+  },
+  {
+   "id": "w126",
+   "text": "nos",
+   "start": 50.62,
+   "end": 50.72
+  },
+  {
+   "id": "w127",
+   "text": "Emirados",
+   "start": 50.78,
+   "end": 51.16
+  },
+  {
+   "id": "w128",
+   "text": "Árabes",
+   "start": 51.24,
+   "end": 51.44
+  },
+  {
+   "id": "w129",
+   "text": "Unidos",
+   "start": 51.5,
+   "end": 51.78
+  }
+ ],
+ "segments": [
+  {
+   "start": 0.36,
+   "end": 0.98,
+   "text": "O Brasil",
+   "words": [
+    0,
+    1
+   ]
+  },
+  {
+   "start": 1.32,
+   "end": 2.42,
+   "text": "deve crescer apenas",
+   "words": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "start": 2.88,
+   "end": 5.5,
+   "text": "1,9% em 2027",
+   "words": [
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "start": 5.56,
+   "end": 6.7,
+   "text": "de acordo com o FMI",
+   "words": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  {
+   "start": 7.82,
+   "end": 11.92,
+   "text": "7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027",
+   "words": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+   ]
+  },
+  {
+   "start": 12.16,
+   "end": 14.86,
+   "text": "contra 3,2% do restante do mundo",
+   "words": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ]
+  },
+  {
+   "start": 15.5,
+   "end": 16.58,
+   "text": "Eu me chamo Caio Rezende",
+   "words": [
+    30,
+    31,
+    32,
+    33,
+    34
+   ]
+  },
+  {
+   "start": 16.74,
+   "end": 18.8,
+   "text": "eu sou advogado e consultor imobiliário",
+   "words": [
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+   ]
+  },
+  {
+   "start": 18.86,
+   "end": 21.58,
+   "text": "eu assessoro investidores brasileiros a investir",
+   "words": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+   ]
+  },
+  {
+   "start": 21.92,
+   "end": 22.78,
+   "text": "aqui nos Emirados",
+   "words": [
+    47,
+    48,
+    49
+   ]
+  },
+  {
+   "start": 23.56,
+   "end": 24.64,
+   "text": "Moeda atrelada ao dólar",
+   "words": [
+    50,
+    51,
+    52,
+    53
+   ]
+  },
+  {
+   "start": 24.98,
+   "end": 26.72,
+   "text": "aluguel acima da média mundial",
+   "words": [
+    54,
+    55,
+    56,
+    57,
+    58
+   ]
+  },
+  {
+   "start": 26.94,
+   "end": 29.64,
+   "text": "sem imposto local sobre o aluguel e a renda",
+   "words": [
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+   ]
+  },
+  {
+   "start": 30.32,
+   "end": 32.28,
+   "text": "um dos países mais seguros do mundo",
+   "words": [
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74
+   ]
+  },
+  {
+   "start": 32.659,
+   "end": 37.22,
+   "text": "e um visto de dez anos pra você e pra sua família a partir de um valor de investimento",
+   "words": [
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93
+   ]
+  },
+  {
+   "start": 37.8,
+   "end": 39.02,
+   "text": "Tudo isso com a Allegiance",
+   "words": [
+    94,
+    95,
+    96,
+    97,
+    98
+   ]
+  },
+  {
+   "start": 39.3,
+   "end": 41.68,
+   "text": "Nós temos sete escritórios pelo mundo",
+   "words": [
+    99,
+    100,
+    101,
+    102,
+    103,
+    104
+   ]
+  },
+  {
+   "start": 42.16,
+   "end": 44.16,
+   "text": "e registro no órgão regulador de Dubai",
+   "words": [
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+   ]
+  },
+  {
+   "start": 44.4,
+   "end": 44.9,
+   "text": "o RERA",
+   "words": [
+    112,
+    113
+   ]
+  },
+  {
+   "start": 45.36,
+   "end": 47.62,
+   "text": "Agende uma consulta inicial comigo",
+   "words": [
+    114,
+    115,
+    116,
+    117,
+    118
+   ]
+  },
+  {
+   "start": 47.96,
+   "end": 48.8,
+   "text": "sem compromisso",
+   "words": [
+    119,
+    120
+   ]
+  },
+  {
+   "start": 48.88,
+   "end": 51.78,
+   "text": "e descubra como investir aqui nos Emirados Árabes Unidos",
+   "words": [
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129
+   ]
+  }
+ ]
+}

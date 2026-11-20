@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden;  font-family:"Montserrat", sans-serif; color:#ffffff; }
+
+        #root .cta { position:absolute; left:80px; right:80px; top:1335px; }
+        #root .ctai { padding:28px 32px; border-radius:28px; background:rgba(12,16,24,.82); border:1.5px solid rgba(47,211,245,.35); text-align:center; box-shadow:0 14px 40px rgba(0,0,0,.4); }
+        #root .ttl { display:flex; gap:14px; align-items:center; justify-content:center; font:700 42px "Montserrat"; }
+        #root .ttl b { color:#2fd3f5; }
+        #root .btn { margin:20px auto 0; width:600px; padding:22px 0; border-radius:60px; background:#2fd3f5; color:#06121a; font:900 44px "Montserrat"; }
+        #root .sub { margin-top:18px; font:500 32px "Montserrat"; color:rgba(255,255,255,.62); }
+        #root .sub b { color:#ffffff; }
+    
+      </style>
+      <div id="root" data-composition-id="o-cta" data-width="1080" data-height="1920">
+        <div id="cta-card" class="clip cta" data-start="0.15" data-duration="6.65" data-track-index="0">
+          <div id="cta-in" class="ctai">
+            <div class="ttl"><svg class="ic" viewBox="0 0 48 48" width="48" height="48" style="stroke:#2fd3f5" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="34" height="31" rx="3"/><path d="M7 19h34M16 6v8M32 6v8M15 27h5M22 27h5M29 27h5M15 34h5"/></svg> Consulta inicial <b>sem compromisso</b></div>
+            <div id="cta-btn" class="btn">Agende com o Caio</div>
+            <div id="cta-sub" class="sub">Invista nos Emirados com a <b>Allegiance</b></div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#cta-in", { opacity:0, y:60, scale:0.9 }, { opacity:1, y:0, scale:1, duration:0.55, ease:"expo.out" }, 0.15);
+          tl.fromTo("#cta-btn", { scale:1 }, { scale:0.92, duration:0.1, ease:"power2.in" }, 1.80);
+          tl.to("#cta-btn", { scale:1, duration:0.35, ease:"back.out(3)" }, 1.90);
+          tl.fromTo("#cta-sub", { opacity:0 }, { opacity:1, duration:0.4 }, 3.60);
+    
+          window.__timelines["o-cta"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
