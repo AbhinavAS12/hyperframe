@@ -440,7 +440,7 @@
   },
   {
    "id": "w73",
-   "text": "e",
+   "text": "E",
    "start": 29.566,
    "end": 29.757
   },
@@ -1346,20 +1346,20 @@
   },
   {
    "id": "w224",
-   "text": "7",
+   "text": "sete",
    "start": 82.498,
-   "end": 82.664
+   "end": 82.719
   },
   {
    "id": "w225",
    "text": "escritórios",
-   "start": 82.664,
-   "end": 83.27
+   "start": 82.719,
+   "end": 83.325
   },
   {
    "id": "w226",
-   "text": "pelo",
-   "start": 83.27,
+   "text": "no",
+   "start": 83.325,
    "end": 83.49
   },
   {
@@ -1514,56 +1514,56 @@
   },
   {
    "id": "w252",
-   "text": "agende",
+   "text": "Agende",
    "start": 94.133,
-   "end": 94.533
+   "end": 94.487
   },
   {
    "id": "w253",
    "text": "uma",
-   "start": 94.533,
-   "end": 94.733
+   "start": 94.487,
+   "end": 94.664
   },
   {
    "id": "w254",
    "text": "consulta",
-   "start": 94.733,
-   "end": 95.266
+   "start": 94.664,
+   "end": 95.137
   },
   {
    "id": "w255",
    "text": "inicial",
-   "start": 95.266,
-   "end": 95.733
+   "start": 95.137,
+   "end": 95.55
   },
   {
    "id": "w256",
    "text": "comigo",
-   "start": 95.733,
-   "end": 96.133
+   "start": 95.6,
+   "end": 96.058
   },
   {
    "id": "w257",
    "text": "como",
-   "start": 96.3,
-   "end": 96.567
+   "start": 96.058,
+   "end": 96.363
   },
   {
    "id": "w258",
    "text": "cortesia",
-   "start": 96.567,
-   "end": 97.1
+   "start": 96.363,
+   "end": 96.974
   },
   {
    "id": "w259",
    "text": "da",
-   "start": 97.1,
-   "end": 97.3
+   "start": 96.974,
+   "end": 97.203
   },
   {
    "id": "w260",
    "text": "Allegiance",
-   "start": 97.3,
+   "start": 97.203,
    "end": 97.966
   },
   {
@@ -1821,7 +1821,7 @@
    "seg": 69,
    "start": 29.566,
    "end": 30.966,
-   "text": "e por que investir aqui?",
+   "text": "E por que investir aqui?",
    "words": [
     73,
     74,
@@ -2179,7 +2179,7 @@
    "seg": 95,
    "start": 82.333,
    "end": 83.766,
-   "text": "com 7 escritórios pelo mundo",
+   "text": "com sete escritórios no mundo",
    "words": [
     223,
     224,
@@ -2247,22 +2247,22 @@
   {
    "seg": 100,
    "start": 94.133,
-   "end": 96.133,
-   "text": "agende uma consulta inicial comigo",
+   "end": 95.55,
+   "text": "Agende uma consulta inicial",
    "words": [
     252,
     253,
     254,
-    255,
-    256
+    255
    ]
   },
   {
    "seg": 101,
-   "start": 96.3,
+   "start": 95.6,
    "end": 97.966,
-   "text": "como cortesia da Allegiance",
+   "text": "comigo como cortesia da Allegiance",
    "words": [
+    256,
     257,
     258,
     259,
