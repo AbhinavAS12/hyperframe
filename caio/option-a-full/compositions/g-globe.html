@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden; background:#07090d; font-family:"Montserrat", sans-serif; color:#ffffff; }
+
+        #g-globe-stage { position:absolute; inset:0; }
+        #g-globe-bg3d { position:absolute; inset:0; width:1080px; height:1920px; }
+        #g-globe-vig { position:absolute; inset:0; background:radial-gradient(120% 80% at 50% 38%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%); }
+        #g-globe-ring { position:absolute; left:402px; top:142px; width:276px; height:276px;
+                    border-radius:50%; border:3px solid #2fd3f5; box-shadow:0 0 40px rgba(212,175,106,.35); }
+    
+        #root .ttl { position:absolute; top:250px; left:0; right:0; text-align:center; font:800 74px/1.05 "Montserrat", serif; }
+        #root .ttl span { color:#2fd3f5; }
+        #root .route { position:absolute; top:440px; left:0; right:0; display:flex; justify-content:center; align-items:center; gap:22px; font:700 42px "Montserrat"; }
+        #root .pt { display:flex; align-items:center; gap:8px; padding:12px 26px; border-radius:50px; background:rgba(12,16,24,.82); border:1.5px solid rgba(47,211,245,.35); }
+        #root .pt.hi { color:#2fd3f5; }
+        #root .arrow { color:rgba(255,255,255,.62); }
+    
+      </style>
+      <div id="root" data-composition-id="g-globe" data-width="1080" data-height="1920">
+        <div id="g-globe-glow" style="position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 40%, rgba(47,211,245,.10), rgba(0,0,0,0) 70%);"></div>
+        <div id="g-globe-stage">
+          <canvas id="gl-canvas" width="1080" height="1920" style="position:absolute;inset:0"></canvas>
+          <div id="gl-ttl" class="ttl">Investidores <span>brasileiros</span><br>nos Emirados</div>
+          <div class="route">
+            <div id="gl-from" class="pt"><svg class="ic" viewBox="0 0 48 48" width="40" height="40" style="stroke:rgba(255,255,255,.62)" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg> São Paulo</div>
+            <div class="arrow">→</div>
+            <div id="gl-to" class="pt hi"><svg class="ic" viewBox="0 0 48 48" width="40" height="40" style="stroke:#2fd3f5" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg> Dubai</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+
+          tl.fromTo("#g-globe-stage", { scale:1.18, filter:"blur(14px)", opacity:0 }, { scale:1, filter:"blur(0px)", opacity:1, duration:0.32, ease:"expo.out" }, 0);
+          tl.to("#g-globe-stage", { scale:0.94, filter:"blur(10px)", opacity:0, duration:0.18, ease:"power3.in" }, 4.950);
+        
+          const R = window.CaioFX.globe(document.getElementById("gl-canvas"), "assets/globe-a.png", "#2fd3f5", 880);
+          const g = { p:0, a:0 };
+          tl.fromTo(g, { p:0 }, { p:1, duration:4.75, ease:"power2.inOut", onUpdate:() => R(g.p, g.a) }, 0);
+          tl.fromTo(g, { a:0 }, { a:1, duration:2.2, ease:"power2.inOut", onUpdate:() => R(g.p, g.a) }, 1.0);
+          R(0, 0);
+          tl.fromTo("#gl-from", { opacity:0, x:-30 }, { opacity:1, x:0, duration:0.4, ease:"expo.out" }, 0.25);
+          tl.fromTo("#gl-to", { opacity:0, x:30 }, { opacity:1, x:0, duration:0.4, ease:"expo.out" }, 2.9);
+          tl.fromTo("#gl-ttl", { opacity:0, y:24 }, { opacity:1, y:0, duration:0.5, ease:"expo.out" }, 0.1);
+    
+          window.__timelines["g-globe"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

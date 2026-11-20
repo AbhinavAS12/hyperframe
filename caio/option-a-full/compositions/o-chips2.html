@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden;  font-family:"Montserrat", sans-serif; color:#ffffff; }
+
+        #root .card { position:absolute; left:0; right:0; top:1335px; display:flex; justify-content:center; overflow:visible; }
+        #root .ci { display:flex; align-items:center; gap:18px; padding:20px 34px; border-radius:60px;
+                    background:#ffffff; color:#0b0f16;
+                    border:0; box-shadow:0 14px 40px rgba(0,0,0,.35);
+                    font:700 40px/1.2 "Montserrat"; max-width:880px; }
+        #root .ci svg { flex:none; stroke:#0aa5c6; }
+        #root .ci b { color:#0aa5c6; font-weight:900; }
+        #root .ci small { display:block; font:500 30px "Montserrat"; opacity:.7; margin-top:4px; }
+    
+      </style>
+      <div id="root" data-composition-id="o-chips2" data-width="1080" data-height="1920">
+        <div id="o-chips2-c0" class="clip card" data-start="0.15" data-duration="5.20" data-track-index="0"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 17h30l-7-7M40 31H10l7 7"/></svg><div><b>Mercado líquido</b><small>Entre e saia quando quiser</small></div></div></div>
+        <div id="o-chips2-c1" class="clip card" data-start="5.55" data-duration="3.60" data-track-index="1"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="12" r="5"/><circle cx="33" cy="12" r="5"/><circle cx="24" cy="25" r="4"/><path d="M6 40c0-9 4-14 9-14s9 5 9 14M24 40c0-9 4-14 9-14s9 5 9 14"/></svg><div>Visto de <b>10 anos</b><small>Para você e sua família</small></div></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#o-chips2-c0 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},0.15);
+          tl.to("#o-chips2-c0 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},5.11);
+          tl.fromTo("#o-chips2-c1 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},5.55);
+          tl.to("#o-chips2-c1 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},8.91);
+          window.__timelines["o-chips2"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

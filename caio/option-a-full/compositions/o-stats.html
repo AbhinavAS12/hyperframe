@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+        #root { position:absolute; inset:0; overflow:hidden;  font-family:"Montserrat", sans-serif; color:#ffffff; }
+
+        #root .card { position:absolute; left:0; right:0; top:1335px; display:flex; justify-content:center; overflow:visible; }
+        #root .ci { display:flex; align-items:center; gap:18px; padding:20px 34px; border-radius:60px;
+                    background:#ffffff; color:#0b0f16;
+                    border:0; box-shadow:0 14px 40px rgba(0,0,0,.35);
+                    font:700 40px/1.2 "Montserrat"; max-width:880px; }
+        #root .ci svg { flex:none; stroke:#0aa5c6; }
+        #root .ci b { color:#0aa5c6; font-weight:900; }
+        #root .ci small { display:block; font:500 30px "Montserrat"; opacity:.7; margin-top:4px; }
+    
+      </style>
+      <div id="root" data-composition-id="o-stats" data-width="1080" data-height="1920">
+        <div id="o-stats-c0" class="clip card" data-start="0.02" data-duration="3.21" data-track-index="0"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 6 6 30 0 36M24 6c-6 6-6 30 0 36"/></svg><div>Consultoria <b>global</b> de investimentos</div></div></div>
+        <div id="o-stats-c1" class="clip card" data-start="3.28" data-duration="2.85" data-track-index="1"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="30" height="30" rx="2"/><path d="M36 17h6v18a4 4 0 0 1-8 0M12 16h18M12 23h18M12 30h11"/></svg><div>Reconhecida pela <b>imprensa internacional</b></div></div></div>
+        <div id="o-stats-c2" class="clip card" data-start="6.18" data-duration="1.72" data-track-index="0"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 43s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="19" r="5"/></svg><div><b id="st-n7">7</b> escritórios pelo mundo</div></div></div>
+        <div id="o-stats-c3" class="clip card" data-start="7.95" data-duration="3.18" data-track-index="1"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="19" r="12"/><path d="m17 29-4 13 11-5 11 5-4-13"/><path d="m19 19 4 4 7-8"/></svg><div>Registrada no <b>regulador imobiliário</b> de Dubai</div></div></div>
+        <div id="o-stats-c4" class="clip card" data-start="11.18" data-duration="3.92" data-track-index="0"><div class="ci"><svg class="ic" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 40h34"/><path d="m9 32 9-9 7 6 14-15"/><path d="M33 14h6v6"/></svg><div>Mais de <b>AED <span id="st-n20">20</span> bilhões</b><small>em transações imobiliárias</small></div></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#o-stats-c0 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},0.02);
+          tl.to("#o-stats-c0 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},2.99);
+          tl.fromTo("#o-stats-c1 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},3.28);
+          tl.to("#o-stats-c1 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},5.89);
+          tl.fromTo("#o-stats-c2 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},6.18);
+          tl.to("#o-stats-c2 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},7.66);
+          tl.fromTo("#o-stats-c3 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},7.95);
+          tl.to("#o-stats-c3 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},10.89);
+          tl.fromTo("#o-stats-c4 .ci",{opacity:0,y:40,scale:0.85},{opacity:1,y:0,scale:1,duration:0.45,ease:"back.out(1.7)"},11.18);
+          tl.to("#o-stats-c4 .ci",{opacity:0,y:-20,duration:0.22,ease:"power2.in"},14.86);
+          (function(){const o={v:0};const e=document.getElementById("st-n7");tl.fromTo(o,{v:0},{v:7,duration:0.8,ease:"power2.out",onUpdate:()=>{e.textContent=Math.round(o.v);}},6.18);})();
+          (function(){const o={v:0};const e=document.getElementById("st-n20");tl.fromTo(o,{v:0},{v:20,duration:1.2,ease:"power2.out",onUpdate:()=>{e.textContent=Math.round(o.v);}},11.38);})();
+          window.__timelines["o-stats"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
