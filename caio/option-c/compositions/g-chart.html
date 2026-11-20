@@ -25,6 +25,7 @@
     
       </style>
       <div id="root" data-composition-id="g-chart" data-width="1080" data-height="1920">
+        <img id="g-chart-bgimg" src="assets/bg-chart.jpg" alt="" style="position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;"><div id="g-chart-bgdim" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,14,.55) 0%,rgba(4,8,14,.35) 45%,rgba(4,8,14,.75) 100%);"></div>
         <div id="g-chart-glow" style="position:absolute;inset:0;background:radial-gradient(70% 45% at 50% 40%, rgba(47,211,245,.10), rgba(0,0,0,0) 70%);"></div>
         <div id="g-chart-stage">
           
@@ -69,6 +70,7 @@
           tl.fromTo("#ch-title",{opacity:0,y:30},{opacity:1,y:0,duration:0.5,ease:"expo.out"},0.1);
           tl.fromTo("#ch-sub",{opacity:0},{opacity:1,duration:0.4},0.35);
           tl.fromTo("#ch-badge",{opacity:0,scale:0.6},{opacity:1,scale:1,duration:0.45,ease:"back.out(1.6)"},4.4);
+          tl.fromTo("#g-chart-bgimg",{scale:1.1},{scale:1.0,duration:6.45,ease:"power1.out"},0);
           window.__timelines["g-chart"] = tl;
         })();
       </script>

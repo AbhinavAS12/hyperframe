@@ -14,6 +14,8 @@ import build as B
 HERE = B.HERE
 SHARED = B.SHARED
 W, H, DUR = B.W, B.H, B.DUR
+OUTRO_AT, OUTRO_LEN = 100.85, 5.15
+TOTAL = round(OUTRO_AT + OUTRO_LEN, 2)  # talk ends at DUR, Allegiance outro follows
 S = dict(B.STYLE["a"], name="Option C - Kinetic + B-roll")
 OPT = "a"  # reuse Option A styling everywhere
 B.EMPH.update({"sete", "escritórios"})
@@ -36,7 +38,7 @@ BROLL = [
 ]
 RATE = {"b04": ' data-playback-rate="1.04"'}
 # image backgrounds behind the text-only cards
-BG = {"g-question": ("bg-question.jpg", 1.85), "g-brand": ("bg-brand.jpg", 2.35)}
+BG = {"g-chart": ("bg-chart.jpg", 6.45), "g-question": ("bg-question.jpg", 1.85), "g-brand": ("bg-brand.jpg", 2.35)}
 CUTS = [("g-chart", 6.0, 12.45), ("g-question", 29.45, 31.3), ("g-brand", 73.8, 76.15)]
 OVERS = [("o-name", 16.55, 24.25), ("o-stats", 79.45, 87.25), ("o-cta", 93.9, DUR)]
 # punch-ins on the talking-head stretches only
@@ -88,7 +90,7 @@ def sfx():
     s += [("impact-bass-1", 8.7, 2.1, 0.7), ("pop", 6.1, 0.72, 0.6), ("pop", 9.6, 0.72, 0.6),
           ("click-soft", 16.6, 0.37, 1.0), ("click-soft", 79.45, 0.37, 1.0), ("click-soft", 82.33, 0.37, 1.0),
           ("click-soft", 84.1, 0.37, 1.0), ("sparkle", 74.2, 1.8, 0.7), ("click", 96.3, 0.3, 1.0),
-          ("chime", 96.35, 2.5, 0.6)]
+          ("chime", 96.35, 2.5, 0.6), ("sparkle", 100.9, 1.8, 0.8)]
     return sorted(s, key=lambda x: x[1])
 
 
@@ -126,14 +128,15 @@ def root():
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="root" data-start="0" data-width="{W}" data-height="{H}" data-duration="{DUR}">
+    <div id="root" data-composition-id="root" data-start="0" data-width="{W}" data-height="{H}" data-duration="{TOTAL}">
       <div id="cam">
         <video id="talk" class="clip" src="assets/caio-full.mp4" playsinline data-has-audio="true" data-start="0" data-duration="{DUR}" data-track-index="1" data-volume="1"></video>
       </div>
       <div id="grade" style="position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 20%,rgba(0,0,0,0) 50%,rgba(0,0,0,.45) 100%);"></div>
 {chr(10).join(brolls)}
 {chr(10).join(hosts)}
-      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="{DUR}" data-track-index="10" data-volume="0.16" data-fade-in="0.5" data-fade-out="2.5"></audio>
+      <div id="ow" class="bw" style="z-index:12"><video id="outro" class="clip" src="assets/outro.mp4" muted playsinline data-start="{OUTRO_AT}" data-duration="{OUTRO_LEN}" data-media-start="0" data-track-index="6"></video></div>
+      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="105.0" data-track-index="10" data-volume="0.16" data-fade-in="0.5" data-fade-out="4"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
@@ -141,6 +144,7 @@ def root():
       const tl = gsap.timeline({{ paused: true }});
 {cam}
 {chr(10).join(bjs)}
+      tl.fromTo("#ow", {{ opacity:0, scale:1.06 }}, {{ opacity:1, scale:1, duration:0.4, ease:"power2.out" }}, {OUTRO_AT});
       window.__timelines["root"] = tl;
     </script>
   </body>
@@ -163,7 +167,8 @@ def main():
             shutil.copy(os.path.join(bdir, f), os.path.join(assets, "broll", f))
     shutil.copy(os.path.join(SHARED, "three.min.js"), assets)
     shutil.copy(os.path.join(SHARED, "music-c.mp3"), os.path.join(assets, "music.mp3"))
-    for img in ("bg-question.jpg", "bg-brand.jpg"):
+    shutil.copy(os.path.join(SHARED, "outro-1080.mp4"), os.path.join(assets, "outro.mp4"))
+    for img in ("bg-chart.jpg", "bg-question.jpg", "bg-brand.jpg"):
         shutil.copy(os.path.join(SHARED, img), os.path.join(assets, img))
     shutil.copy(os.path.join(HERE, "..", "vendor", "gsap.min.js"), os.path.join(assets, "gsap.min.js"))
     for f in os.listdir(SHARED):
@@ -172,7 +177,7 @@ def main():
     open(os.path.join(assets, "fx.js"), "w").write(B.FX_JS)
     files = {
         "captions.html": B.build_captions(S, OPT),
-        "g-chart.html": B.g_chart(S, OPT, 6.45),
+        "g-chart.html": with_bg("g-chart", B.g_chart(S, OPT, 6.45)),
         "g-question.html": with_bg("g-question", B.g_question(S, OPT, 1.85)),
         "g-brand.html": with_bg("g-brand", B.g_brand(S, OPT, 2.35)),
         "o-name.html": B.o_name(S, OPT, 16.55, 24.25),
