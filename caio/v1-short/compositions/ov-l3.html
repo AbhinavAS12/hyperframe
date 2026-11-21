@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .l3bg { position:absolute; left:0; top:1040px; width:900px; height:260px; background:radial-gradient(60% 50% at 25% 50%, rgba(7,21,15,.7) 0%, rgba(7,21,15,.35) 60%, rgba(7,21,15,0) 100%); }
+        #root .l3 { position:absolute; left:110px; top:1100px; display:flex; gap:24px; }
+        #root .rl { width:2px; background:#C9A86A; transform-origin:50% 0; }
+        #root .nm { font:600 66px/1 "Cormorant Garamond", serif; color:#F5F0E6; }
+        #root .tt { margin-top:10px; font:500 28px "Montserrat", sans-serif; color:#C9A86A; }
+        #root .tx { margin-top:8px; font:500 22px "Montserrat", sans-serif; color:#F5F0E6; opacity:.75; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-l3" data-width="1080" data-height="1920">
+        <div id="l3" class="clip" data-start="8.933" data-duration="5.533" data-track-index="0">
+          <div class="l3bg"></div><div class="l3"><div class="rl"></div><div><div id="l3n" class="nm">Caio Rezende</div><div id="l3t" class="tt">Advogado e consultor imobiliário</div>
+          <div id="l3x" class="tx">+10 anos em transações de alto valor · Allegiance</div></div></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#l3 .rl",{scaleY:0},{scaleY:1,duration:0.4,ease:"power2.out"},8.933);
+          tl.fromTo("#l3n",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},9.033);
+          tl.fromTo("#l3t",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},9.183);
+          tl.fromTo("#l3x",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},9.333);
+          tl.to("#l3 .l3",{opacity:0,duration:0.2,ease:"power1.in"},14.217);
+          tl.to("#l3 .l3bg",{opacity:0,duration:0.2,ease:"power1.in"},14.217);
+          tl.fromTo("#l3 .l3bg",{opacity:0},{opacity:1,duration:0.3},8.933);
+          window.__timelines["ov-l3"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

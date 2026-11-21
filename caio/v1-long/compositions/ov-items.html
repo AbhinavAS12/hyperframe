@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .chip { display:flex; justify-content:center; }
+        #root .ci { position:absolute; top:290px; display:flex; align-items:center; gap:14px; padding:14px 30px; border-radius:60px;
+                    background:rgba(11,43,34,.72); border:1.5px solid #C9A86A; font:500 30px "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .dot { width:11px; height:11px; border-radius:50%; background:#C9A86A; }
+        #root .fi { position:absolute; left:110px; top:1330px; font:500 21px "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .rule { position:absolute; left:0; right:0; top:959px; height:2px; background:#C9A86A; }
+        #root .shade { position:absolute; left:0; right:0; top:961px; bottom:0; background:linear-gradient(180deg,#07150Fcc 0%,#07150F33 35%,#07150F00 55%,#07150Fcc 100%); }
+        #root .sh { position:absolute; left:110px; right:110px; top:1000px; }
+        #root .h1 { font:600 72px/1.05 "Cormorant Garamond", serif; color:#F5F0E6; }
+        #root .h2 { margin-top:10px; font:500 26px/1.3 "Montserrat", sans-serif; color:#F5F0E6; opacity:.8; }
+        #root .sf06 .dim { position:absolute; inset:0; background:linear-gradient(180deg,#07150F80 0%,#07150F40 30%,#07150Fcc 60%,#07150Ff0 100%); }
+        #root .si { position:absolute; left:110px; right:110px; top:880px; }
+        #root .idx { font:500 24px "Montserrat", sans-serif; letter-spacing:5px; color:#C9A86A; }
+        #root .big { font:600 230px/0.9 "Cormorant Garamond", serif; color:#C9A86A; margin-top:28px; }
+        #root .ln { font:500 58px/1.12 "Cormorant Garamond", serif; color:#F5F0E6; margin-top:6px; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-items" data-width="1080" data-height="1920">
+        <div id="cp5" class="clip chip" data-start="18.450" data-duration="4.217" data-track-index="0"><div class="ci"><span class="dot"></span>Moeda atrelada ao dólar</div></div>
+        <div id="sl6" class="clip split" data-start="22.667" data-duration="2.533" data-track-index="2"><div class="rule"></div><div class="shade"></div><div class="sh"><div class="h1">Aluguel acima da média</div><div class="h2">das grandes capitais do mundo</div></div></div>
+        <div id="sx7" class="clip sf06" data-start="25.200" data-duration="3.333" data-track-index="2"><div class="dim"></div><div class="si"><div class="idx" data-layout-allow-overlap>03 / 08</div><div class="big" data-layout-allow-overlap>0%</div><div class="ln">de imposto local sobre a renda e o lucro na venda</div></div></div>
+        <div id="sl8" class="clip split" data-start="28.533" data-duration="3.233" data-track-index="2"><div class="rule"></div><div class="shade"></div><div class="sh"><div class="h1">População em crescimento recorde</div><div class="h2">e a demanda por imóveis cresce junto</div></div></div>
+        <div id="cp9" class="clip chip" data-start="31.917" data-duration="4.050" data-track-index="0"><div class="ci"><span class="dot"></span>Segurança e regras estáveis</div></div>
+        <div id="sl10" class="clip split" data-start="35.967" data-duration="7.033" data-track-index="2"><div class="rule"></div><div class="shade"></div><div class="sh"><div class="h1">Propriedade plena</div><div class="h2">Registro oficial e escrow fiscalizado pelo governo</div></div></div>
+        <div id="cp11" class="clip chip" data-start="43.150" data-duration="2.083" data-track-index="0"><div class="ci"><span class="dot"></span>Liquidez</div></div>
+        <div id="cp12" class="clip chip" data-start="45.383" data-duration="4.050" data-track-index="0"><div class="ci"><span class="dot"></span>Visto de 10 anos*</div></div>
+        <div id="ft12" class="clip foot" data-start="45.633" data-duration="3.800" data-track-index="1"><div class="fi">*A partir de valor mínimo de investimento</div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#cp5 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},18.450);
+          tl.to("#cp5 .ci",{opacity:0,duration:0.2,ease:"power1.in"},22.447);
+          tl.fromTo("#sl6 .rule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},22.667);
+          tl.fromTo("#sl6 .h1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},22.817);
+          tl.fromTo("#sl6 .h2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},22.967);
+          tl.to("#sl6 .sh",{opacity:0,duration:0.2,ease:"power1.in"},24.980);
+          tl.fromTo("#sx7 .idx",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},25.300);
+          tl.fromTo("#sx7 .big",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},25.400);
+          tl.fromTo("#sx7 .ln",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},25.600);
+          tl.to("#sx7 .si",{opacity:0,duration:0.2,ease:"power1.in"},28.313);
+          tl.fromTo("#sl8 .rule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},28.533);
+          tl.fromTo("#sl8 .h1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},28.683);
+          tl.fromTo("#sl8 .h2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},28.833);
+          tl.to("#sl8 .sh",{opacity:0,duration:0.2,ease:"power1.in"},31.547);
+          tl.fromTo("#cp9 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},31.917);
+          tl.to("#cp9 .ci",{opacity:0,duration:0.2,ease:"power1.in"},35.747);
+          tl.fromTo("#sl10 .rule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},35.967);
+          tl.fromTo("#sl10 .h1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},36.117);
+          tl.fromTo("#sl10 .h2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},36.267);
+          tl.to("#sl10 .sh",{opacity:0,duration:0.2,ease:"power1.in"},42.780);
+          tl.fromTo("#cp11 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},43.150);
+          tl.to("#cp11 .ci",{opacity:0,duration:0.2,ease:"power1.in"},45.013);
+          tl.fromTo("#cp12 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},45.383);
+          tl.to("#cp12 .ci",{opacity:0,duration:0.2,ease:"power1.in"},49.213);
+          tl.fromTo("#ft12 .fi",{opacity:0},{opacity:0.7,duration:0.3},45.633);
+          tl.to("#ft12 .fi",{opacity:0,duration:0.2,ease:"power1.in"},49.213);
+          window.__timelines["ov-items"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
