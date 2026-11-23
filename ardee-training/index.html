@@ -48,6 +48,23 @@
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
+      // Subtle push-in on the wider shots; the mock-up crops and tight manager shots stay static.
+      tl.fromTo("#s01", { scale: 1.0 }, { scale: 1.05, duration: 2.000, ease: "none" }, 0.000);
+      tl.fromTo("#s03", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 3.000);
+      tl.fromTo("#s05", { scale: 1.0 }, { scale: 1.05, duration: 0.500, ease: "none" }, 5.000);
+      tl.fromTo("#s06", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 5.500);
+      tl.fromTo("#s08", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 7.000);
+      tl.fromTo("#s09", { scale: 1.0 }, { scale: 1.05, duration: 0.500, ease: "none" }, 8.000);
+      tl.fromTo("#s10", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 8.500);
+      tl.fromTo("#s11", { scale: 1.0 }, { scale: 1.05, duration: 0.500, ease: "none" }, 9.500);
+      tl.fromTo("#s14", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 12.000);
+      tl.fromTo("#s15", { scale: 1.0 }, { scale: 1.05, duration: 0.500, ease: "none" }, 13.000);
+      tl.fromTo("#s16", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 13.500);
+      tl.fromTo("#s17", { scale: 1.0 }, { scale: 1.05, duration: 0.500, ease: "none" }, 14.500);
+      tl.fromTo("#s19", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 16.000);
+      tl.fromTo("#s20", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 17.000);
+      tl.fromTo("#s21", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 18.000);
+      tl.fromTo("#s22", { scale: 1.0 }, { scale: 1.05, duration: 1.000, ease: "none" }, 19.000);
       window.__timelines["main"] = tl;
       tl.seek(0);
     </script>
