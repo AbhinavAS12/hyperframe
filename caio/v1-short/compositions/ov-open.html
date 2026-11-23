@@ -29,11 +29,11 @@
       </style>
       <div id="root" data-composition-id="ov-open" data-width="1080" data-height="1920">
 
-        <div id="bz" class="clip" data-start="1.977" data-duration="2.090" data-track-index="0">
+        <div id="bz" class="clip" data-start="2.977" data-duration="2.090" data-track-index="0">
           <div class="bzn"><div id="bz-n" class="n">1,9%</div><div id="bz-r" class="rule"></div>
           <div id="bz-l" class="l">Crescimento projetado do Brasil em 2027</div></div>
         </div>
-        <div id="ch" class="clip" data-start="4.067" data-duration="5.067" data-track-index="1">
+        <div id="ch" class="clip" data-start="5.067" data-duration="5.067" data-track-index="1">
           <div id="ch-in" class="chin">
             <div id="ch-k" class="kick">PROJEÇÃO DE CRESCIMENTO 2027</div>
             <div id="ch-h" class="chh">Os Emirados devem crescer 4× mais que o Brasil</div>
@@ -45,22 +45,22 @@
       <script>
         (function () {
           const tl = gsap.timeline({ paused: true });
-          tl.fromTo("#bz-n",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},1.977);
-          tl.fromTo("#bz-r",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},2.177);
-          tl.fromTo("#bz-l",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},2.277);
-          tl.to("#bz .bzn",{opacity:0,duration:0.2,ease:"power1.in"},3.867);
-          tl.fromTo("#ch-in",{opacity:0},{opacity:1,duration:0.2,ease:"none"},4.067);
-          tl.fromTo("#ch-k",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.167);
-          tl.fromTo("#ch-h",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.267);
-          tl.fromTo("#cb0",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},4.317);
-          tl.fromTo("#cv0",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.317);
-          (function(){const o={v:0},e=document.getElementById("cv0");tl.fromTo(o,{v:0},{v:1.9,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},4.317);})();
-          tl.fromTo("#cb1",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},7.574);
-          tl.fromTo("#cv1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},7.574);
-          (function(){const o={v:0},e=document.getElementById("cv1");tl.fromTo(o,{v:0},{v:3.2,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},7.574);})();
-          tl.fromTo("#cb2",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},5.613);
-          tl.fromTo("#cv2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},5.613);
-          (function(){const o={v:0},e=document.getElementById("cv2");tl.fromTo(o,{v:0},{v:7.7,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},5.613);})();
+          tl.fromTo("#bz-n",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},2.977);
+          tl.fromTo("#bz-r",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},3.177);
+          tl.fromTo("#bz-l",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},3.277);
+          tl.to("#bz .bzn",{opacity:0,duration:0.2,ease:"power1.in"},4.867);
+          tl.fromTo("#ch-in",{opacity:0},{opacity:1,duration:0.2,ease:"none"},5.067);
+          tl.fromTo("#ch-k",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},5.167);
+          tl.fromTo("#ch-h",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},5.267);
+          tl.fromTo("#cb0",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},5.317);
+          tl.fromTo("#cv0",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},5.317);
+          (function(){const o={v:0},e=document.getElementById("cv0");tl.fromTo(o,{v:0},{v:1.9,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},5.317);})();
+          tl.fromTo("#cb1",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},8.574);
+          tl.fromTo("#cv1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},8.574);
+          (function(){const o={v:0},e=document.getElementById("cv1");tl.fromTo(o,{v:0},{v:3.2,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},8.574);})();
+          tl.fromTo("#cb2",{scaleY:0},{scaleY:1,duration:1.0,ease:"power3.out"},6.613);
+          tl.fromTo("#cv2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},6.613);
+          (function(){const o={v:0},e=document.getElementById("cv2");tl.fromTo(o,{v:0},{v:7.7,duration:1.0,ease:"power3.out",onUpdate:()=>{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}},6.613);})();
           window.__timelines["ov-open"] = tl;
         })();
       </script>

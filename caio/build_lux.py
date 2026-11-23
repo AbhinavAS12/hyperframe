@@ -62,7 +62,7 @@ LONG = dict(
 
 SHORT = dict(
     out="v1-short", src="caio-v2-13x-clean.mp4", music_start=25.0,
-    file="ALLEGIANCE_BR_V1_SHORT_9x16_v01.mp4",
+    file="ALLEGIANCE_BR_V1_SHORT_9x16_v01.mp4", preroll=1.0,
     spans=[
         (0.36, 5.50, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9% em 2027."], beats=dict(b19=3.0))),
         (None, 0.5, "gap", dict()),
@@ -123,7 +123,7 @@ V3 = dict(
 
 V4 = dict(
     out="v4-short", src="caio-v3-clean.mp4", speed=1.0, words="v3_words.json",
-    dark="music-dark-v3.mp3", dark_ms=10.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_SHORT_9x16_v01.mp4",
+    dark="music-dark-v3.mp3", dark_ms=10.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_SHORT_9x16_v01.mp4", preroll=1.0,
     spans=[
         (0.58, 3.72, "full", dict(COLD, num=dict(n="R$ 1 = US$ 1", label="Em 1994", src=SRC_BC, red=False, size=130, at=0.3))),
         (3.92, 5.26, "brl", dict(COLD)),
@@ -209,6 +209,8 @@ def layout(cfg):
     out = []
     # where two spans touch in the source, meet at one point so no audio repeats
     sp = list(cfg["spans"])
+    if cfg.get("preroll"):
+        sp = [(None, cfg["preroll"], "gap", dict(pre=True))] + sp
     bounds = []
     for k, (a, b, mode, o) in enumerate(sp):
         if mode == "gap":
@@ -614,7 +616,7 @@ def build(cfg):
     WORDS = []
     if cfg.get("words"):
         WORDS = [w for w in json.load(open(os.path.join(SHARED, cfg["words"])))["words"] if w.get("type", "word") == "word"]
-    gap = next((s for s in spans if s["mode"] == "gap"), None)
+    gap = next((s for s in spans if s["mode"] == "gap" and not s["o"].get("pre")), None)
     if gap:
         dark_end, c_up = gap["t1"] + 1.2, gap["t0"]
     else:
