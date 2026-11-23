@@ -1,0 +1,45 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; }
+    #title-scrim {
+      opacity: 0;
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 26%, rgba(0,0,0,0.5) 38%, rgba(0,0,0,0.58) 62%, rgba(0,0,0,0) 80%);
+    }
+    #title-block {
+      position: absolute; left: 120px; top: 800px; width: 660px; color: #f4efe6;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+    }
+    #title-kicker, #title-date {
+      font-family: "IBM Plex Mono", monospace; font-size: 28px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(244,239,230,0.9);
+    }
+    #title-h1, #title-h2 {
+      display: block; font-family: "EB Garamond", serif; font-weight: 400; font-size: 74px; line-height: 1.04;
+    }
+    #title-h1 { margin-top: 26px; }
+    #title-h2 { font-style: italic; }
+    #title-date { margin-top: 30px; }
+  </style>
+  <div id="root" data-composition-id="title" data-width="1080" data-height="1920"
+    data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Allegiance Real Estate"},{"id":"headline","type":"string","label":"Headline","default":"ARDEE Sales Training"},{"id":"subline","type":"string","label":"Italic line","default":"and Project Preview"},{"id":"date","type":"string","label":"Date","default":"November 2026"}]'>
+    <div id="title-scrim" class="clip" data-start="0" data-duration="4.533" data-track-index="0"></div>
+    <div id="title-block" class="clip" data-start="0" data-duration="4.533" data-track-index="1">
+      <div id="title-kicker" data-var-text="kicker">Allegiance Real Estate</div>
+      <div id="title-h1" data-var-text="headline">ARDEE Sales Training</div>
+      <div id="title-h2" data-var-text="subline">and Project Preview</div>
+      <div id="title-date" data-var-text="date">November 2026</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#title-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.25);
+    tl.fromTo("#title-kicker", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.45);
+    tl.fromTo("#title-h1", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.6);
+    tl.fromTo("#title-h2", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 1.07);
+    tl.fromTo("#title-date", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.4);
+    tl.fromTo("#title-block", { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.45, ease: "power2.in" }, 4.0);
+    tl.fromTo("#title-scrim", { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, 4.0);
+    window.__timelines["title"] = tl;
+  </script>
+</template>

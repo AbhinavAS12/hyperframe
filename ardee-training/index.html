@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --ground: #0b0f0d;
+        --ink: #f4efe6;
+        --ink-soft: rgba(244, 239, 230, 0.78);
+        --font-display: "EB Garamond", serif;
+        --font-label: "IBM Plex Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      .shot, #endcard { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="25" data-width="1080" data-height="1920">
+      <video id="s01" class="clip shot" src="assets/shots/s01.mp4" data-start="0.000" data-duration="2.067" data-track-index="0" muted playsinline></video>
+      <video id="s02" class="clip shot" src="assets/shots/s02.mp4" data-start="2.067" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s03" class="clip shot" src="assets/shots/s03.mp4" data-start="3.067" data-duration="1.467" data-track-index="0" muted playsinline></video>
+      <video id="s04" class="clip shot" src="assets/shots/s04.mp4" data-start="4.534" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s05" class="clip shot" src="assets/shots/s05.mp4" data-start="5.534" data-duration="0.500" data-track-index="0" muted playsinline></video>
+      <video id="s06" class="clip shot" src="assets/shots/s06.mp4" data-start="6.034" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s07" class="clip shot" src="assets/shots/s07.mp4" data-start="7.034" data-duration="0.500" data-track-index="0" muted playsinline></video>
+      <video id="s08" class="clip shot" src="assets/shots/s08.mp4" data-start="7.534" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s09" class="clip shot" src="assets/shots/s09.mp4" data-start="8.534" data-duration="1.000" data-track-index="0" muted playsinline></video>
+      <video id="s10" class="clip shot" src="assets/shots/s10.mp4" data-start="9.534" data-duration="0.500" data-track-index="1" muted playsinline></video>
+      <video id="s11" class="clip shot" src="assets/shots/s11.mp4" data-start="10.034" data-duration="1.000" data-track-index="0" muted playsinline></video>
+      <video id="s12" class="clip shot" src="assets/shots/s12.mp4" data-start="11.034" data-duration="0.500" data-track-index="1" muted playsinline></video>
+      <video id="s13" class="clip shot" src="assets/shots/s13.mp4" data-start="11.534" data-duration="1.000" data-track-index="0" muted playsinline></video>
+      <video id="s14" class="clip shot" src="assets/shots/s14.mp4" data-start="12.534" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s15" class="clip shot" src="assets/shots/s15.mp4" data-start="13.534" data-duration="0.500" data-track-index="0" muted playsinline></video>
+      <video id="s16" class="clip shot" src="assets/shots/s16.mp4" data-start="14.034" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s17" class="clip shot" src="assets/shots/s17.mp4" data-start="15.034" data-duration="0.500" data-track-index="0" muted playsinline></video>
+      <video id="s18" class="clip shot" src="assets/shots/s18.mp4" data-start="15.534" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s19" class="clip shot" src="assets/shots/s19.mp4" data-start="16.534" data-duration="0.500" data-track-index="0" muted playsinline></video>
+      <video id="s20" class="clip shot" src="assets/shots/s20.mp4" data-start="17.034" data-duration="1.000" data-track-index="1" muted playsinline></video>
+      <video id="s21" class="clip shot" src="assets/shots/s21.mp4" data-start="18.034" data-duration="1.000" data-track-index="0" muted playsinline></video>
+      <video id="s22" class="clip shot" src="assets/shots/s22.mp4" data-start="19.034" data-duration="1.500" data-track-index="1" muted playsinline></video>
+      <video id="endcard" class="clip" src="assets/shots/endcard.mp4" data-start="20.534" data-duration="4.466" data-track-index="2" muted playsinline></video>
+      <div id="title" data-composition-id="title" data-composition-src="compositions/title.html" data-start="0" data-duration="4.533" data-track-index="3" data-track-kind="graphics" style="position:absolute;inset:0;z-index:6"></div>
+      <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="25" data-track-index="5" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      // Slow alternating punch-in / pull-out per shot keeps the cut-to-the-beat montage alive.
+      tl.fromTo("#s01", { scale: 1.0 }, { scale: 1.06, duration: 2.067, ease: "none" }, 0.000);
+      tl.fromTo("#s02", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 2.067);
+      tl.fromTo("#s03", { scale: 1.0 }, { scale: 1.06, duration: 1.467, ease: "none" }, 3.067);
+      tl.fromTo("#s04", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 4.534);
+      tl.fromTo("#s05", { scale: 1.0 }, { scale: 1.06, duration: 0.500, ease: "none" }, 5.534);
+      tl.fromTo("#s06", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 6.034);
+      tl.fromTo("#s07", { scale: 1.0 }, { scale: 1.06, duration: 0.500, ease: "none" }, 7.034);
+      tl.fromTo("#s08", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 7.534);
+      tl.fromTo("#s09", { scale: 1.0 }, { scale: 1.06, duration: 1.000, ease: "none" }, 8.534);
+      tl.fromTo("#s10", { scale: 1.06 }, { scale: 1.0, duration: 0.500, ease: "none" }, 9.534);
+      tl.fromTo("#s11", { scale: 1.0 }, { scale: 1.06, duration: 1.000, ease: "none" }, 10.034);
+      tl.fromTo("#s12", { scale: 1.06 }, { scale: 1.0, duration: 0.500, ease: "none" }, 11.034);
+      tl.fromTo("#s13", { scale: 1.0 }, { scale: 1.06, duration: 1.000, ease: "none" }, 11.534);
+      tl.fromTo("#s14", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 12.534);
+      tl.fromTo("#s15", { scale: 1.0 }, { scale: 1.06, duration: 0.500, ease: "none" }, 13.534);
+      tl.fromTo("#s16", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 14.034);
+      tl.fromTo("#s17", { scale: 1.0 }, { scale: 1.06, duration: 0.500, ease: "none" }, 15.034);
+      tl.fromTo("#s18", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 15.534);
+      tl.fromTo("#s19", { scale: 1.0 }, { scale: 1.06, duration: 0.500, ease: "none" }, 16.534);
+      tl.fromTo("#s20", { scale: 1.06 }, { scale: 1.0, duration: 1.000, ease: "none" }, 17.034);
+      tl.fromTo("#s21", { scale: 1.0 }, { scale: 1.06, duration: 1.000, ease: "none" }, 18.034);
+      tl.fromTo("#s22", { scale: 1.06 }, { scale: 1.0, duration: 1.500, ease: "none" }, 19.034);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
