@@ -16,9 +16,9 @@
     
       </style>
       <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
-        <div id="cap0" class="clip cap" data-start="0.020" data-duration="3.561" data-track-index="0"><div class="ct">7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027,</div></div>
-        <div id="cap1" class="clip cap" data-start="3.631" data-duration="1.872" data-track-index="0"><div class="ct">contra 3,2% do restante do mundo.</div></div>
-        <div id="cap2" class="clip cap" data-start="5.553" data-duration="3.150" data-track-index="0"><div class="ct">O Brasil deve crescer apenas 1,9%.</div></div>
+        <div id="cap0" class="clip cap" data-start="0.020" data-duration="3.150" data-track-index="0"><div class="ct">O Brasil deve crescer apenas 1,9%.</div></div>
+        <div id="cap1" class="clip cap" data-start="3.220" data-duration="3.561" data-track-index="0"><div class="ct">7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027,</div></div>
+        <div id="cap2" class="clip cap" data-start="6.831" data-duration="1.872" data-track-index="0"><div class="ct">contra 3,2% do restante do mundo.</div></div>
         <div id="cap3" class="clip cap" data-start="8.753" data-duration="2.795" data-track-index="0"><div class="ct">Eu me chamo Caio Rezende, eu sou advogado e consultor imobiliário,</div></div>
         <div id="cap4" class="clip cap" data-start="11.598" data-duration="2.838" data-track-index="0"><div class="ct">eu assessoro investidores brasileiros a investir aqui nos Emirados.</div></div>
         <div id="cap5" class="clip cap" data-start="14.487" data-duration="0.917" data-track-index="0"><div class="ct">Moeda atrelada ao dólar,</div></div>
@@ -36,10 +36,10 @@
         (function () {
           const tl = gsap.timeline({ paused: true });
           tl.fromTo("#cap0 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},0.020);
-          tl.to("#cap0 .ct",{opacity:0,duration:0.15,ease:"power1.in"},3.431);
-          tl.fromTo("#cap1 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},3.631);
-          tl.to("#cap1 .ct",{opacity:0,duration:0.15,ease:"power1.in"},5.353);
-          tl.fromTo("#cap2 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},5.553);
+          tl.to("#cap0 .ct",{opacity:0,duration:0.15,ease:"power1.in"},3.020);
+          tl.fromTo("#cap1 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},3.220);
+          tl.to("#cap1 .ct",{opacity:0,duration:0.15,ease:"power1.in"},6.631);
+          tl.fromTo("#cap2 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},6.831);
           tl.to("#cap2 .ct",{opacity:0,duration:0.15,ease:"power1.in"},8.553);
           tl.fromTo("#cap3 .ct",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},8.753);
           tl.to("#cap3 .ct",{opacity:0,duration:0.15,ease:"power1.in"},11.398);

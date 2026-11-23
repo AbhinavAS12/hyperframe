@@ -28,17 +28,17 @@ ICON = {
 # ------------------------------------------------------------------ videos ----
 # span: (a, b, mode, opts)   mode: hook | chart | full | punch | split | broll | sf06 | creds | end
 LONG = dict(
-    out="v1-long", src="caio-full-13x.mp4", music_start=0.0,
+    out="v1-long", src="caio-full-13x-clean.mp4", music_start=0.0,
     file="ALLEGIANCE_BR_V1_LONG_9x16_v01.mp4",
     spans=[
-        (6.000, 12.266, "hook", dict(cap=["Os Emirados Árabes Unidos devem crescer 7,7%, contra 3,2% da média mundial."],
-                                     beats=dict(e77=8.75, m32=9.95))),
-        (0.633, 4.666, "chart", dict(cap=["O Brasil deve crescer apenas 1,9% em 2027."], beats=dict(b19=2.55))),
+        (0.633, 4.666, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9% em 2027."], beats=dict(b19=2.55))),
+        (6.000, 12.266, "chart", dict(cap=["Os Emirados Árabes Unidos devem crescer 7,7%, contra 3,2% da média mundial."],
+                                      beats=dict(e77=8.75, m32=9.95))),
         (16.666, 23.200, "full", dict(l3=True, cap=["Eu me chamo Caio Rezende, eu sou advogado e tenho mais de dez anos",
                                                      "de experiência em consultoria imobiliária em São Paulo."])),
         (24.300, 29.066, "punch", dict(cap=["E hoje eu assessoro investidores brasileiros a investir aqui nos Emirados Árabes Unidos."])),
         (29.566, 30.966, "broll", dict(clip="b12", cap=["E por que investir aqui?"])),
-        (31.300, 36.833, "punch", dict(chip="Moeda atrelada ao dólar", cap=["A moeda é atrelada ao dólar desde 1997,", "então seu patrimônio fica dolarizado e protegido."])),
+        (31.300, 36.833, "full", dict(chip="Moeda atrelada ao dólar", cap=["A moeda é atrelada ao dólar desde 1997,", "então seu patrimônio fica dolarizado e protegido."])),
         (36.966, 40.100, "split", dict(clip="b03", head="Aluguel acima da média", sub="das grandes capitais do mundo",
                                        cap=["O retorno com aluguel é acima da média das grandes capitais do mundo."])),
         (40.366, 44.533, "sf06", dict(clip="b09", idx="03 / 08", big="0%", line="de imposto local sobre a renda e o lucro na venda",
@@ -61,15 +61,15 @@ LONG = dict(
     ])
 
 SHORT = dict(
-    out="v1-short", src="caio-v2-13x.mp4", music_start=25.0,
+    out="v1-short", src="caio-v2-13x-clean.mp4", music_start=25.0,
     file="ALLEGIANCE_BR_V1_SHORT_9x16_v01.mp4",
     spans=[
-        (7.82, 14.86, "hook", dict(cap=["7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027,", "contra 3,2% do restante do mundo."],
-                                   beats=dict(e77=8.10, m32=12.95))),
-        (0.36, 4.34, "chart", dict(cap=["O Brasil deve crescer apenas 1,9%."], beats=dict(b19=3.0))),
+        (0.36, 4.34, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9%."], beats=dict(b19=3.0))),
+        (7.82, 14.86, "chart", dict(cap=["7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027,", "contra 3,2% do restante do mundo."],
+                                    beats=dict(e77=8.10, m32=12.95))),
         (15.50, 22.78, "full", dict(l3=True, cap=["Eu me chamo Caio Rezende, eu sou advogado e consultor imobiliário,",
                                                   "eu assessoro investidores brasileiros a investir aqui nos Emirados."])),
-        (23.56, 24.64, "punch", dict(chip="Moeda atrelada ao dólar", cap=["Moeda atrelada ao dólar,"])),
+        (23.56, 24.64, "full", dict(chip="Moeda atrelada ao dólar", cap=["Moeda atrelada ao dólar,"])),
         (24.98, 26.72, "split", dict(clip="b03", head="Aluguel acima da média", sub="mundial", cap=["aluguel acima da média mundial,"])),
         (26.94, 29.64, "sf06", dict(clip="b09", idx="03 / 05", big="0%", line="de imposto local sobre aluguel e renda",
                                     cap=["sem imposto local sobre o aluguel e a renda,"])),
@@ -161,14 +161,14 @@ def tmap(sp, src_t):
 
 # ------------------------------------------------------------- overlays ----
 def ov_open(spans):
-    hook = next(s for s in spans if s["mode"] == "hook")
+    br = next(s for s in spans if s["mode"] == "brazil")
     chart = next(s for s in spans if s["mode"] == "chart")
-    t77 = tmap(hook, hook["o"]["beats"]["e77"])
-    t32 = tmap(hook, hook["o"]["beats"]["m32"])
-    t19 = tmap(chart, chart["o"]["beats"]["b19"])
-    hook_end = max(t77 + 0.55, 1.8)
-    end = chart["t1"]
-    bars = [("Brasil", 1.9, C["grey"], f"{C['ivory']}99", t19), ("Mundo", 3.2, "#DCD3C6", C["ivory"], t32), ("Emirados", 7.7, C["gold"], C["gold"], max(t77 + 0.15, hook_end + 0.15))]
+    t19 = tmap(br, br["o"]["beats"]["b19"])
+    t77 = tmap(chart, chart["o"]["beats"]["e77"])
+    t32 = tmap(chart, chart["o"]["beats"]["m32"])
+    c0, end = chart["t0"], chart["t1"]
+    bars = [("Brasil", 1.9, C["grey"], f"{C['ivory']}99", c0 + 0.25), ("Mundo", 3.2, "#DCD3C6", C["ivory"], max(t32, c0 + 0.8)),
+            ("Emirados", 7.7, C["gold"], C["gold"], max(t77, c0 + 0.5))]
     hmax = 470
     cols, js = [], []
     for i, (lab, v, col, tcol, t) in enumerate(bars):
@@ -181,13 +181,11 @@ def ov_open(spans):
         js.append(f'(function(){{const o={{v:0}},e=document.getElementById("cv{i}");tl.fromTo(o,{{v:0}},{{v:{v},duration:1.0,ease:"power3.out",'
                   f'onUpdate:()=>{{e.textContent=o.v.toFixed(1).replace(".",",")+"%";}}}},{t:.3f});}})();')
     inner = f"""
-        <div id="hk" class="clip" data-start="0" data-duration="{hook_end + 0.2:.3f}" data-track-index="0">
-          <div class="hkdim"></div>
-          <div id="hk-n" class="hkn">7,7%</div>
-          <div id="hk-l" class="hkl">Crescimento projetado<br>dos Emirados em 2027</div>
-          <div class="src hks">{SRC_IMF}</div>
+        <div id="bz" class="clip" data-start="{t19 - 0.1:.3f}" data-duration="{br['t1'] - t19 + 0.1:.3f}" data-track-index="0">
+          <div class="bzn"><div id="bz-n" class="n">1,9%</div><div id="bz-r" class="rule"></div>
+          <div id="bz-l" class="l">Crescimento projetado do Brasil em 2027</div></div>
         </div>
-        <div id="ch" class="clip" data-start="{hook_end:.3f}" data-duration="{end - hook_end:.3f}" data-track-index="1">
+        <div id="ch" class="clip" data-start="{c0:.3f}" data-duration="{end - c0:.3f}" data-track-index="1">
           <div id="ch-in" class="chin">
             <div id="ch-k" class="kick">PROJEÇÃO DE CRESCIMENTO 2027</div>
             <div id="ch-h" class="chh">Os Emirados devem crescer 4× mais que o Brasil</div>
@@ -197,11 +195,11 @@ def ov_open(spans):
         </div>"""
     css = f"""
         #root .clip {{ position:absolute; inset:0; }}
-        #root .hkdim {{ position:absolute; inset:0; background:linear-gradient(180deg, {C['night']}b3 0%, {C['night']}66 35%, {C['night']}d9 100%); }}
-        #root .hkn {{ position:absolute; left:0; right:0; top:500px; text-align:center; font:600 300px/1 {SERIF}; color:{C['gold']}; letter-spacing:-6px; }}
-        #root .hkl {{ position:absolute; left:0; right:0; top:860px; text-align:center; font:500 40px/1.3 {SANS}; color:{C['ivory']}; }}
+        #root .bzn {{ position:absolute; left:110px; right:110px; top:1010px; }}
+        #root .bzn .n {{ font:600 170px/0.9 {SERIF}; color:{C['ivory']}; text-shadow:0 4px 30px rgba(7,21,15,.6); }}
+        #root .bzn .rule {{ width:220px; height:3px; margin-top:12px; background:{C['ivory']}; opacity:.7; transform-origin:0 50%; }}
+        #root .bzn .l {{ margin-top:14px; font:500 28px {SANS}; color:{C['ivory']}; text-shadow:0 2px 12px rgba(7,21,15,.8); }}
         #root .src {{ position:absolute; left:110px; font:500 20px {SANS}; color:{C['ivory']}; opacity:.6; }}
-        #root .hks {{ top:1290px; }}
         #root .chin {{ position:absolute; inset:0; background:{C['emerald']}; }}
         #root .kick {{ position:absolute; left:110px; top:330px; font:500 24px {SANS}; letter-spacing:5px; color:{C['gold']}; }}
         #root .chh {{ position:absolute; left:110px; right:110px; top:380px; font:600 78px/1.1 {SERIF}; color:{C['ivory']}; }}
@@ -212,9 +210,10 @@ def ov_open(spans):
         #root .lab {{ position:absolute; bottom:-52px; font:500 28px {SANS}; }}
         #root .chs {{ top:1330px; }}
     """
-    js = [reveal("#hk-n", 0.05), reveal("#hk-l", 0.25), f'tl.fromTo("#hk .src",{{opacity:0}},{{opacity:0.6,duration:0.3}},0.35);',
-          f'tl.fromTo("#ch-in",{{opacity:0}},{{opacity:1,duration:0.2,ease:"none"}},{hook_end:.3f});',
-          reveal("#ch-k", hook_end + 0.1), reveal("#ch-h", hook_end + 0.2)] + js
+    js = [reveal("#bz-n", t19 - 0.1), f'tl.fromTo("#bz-r",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"power2.out"}},{t19 + 0.1:.3f});',
+          reveal("#bz-l", t19 + 0.2), hide("#bz .bzn", br["t1"] - 0.2),
+          f'tl.fromTo("#ch-in",{{opacity:0}},{{opacity:1,duration:0.2,ease:"none"}},{c0:.3f});',
+          reveal("#ch-k", c0 + 0.1), reveal("#ch-h", c0 + 0.2)] + js
     return scene("ov-open", inner, css, "\n".join("          " + j for j in js)), (0, end)
 
 
@@ -244,10 +243,10 @@ def ov_items(spans):
     css = f"""
         #root .clip {{ position:absolute; inset:0; }}
         #root .chip {{ display:flex; justify-content:center; }}
-        #root .ci {{ position:absolute; top:290px; display:flex; align-items:center; gap:14px; padding:14px 30px; border-radius:60px;
+        #root .ci {{ position:absolute; top:1235px; display:flex; align-items:center; gap:14px; padding:14px 30px; border-radius:60px;
                     background:rgba(11,43,34,.72); border:1.5px solid {C['gold']}; font:500 30px {SANS}; color:{C['ivory']}; }}
         #root .dot {{ width:11px; height:11px; border-radius:50%; background:{C['gold']}; }}
-        #root .fi {{ position:absolute; left:110px; top:1330px; font:500 21px {SANS}; color:{C['ivory']}; }}
+        #root .fi {{ position:absolute; left:0; right:0; text-align:center; top:1330px; font:500 21px {SANS}; color:{C['ivory']}; }}
         #root .rule {{ position:absolute; left:0; right:0; top:959px; height:2px; background:{C['gold']}; }}
         #root .shade {{ position:absolute; left:0; right:0; top:961px; bottom:0; background:linear-gradient(180deg,{C['night']}cc 0%,{C['night']}33 35%,{C['night']}00 55%,{C['night']}cc 100%); }}
         #root .sh {{ position:absolute; left:110px; right:110px; top:1000px; }}
@@ -409,6 +408,7 @@ def build(cfg):
     end_at = talk + HOLD
     total = round(end_at + OUTRO_LEN, 2)
     sfx = []
+    c_up = next(s for s in spans if s["mode"] == "chart")["t0"]
     files = {"captions.html": captions(spans), "ov-items.html": ov_items(spans), "ov-l3.html": ov_l3(spans),
              "ov-creds.html": ov_creds(spans, sfx), "ov-end.html": ov_end(spans, end_at)}
     open_html, _ = ov_open(spans)
@@ -421,19 +421,15 @@ def build(cfg):
             d += HOLD
         m = s["mode"]
         clip = "inset(0 0 50% 0)" if m == "split" else "none"
-        s0 = 1.25 if m == "punch" else 1.0
-        org = "50% 24%" if m == "punch" else "50% 40%"
+        s0 = 1.15 if m == "punch" else 1.0
+        org = "50% 30%"
         vids.append(f'      <div class="sp" style="clip-path:{clip}"><div id="mv{i}" class="mv" style="transform-origin:{org}">'
                     f'<video id="tk{i}" class="clip" src="assets/caio.mp4" playsinline data-has-audio="true" data-start="{s["t0"]:.3f}" '
                     f'data-duration="{d:.3f}" data-media-start="{s["ms"]:.3f}" data-track-index="{1 + 6 * (i % 2)}" data-volume="1"></video></div></div>')
-        js.append(f'      tl.fromTo("#mv{i}", {{ scale:{s0} }}, {{ scale:{s0 * 1.06:.4f}, duration:{d:.3f}, ease:"none" }}, {s["t0"]:.3f});')
+        js.append(f'      tl.set("#mv{i}", {{ scale:{s0} }}, {s["t0"]:.3f});')
         clipname = s["o"].get("clip")
-        if m == "hook":
-            clipname, bd = "b00", None
         if clipname:
             bt0, bt1 = s["t0"], s["t1"]
-            if m == "hook":
-                bt1 = min(s["t1"], tmap(s, s["o"]["beats"]["e77"]) + 0.8)
             bclip = "inset(50% 0 0 0)" if m == "split" else "none"
             bvids.append(f'      <div class="bw" style="clip-path:{bclip}"><div id="bm{i}" class="bm"><video id="bv{i}" class="clip" src="assets/broll/{clipname}.mp4" muted playsinline '
                          f'data-start="{bt0:.3f}" data-duration="{bt1 - bt0:.3f}" data-media-start="0.3" data-track-index="2"></video></div></div>')
@@ -474,7 +470,8 @@ def build(cfg):
       <div id="vig"></div>
 {chr(10).join(hosts)}
       <div id="ow" class="bw" style="z-index:12"><div class="bm"><video id="outro" class="clip" src="assets/outro.mp4" muted playsinline data-start="{end_at:.3f}" data-duration="{OUTRO_LEN}" data-media-start="0" data-track-index="8"></video></div></div>
-      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="{total}" data-media-start="{cfg['music_start']}" data-track-index="10" data-volume="0.12" data-fade-in="0.4" data-fade-out="3"></audio>
+      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{c_up + 0.8:.3f}" data-track-index="9" data-volume="0.2" data-fade-in="0.3" data-fade-out="0.9"></audio>
+      <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="0.6" data-fade-out="3"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
@@ -500,6 +497,7 @@ def build(cfg):
         cp(os.path.join(SHARED, "broll-lux", b + ".mp4"), os.path.join(assets, "broll", b + ".mp4"))
     cp(os.path.join(SHARED, "outro-1080.mp4"), os.path.join(assets, "outro.mp4"))
     cp(os.path.join(SHARED, "music-lux.mp3"), os.path.join(assets, "music.mp3"))
+    cp(os.path.join(SHARED, "music-dark.mp3"), os.path.join(assets, "music-dark.mp3"))
     cp(os.path.join(SHARED, "allegiance-logo-gold.png"), os.path.join(assets, "allegiance-logo-gold.png"))
     cp(os.path.join(SHARED, "impact-bass-1.mp3"), os.path.join(assets, "sfx", "impact-bass-1.mp3"))
     for f in os.listdir(os.path.join(SHARED, "fonts")):
@@ -514,7 +512,7 @@ def build(cfg):
         "check": "npx --yes hyperframes@0.8.137 check", "render": "npx --yes hyperframes@0.8.137 render"}},
         open(os.path.join(out, "package.json"), "w"), indent=2)
     # Caio-on-screen share (full/punch/end count fully, split counts half)
-    caio = sum((s["t1"] - s["t0"]) * (1 if s["mode"] in ("full", "punch", "end") else 1 if s["mode"] == "split" else 0) for s in spans)
+    caio = sum((s["t1"] - s["t0"]) * (1 if s["mode"] in ("full", "punch", "end", "brazil") else 1 if s["mode"] == "split" else 0) for s in spans)
     print(f"wrote {out}: talk {talk:.1f}s, end card hold to {end_at:.1f}s, total {total}s, Caio on screen {caio / talk * 100:.0f}%")
 
 
