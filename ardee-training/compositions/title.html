@@ -4,10 +4,10 @@
     #title-scrim {
       opacity: 0;
       position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 30% at 50% 38%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+      background: radial-gradient(ellipse 70% 30% at 50% 50%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
     }
     #title-block {
-      position: absolute; left: 140px; top: 470px; width: 800px; color: #f4efe6; text-align: center;
+      position: absolute; left: 0px; top: 0px; width: 1080px; height: 1920px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #f4efe6; text-align: center;
       text-shadow: 0 2px 22px rgba(0,0,0,0.4);
     }
     #title-l1, #title-x, #title-l2 {
@@ -19,7 +19,7 @@
   <div id="root" data-composition-id="title" data-width="1080" data-height="1920"
     data-composition-variables='[{"id":"line1","type":"string","label":"Top line","default":"ALLEGIANCE"},{"id":"joiner","type":"string","label":"Middle","default":"X"},{"id":"line2","type":"string","label":"Bottom line","default":"ARDEE"}]'>
     <div id="title-scrim" class="clip" data-start="0" data-duration="4" data-track-index="0"></div>
-    <div id="title-block" class="clip" data-start="0" data-duration="4" data-track-index="1">
+    <div id="title-block" data-layout-allow-safe-zone class="clip" data-start="0" data-duration="4" data-track-index="1">
       <div id="title-l1" data-var-text="line1">ALLEGIANCE</div>
       <div id="title-x" data-var-text="joiner">X</div>
       <div id="title-l2" data-var-text="line2">ARDEE</div>
