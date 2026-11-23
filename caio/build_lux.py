@@ -207,13 +207,26 @@ def layout(cfg):
     """Place spans back to back; returns list of dicts with out times."""
     t = 0.0
     out = []
-    for a, b, mode, o in cfg["spans"]:
+    # where two spans touch in the source, meet at one point so no audio repeats
+    sp = list(cfg["spans"])
+    bounds = []
+    for k, (a, b, mode, o) in enumerate(sp):
+        if mode == "gap":
+            bounds.append(None)
+            continue
+        a0, b0 = a - LEAD, b + TAIL
+        if k and bounds[-1] is not None and sp[k - 1][2] != "gap" and a0 < bounds[-1][1] and a > sp[k - 1][1] - 0.01:
+            mid = (sp[k - 1][1] + a) / 2
+            bounds[-1] = (bounds[-1][0], mid)
+            a0 = mid
+        bounds.append((a0, b0))
+    for (a, b, mode, o), bd in zip(sp, bounds):
         if mode == "gap":
             t1 = round((t + b) * 30) / 30
             out.append(dict(a=None, b=None, a0=None, mode=mode, o=o, t0=t, t1=t1, ms=None))
             t = t1
             continue
-        a0, b0 = a - LEAD, b + TAIL
+        a0, b0 = bd
         d = (b0 - a0) / SPEED
         t1 = round((t + d) * 30) / 30
         out.append(dict(a=a, b=b, a0=a0, mode=mode, o=o, t0=t, t1=t1, ms=a0 / SPEED))
