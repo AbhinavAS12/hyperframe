@@ -34,8 +34,8 @@ LONG = dict(
         (0.633, 4.666, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9% em 2027."], beats=dict(b19=2.55))),
         (6.000, 12.266, "chart", dict(cap=["Os Emirados Árabes Unidos devem crescer 7,7%, contra 3,2% da média mundial."],
                                       beats=dict(e77=8.75, m32=9.95))),
-        (16.666, 23.200, "full", dict(l3=True, cap=["Eu me chamo Caio Rezende, eu sou advogado e tenho mais de dez anos",
-                                                     "de experiência em consultoria imobiliária em São Paulo."])),
+        (16.666, 23.400, "full", dict(l3=True, cap=["Eu me chamo Caio Rezende, eu sou advogado e tenho mais de dez anos",
+                                                     "de experiência em consultoria imobiliária em São Paulo capital."])),
         (24.300, 29.066, "punch", dict(cap=["E hoje eu assessoro investidores brasileiros a investir aqui nos Emirados Árabes Unidos."])),
         (29.566, 30.966, "broll", dict(clip="b12", cap=["E por que investir aqui?"])),
         (31.300, 36.833, "full", dict(chip="Moeda atrelada ao dólar", cap=["A moeda é atrelada ao dólar desde 1997,", "então seu patrimônio fica dolarizado e protegido."])),
@@ -64,9 +64,10 @@ SHORT = dict(
     out="v1-short", src="caio-v2-13x-clean.mp4", music_start=25.0,
     file="ALLEGIANCE_BR_V1_SHORT_9x16_v01.mp4",
     spans=[
-        (0.36, 4.34, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9%."], beats=dict(b19=3.0))),
-        (7.82, 14.86, "chart", dict(cap=["7,7% é quanto os Emirados Árabes Unidos devem crescer em 2027,", "contra 3,2% do restante do mundo."],
-                                    beats=dict(e77=8.10, m32=12.95))),
+        (0.36, 5.50, "brazil", dict(cap=["O Brasil deve crescer apenas 1,9% em 2027."], beats=dict(b19=3.0))),
+        (None, 0.5, "gap", dict()),
+        (9.10, 14.86, "chart", dict(cap=["Os Emirados Árabes Unidos devem crescer em 2027,", "contra 3,2% do restante do mundo."],
+                                    beats=dict(e77=10.40, m32=12.95))),
         (15.50, 22.78, "full", dict(l3=True, cap=["Eu me chamo Caio Rezende, eu sou advogado e consultor imobiliário,",
                                                   "eu assessoro investidores brasileiros a investir aqui nos Emirados."])),
         (23.56, 24.64, "full", dict(chip="Moeda atrelada ao dólar", cap=["Moeda atrelada ao dólar,"])),
@@ -233,6 +234,9 @@ def ov_open(spans):
     t77 = tmap(chart, chart["o"]["beats"]["e77"])
     t32 = tmap(chart, chart["o"]["beats"]["m32"])
     c0, end = chart["t0"], chart["t1"]
+    ci = spans.index(chart)
+    if ci and spans[ci - 1]["mode"] == "gap":
+        c0 = spans[ci - 1]["t0"]
     bars = [("Brasil", 1.9, C["grey"], f"{C['ivory']}99", c0 + 0.25), ("Mundo", 3.2, "#DCD3C6", C["ivory"], max(t32, c0 + 0.8)),
             ("Emirados", 7.7, C["gold"], C["gold"], max(t77, c0 + 0.5))]
     hmax = 470
@@ -619,6 +623,8 @@ def build(cfg):
         if s["mode"] == "end":
             d += HOLD
         m = s["mode"]
+        if m == "gap" and not s["o"].get("clip"):
+            continue
         if m == "gap":
             bvids.append(f'      <div class="bw"><div id="bm{i}" class="bm"><video id="bv{i}" class="clip" src="assets/broll/{s["o"]["clip"]}.mp4" muted playsinline '
                          f'data-start="{s["t0"]:.3f}" data-duration="{d + 0.1:.3f}" data-media-start="2.0" data-track-index="2"></video></div></div>')
