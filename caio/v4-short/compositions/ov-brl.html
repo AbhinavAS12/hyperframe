@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .brin { position:absolute; inset:0; background:radial-gradient(110% 70% at 50% 40%, #151d22 0%, #0E1418 60%, #080b0d 100%); }
+        #root .kick { position:absolute; left:110px; top:300px; font:500 24px "Montserrat", sans-serif; letter-spacing:5px; color:#F5F0E6; opacity:.7; }
+        #root .hh { position:absolute; left:110px; right:110px; top:350px; font:600 84px/1.05 "Cormorant Garamond", serif; color:#F5F0E6; }
+        #root .plot { position:absolute; left:0; top:0; }
+        #root .tk text { font:500 24px "Montserrat", sans-serif; fill:#F5F0E6; fill-opacity:.6; }
+        #root .lbl { font:500 26px "Montserrat", sans-serif; fill:#F5F0E6; }
+        #root .endv { position:absolute; right:110px; font:600 92px/1 "Cormorant Garamond", serif; color:#F5F0E6; text-align:right; }
+        #root .endl { position:absolute; right:110px; font:500 24px "Montserrat", sans-serif; color:#C8473D; text-align:right; }
+        #root .note { position:absolute; left:110px; right:110px; top:1240px; font:500 32px/1.3 "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .src { position:absolute; left:110px; top:1330px; font:500 20px "Montserrat", sans-serif; color:#F5F0E6; opacity:.6; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-brl" data-width="1080" data-height="1920">
+        <div id="br" class="clip" data-start="2.533" data-duration="3.767" data-track-index="0">
+          <div id="br-in" class="brin">
+            <div id="br-k" class="kick">QUANTOS REAIS VALE UM DÓLAR</div>
+            <div id="br-h" class="hh">Em 1994, um real<br>valia um dólar.</div>
+            <svg class="plot" viewBox="0 0 1080 1920" width="1080" height="1920">
+              <line x1="120" y1="1180" x2="960" y2="1180" stroke="#F5F0E6" stroke-opacity=".25" stroke-width="2"/>
+              <g class="tk"><text x="120" y="1224" text-anchor="middle">1994</text><text x="330" y="1224" text-anchor="middle">2002</text><text x="540" y="1224" text-anchor="middle">2010</text><text x="750" y="1224" text-anchor="middle">2018</text><text x="960" y="1224" text-anchor="middle">2026</text></g>
+              <polyline id="br-l" points="120.0,1163.1 172.5,1162.2 225.0,1149.5 251.2,1094.5 303.8,1048.8 330.0,1000.6 356.2,987.1 408.8,1042.1 461.2,1082.7 487.5,1092.8 540.0,1098.8 566.2,1106.4 618.8,1064.9 671.2,965.9 697.5,952.4 750.0,938.8 776.2,914.3 802.5,811.1 828.8,790.8 855.0,811.1 881.2,825.5 907.5,791.6 933.8,786.5" fill="none" stroke="#F5F0E6" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+              <polyline id="br-r" points="933.8,786.5 960.0,769.6" fill="none" stroke="#C8473D" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+              <circle id="br-s" cx="120.0" cy="1163.1" r="9" fill="#F5F0E6"/>
+              <circle id="br-e" cx="960.0" cy="769.6" r="11" fill="#C8473D"/>
+              <text id="br-st" x="126" y="1137" class="lbl">R$ 1,00 (1994)</text>
+            </svg>
+            <div id="br-v" class="endv" style="top:595px">R$ 5,65</div>
+            <div id="br-vl" class="endl" style="top:712px">hoje · alta desde a eleição</div>
+            <div id="br-note" class="note">Moeda que mais perdeu valor no mundo nas últimas semanas</div>
+            <div class="src">Fonte: Banco Central do Brasil (PTAX), curva ilustrativa · Austin Rating</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#br-in",{opacity:0},{opacity:1,duration:0.2,ease:"none"},2.533);
+          tl.fromTo("#br-k",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},2.583);
+          tl.fromTo("#br-h",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},2.633);
+          tl.fromTo("#br-s",{scale:0,transformOrigin:"50% 50%"},{scale:1,duration:0.3},2.633);
+          tl.fromTo("#br-st",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},2.683);
+          tl.fromTo("#br-l",{attr:{"stroke-dashoffset":1}},{attr:{"stroke-dashoffset":0},duration:1.3,ease:"power1.inOut"},2.733);
+          tl.fromTo("#br-r",{attr:{"stroke-dashoffset":1}},{attr:{"stroke-dashoffset":0},duration:0.5,ease:"power2.out"},3.700);
+          tl.fromTo("#br-e",{scale:0,transformOrigin:"50% 50%"},{scale:1,duration:0.3},4.100);
+          tl.fromTo("#br-v",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.100);
+          tl.fromTo("#br-vl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.250);
+          tl.fromTo("#br-note",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},4.400);
+          tl.fromTo("#br .src",{opacity:0},{opacity:0.6,duration:0.3},3.033);
+          tl.to("#br-in",{opacity:0,duration:0.2},6.100);
+          window.__timelines["ov-brl"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

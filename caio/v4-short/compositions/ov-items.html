@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .chip { display:flex; justify-content:center; }
+        #root .ci { position:absolute; top:1235px; display:flex; align-items:center; gap:14px; padding:14px 30px; border-radius:60px;
+                    background:rgba(11,43,34,.72); border:1.5px solid #C9A86A; font:500 30px "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .dot { width:11px; height:11px; border-radius:50%; background:#C9A86A; }
+        #root .num .ndim { position:absolute; inset:0; background:linear-gradient(180deg,rgba(7,12,16,.35) 0%,rgba(7,12,16,.25) 40%,rgba(7,12,16,.85) 100%); }
+        #root .nb { position:absolute; left:110px; right:110px; top:960px; }
+        #root .nn { font-family:"Cormorant Garamond", serif; font-weight:600; line-height:0.95; color:#F5F0E6; text-shadow:0 4px 30px rgba(7,12,16,.6); white-space:nowrap; }
+        #root .nrule { width:220px; height:3px; margin-top:12px; transform-origin:0 50%; }
+        #root .nl { margin-top:14px; font:500 30px/1.3 "Montserrat", sans-serif; color:#F5F0E6; text-shadow:0 2px 12px rgba(7,12,16,.85); }
+        #root .ns { margin-top:10px; font:500 20px "Montserrat", sans-serif; color:#F5F0E6; opacity:.6; }
+        #root .fi { position:absolute; left:0; right:0; text-align:center; top:1330px; font:500 21px "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .rule { position:absolute; left:0; right:0; top:959px; height:2px; background:#C9A86A; }
+        #root .shade { position:absolute; left:0; right:0; top:961px; bottom:0; background:linear-gradient(180deg,#07150Fcc 0%,#07150F33 35%,#07150F00 55%,#07150Fcc 100%); }
+        #root .sh { position:absolute; left:110px; right:110px; top:1000px; }
+        #root .h1 { font:600 72px/1.05 "Cormorant Garamond", serif; color:#F5F0E6; }
+        #root .h2 { margin-top:10px; font:500 26px/1.3 "Montserrat", sans-serif; color:#F5F0E6; opacity:.8; }
+        #root .sf06 .dim { position:absolute; inset:0; background:linear-gradient(180deg,#07150F80 0%,#07150F40 30%,#07150Fcc 60%,#07150Ff0 100%); }
+        #root .si { position:absolute; left:110px; right:110px; top:880px; }
+        #root .idx { font:500 24px "Montserrat", sans-serif; letter-spacing:5px; color:#C9A86A; }
+        #root .big { font:600 230px/0.9 "Cormorant Garamond", serif; color:#C9A86A; margin-top:28px; }
+        #root .ln { font:500 58px/1.12 "Cormorant Garamond", serif; color:#F5F0E6; margin-top:6px; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-items" data-width="1080" data-height="1920">
+        <div id="nm0" class="clip num" data-start="0.000" data-duration="2.533" data-track-index="3"><div class="nb"><div class="nn" style="font-size:130px">R$ 1 = US$ 1</div><div class="nrule" style="background:#C9A86A"></div><div class="nl">Em 1994</div><div class="ns">Fonte: Banco Central do Brasil</div></div></div>
+        <div id="nm3" class="clip num" data-start="6.300" data-duration="1.967" data-track-index="3"><div class="nb"><div class="nn" style="font-size:170px">13,75%</div><div class="nrule" style="background:#C8473D"></div><div class="nl">Selic: juros entre os mais altos do planeta</div><div class="ns">Fonte: Banco Central do Brasil, Copom</div></div></div>
+        <div id="nm4" class="clip num" data-start="8.267" data-duration="1.267" data-track-index="3"><div class="ndim"></div><div class="nb"><div class="nn" style="font-size:130px">82,9% do PIB</div><div class="nrule" style="background:#C8473D"></div><div class="nl">Dívida bruta do Brasil</div><div class="ns">Fonte: Banco Central do Brasil, ago. 2026</div></div></div>
+        <div id="nm5" class="clip num" data-start="9.533" data-duration="1.400" data-track-index="3"><div class="ndim"></div><div class="nb"><div class="nn" style="font-size:170px">10%</div><div class="nrule" style="background:#C8473D"></div><div class="nl">sobre dividendos</div><div class="ns">Fonte: Lei 15.270/2025</div></div></div>
+        <div id="nm6" class="clip num" data-start="10.933" data-duration="2.667" data-track-index="3"><div class="ndim"></div><div class="nb"><div class="nn" style="font-size:150px">Até 22,5%</div><div class="nrule" style="background:#C8473D"></div><div class="nl">de imposto na venda de imóvel com lucro</div><div class="ns">Fonte: Receita Federal</div></div></div>
+        <div id="nm7" class="clip num" data-start="13.600" data-duration="1.067" data-track-index="3"><div class="nb"><div class="nn" style="font-size:170px">~1.200</div><div class="nrule" style="background:#C8473D"></div><div class="nl">milionários deixaram o Brasil em um ano</div><div class="ns">Fonte: Henley &amp; Partners, 2025</div></div></div>
+        <div id="cp11" class="clip chip" data-start="20.150" data-duration="2.317" data-track-index="0"><div class="ci"><span class="dot"></span>Economia em crescimento</div></div>
+        <div id="cp12" class="clip chip" data-start="22.617" data-duration="0.617" data-track-index="0"><div class="ci"><span class="dot"></span>Moeda atrelada ao dólar</div></div>
+        <div id="sx13" class="clip sf06" data-start="23.233" data-duration="1.767" data-track-index="2"><div class="dim"></div><div class="si"><div class="idx" data-layout-allow-overlap>EMIRADOS ÁRABES UNIDOS</div><div class="big" data-layout-allow-overlap>0%</div><div class="ln">de imposto local sobre aluguel e ganho de capital</div></div></div>
+        <div id="sl14" class="clip split" data-start="25.000" data-duration="1.600" data-track-index="2"><div class="rule"></div><div class="shade"></div><div class="sh"><div class="h1">Segurança</div><div class="h2">entre as maiores do planeta</div></div></div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#nm0 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},0.300);
+          tl.fromTo("#nm0 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},0.450);
+          tl.fromTo("#nm0 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},0.550);
+          tl.fromTo("#nm0 .ns",{opacity:0},{opacity:0.6,duration:0.3},0.650);
+          tl.to("#nm0 .nb",{opacity:0,duration:0.2,ease:"power1.in"},2.313);
+          tl.fromTo("#nm3 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},6.600);
+          tl.fromTo("#nm3 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},6.750);
+          tl.fromTo("#nm3 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},6.850);
+          tl.fromTo("#nm3 .ns",{opacity:0},{opacity:0.6,duration:0.3},6.950);
+          tl.to("#nm3 .nb",{opacity:0,duration:0.2,ease:"power1.in"},8.047);
+          tl.fromTo("#nm4 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},8.417);
+          tl.fromTo("#nm4 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},8.567);
+          tl.fromTo("#nm4 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},8.667);
+          tl.fromTo("#nm4 .ns",{opacity:0},{opacity:0.6,duration:0.3},8.767);
+          tl.to("#nm4 .nb",{opacity:0,duration:0.2,ease:"power1.in"},9.313);
+          tl.fromTo("#nm5 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},9.683);
+          tl.fromTo("#nm5 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},9.833);
+          tl.fromTo("#nm5 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},9.933);
+          tl.fromTo("#nm5 .ns",{opacity:0},{opacity:0.6,duration:0.3},10.033);
+          tl.to("#nm5 .nb",{opacity:0,duration:0.2,ease:"power1.in"},10.713);
+          tl.fromTo("#nm6 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},11.933);
+          tl.fromTo("#nm6 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},12.083);
+          tl.fromTo("#nm6 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},12.183);
+          tl.fromTo("#nm6 .ns",{opacity:0},{opacity:0.6,duration:0.3},12.283);
+          tl.to("#nm6 .nb",{opacity:0,duration:0.2,ease:"power1.in"},13.380);
+          tl.fromTo("#nm7 .nn",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},13.750);
+          tl.fromTo("#nm7 .nrule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},13.900);
+          tl.fromTo("#nm7 .nl",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},14.000);
+          tl.fromTo("#nm7 .ns",{opacity:0},{opacity:0.6,duration:0.3},14.100);
+          tl.to("#nm7 .nb",{opacity:0,duration:0.2,ease:"power1.in"},14.447);
+          tl.fromTo("#cp11 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},20.150);
+          tl.to("#cp11 .ci",{opacity:0,duration:0.2,ease:"power1.in"},22.247);
+          tl.fromTo("#cp12 .ci",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},22.617);
+          tl.to("#cp12 .ci",{opacity:0,duration:0.2,ease:"power1.in"},23.013);
+          tl.fromTo("#sx13 .idx",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},23.333);
+          tl.fromTo("#sx13 .big",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},23.433);
+          tl.fromTo("#sx13 .ln",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},23.633);
+          tl.to("#sx13 .si",{opacity:0,duration:0.2,ease:"power1.in"},24.780);
+          tl.fromTo("#sl14 .rule",{scaleX:0},{scaleX:1,duration:0.4,ease:"power2.out"},25.000);
+          tl.fromTo("#sl14 .h1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},25.150);
+          tl.fromTo("#sl14 .h2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},25.300);
+          tl.to("#sl14 .sh",{opacity:0,duration:0.2,ease:"power1.in"},26.380);
+          window.__timelines["ov-items"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

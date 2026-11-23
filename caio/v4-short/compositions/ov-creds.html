@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .crin { position:absolute; inset:0; background:radial-gradient(90% 60% at 50% 35%, #0f3a2d 0%, #0B2B22 55%, #07150F 100%); }
+        #root .logo { position:absolute; left:50%; margin-left:-300px; top:300px; width:600px; }
+        #root .tag { position:absolute; left:0; right:0; top:460px; text-align:center; font:500 22px "Montserrat", sans-serif; letter-spacing:6px; color:#E5D3A6; }
+        #root .stats { position:absolute; left:90px; right:90px; top:560px; display:flex; justify-content:space-between; text-align:center; }
+        #root .st { width:300px; white-space:nowrap; }
+        #root .st b { display:block; font:600 66px/1 "Cormorant Garamond", serif; color:#C9A86A; }
+        #root .st span { display:block; margin-top:8px; font:500 24px "Montserrat", sans-serif; color:#F5F0E6; }
+        #root .cities { position:absolute; left:120px; right:120px; top:760px; text-align:center; font:500 25px/1.9 "Montserrat", sans-serif; letter-spacing:3px; }
+        #root .cty { display:inline-block; margin:0 14px; color:#F5F0E6; }
+        #root .cty.hq { color:#C9A86A; }
+        #root .cty i { display:inline-block; width:12px; height:12px; border-radius:50%; background:#C9A86A; margin-right:10px; vertical-align:2px; }
+        #root .seals { position:absolute; left:0; right:0; top:900px; display:flex; justify-content:center; gap:30px; }
+        #root .seal { width:330px; height:120px; border:1.5px solid #C9A86A; border-radius:14px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+        #root .seal b { font:600 46px/1 "Cormorant Garamond", serif; color:#F5F0E6; letter-spacing:4px; }
+        #root .seal span { margin-top:8px; font:500 18px "Montserrat", sans-serif; color:#E5D3A6; }
+        #root .press { position:absolute; left:0; right:0; top:1080px; text-align:center; }
+        #root .press .k { font:500 22px "Montserrat", sans-serif; letter-spacing:6px; color:#C9A86A; }
+        #root .press .pl { margin-top:14px; font:500 30px "Montserrat", sans-serif; color:#F5F0E6; opacity:.75; }
+        #root .press .gr { margin-top:12px; font:500 22px "Montserrat", sans-serif; color:#F5F0E6; opacity:.75; }
+        #root .src { position:absolute; left:110px; font:500 20px "Montserrat", sans-serif; color:#F5F0E6; opacity:.6; }
+        #root .crs { top:1290px; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-creds" data-width="1080" data-height="1920">
+        <div id="cr" class="clip" data-start="28.400" data-duration="4.167" data-track-index="0">
+          <div id="cr-in" class="crin">
+            <img id="cr-logo" class="logo" src="assets/allegiance-logo-gold.png" alt="Allegiance Real Estate">
+            <div id="cr-tag" class="tag">CONSULTORIA GLOBAL DE INVESTIMENTOS</div>
+            <div class="stats">
+              <div id="st0" class="st"><b>AED 20B+</b><span>em transações</span></div>
+              <div id="st1" class="st"><b>5.000+</b><span>clientes</span></div>
+              <div id="st2" class="st"><b>7</b><span>escritórios</span></div>
+            </div>
+            <div id="cr-cty" class="cities"><span class="cty hq"><i></i>DUBAI</span><span class="cty">BEIRUT</span><span class="cty">PARIS</span><span class="cty">RIYADH</span><span class="cty">SYDNEY</span><span class="cty">TOKYO</span><span class="cty">LJUBLJANA</span></div>
+            <div class="seals"><div id="sl0" class="seal"><b>RERA</b><span>Real Estate Regulatory Agency</span></div>
+              <div id="sl1" class="seal"><b>DLD</b><span>Dubai Land Department</span></div></div>
+            <div id="cr-pr" class="press"><div class="k">COMO VISTO EM</div><div class="pl">Forbes · Business Insider · Gulf News · CEO Weekly</div>
+              <div class="gr">Google Reviews 4,9/5</div></div>
+            <div class="src crs">Fonte: Allegiance, perfil institucional</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#cr-in",{opacity:0},{opacity:1,duration:0.2,ease:"none"},28.400);
+          tl.fromTo("#cr-logo",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},28.500);
+          tl.fromTo("#cr-tag",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},28.700);
+          tl.fromTo("#st1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},29.000);
+          tl.fromTo("#st2",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},29.400);
+          tl.fromTo("#cr-cty",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},29.600);
+          tl.fromTo("#cr-cty i",{scale:1},{scale:1.6,duration:0.6,ease:"sine.inOut",yoyo:true,repeat:3},29.900);
+          tl.fromTo("#sl0",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},30.300);
+          tl.fromTo("#sl1",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},30.700);
+          tl.fromTo("#st0",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},29.300);
+          tl.fromTo("#cr-pr",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},31.300);
+          tl.fromTo("#cr .src",{opacity:0},{opacity:0.6,duration:0.3},28.900);
+          tl.to("#cr-in",{opacity:0,duration:0.2},32.367);
+          window.__timelines["ov-creds"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

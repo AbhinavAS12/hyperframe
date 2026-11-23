@@ -18,7 +18,7 @@ LEAD, TAIL = 0.06, 0.10
 HOLD = 1.5           # end-card hold after the last word
 OUTRO_LEN = 5.15
 
-C = dict(emerald="#0B2B22", night="#07150F", gold="#C9A86A", champ="#E5D3A6", ivory="#F5F0E6", grey="#5A6670")
+C = dict(emerald="#0B2B22", night="#07150F", gold="#C9A86A", champ="#E5D3A6", ivory="#F5F0E6", grey="#5A6670", red="#C8473D", slate="#0E1418")
 SRC_IMF = "Fonte: FMI, World Economic Outlook, out. 2026"
 
 ICON = {
@@ -85,6 +85,67 @@ SHORT = dict(
     ])
 
 
+# ---------------------------------------------------------- Video 2 (Brazil) ----
+SRC_BC = "Fonte: Banco Central do Brasil"
+COLD = dict(cold=True)
+V3 = dict(
+    out="v3-long", src="caio-v3-13x-clean.mp4", src_cold="caio-v3-13x-cold.mp4", words="v3_words.json",
+    dark="music-dark-v3.mp3", dark_ms=4.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_LONG_9x16_v01.mp4",
+    spans=[
+        (0.58, 3.72, "full", dict(COLD, num=dict(n="R$ 1 = US$ 1", label="Em 1994", src=SRC_BC, red=False, size=130, at=0.3))),
+        (3.92, 5.26, "brl", dict(COLD)),
+        (6.14, 9.34, "brl", dict(COLD)),
+        (9.96, 15.06, "full", dict(COLD, num=dict(n="13,75%", label="Selic: juros entre os mais altos do planeta, e a projeção para 2027 subiu",
+                                                 src="Fonte: Banco Central do Brasil, Copom e Boletim Focus", at=0.9))),
+        (15.58, 17.08, "broll", dict(COLD, clip="c20", num=dict(n="82,9% do PIB", label="Dívida bruta do Brasil", src=SRC_BC + ", ago. 2026", size=130))),
+        (17.44, 22.02, "broll", dict(COLD, clip="c21", num=dict(n="10%", label="sobre dividendos · regras mudando até 2033", src="Fonte: Lei 15.270/2025"))),
+        (22.56, 25.88, "broll", dict(COLD, clip="c22", num=dict(n="Até 22,5%", label="de imposto na venda de imóvel com lucro", src="Fonte: Receita Federal", size=150, at=1.0))),
+        (26.40, 30.76, "full", dict(COLD, num=dict(n="~1.200", label="milionários deixaram o Brasil em um ano", src="Fonte: Henley & Partners, 2025"))),
+        (31.04, 36.04, "broll", dict(COLD, clip="c23")),
+        (36.46, 41.20, "full", dict(COLD)),
+        (None, 0.8, "gap", dict()),
+        (41.64, 44.70, "broll", dict(clip="b24", chip="Economia em crescimento")),
+        (45.02, 45.84, "full", dict(chip="Moeda atrelada ao dólar")),
+        (46.14, 48.28, "sf06", dict(clip="b12", idx="EMIRADOS ÁRABES UNIDOS", big="0%", line="de imposto local sobre aluguel e ganho de capital")),
+        (48.64, 54.08, "split", dict(clip="b05", head="Segurança", sub="um ambiente feito para o investidor estrangeiro")),
+        (54.52, 58.46, "punch", dict(chip="Proteja o que você construiu")),
+        (59.12, 63.90, "full", dict(l3=True)),
+        (64.36, 68.94, "full", dict()),
+        (68.98, 70.50, "creds", dict(step="intro")),
+        (70.52, 71.92, "creds", dict(step="offices")),
+        (72.22, 73.92, "creds", dict(step="press")),
+        (74.22, 77.00, "creds", dict(step="seals")),
+        (77.60, 79.86, "full", dict()),
+        (80.12, 82.88, "punch", dict()),
+        (83.26, 85.46, "end", dict(cap=[])),
+    ])
+
+V4 = dict(
+    out="v4-short", src="caio-v3-13x-clean.mp4", src_cold="caio-v3-13x-cold.mp4", words="v3_words.json",
+    dark="music-dark-v3.mp3", dark_ms=10.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_SHORT_9x16_v01.mp4",
+    spans=[
+        (0.58, 3.72, "full", dict(COLD, num=dict(n="R$ 1 = US$ 1", label="Em 1994", src=SRC_BC, red=False, size=130, at=0.3))),
+        (3.92, 5.26, "brl", dict(COLD)),
+        (6.14, 9.34, "brl", dict(COLD)),
+        (9.96, 12.36, "full", dict(COLD, num=dict(n="13,75%", label="Selic: juros entre os mais altos do planeta", src="Fonte: Banco Central do Brasil, Copom", at=0.3))),
+        (15.58, 17.08, "broll", dict(COLD, clip="c20", num=dict(n="82,9% do PIB", label="Dívida bruta do Brasil", src=SRC_BC + ", ago. 2026", size=130))),
+        (17.44, 19.10, "broll", dict(COLD, clip="c21", num=dict(n="10%", label="sobre dividendos", src="Fonte: Lei 15.270/2025"))),
+        (22.56, 25.88, "broll", dict(COLD, clip="c22", num=dict(n="Até 22,5%", label="de imposto na venda de imóvel com lucro", src="Fonte: Receita Federal", size=150, at=1.0))),
+        (26.40, 27.62, "full", dict(COLD, num=dict(n="~1.200", label="milionários deixaram o Brasil em um ano", src="Fonte: Henley & Partners, 2025"))),
+        (31.04, 34.56, "broll", dict(COLD, clip="c23")),
+        (38.90, 41.20, "full", dict(COLD)),
+        (None, 0.6, "gap", dict()),
+        (41.64, 44.70, "broll", dict(clip="b24", chip="Economia em crescimento")),
+        (45.02, 45.84, "full", dict(chip="Moeda atrelada ao dólar")),
+        (46.14, 48.28, "sf06", dict(clip="b12", idx="EMIRADOS ÁRABES UNIDOS", big="0%", line="de imposto local sobre aluguel e ganho de capital")),
+        (48.64, 50.58, "split", dict(clip="b05", head="Segurança", sub="entre as maiores do planeta")),
+        (59.12, 61.32, "full", dict(l3=True)),
+        (68.98, 71.30, "creds", dict(step="intro")),
+        (74.22, 77.00, "creds", dict(step="seals")),
+        (80.12, 82.88, "end", dict(cap=[])),
+    ])
+
+
 def esc(s):
     return html.escape(s, quote=False)
 
@@ -146,6 +207,11 @@ def layout(cfg):
     t = 0.0
     out = []
     for a, b, mode, o in cfg["spans"]:
+        if mode == "gap":
+            t1 = round((t + b) * 30) / 30
+            out.append(dict(a=None, b=None, a0=None, mode=mode, o=o, t0=t, t1=t1, ms=None))
+            t = t1
+            continue
         a0, b0 = a - LEAD, b + TAIL
         d = (b0 - a0) / SPEED
         t1 = round((t + d) * 30) / 30
@@ -217,6 +283,68 @@ def ov_open(spans):
     return scene("ov-open", inner, css, "\n".join("          " + j for j in js)), (0, end)
 
 
+BRL = [(1994, 1.0), (1996, 1.01), (1998, 1.16), (1999, 1.81), (2001, 2.35), (2002, 2.92), (2003, 3.08), (2005, 2.43),
+       (2007, 1.95), (2008, 1.83), (2010, 1.76), (2011, 1.67), (2013, 2.16), (2015, 3.33), (2016, 3.49), (2018, 3.65),
+       (2019, 3.94), (2020, 5.16), (2021, 5.40), (2022, 5.16), (2023, 4.99), (2024, 5.39), (2025, 5.45), (2026, 5.65)]
+
+
+def ov_brl(spans):
+    bs = [s for s in spans if s["mode"] == "brl"]
+    t0, t1 = bs[0]["t0"], bs[-1]["t1"]
+    t_red = bs[-1]["t0"] if len(bs) > 1 else t0 + 1.4
+    x0, x1, y0, y1 = 120, 960, 1180, 740          # plot box (px)
+    X = lambda yr: x0 + (yr - 1994) / (2026 - 1994) * (x1 - x0)
+    Y = lambda v: y0 - (v - 0.8) / (6.0 - 0.8) * (y0 - y1)
+    pts = [(X(a), Y(b)) for a, b in BRL]
+    main = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts[:-1])
+    red = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts[-2:])
+    ticks = "".join(f'<text x="{X(yr):.0f}" y="{y0 + 44}" text-anchor="middle">{yr}</text>' for yr in (1994, 2002, 2010, 2018, 2026))
+    ex, ey = pts[-1]
+    inner = f"""        <div id="br" class="clip" data-start="{t0:.3f}" data-duration="{t1 - t0:.3f}" data-track-index="0">
+          <div id="br-in" class="brin">
+            <div id="br-k" class="kick">QUANTOS REAIS VALE UM DÓLAR</div>
+            <div id="br-h" class="hh">Em 1994, um real<br>valia um dólar.</div>
+            <svg class="plot" viewBox="0 0 {W} {H}" width="{W}" height="{H}">
+              <line x1="{x0}" y1="{y0}" x2="{x1}" y2="{y0}" stroke="{C['ivory']}" stroke-opacity=".25" stroke-width="2"/>
+              <g class="tk">{ticks}</g>
+              <polyline id="br-l" points="{main}" fill="none" stroke="{C['ivory']}" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+              <polyline id="br-r" points="{red}" fill="none" stroke="{C['red']}" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+              <circle id="br-s" cx="{pts[0][0]:.1f}" cy="{pts[0][1]:.1f}" r="9" fill="{C['ivory']}"/>
+              <circle id="br-e" cx="{ex:.1f}" cy="{ey:.1f}" r="11" fill="{C['red']}"/>
+              <text id="br-st" x="{pts[0][0] + 6:.0f}" y="{pts[0][1] - 26:.0f}" class="lbl">R$ 1,00 (1994)</text>
+            </svg>
+            <div id="br-v" class="endv" style="top:{ey - 175:.0f}px">R$ 5,65</div>
+            <div id="br-vl" class="endl" style="top:{ey - 58:.0f}px">hoje · alta desde a eleição</div>
+            <div id="br-note" class="note">Moeda que mais perdeu valor no mundo nas últimas semanas</div>
+            <div class="src">Fonte: Banco Central do Brasil (PTAX), curva ilustrativa · Austin Rating</div>
+          </div>
+        </div>"""
+    css = f"""
+        #root .clip {{ position:absolute; inset:0; }}
+        #root .brin {{ position:absolute; inset:0; background:radial-gradient(110% 70% at 50% 40%, #151d22 0%, {C['slate']} 60%, #080b0d 100%); }}
+        #root .kick {{ position:absolute; left:110px; top:300px; font:500 24px {SANS}; letter-spacing:5px; color:{C['ivory']}; opacity:.7; }}
+        #root .hh {{ position:absolute; left:110px; right:110px; top:350px; font:600 84px/1.05 {SERIF}; color:{C['ivory']}; }}
+        #root .plot {{ position:absolute; left:0; top:0; }}
+        #root .tk text {{ font:500 24px {SANS}; fill:{C['ivory']}; fill-opacity:.6; }}
+        #root .lbl {{ font:500 26px {SANS}; fill:{C['ivory']}; }}
+        #root .endv {{ position:absolute; right:110px; font:600 92px/1 {SERIF}; color:{C['ivory']}; text-align:right; }}
+        #root .endl {{ position:absolute; right:110px; font:500 24px {SANS}; color:{C['red']}; text-align:right; }}
+        #root .note {{ position:absolute; left:110px; right:110px; top:1240px; font:500 32px/1.3 {SANS}; color:{C['ivory']}; }}
+        #root .src {{ position:absolute; left:110px; top:1330px; font:500 20px {SANS}; color:{C['ivory']}; opacity:.6; }}
+    """
+    js = [f'tl.fromTo("#br-in",{{opacity:0}},{{opacity:1,duration:0.2,ease:"none"}},{t0:.3f});',
+          reveal("#br-k", t0 + 0.05), reveal("#br-h", t0 + 0.1),
+          f'tl.fromTo("#br-s",{{scale:0,transformOrigin:"50% 50%"}},{{scale:1,duration:0.3}},{t0 + 0.1:.3f});',
+          reveal("#br-st", t0 + 0.15),
+          f'tl.fromTo("#br-l",{{attr:{{"stroke-dashoffset":1}}}},{{attr:{{"stroke-dashoffset":0}},duration:1.3,ease:"power1.inOut"}},{t0 + 0.2:.3f});',
+          f'tl.fromTo("#br-r",{{attr:{{"stroke-dashoffset":1}}}},{{attr:{{"stroke-dashoffset":0}},duration:0.5,ease:"power2.out"}},{t_red:.3f});',
+          f'tl.fromTo("#br-e",{{scale:0,transformOrigin:"50% 50%"}},{{scale:1,duration:0.3}},{t_red + 0.4:.3f});',
+          reveal("#br-v", t_red + 0.4), reveal("#br-vl", t_red + 0.55), reveal("#br-note", t_red + 0.7),
+          f'tl.fromTo("#br .src",{{opacity:0}},{{opacity:0.6,duration:0.3}},{t0 + 0.5:.3f});',
+          f'tl.to("#br-in",{{opacity:0,duration:0.2}},{t1 - 0.2:.3f});']
+    return scene("ov-brl", inner, css, "\n".join("          " + j for j in js))
+
+
 def ov_items(spans):
     els, js = [], []
     for i, s in enumerate(spans):
@@ -229,6 +357,17 @@ def ov_items(spans):
         if o.get("foot"):
             els.append(f'<div id="ft{i}" class="clip foot" data-start="{t0 + 0.4:.3f}" data-duration="{d - 0.4:.3f}" data-track-index="1"><div class="fi">{esc(o["foot"])}</div></div>')
             js += [f'tl.fromTo("#ft{i} .fi",{{opacity:0}},{{opacity:0.7,duration:0.3}},{t0 + 0.4:.3f});', hide(f"#ft{i} .fi", t1 - 0.22)]
+        if o.get("num"):
+            nm = o["num"]
+            tn = t0 + nm.get("at", 0.15)
+            dim = '<div class="ndim"></div>' if s["mode"] == "broll" else ""
+            red = f'<div class="nrule" style="background:{C["red"] if nm.get("red", True) else C["gold"]}"></div>'
+            els.append(f'<div id="nm{i}" class="clip num" data-start="{t0:.3f}" data-duration="{d:.3f}" data-track-index="3">{dim}'
+                       f'<div class="nb"><div class="nn" style="font-size:{nm.get("size", 170)}px">{esc(nm["n"])}</div>{red}'
+                       f'<div class="nl">{esc(nm["label"])}</div><div class="ns">{esc(nm.get("src", ""))}</div></div></div>')
+            js += [reveal(f"#nm{i} .nn", tn), f'tl.fromTo("#nm{i} .nrule",{{scaleX:0}},{{scaleX:1,duration:0.4,ease:"power2.out"}},{tn + 0.15:.3f});',
+                   reveal(f"#nm{i} .nl", tn + 0.25), f'tl.fromTo("#nm{i} .ns",{{opacity:0}},{{opacity:0.6,duration:0.3}},{tn + 0.35:.3f});',
+                   hide(f"#nm{i} .nb", t1 - 0.22)]
         if s["mode"] == "split":
             els.append(f'<div id="sl{i}" class="clip split" data-start="{t0:.3f}" data-duration="{d:.3f}" data-track-index="2">'
                        f'<div class="rule"></div><div class="shade"></div>'
@@ -246,6 +385,12 @@ def ov_items(spans):
         #root .ci {{ position:absolute; top:1235px; display:flex; align-items:center; gap:14px; padding:14px 30px; border-radius:60px;
                     background:rgba(11,43,34,.72); border:1.5px solid {C['gold']}; font:500 30px {SANS}; color:{C['ivory']}; }}
         #root .dot {{ width:11px; height:11px; border-radius:50%; background:{C['gold']}; }}
+        #root .num .ndim {{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(7,12,16,.35) 0%,rgba(7,12,16,.25) 40%,rgba(7,12,16,.85) 100%); }}
+        #root .nb {{ position:absolute; left:110px; right:110px; top:960px; }}
+        #root .nn {{ font-family:{SERIF}; font-weight:600; line-height:0.95; color:{C['ivory']}; text-shadow:0 4px 30px rgba(7,12,16,.6); white-space:nowrap; }}
+        #root .nrule {{ width:220px; height:3px; margin-top:12px; transform-origin:0 50%; }}
+        #root .nl {{ margin-top:14px; font:500 30px/1.3 {SANS}; color:{C['ivory']}; text-shadow:0 2px 12px rgba(7,12,16,.85); }}
+        #root .ns {{ margin-top:10px; font:500 20px {SANS}; color:{C['ivory']}; opacity:.6; }}
         #root .fi {{ position:absolute; left:0; right:0; text-align:center; top:1330px; font:500 21px {SANS}; color:{C['ivory']}; }}
         #root .rule {{ position:absolute; left:0; right:0; top:959px; height:2px; background:{C['gold']}; }}
         #root .shade {{ position:absolute; left:0; right:0; top:961px; bottom:0; background:linear-gradient(180deg,{C['night']}cc 0%,{C['night']}33 35%,{C['night']}00 55%,{C['night']}cc 100%); }}
@@ -288,7 +433,7 @@ def ov_creds(spans, sfx):
     t_off = step.get("offices", t0 + 1.0)
     t_seal = step.get("seals", t_off + 1.5)
     t_aed = step.get("aed", t0 + 0.9)
-    t_press = step.get("aed", t_seal) + 1.0
+    t_press = step.get("press", step.get("aed", t_seal) + 1.0)
     cities = "".join(f'<span class="cty{" hq" if c == "DUBAI" else ""}">{"<i></i>" if c == "DUBAI" else ""}{c}</span>'
                      for c in ["DUBAI", "BEIRUT", "PARIS", "RIYADH", "SYDNEY", "TOKYO", "LJUBLJANA"])
     inner = f"""        <div id="cr" class="clip" data-start="{t0:.3f}" data-duration="{t1 - t0:.3f}" data-track-index="0">
@@ -377,6 +522,8 @@ def ov_end(spans, t_end):
     return scene("ov-end", inner, css, "\n".join("          " + j for j in js))
 
 
+WORDS = []
+WEAK = set("a o e os as do da de dos das no na nos nas em um uma que com pra por para ao à é sobre entre mais".split())
 MAXC = 54  # ~2 lines of 42px Montserrat in an 880px box
 
 
@@ -390,7 +537,9 @@ def fit2(text):
         a, b = " ".join(words[:i]), " ".join(words[i:])
         if len(a) > MAXC:
             break
-        score = abs(len(a) - len(b)) - (25 if a.endswith(",") else 0)
+        last = words[i - 1].lower().strip(",.:;")
+        weak = last in WEAK
+        score = abs(len(a) - len(b)) - (40 if a[-1] in ",.:;" else 0) + (60 if weak else 0)
         if best is None or score < best[0]:
             best = (score, a, b)
     a, b = best[1], best[2]
@@ -401,7 +550,21 @@ def captions(spans):
     els, js = [], []
     n = 0
     for s in spans:
-        caps = [c2 for c in s["o"].get("cap", []) for c2 in fit2(c)]
+        caps = s["o"].get("cap")
+        if caps is None and WORDS and s["a"] is not None:
+            ws = [w for w in WORDS if w["start"] >= s["a"] - 0.05 and w["end"] <= s["b"] + 0.05]
+            chunks = fit2(" ".join(w["text"] for w in ws))
+            k = 0
+            for ci, c in enumerate(chunks):
+                nw = len(c.split())
+                st = s["t0"] if ci == 0 else tmap(s, ws[k]["start"]) - 0.05
+                en = s["t1"] if ci == len(chunks) - 1 else tmap(s, ws[k + nw]["start"]) - 0.06
+                els.append(f'<div id="cap{n}" class="clip cap" data-start="{st + 0.02:.3f}" data-duration="{en - st - 0.05:.3f}" data-track-index="0"><div class="ct">{esc(c)}</div></div>')
+                js += [reveal(f"#cap{n} .ct", st + 0.02), hide(f"#cap{n} .ct", en - 0.18, 0.15)]
+                n += 1
+                k += nw
+            continue
+        caps = [c2 for c in (caps or []) for c2 in fit2(c)]
         if not caps:
             continue
         t0, t1 = s["t0"], s["t1"]
@@ -428,11 +591,25 @@ def build(cfg):
     end_at = talk + HOLD
     total = round(end_at + OUTRO_LEN, 2)
     sfx = []
-    c_up = next(s for s in spans if s["mode"] == "chart")["t0"]
+    global WORDS
+    WORDS = []
+    if cfg.get("words"):
+        WORDS = [w for w in json.load(open(os.path.join(SHARED, cfg["words"])))["words"] if w.get("type", "word") == "word"]
+    gap = next((s for s in spans if s["mode"] == "gap"), None)
+    if gap:
+        dark_end, c_up = gap["t0"], gap["t1"]
+    else:
+        c_up = next(s for s in spans if s["mode"] == "chart")["t0"]
+        dark_end = c_up + 0.8
     files = {"captions.html": captions(spans), "ov-items.html": ov_items(spans), "ov-l3.html": ov_l3(spans),
              "ov-creds.html": ov_creds(spans, sfx), "ov-end.html": ov_end(spans, end_at)}
-    open_html, _ = ov_open(spans)
-    files["ov-open.html"] = open_html
+    comps = [("ov-items", 6), ("ov-l3", 6), ("ov-creds", 6), ("ov-end", 7), ("captions", 9)]
+    if any(s["mode"] == "brazil" for s in spans):
+        files["ov-open.html"] = ov_open(spans)[0]
+        comps.insert(0, ("ov-open", 5))
+    if any(s["mode"] == "brl" for s in spans):
+        files["ov-brl.html"] = ov_brl(spans)
+        comps.insert(0, ("ov-brl", 5))
 
     vids, bvids, js = [], [], []
     for i, s in enumerate(spans):
@@ -440,11 +617,13 @@ def build(cfg):
         if s["mode"] == "end":
             d += HOLD
         m = s["mode"]
+        if m == "gap":
+            continue
         clip = "inset(0 0 50% 0)" if m == "split" else "none"
         s0 = 1.15 if m == "punch" else 1.0
         org = "50% 30%"
         vids.append(f'      <div class="sp" style="clip-path:{clip}"><div id="mv{i}" class="mv" style="transform-origin:{org}">'
-                    f'<video id="tk{i}" class="clip" src="assets/caio.mp4" playsinline data-has-audio="true" data-start="{s["t0"]:.3f}" '
+                    f'<video id="tk{i}" class="clip" src="assets/{'caio-cold' if s['o'].get('cold') else 'caio'}.mp4" playsinline data-has-audio="true" data-start="{s["t0"]:.3f}" '
                     f'data-duration="{d:.3f}" data-media-start="{s["ms"]:.3f}" data-track-index="{1 + 6 * (i % 2)}" data-volume="1"></video></div></div>')
         js.append(f'      tl.set("#mv{i}", {{ scale:{s0} }}, {s["t0"]:.3f});')
         clipname = s["o"].get("clip")
@@ -456,7 +635,7 @@ def build(cfg):
             js.append(f'      tl.fromTo("#bm{i}", {{ scale:1.03 }}, {{ scale:1.0, duration:{bt1 - bt0:.3f}, ease:"none" }}, {bt0:.3f});')
 
     hosts = []
-    for cid, z in [("ov-open", 5), ("ov-items", 6), ("ov-l3", 6), ("ov-creds", 6), ("ov-end", 7), ("captions", 9)]:
+    for cid, z in comps:
         hosts.append(f'      <div id="{cid}" data-composition-id="{cid}" data-composition-src="compositions/{cid}.html" data-start="0" '
                      f'data-duration="{end_at:.3f}" data-track-index="{3 if cid != "captions" else 4}" data-track-kind="{"captions" if cid == "captions" else "graphics"}" '
                      f'data-width="{W}" data-height="{H}" style="z-index:{z}"></div>')
@@ -490,8 +669,8 @@ def build(cfg):
       <div id="vig"></div>
 {chr(10).join(hosts)}
       <div id="ow" class="bw" style="z-index:12"><div class="bm"><video id="outro" class="clip" src="assets/outro.mp4" muted playsinline data-start="{end_at:.3f}" data-duration="{OUTRO_LEN}" data-media-start="0" data-track-index="8"></video></div></div>
-      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{c_up + 0.8:.3f}" data-track-index="9" data-volume="0.22" data-fade-in="0.3" data-fade-out="0.9"></audio>
-      <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="0.6" data-fade-out="3"></audio>
+      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{dark_end:.3f}" data-media-start="{cfg.get('dark_ms', 0)}" data-track-index="9" data-volume="{cfg.get('dark_vol', 0.22)}" data-fade-in="0.3" data-fade-out="{0.25 if gap else 0.9}"></audio>
+      <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="{0.05 if gap else 0.6}" data-fade-out="3"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
@@ -513,11 +692,13 @@ def build(cfg):
         if not os.path.exists(dst) or os.path.getsize(dst) != os.path.getsize(src):
             shutil.copy(src, dst)
     cp(os.path.join(SHARED, cfg["src"]), os.path.join(assets, "caio.mp4"))
-    for b in ("b00", "b03", "b05", "b08", "b09", "b12"):
+    for b in sorted(f[:-4] for f in os.listdir(os.path.join(SHARED, "broll-lux"))):
         cp(os.path.join(SHARED, "broll-lux", b + ".mp4"), os.path.join(assets, "broll", b + ".mp4"))
     cp(os.path.join(SHARED, "outro-1080.mp4"), os.path.join(assets, "outro.mp4"))
     cp(os.path.join(SHARED, "music-lux.mp3"), os.path.join(assets, "music.mp3"))
-    cp(os.path.join(SHARED, "music-dark.mp3"), os.path.join(assets, "music-dark.mp3"))
+    cp(os.path.join(SHARED, cfg.get("dark", "music-dark.mp3")), os.path.join(assets, "music-dark.mp3"))
+    if cfg.get("src_cold"):
+        cp(os.path.join(SHARED, cfg["src_cold"]), os.path.join(assets, "caio-cold.mp4"))
     cp(os.path.join(SHARED, "allegiance-logo-gold.png"), os.path.join(assets, "allegiance-logo-gold.png"))
     cp(os.path.join(SHARED, "impact-bass-1.mp3"), os.path.join(assets, "sfx", "impact-bass-1.mp3"))
     for f in os.listdir(os.path.join(SHARED, "fonts")):
@@ -539,4 +720,4 @@ def build(cfg):
 if __name__ == "__main__":
     which = sys.argv[1:] or ["long", "short"]
     for w in which:
-        build(LONG if w == "long" else SHORT)
+        build(dict(long=LONG, short=SHORT, v3=V3, v4=V4)[w])

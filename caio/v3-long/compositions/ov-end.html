@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><meta charset="UTF-8"></head>
+  <body>
+    <template>
+      <style>
+
+        @font-face { font-family:"Cormorant Garamond"; font-weight:600; src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2"); }
+        @font-face { font-family:"Cormorant Garamond"; font-weight:500; src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2"); }
+
+        #root { position:absolute; inset:0; overflow:hidden; color:#F5F0E6; font-family:"Montserrat", sans-serif; font-weight:500; }
+
+        #root .clip { position:absolute; inset:0; }
+        #root .grad { position:absolute; inset:0; background:linear-gradient(180deg, #0B2B2200 0%, #0B2B2200 28%, #0B2B22e6 44%, #0B2B22 52%); }
+        #root .cover { position:absolute; inset:0; background:#0B2B22; }
+        #root .blk { position:absolute; left:80px; right:80px; top:880px; text-align:center; }
+        #root .k { font:500 24px "Montserrat", sans-serif; letter-spacing:6px; color:#C9A86A; }
+        #root .h { margin-top:22px; font:600 88px/1.02 "Cormorant Garamond", serif; color:#F5F0E6; }
+        #root .s { margin-top:22px; font:500 28px/1.4 "Montserrat", sans-serif; color:#F5F0E6; opacity:.85; }
+        #root .btn { margin:30px auto 0; width:520px; padding:24px 0; border-radius:60px; background:#C9A86A; color:#0B2B22; font:600 34px "Montserrat", sans-serif; }
+        #root .lg { display:block; margin:34px auto 0; width:300px; }
+        #root .r { margin-top:12px; font:500 20px "Montserrat", sans-serif; color:#F5F0E6; opacity:.6; }
+    
+      </style>
+      <div id="root" data-composition-id="ov-end" data-width="1080" data-height="1920">
+        <div id="ec" class="clip" data-start="60.100" data-duration="3.300" data-track-index="0">
+          <div id="ec-g" class="grad"></div>
+          <div id="ec-cover" class="cover"></div>
+          <div class="blk">
+            <div id="ec-k" class="k">CORTESIA ALLEGIANCE</div>
+            <div id="ec-h" class="h">Consulta inicial<br>com Caio Rezende</div>
+            <div id="ec-s" class="s">Entenda como proteger seu patrimônio<br>e investir nos Emirados Árabes Unidos.</div>
+            <div id="ec-b" class="btn">Agende sua consulta</div>
+            <img id="ec-l" class="lg" src="assets/allegiance-logo-gold.png" alt="Allegiance Real Estate">
+            <div id="ec-r" class="r">Caio Rezende · RERA BRN 100501</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#ec-g",{opacity:0},{opacity:1,duration:0.5,ease:"power1.out"},60.100);
+          tl.fromTo("#ec-cover",{opacity:0},{opacity:1,duration:1.0,ease:"power1.inOut"},61.700);
+          tl.fromTo("#ec-k",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},60.300);
+          tl.fromTo("#ec-h",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},60.450);
+          tl.fromTo("#ec-s",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},60.700);
+          tl.fromTo("#ec-b",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},60.950);
+          tl.fromTo("#ec-l",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},61.150);
+          tl.fromTo("#ec-r",{opacity:0,y:12},{opacity:1,y:0,duration:0.27,ease:"power2.out"},61.300);
+          window.__timelines["ov-end"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
