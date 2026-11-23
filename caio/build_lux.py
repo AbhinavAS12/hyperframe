@@ -87,9 +87,9 @@ SHORT = dict(
 
 # ---------------------------------------------------------- Video 2 (Brazil) ----
 SRC_BC = "Fonte: Banco Central do Brasil"
-COLD = dict(cold=True)
+COLD = dict()  # Caio keeps his original colour; only the Brazil b-roll is graded cold
 V3 = dict(
-    out="v3-long", src="caio-v3-13x-clean.mp4", src_cold="caio-v3-13x-cold.mp4", words="v3_words.json",
+    out="v3-long", src="caio-v3-clean.mp4", speed=1.0, words="v3_words.json",
     dark="music-dark-v3.mp3", dark_ms=4.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_LONG_9x16_v01.mp4",
     spans=[
         (0.58, 3.72, "full", dict(COLD, num=dict(n="R$ 1 = US$ 1", label="Em 1994", src=SRC_BC, red=False, size=130, at=0.3))),
@@ -103,7 +103,7 @@ V3 = dict(
         (26.40, 30.76, "full", dict(COLD, num=dict(n="~1.200", label="milionários deixaram o Brasil em um ano", src="Fonte: Henley & Partners, 2025"))),
         (31.04, 36.04, "broll", dict(COLD, clip="c23")),
         (36.46, 41.20, "full", dict(COLD)),
-        (None, 0.8, "gap", dict()),
+        (None, 1.2, "gap", dict(clip="c23")),
         (41.64, 44.70, "broll", dict(clip="b24", chip="Economia em crescimento")),
         (45.02, 45.84, "full", dict(chip="Moeda atrelada ao dólar")),
         (46.14, 48.28, "sf06", dict(clip="b12", idx="EMIRADOS ÁRABES UNIDOS", big="0%", line="de imposto local sobre aluguel e ganho de capital")),
@@ -121,7 +121,7 @@ V3 = dict(
     ])
 
 V4 = dict(
-    out="v4-short", src="caio-v3-13x-clean.mp4", src_cold="caio-v3-13x-cold.mp4", words="v3_words.json",
+    out="v4-short", src="caio-v3-clean.mp4", speed=1.0, words="v3_words.json",
     dark="music-dark-v3.mp3", dark_ms=10.0, dark_vol=0.16, file="ALLEGIANCE_BR_V2_SHORT_9x16_v01.mp4",
     spans=[
         (0.58, 3.72, "full", dict(COLD, num=dict(n="R$ 1 = US$ 1", label="Em 1994", src=SRC_BC, red=False, size=130, at=0.3))),
@@ -134,7 +134,7 @@ V4 = dict(
         (26.40, 27.62, "full", dict(COLD, num=dict(n="~1.200", label="milionários deixaram o Brasil em um ano", src="Fonte: Henley & Partners, 2025"))),
         (31.04, 34.56, "broll", dict(COLD, clip="c23")),
         (38.90, 41.20, "full", dict(COLD)),
-        (None, 0.6, "gap", dict()),
+        (None, 1.2, "gap", dict(clip="c23")),
         (41.64, 44.70, "broll", dict(clip="b24", chip="Economia em crescimento")),
         (45.02, 45.84, "full", dict(chip="Moeda atrelada ao dólar")),
         (46.14, 48.28, "sf06", dict(clip="b12", idx="EMIRADOS ÁRABES UNIDOS", big="0%", line="de imposto local sobre aluguel e ganho de capital")),
@@ -587,6 +587,8 @@ def captions(spans):
 
 # ----------------------------------------------------------------- root ----
 def build(cfg):
+    global SPEED
+    SPEED = cfg.get("speed", 1.3)
     spans, talk = layout(cfg)
     end_at = talk + HOLD
     total = round(end_at + OUTRO_LEN, 2)
@@ -597,7 +599,7 @@ def build(cfg):
         WORDS = [w for w in json.load(open(os.path.join(SHARED, cfg["words"])))["words"] if w.get("type", "word") == "word"]
     gap = next((s for s in spans if s["mode"] == "gap"), None)
     if gap:
-        dark_end, c_up = gap["t0"], gap["t1"]
+        dark_end, c_up = gap["t1"] + 1.2, gap["t0"]
     else:
         c_up = next(s for s in spans if s["mode"] == "chart")["t0"]
         dark_end = c_up + 0.8
@@ -618,6 +620,9 @@ def build(cfg):
             d += HOLD
         m = s["mode"]
         if m == "gap":
+            bvids.append(f'      <div class="bw"><div id="bm{i}" class="bm"><video id="bv{i}" class="clip" src="assets/broll/{s["o"]["clip"]}.mp4" muted playsinline '
+                         f'data-start="{s["t0"]:.3f}" data-duration="{d + 0.1:.3f}" data-media-start="2.0" data-track-index="2"></video></div></div>')
+            js.append(f'      tl.fromTo("#bm{i}", {{ scale:1.0 }}, {{ scale:1.04, duration:{d:.3f}, ease:"none" }}, {s["t0"]:.3f});')
             continue
         clip = "inset(0 0 50% 0)" if m == "split" else "none"
         s0 = 1.15 if m == "punch" else 1.0
@@ -629,8 +634,12 @@ def build(cfg):
         clipname = s["o"].get("clip")
         if clipname:
             bt0, bt1 = s["t0"], s["t1"]
+            prev = spans[i - 1] if i else None
+            if prev and prev["mode"] == "gap":
+                bt0 = prev["t0"]
+                js.append(f'      tl.fromTo("#bw{i}", {{ opacity:0 }}, {{ opacity:1, duration:{prev["t1"] - prev["t0"]:.3f}, ease:"sine.inOut" }}, {bt0:.3f});')
             bclip = "inset(50% 0 0 0)" if m == "split" else "none"
-            bvids.append(f'      <div class="bw" style="clip-path:{bclip}"><div id="bm{i}" class="bm"><video id="bv{i}" class="clip" src="assets/broll/{clipname}.mp4" muted playsinline '
+            bvids.append(f'      <div id="bw{i}" class="bw" style="clip-path:{bclip}"><div id="bm{i}" class="bm"><video id="bv{i}" class="clip" src="assets/broll/{clipname}.mp4" muted playsinline '
                          f'data-start="{bt0:.3f}" data-duration="{bt1 - bt0:.3f}" data-media-start="0.3" data-track-index="2"></video></div></div>')
             js.append(f'      tl.fromTo("#bm{i}", {{ scale:1.03 }}, {{ scale:1.0, duration:{bt1 - bt0:.3f}, ease:"none" }}, {bt0:.3f});')
 
@@ -669,8 +678,8 @@ def build(cfg):
       <div id="vig"></div>
 {chr(10).join(hosts)}
       <div id="ow" class="bw" style="z-index:12"><div class="bm"><video id="outro" class="clip" src="assets/outro.mp4" muted playsinline data-start="{end_at:.3f}" data-duration="{OUTRO_LEN}" data-media-start="0" data-track-index="8"></video></div></div>
-      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{dark_end:.3f}" data-media-start="{cfg.get('dark_ms', 0)}" data-track-index="9" data-volume="{cfg.get('dark_vol', 0.22)}" data-fade-in="0.3" data-fade-out="{0.25 if gap else 0.9}"></audio>
-      <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="{0.05 if gap else 0.6}" data-fade-out="3"></audio>
+      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{dark_end:.3f}" data-media-start="{cfg.get('dark_ms', 0)}" data-track-index="9" data-volume="{cfg.get('dark_vol', 0.22)}" data-fade-in="0.3" data-fade-out="{2.0 if gap else 0.9}"></audio>
+      <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="{1.6 if gap else 0.6}" data-fade-out="3"></audio>
 {chr(10).join(aud)}
     </div>
     <script>
