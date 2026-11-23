@@ -4,38 +4,34 @@
     #title-scrim {
       opacity: 0;
       position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 22%, rgba(0,0,0,0.5) 31%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0) 66%);
+      background: radial-gradient(ellipse 70% 30% at 50% 38%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
     }
     #title-block {
-      position: absolute; left: 120px; top: 640px; width: 780px; color: #f4efe6;
-      text-shadow: 0 2px 18px rgba(0,0,0,0.35);
+      position: absolute; left: 140px; top: 470px; width: 800px; color: #f4efe6; text-align: center;
+      text-shadow: 0 2px 22px rgba(0,0,0,0.4);
     }
-    #title-kicker, #title-date {
-      font-family: "IBM Plex Mono", monospace; font-size: 28px; letter-spacing: 0.28em;
-      text-transform: uppercase; color: rgba(244,239,230,0.9);
+    #title-l1, #title-x, #title-l2 {
+      display: block; font-family: "EB Garamond", serif; font-weight: 400; line-height: 1.0; white-space: nowrap;
     }
-    #title-h1 {
-      display: block; font-family: "EB Garamond", serif; font-weight: 400; font-size: 62px; line-height: 1.08; white-space: nowrap;
-    }
-    #title-h1 { margin-top: 26px; }
-    #title-date { margin-top: 30px; }
+    #title-l1, #title-l2 { font-size: 104px; letter-spacing: 0.02em; }
+    #title-x { font-size: 64px; font-style: italic; margin: 18px 0 14px; }
   </style>
   <div id="root" data-composition-id="title" data-width="1080" data-height="1920"
-    data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Sales Training"},{"id":"headline","type":"string","label":"Headline","default":"ARDEE X ALLEGIANCE"},{"id":"date","type":"string","label":"Date","default":"November 2026"}]'>
+    data-composition-variables='[{"id":"line1","type":"string","label":"Top line","default":"ALLEGIANCE"},{"id":"joiner","type":"string","label":"Middle","default":"X"},{"id":"line2","type":"string","label":"Bottom line","default":"ARDEE"}]'>
     <div id="title-scrim" class="clip" data-start="0" data-duration="4" data-track-index="0"></div>
     <div id="title-block" class="clip" data-start="0" data-duration="4" data-track-index="1">
-      <div id="title-kicker" data-var-text="kicker">Sales Training</div>
-      <div id="title-h1" data-var-text="headline">ARDEE X ALLEGIANCE</div>
-      <div id="title-date" data-var-text="date">November 2026</div>
+      <div id="title-l1" data-var-text="line1">ALLEGIANCE</div>
+      <div id="title-x" data-var-text="joiner">X</div>
+      <div id="title-l2" data-var-text="line2">ARDEE</div>
     </div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    tl.fromTo("#title-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.25);
-    tl.fromTo("#title-kicker", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.45);
-    tl.fromTo("#title-h1", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.6);
-    tl.fromTo("#title-date", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.4);
-    tl.fromTo("#title-block", { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in" }, 3.5);
+    tl.fromTo("#title-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.2);
+    tl.fromTo("#title-l1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.4);
+    tl.fromTo("#title-x", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.9);
+    tl.fromTo("#title-l2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 1.15);
+    tl.fromTo("#title-block", { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in", immediateRender: false }, 3.5);
     tl.fromTo("#title-scrim", { opacity: 1 }, { opacity: 0, duration: 0.4, ease: "power2.in", immediateRender: false }, 3.5);
     window.__timelines["title"] = tl;
   </script>
