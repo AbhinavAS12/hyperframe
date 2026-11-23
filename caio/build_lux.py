@@ -377,11 +377,31 @@ def ov_end(spans, t_end):
     return scene("ov-end", inner, css, "\n".join("          " + j for j in js))
 
 
+MAXC = 54  # ~2 lines of 42px Montserrat in an 880px box
+
+
+def fit2(text):
+    """Split a sentence into chunks that each fit on two lines, preferring commas."""
+    if len(text) <= MAXC:
+        return [text]
+    words = text.split()
+    best = None
+    for i in range(1, len(words)):
+        a, b = " ".join(words[:i]), " ".join(words[i:])
+        if len(a) > MAXC:
+            break
+        score = abs(len(a) - len(b)) - (25 if a.endswith(",") else 0)
+        if best is None or score < best[0]:
+            best = (score, a, b)
+    a, b = best[1], best[2]
+    return [a] + fit2(b)
+
+
 def captions(spans):
     els, js = [], []
     n = 0
     for s in spans:
-        caps = s["o"].get("cap", [])
+        caps = [c2 for c in s["o"].get("cap", []) for c2 in fit2(c)]
         if not caps:
             continue
         t0, t1 = s["t0"], s["t1"]
@@ -470,7 +490,7 @@ def build(cfg):
       <div id="vig"></div>
 {chr(10).join(hosts)}
       <div id="ow" class="bw" style="z-index:12"><div class="bm"><video id="outro" class="clip" src="assets/outro.mp4" muted playsinline data-start="{end_at:.3f}" data-duration="{OUTRO_LEN}" data-media-start="0" data-track-index="8"></video></div></div>
-      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{c_up + 0.8:.3f}" data-track-index="9" data-volume="0.2" data-fade-in="0.3" data-fade-out="0.9"></audio>
+      <audio id="music-dark" src="assets/music-dark.mp3" data-start="0" data-duration="{c_up + 0.8:.3f}" data-track-index="9" data-volume="0.22" data-fade-in="0.3" data-fade-out="0.9"></audio>
       <audio id="music" src="assets/music.mp3" data-start="{c_up:.3f}" data-duration="{total - c_up:.3f}" data-media-start="0" data-track-index="10" data-volume="0.12" data-fade-in="0.6" data-fade-out="3"></audio>
 {chr(10).join(aud)}
     </div>
