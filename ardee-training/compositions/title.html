@@ -23,8 +23,8 @@
   </style>
   <div id="root" data-composition-id="title" data-width="1080" data-height="1920"
     data-composition-variables='[{"id":"kicker","type":"string","label":"Kicker","default":"Allegiance Real Estate"},{"id":"headline","type":"string","label":"Headline","default":"ARDEE Sales Training"},{"id":"subline","type":"string","label":"Italic line","default":"and Project Preview"},{"id":"date","type":"string","label":"Date","default":"November 2026"}]'>
-    <div id="title-scrim" class="clip" data-start="0" data-duration="4.5" data-track-index="0"></div>
-    <div id="title-block" class="clip" data-start="0" data-duration="4.5" data-track-index="1">
+    <div id="title-scrim" class="clip" data-start="0" data-duration="4" data-track-index="0"></div>
+    <div id="title-block" class="clip" data-start="0" data-duration="4" data-track-index="1">
       <div id="title-kicker" data-var-text="kicker">Allegiance Real Estate</div>
       <div id="title-h1" data-var-text="headline">ARDEE Sales Training</div>
       <div id="title-h2" data-var-text="subline">and Project Preview</div>
@@ -38,8 +38,8 @@
     tl.fromTo("#title-h1", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 0.6);
     tl.fromTo("#title-h2", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 1.07);
     tl.fromTo("#title-date", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.4);
-    tl.fromTo("#title-block", { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.45, ease: "power2.in" }, 4.0);
-    tl.fromTo("#title-scrim", { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power2.in", immediateRender: false }, 4.0);
+    tl.fromTo("#title-block", { opacity: 1, y: 0 }, { opacity: 0, y: -24, duration: 0.4, ease: "power2.in" }, 3.5);
+    tl.fromTo("#title-scrim", { opacity: 1 }, { opacity: 0, duration: 0.4, ease: "power2.in", immediateRender: false }, 3.5);
     window.__timelines["title"] = tl;
   </script>
 </template>
