@@ -9,6 +9,7 @@
       html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
       #footage { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+      #cards { position: absolute; inset: 0; z-index: 4; }
       #captions { position: absolute; inset: 0; z-index: 5; }
     </style>
   </head>
@@ -20,9 +21,17 @@
         data-start="0" data-duration="26.43" data-track-index="1" data-track-kind="captions" data-width="1080" data-height="1920"></div>
 
 
+      <div id="cards" data-composition-id="cards" data-composition-src="compositions/cards.html"
+        data-start="0" data-duration="26.43" data-track-index="2" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+
       <audio id="bgm" src="assets/audio/bgm.mp3" data-start="0" data-duration="26.43" data-track-index="3" data-volume="0.28"></audio>
       <audio id="sfx-blur1" src="assets/audio/whoosh-short.mp3" data-start="7.82" data-duration="0.57" data-track-index="4" data-volume="0.55"></audio>
       <audio id="sfx-blur2" src="assets/audio/whoosh-short.mp3" data-start="16.05" data-duration="0.57" data-track-index="4" data-volume="0.55"></audio>
+      <audio id="sfx-pop1" src="assets/audio/pop.mp3" data-start="3.5" data-duration="0.72" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-pop2" src="assets/audio/pop.mp3" data-start="10.02" data-duration="0.72" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-pop3" src="assets/audio/pop.mp3" data-start="14.9" data-duration="0.72" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-pop4" src="assets/audio/pop.mp3" data-start="21.92" data-duration="0.72" data-track-index="5" data-volume="0.45"></audio>
+      <audio id="sfx-pop5" src="assets/audio/pop.mp3" data-start="24.15" data-duration="0.72" data-track-index="5" data-volume="0.45"></audio>
     </div>
     <script>
       window.__timelines = window.__timelines || {};

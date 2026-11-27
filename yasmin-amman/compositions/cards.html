@@ -1,0 +1,144 @@
+<template>
+  <style>
+    @font-face { font-family: "Almarai"; font-weight: 800; src: url("assets/fonts/Almarai-ExtraBold.ttf") format("truetype"); }
+    #root { position: absolute; inset: 0; overflow: visible; font-family: "Almarai", sans-serif; }
+    #root .card { position: absolute; left: 90px; width: 900px; overflow: visible; color: #fff; }
+    #root .inner { position: relative; width: 100%; height: 100%; border-radius: 30px; overflow: hidden; opacity: 0;
+      background: linear-gradient(150deg, #11726d 0%, #0b4a47 100%); box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      border: 2px solid rgba(232,195,106,0.55); }
+    #root .ar { direction: rtl; font-family: "Almarai", sans-serif; font-weight: 800; }
+    #root .en { font-family: "Montserrat", sans-serif; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    #root .gold { color: #f2cf73; }
+
+    /* Event card: hotel + time */
+    #card-event { top: 1110px; height: 640px; }
+    #ev-photo { position: absolute; left: 0; top: 0; width: 900px; height: 380px; object-fit: cover; }
+    #ev-shade { position: absolute; left: 0; top: 230px; width: 900px; height: 150px; background: linear-gradient(180deg, rgba(11,74,71,0) 0%, rgba(11,74,71,0.95) 100%); }
+    #ev-chip { position: absolute; right: 28px; top: 26px; padding: 10px 26px; border-radius: 40px; background: #f2cf73; color: #0b3f3d; font-size: 34px; line-height: 44px; }
+    #ev-name { position: absolute; left: 0; right: 0; top: 392px; text-align: center; font-size: 52px; line-height: 70px; }
+    #ev-sub { position: absolute; left: 0; right: 0; top: 462px; text-align: center; font-size: 24px; line-height: 30px; color: rgba(255,255,255,0.8); }
+    #ev-time { position: absolute; left: 40px; right: 40px; top: 512px; height: 100px; border-radius: 22px; background: rgba(0,0,0,0.25);
+      display: flex; align-items: center; justify-content: center; gap: 28px; }
+    #ev-time .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 54px; line-height: 100px; color: #fff; white-space: nowrap; }
+    #ev-time .t small { font-size: 30px; color: #f2cf73; margin-left: 8px; }
+    #ev-time .dash { width: 60px; height: 5px; border-radius: 3px; background: #f2cf73; }
+
+    /* Offers card */
+    #card-offer { top: 1425px; height: 300px; }
+    #of-tag { position: absolute; left: 0; right: 0; top: 30px; text-align: center; font-size: 24px; line-height: 30px; }
+    #of-title { position: absolute; left: 0; right: 0; top: 74px; text-align: center; font-size: 74px; line-height: 100px; }
+    #of-row { position: absolute; left: 0; right: 0; top: 190px; display: flex; justify-content: center; gap: 22px; direction: rtl; }
+    #root .pill { padding: 0 34px; height: 74px; border-radius: 40px; background: rgba(255,255,255,0.12); border: 2px solid rgba(242,207,115,0.6);
+      font-size: 38px; line-height: 74px; white-space: nowrap; }
+
+    /* Cities card */
+    #card-city { top: 1425px; height: 270px; }
+    #ci-title { position: absolute; left: 0; right: 0; top: 26px; text-align: center; font-size: 40px; line-height: 56px; }
+    #ci-row { position: absolute; left: 30px; right: 30px; top: 100px; display: flex; justify-content: space-between; direction: rtl; }
+    #root .city { width: 262px; height: 140px; border-radius: 22px; background: rgba(0,0,0,0.22); text-align: center; }
+    #root .city .ar { display: block; font-size: 52px; line-height: 80px; padding-top: 6px; }
+    #root .city .en { display: block; font-size: 22px; line-height: 30px; color: #f2cf73; }
+
+    /* WhatsApp card */
+    #card-wa { top: 1120px; height: 210px; left: 140px; width: 800px; }
+    #wa-in { background: linear-gradient(150deg, #1fbf5b 0%, #128c4a 100%); border-color: rgba(255,255,255,0.5); }
+    #wa-icon { position: absolute; right: 36px; top: 35px; width: 140px; height: 140px; border-radius: 70px; background: #fff;
+      display: flex; align-items: center; justify-content: center; }
+    #wa-icon svg { width: 88px; height: 88px; }
+    #wa-title { position: absolute; right: 206px; left: 30px; top: 42px; text-align: right; font-size: 58px; line-height: 76px; }
+    #wa-sub { position: absolute; right: 206px; left: 30px; top: 124px; text-align: right; font-size: 24px; line-height: 32px; color: rgba(255,255,255,0.9); }
+
+    /* End card */
+    #card-end { top: 1110px; height: 360px; }
+    #en-title { position: absolute; left: 0; right: 0; top: 34px; text-align: center; font-size: 80px; line-height: 110px; }
+    #en-sub { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-size: 26px; line-height: 34px; }
+    #en-time { position: absolute; left: 40px; right: 40px; top: 210px; height: 112px; border-radius: 22px; background: rgba(0,0,0,0.25);
+      display: flex; align-items: center; justify-content: center; gap: 26px; }
+    #en-time .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 50px; line-height: 112px; white-space: nowrap; }
+    #en-time .t small { font-size: 28px; color: #f2cf73; margin-left: 8px; }
+    #en-time .dash { width: 50px; height: 5px; border-radius: 3px; background: #f2cf73; }
+  </style>
+  <div id="root" data-composition-id="cards" data-width="1080" data-height="1920">
+
+    <div id="card-event" class="card clip" data-start="3.45" data-duration="4.45"><div class="inner" id="ev-in">
+      <img id="ev-photo" src="assets/images/ritz-carlton-amman.jpg" alt="The Ritz-Carlton, Amman" />
+      <div id="ev-shade"></div>
+      <div id="ev-chip" class="ar">اليوم</div>
+      <div id="ev-name" class="ar">فندق <span class="gold">ريتز كارلتون</span> · عمّان</div>
+      <div id="ev-sub" class="en">The Ritz-Carlton, Amman</div>
+      <div id="ev-time">
+        <div class="t" id="ev-t1">10:00<small>AM</small></div>
+        <div class="dash" id="ev-dash"></div>
+        <div class="t" id="ev-t2">8:00<small>PM</small></div>
+      </div>
+    </div></div>
+
+    <div id="card-offer" class="card clip" data-start="9.8" data-duration="4.75"><div class="inner" id="of-in">
+      <div id="of-tag" class="en gold">Exclusive Offers</div>
+      <div id="of-title" class="ar">عروض <span class="gold">حصرية</span></div>
+      <div id="of-row">
+        <div class="pill ar" id="of-p1">استثمارية</div>
+        <div class="pill ar" id="of-p2">سكنية</div>
+      </div>
+    </div></div>
+
+    <div id="card-city" class="card clip" data-start="14.7" data-duration="1.35"><div class="inner" id="ci-in">
+      <div id="ci-title" class="ar">مشاريع في</div>
+      <div id="ci-row">
+        <div class="city" id="ci-1"><span class="ar">دبي</span><span class="en">Dubai</span></div>
+        <div class="city" id="ci-2"><span class="ar">بغداد</span><span class="en">Baghdad</span></div>
+        <div class="city" id="ci-3"><span class="ar">لندن</span><span class="en">London</span></div>
+      </div>
+    </div></div>
+
+    <div id="card-wa" class="card clip" data-start="21.75" data-duration="2.3"><div class="inner" id="wa-in">
+      <div id="wa-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+      <div id="wa-title" class="ar">راسلنا على الواتساب</div>
+      <div id="wa-sub" class="ar">للاستفسار وحجز موعدك</div>
+    </div></div>
+
+    <div id="card-end" class="card clip" data-start="24.1" data-duration="2.33"><div class="inner" id="en-in">
+      <div id="en-title" class="ar">نشوفكم <span class="gold">اليوم!</span></div>
+      <div id="en-sub" class="ar">فندق ريتز كارلتون · عمّان</div>
+      <div id="en-time">
+        <div class="t">10:00<small>AM</small></div>
+        <div class="dash"></div>
+        <div class="t">8:00<small>PM</small></div>
+      </div>
+    </div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const IN = { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.4)" };
+    const FROM = { opacity: 0, y: 70, scale: 0.9 };
+    function card(id, s, e) {
+      tl.fromTo(id, FROM, { ...IN }, s);
+      tl.to(id, { opacity: 0, y: 40, scale: 0.96, duration: 0.25, ease: "power2.in" }, e - 0.27);
+    }
+    // Event card (hotel name 3.58s, time 4.77-8.1s)
+    card("#ev-in", 3.47, 7.9);
+    tl.fromTo("#ev-photo", { scale: 1.12 }, { scale: 1.0, duration: 4.4, ease: "none" }, 3.47);
+    tl.fromTo("#ev-chip", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.8);
+    tl.fromTo("#ev-time", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 4.75);
+    tl.fromTo("#ev-t1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 5.35);
+    tl.fromTo("#ev-dash", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "power2.out" }, 6.45);
+    tl.fromTo("#ev-t2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 6.8);
+    // Offers (فرصة 10.7, العروض 12.2, الاستثمارية 12.8, والسكنية 13.96)
+    card("#of-in", 9.82, 14.55);
+    tl.fromTo("#of-title", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 10.0);
+    tl.fromTo("#of-p1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 12.8);
+    tl.fromTo("#of-p2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 13.95);
+    // Cities (دبي 14.9, بغداد 15.2, لندن 15.7)
+    card("#ci-in", 14.7, 16.05);
+    tl.fromTo("#ci-1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.88);
+    tl.fromTo("#ci-2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 15.18);
+    tl.fromTo("#ci-3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 15.68);
+    // WhatsApp (الواتساب 22.68)
+    card("#wa-in", 21.77, 24.05);
+    tl.fromTo("#wa-icon", { rotation: -25, scale: 0.5 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2.5)" }, 21.9);
+    // End card
+    tl.fromTo("#en-in", FROM, { ...IN }, 24.12);
+    tl.fromTo("#en-time", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 24.5);
+    window.__timelines["cards"] = tl;
+  </script>
+</template>
