@@ -14,8 +14,8 @@ import html, pathlib
 
 GROUPS = [
     (0.15, 0.95, [("ey", "Namaskara!", 0.15)]),
-    (0.95, 2.05, [("s", "I'm", 0.95), ("ec", "Hemanth", 1.29)]),
-    (2.10, 4.00, [("s", "I will be at the", 2.10), ("gc", "Ritz-Carlton", 2.61), ("gg", "BENGALURU", 3.46)]),
+    (0.95, 2.05, [("s", "Nanu", 0.95), ("ec", "Hemant", 1.29)]),
+    (2.10, 4.04, [("s", "I will be at the", 2.10), ("gc", "Ritz-Carlton", 2.61), ("gg", "BENGALURU", 3.46)], "mid"),
     (4.04, 6.40, [("s", "on", 4.04), ("gg", "12th & 13th", 4.08), ("ec", "December", 5.38)]),
     (6.40, 7.56, [("s", "from", 6.40), ("gg", "10 AM – 8 PM", 6.54)]),
     (7.56, 9.60, [("s", "and I would love to", 7.56), ("ec", "catch up", 8.95)]),
@@ -23,8 +23,8 @@ GROUPS = [
     (11.94, 13.09, [("s", "We can have a", 11.94), ("ec", "private,", 12.61)]),
     (13.09, 14.95, [("b", "no-pressure", 13.09), ("ey", "one-on-one discussion", 13.69)]),
     (14.99, 16.20, [("s", "about your", 14.99), ("gg", "UAE", 15.47), ("b", "portfolio", 15.65)]),
-    (16.20, 18.25, [("s", "and", 16.20), ("b", "business setup", 16.38), ("ec", "opportunities", 17.34)]),
-    (18.25, 19.20, [("s", "in", 18.25), ("gg", "DUBAI", 18.39)]),
+    (16.20, 18.25, [("s", "and", 16.20), ("b", "business setup", 16.38), ("ec", "opportunities", 17.34)], "mid"),
+    (18.25, 19.20, [("s", "in", 18.25), ("gg", "DUBAI", 18.39)], "mid"),
     (19.20, 20.95, [("s", "and what to expect in", 19.20), ("gg", "2027", 20.03)]),
     (21.00, 22.95, [("s", "whether it makes sense", 21.00), ("b", "to exit", 22.24)]),
     (22.95, 24.46, [("si", "or", 23.06), ("ey", "double down.", 23.52)]),
@@ -36,7 +36,8 @@ GROUPS = [
 DURATION = 29.46
 
 groups_html, lines_js = [], []
-for gi, (start, end, lines) in enumerate(GROUPS):
+for gi, (start, end, lines, *opt) in enumerate(GROUPS):
+    mid = " mid" if opt and opt[0] == "mid" else ""
     rows = []
     for li, (style, text, t) in enumerate(lines):
         lid = f"c{gi}-{li}"
@@ -44,10 +45,10 @@ for gi, (start, end, lines) in enumerate(GROUPS):
         lines_js.append(f'    ["{lid}", "{style}", {t - start:.2f}],')
     groups_html.append(
         f'      <div id="cg{gi}" class="cg clip" data-start="{start:.2f}" data-duration="{end - start:.2f}" data-track-index="0">\n'
-        f'       <div id="cg{gi}-in" class="cg-in">\n' + "\n".join(rows) + "\n       </div>\n      </div>"
+        f'       <div id="cg{gi}-in" class="cg-in{mid}">\n' + "\n".join(rows) + "\n       </div>\n      </div>"
     )
 
-group_js = ",\n".join(f'    ["cg{gi}", {s:.2f}, {e:.2f}]' for gi, (s, e, _) in enumerate(GROUPS))
+group_js = ",\n".join(f'    ["cg{gi}", {s:.2f}, {e:.2f}]' for gi, (s, e, *_) in enumerate(GROUPS))
 
 doc = f"""<template>
   <style>
@@ -59,6 +60,7 @@ doc = f"""<template>
       text-align: center; overflow: visible; padding-right: 36px;
       filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
     }}
+    .cg-in.mid {{ top: 0; bottom: 0; justify-content: center; }}
     .ln {{ display: block; white-space: nowrap; line-height: 0.98; color: #ffffff; }}
     .ln span {{ display: inline-block; }}
     .s  {{ font-family: "Montserrat"; font-weight: 700; font-size: 50px; letter-spacing: -0.01em; margin-bottom: 4px; }}
@@ -70,7 +72,7 @@ doc = f"""<template>
     .ec {{ color: #2ef3f0; }}
     .ey {{ color: #f0f53a; }}
     .gc {{ font-family: "Montserrat"; font-weight: 900; font-size: 128px; letter-spacing: -0.03em; color: #2ef3f0; }}
-    .gg {{ font-family: "Montserrat"; font-weight: 900; font-size: 136px; letter-spacing: -0.03em; }}
+    .gg {{ font-family: "Montserrat"; font-weight: 900; font-size: 126px; letter-spacing: -0.03em; }}
     .gg span {{
       background: linear-gradient(90deg, #f7a42b 0%, #f4c928 45%, #e9f43a 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -90,7 +92,7 @@ doc = f"""<template>
     const FONT = {{
       s: ["Montserrat", 700, 50], si: ["Montserrat", 600, 50], b: ["Montserrat", 800, 100],
       ec: ["Playfair Display", 800, 112], ey: ["Playfair Display", 800, 112],
-      gc: ["Montserrat", 900, 128], gg: ["Montserrat", 900, 136],
+      gc: ["Montserrat", 900, 128], gg: ["Montserrat", 900, 126],
     }};
     const hf = window.__hyperframes;
     LINES.forEach(([id, style]) => {{

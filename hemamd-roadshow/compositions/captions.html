@@ -8,6 +8,7 @@
       text-align: center; overflow: visible; padding-right: 36px;
       filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
     }
+    .cg-in.mid { top: 0; bottom: 0; justify-content: center; }
     .ln { display: block; white-space: nowrap; line-height: 0.98; color: #ffffff; }
     .ln span { display: inline-block; }
     .s  { font-family: "Montserrat"; font-weight: 700; font-size: 50px; letter-spacing: -0.01em; margin-bottom: 4px; }
@@ -19,7 +20,7 @@
     .ec { color: #2ef3f0; }
     .ey { color: #f0f53a; }
     .gc { font-family: "Montserrat"; font-weight: 900; font-size: 128px; letter-spacing: -0.03em; color: #2ef3f0; }
-    .gg { font-family: "Montserrat"; font-weight: 900; font-size: 136px; letter-spacing: -0.03em; }
+    .gg { font-family: "Montserrat"; font-weight: 900; font-size: 126px; letter-spacing: -0.03em; }
     .gg span {
       background: linear-gradient(90deg, #f7a42b 0%, #f4c928 45%, #e9f43a 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -34,12 +35,12 @@
       </div>
       <div id="cg1" class="cg clip" data-start="0.95" data-duration="1.10" data-track-index="0">
        <div id="cg1-in" class="cg-in">
-        <div id="c1-0" class="ln s"><span>I&#x27;m</span></div>
-        <div id="c1-1" class="ln ec"><span>Hemanth</span></div>
+        <div id="c1-0" class="ln s"><span>Nanu</span></div>
+        <div id="c1-1" class="ln ec"><span>Hemant</span></div>
        </div>
       </div>
-      <div id="cg2" class="cg clip" data-start="2.10" data-duration="1.90" data-track-index="0">
-       <div id="cg2-in" class="cg-in">
+      <div id="cg2" class="cg clip" data-start="2.10" data-duration="1.94" data-track-index="0">
+       <div id="cg2-in" class="cg-in mid">
         <div id="c2-0" class="ln s"><span>I will be at the</span></div>
         <div id="c2-1" class="ln gc"><span>Ritz-Carlton</span></div>
         <div id="c2-2" class="ln gg"><span>BENGALURU</span></div>
@@ -90,14 +91,14 @@
        </div>
       </div>
       <div id="cg10" class="cg clip" data-start="16.20" data-duration="2.05" data-track-index="0">
-       <div id="cg10-in" class="cg-in">
+       <div id="cg10-in" class="cg-in mid">
         <div id="c10-0" class="ln s"><span>and</span></div>
         <div id="c10-1" class="ln b"><span>business setup</span></div>
         <div id="c10-2" class="ln ec"><span>opportunities</span></div>
        </div>
       </div>
       <div id="cg11" class="cg clip" data-start="18.25" data-duration="0.95" data-track-index="0">
-       <div id="cg11-in" class="cg-in">
+       <div id="cg11-in" class="cg-in mid">
         <div id="c11-0" class="ln s"><span>in</span></div>
         <div id="c11-1" class="ln gg"><span>DUBAI</span></div>
        </div>
@@ -143,7 +144,7 @@
     const GROUPS = [
     ["cg0", 0.15, 0.95],
     ["cg1", 0.95, 2.05],
-    ["cg2", 2.10, 4.00],
+    ["cg2", 2.10, 4.04],
     ["cg3", 4.04, 6.40],
     ["cg4", 6.40, 7.56],
     ["cg5", 7.56, 9.60],
@@ -204,7 +205,7 @@
     const FONT = {
       s: ["Montserrat", 700, 50], si: ["Montserrat", 600, 50], b: ["Montserrat", 800, 100],
       ec: ["Playfair Display", 800, 112], ey: ["Playfair Display", 800, 112],
-      gc: ["Montserrat", 900, 128], gg: ["Montserrat", 900, 136],
+      gc: ["Montserrat", 900, 128], gg: ["Montserrat", 900, 126],
     };
     const hf = window.__hyperframes;
     LINES.forEach(([id, style]) => {

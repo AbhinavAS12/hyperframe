@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "60cc6a3e-96a5-46ef-a77e-85a223544a16",
-  "currentRevision": "057d7449-1bfb-479f-85fd-09e41638c7ff",
+  "currentRevision": "a28bbcfd-056b-42a3-ab5e-2b014ce991f6",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -21,16 +21,16 @@
       "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/2d/2db0d6f3439151b8aa2f6c448cd708d67b52988240593f174f622310aecfb797"
     },
     "compositions/captions.html": {
-      "hash": "207c61c0afcb91e777363dbc914a9fb3d0102759807944489296d1eb6a789c64",
-      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/20/207c61c0afcb91e777363dbc914a9fb3d0102759807944489296d1eb6a789c64"
+      "hash": "2b990b1a988c0963edcbf525c3c92e0324499ec228449deee65a332ec0acc7fd",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/2b/2b990b1a988c0963edcbf525c3c92e0324499ec228449deee65a332ec0acc7fd"
     },
     "hyperframes.json": {
       "hash": "35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7",
       "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/35/35a6d4ea79ebe911f0d81705f7aace5d8ff0316b745b0311d56af50c9c237cb7"
     },
     "index.html": {
-      "hash": "b98399407f48baede65c0337db8a3b24f7ceb784df5af89beb5b579468dbf031",
-      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/b9/b98399407f48baede65c0337db8a3b24f7ceb784df5af89beb5b579468dbf031"
+      "hash": "af4e0f9d13f710f2ec78b6182130cdd0126d496012fa2cc86bda76799c1867b2",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/af/af4e0f9d13f710f2ec78b6182130cdd0126d496012fa2cc86bda76799c1867b2"
     },
     "meta.json": {
       "hash": "5fb48834c45d87075353c783afb68642ee1aa69c9d1d555f8fd256a2e0c39064",
@@ -41,12 +41,24 @@
       "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/d3/d3338205163e3e9cabe0e52c80a034b80bb0680ff66e6d6b68e22b3681d3aa4f"
     },
     "tools/build_captions.py": {
-      "hash": "466b3144ce6c964fe360c28851dbef1fc265ea288d32a0508468eebdddf5d891",
-      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/46/466b3144ce6c964fe360c28851dbef1fc265ea288d32a0508468eebdddf5d891"
+      "hash": "d47f2f0e8d7b8d366f1fefb609864f1b99c255a51562649165e3812a2f18daf1",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/d4/d47f2f0e8d7b8d366f1fefb609864f1b99c255a51562649165e3812a2f18daf1"
     },
     "assets/video/roadshow.mp4": {
       "hash": "23315bc5dac3c9774613f35d6e769a100360530eb37cd82b0d43eb0f8b73c0c8",
       "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/23/23315bc5dac3c9774613f35d6e769a100360530eb37cd82b0d43eb0f8b73c0c8"
+    },
+    "assets/images/ritz-carlton-bengaluru.jpg": {
+      "hash": "7b7c2774903248c170cf1a4aee582dd93f5c8ed3f149a8a663d524af5c15550a",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/7b/7b7c2774903248c170cf1a4aee582dd93f5c8ed3f149a8a663d524af5c15550a"
+    },
+    "assets/images/ritz-original.jpg": {
+      "hash": "f593db192f5a8cb8dcab1d9a5f1a6e695bda7af46cd73396e7e15682944e99d0",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/f5/f593db192f5a8cb8dcab1d9a5f1a6e695bda7af46cd73396e7e15682944e99d0"
+    },
+    "assets/video/dubai-broll.mp4": {
+      "hash": "be193a6bdb5766bdff61fff0b6a58e701840ce2b4e9ac335396a75e0e9afe446",
+      "content": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/be/be193a6bdb5766bdff61fff0b6a58e701840ce2b4e9ac335396a75e0e9afe446"
     }
   },
   "revisions": {
@@ -87,12 +99,66 @@
           "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/46/466b3144ce6c964fe360c28851dbef1fc265ea288d32a0508468eebdddf5d891"
         }
       }
+    },
+    "e6463010-40fd-4db3-b6a6-85e6fb653aba": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795788861429,
+      "endedAt": 1795788861811,
+      "files": {
+        "assets/images/ritz-carlton-bengaluru.jpg": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/7b/7b7c2774903248c170cf1a4aee582dd93f5c8ed3f149a8a663d524af5c15550a"
+        },
+        "assets/images/ritz-original.jpg": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/f5/f593db192f5a8cb8dcab1d9a5f1a6e695bda7af46cd73396e7e15682944e99d0"
+        },
+        "assets/video/dubai-broll.mp4": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/be/be193a6bdb5766bdff61fff0b6a58e701840ce2b4e9ac335396a75e0e9afe446"
+        },
+        "compositions/captions.html": {
+          "before": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/20/207c61c0afcb91e777363dbc914a9fb3d0102759807944489296d1eb6a789c64",
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/0e/0e7d20c01c474a42838d5179b8acaabf60fc4bfa0082776dbc395d61e96e5ee3"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/b9/b98399407f48baede65c0337db8a3b24f7ceb784df5af89beb5b579468dbf031",
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/af/af4e0f9d13f710f2ec78b6182130cdd0126d496012fa2cc86bda76799c1867b2"
+        },
+        "tools/build_captions.py": {
+          "before": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/46/466b3144ce6c964fe360c28851dbef1fc265ea288d32a0508468eebdddf5d891",
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/a5/a5fec727d63daf0310dbda94fb0b734335672a567d5db99e5ab1825a62b7a50f"
+        }
+      }
+    },
+    "a28bbcfd-056b-42a3-ab5e-2b014ce991f6": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795788909352,
+      "endedAt": 1795788909355,
+      "files": {
+        "compositions/captions.html": {
+          "before": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/0e/0e7d20c01c474a42838d5179b8acaabf60fc4bfa0082776dbc395d61e96e5ee3",
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/2b/2b990b1a988c0963edcbf525c3c92e0324499ec228449deee65a332ec0acc7fd"
+        },
+        "tools/build_captions.py": {
+          "before": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/a5/a5fec727d63daf0310dbda94fb0b734335672a567d5db99e5ab1825a62b7a50f",
+          "after": "/root/.cache/hyperframes/history/60cc6a3e-96a5-46ef-a77e-85a223544a16/blobs/d4/d47f2f0e8d7b8d366f1fefb609864f1b99c255a51562649165e3812a2f18daf1"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "057d7449-1bfb-479f-85fd-09e41638c7ff",
-      "id": "5c16e8c4-df68-4d85-a8b8-e175eaf7c401"
+      "revision": "a28bbcfd-056b-42a3-ab5e-2b014ce991f6",
+      "id": "6d72a4f0-e21c-4a5c-8263-1817373f313e"
     },
     "revisions": {
       "9b3befb5-5e3c-42e6-9a6a-22b734dcdf27": [
@@ -169,6 +235,81 @@
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
+      ],
+      "e6463010-40fd-4db3-b6a6-85e6fb653aba": [
+        {
+          "id": "1e4ba1ad-dac2-4cb3-b6eb-4ba38f7802db",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795788879515,
+          "contentHash": "8108ba2c36a059ece351422eb288d8f673165917d54402eba88738c0ea35feba",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        }
+      ],
+      "a28bbcfd-056b-42a3-ab5e-2b014ce991f6": [
+        {
+          "id": "6d72a4f0-e21c-4a5c-8263-1817373f313e",
+          "scope": "project",
+          "report": "/home/user/hyperframe/hemamd-roadshow/.hyperframes/artifacts/checks/6d72a4f0-e21c-4a5c-8263-1817373f313e.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795788925496,
+          "contentHash": "fb5e9984ba843b8bdcfc684c0354e6165a05620d03a0e277a3dd7e726f9bdbce",
+          "revision": "a28bbcfd-056b-42a3-ab5e-2b014ce991f6",
+          "inputFingerprint": "b221744b73c0ccf3131de9f9d1925f8b9b06d3ed144b87976d6af8945d7768d7",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
       ]
     },
     "unversioned": [
@@ -212,7 +353,7 @@
   "snapshots": {
     "latest": {
       "revision": "057d7449-1bfb-479f-85fd-09e41638c7ff",
-      "id": "82622895-f5dd-40e1-8e3d-91f18be524b3-2"
+      "id": "82622895-f5dd-40e1-8e3d-91f18be524b3-0"
     },
     "revisions": {
       "9b3befb5-5e3c-42e6-9a6a-22b734dcdf27": [
@@ -677,19 +818,190 @@
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
+      ],
+      "e6463010-40fd-4db3-b6a6-85e6fb653aba": [
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-0",
+          "time": 1.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893682,
+          "contentHash": "0d64aeddc213f6fabf1aa1ad649cceefcb415634c501ff396f27350ddb9f7f1b",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-1",
+          "time": 2.3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893683,
+          "contentHash": "fbab9fc1d14828941f399eac16aa132e6f158f55bf8296b118de88e7eb79629a",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-2",
+          "time": 3,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893683,
+          "contentHash": "91d9ebaccc53e61095632c1a611d8b398607b250f38cc4a586051e1443ee6406",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-3",
+          "time": 3.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893683,
+          "contentHash": "40bf9fdcbee9a18e2627b80614d74233c5bac17422b024d774a55c1f456c6f54",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-4",
+          "time": 16.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893683,
+          "contentHash": "c89444dec502964d0a36d610a5126567c02c92680f6f849968b12d171158b29f",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-5",
+          "time": 17.8,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893684,
+          "contentHash": "8ad74d5e773ebf41969f0933dd5f873f380142a52042161bd2884b825682264a",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-6",
+          "time": 18.9,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893684,
+          "contentHash": "c9f02756ff273870b56943aa03a41b27b24d10b22139a6b454b6006dbdf131a8",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        },
+        {
+          "scope": "full",
+          "id": "a22f1d4a-185d-4d5b-a4ad-42f14bdc7542-7",
+          "time": 29.21,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795788893684,
+          "contentHash": "b3d60ceb1ebdc5b4ffe98f0e771d7addb75611c94e59ae630cf942114486a993",
+          "revision": "e6463010-40fd-4db3-b6a6-85e6fb653aba",
+          "inputFingerprint": "cc3aeb9a6a2a58c1b770f4b108ec5796cbff763015fdfe0d33532dd5c00b9332",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "2973a198-4062-446b-8ced-192d9becf20f"
+        }
       ]
     },
     "unversioned": []
   },
   "renders": {
     "latest": {
-      "id": "4ba9e4eb-063f-4126-a1d4-685a8f8e54dc",
-      "completedAt": 1795700961607,
+      "id": "2973a198-4062-446b-8ced-192d9becf20f",
+      "completedAt": 1795789087606,
       "output": "/home/user/hyperframe/hemamd-roadshow/renders/hemanth-bengaluru-roadshow-captioned.mp4",
       "status": "completed",
-      "revision": "057d7449-1bfb-479f-85fd-09e41638c7ff"
+      "revision": "a28bbcfd-056b-42a3-ab5e-2b014ce991f6"
     },
     "retainedRevisions": [
+      "a28bbcfd-056b-42a3-ab5e-2b014ce991f6",
       "057d7449-1bfb-479f-85fd-09e41638c7ff"
     ]
   },
