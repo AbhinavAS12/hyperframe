@@ -46,7 +46,7 @@
       display: flex; align-items: center; justify-content: center; }
     #wa-icon svg { width: 88px; height: 88px; }
     #wa-title { position: absolute; right: 206px; left: 30px; top: 42px; text-align: right; font-size: 58px; line-height: 76px; }
-    #wa-sub { position: absolute; right: 206px; left: 30px; top: 124px; text-align: right; font-size: 24px; line-height: 32px; color: rgba(255,255,255,0.9); }
+    #wa-sub { position: absolute; right: 206px; left: 30px; top: 124px; text-align: right; font-size: 24px; line-height: 32px; color: #ffffff; text-shadow: 0 1px 3px rgba(0,60,25,0.8); }
 
     /* End card */
     #card-end { top: 1065px; height: 360px; }
@@ -73,7 +73,7 @@
       </div>
     </div></div>
 
-    <div id="card-offer" class="card clip" data-start="9.8" data-duration="4.65"><div class="inner" id="of-in">
+    <div id="card-offer" class="card clip" data-start="9.8" data-duration="4.4"><div class="inner" id="of-in">
       <div id="of-tag" class="en gold">Exclusive Offers</div>
       <div id="of-title" class="ar">عروض <span class="gold">حصرية</span></div>
       <div id="of-row">
@@ -82,7 +82,7 @@
       </div>
     </div></div>
 
-    <div id="card-city" class="card clip" data-start="14.45" data-duration="1.5"><div class="inner" id="ci-in">
+    <div id="card-city" class="card clip" data-start="14.2" data-duration="2.0"><div class="inner" id="ci-in">
       <div id="ci-title" class="ar">مشاريع في</div>
       <div id="ci-row">
         <div class="city" id="ci-1"><span class="ar">دبي</span><span class="en">Dubai</span></div>
@@ -124,15 +124,15 @@
     tl.fromTo("#ev-dash", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "power2.out" }, 6.45);
     tl.fromTo("#ev-t2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 6.8);
     // Offers (فرصة 10.7, العروض 12.2, الاستثمارية 12.8, والسكنية 13.96)
-    card("#of-in", 9.82, 14.45);
+    card("#of-in", 9.82, 14.2);
     tl.fromTo("#of-title", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 10.0);
     tl.fromTo("#of-p1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 12.8);
-    tl.fromTo("#of-p2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 13.95);
+    tl.fromTo("#of-p2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "back.out(2)" }, 13.85);
     // Cities (دبي 14.9, بغداد 15.2, لندن 15.7)
-    card("#ci-in", 14.47, 15.95);
-    tl.fromTo("#ci-1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.62);
-    tl.fromTo("#ci-2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.84);
-    tl.fromTo("#ci-3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 15.06);
+    card("#ci-in", 14.22, 16.17);
+    tl.fromTo("#ci-1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.32);
+    tl.fromTo("#ci-2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.45);
+    tl.fromTo("#ci-3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 14.58);
     // WhatsApp (الواتساب 22.68)
     card("#wa-in", 21.77, 24.05);
     tl.fromTo("#wa-icon", { rotation: -25, scale: 0.5 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2.5)" }, 21.9);
